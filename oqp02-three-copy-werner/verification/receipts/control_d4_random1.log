@@ -1,0 +1,14 @@
+mode random seed 1: q3(C) = 0.325539334446, |C C^+ - C^+ C| = 5.046e-01
+moments 31 done (14s); m[identity] = 1.000000+0.000000j
+moments 22 done (28s); m[identity] = 1.000000+0.000000j
+moments 13 done (42s); m[identity] = 1.000000+0.000000j
+family 31: dim 667, Gram cond 4.68e+05, solve resid 5.27e-16, max Im/Re of <B,Y> 2.37e-18 (58s)
+family 22: dim 1407, Gram cond 1.71e+06, solve resid 1.46e-15, max Im/Re of <B,Y> 5.93e-18 (92s)
+family 13: dim 667, Gram cond 4.68e+05, solve resid 6.57e-16, max Im/Re of <B,Y> 9.49e-18 (108s)
+OBJECTIVE  c^T x = 0.325539334446   q3(C) = 0.325539334446   diff = 1.665e-16
+traces: tr^T x = 3.000000 (expect 3 * s = 805306368 if each moment has unit trace)
+EQUALITIES |E x|_inf = 1.620e-09  relative to |E|_inf |x|_inf = 2.151e+05  -> rel 7.530e-15
+BLOCKS: 1239 compressions; most negative relative eigenvalue -2.746e-14 (block 319, order 3, source); blocks with lambda_min < -1e-7*scale: 0
+        max |M_t| = 7.112e+06; number of blocks with |M_t| < 1e-9*max: 1
+IDENTITY sum_t Tr[Z_t M_t(x)] = 0.325539334446, eta^T E_0 x = 6.163e-16, total = 0.325539334446, c^T x = 0.325539334446, diff -1.110e-16
+done 111s

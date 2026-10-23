@@ -1,0 +1,22 @@
+Extensibly causal processes that are not purifiable (Open Quantum Problem 43):
+a Lean 4 formalization
+Copyright 2026 Physical Superintelligence PBC
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Comparator checks that the theorems proved in Solution.lean are exactly the
+statements in Challenge.lean, using only the three standard axioms, and the proofs are replayed
+by Lean's kernel and by independent kernels.
+
+The text quoted in docs/OQP_STATEMENT.md is from Problem 43 of the IQOQI Vienna Open Quantum
+Problems list (https://oqp.iqoqi.oeaw.ac.at/are-all-extensibly-causal-processes-purifiable);
+it is quoted with attribution and is not covered by the licence of this repository.
+
+This repository depends on Mathlib (Apache License 2.0), which is not included in it.
+
+Provenance and use of AI. This result was released by Physical Superintelligence (PSI). The
+mathematics was developed by PSI researchers working with AI models (OpenAI's GPT-6-Astra and Anthropic's Claude Fable 5.1, Claude Opus 5 and Claude Opus 5.5) in automated research workflows at PSI. The Lean formalization was written by AI
+agents (Anthropic's Claude Fable 5.1 and Claude Opus 5.5 in Claude Code, and OpenAI's GPT-6-Astra in Codex) under PSI's direction. David
+Turturean and Ning Bao are responsible for the correctness of the paper. The paper's AI disclosure
+has the details; formalization.yaml records which agent did which part.
+

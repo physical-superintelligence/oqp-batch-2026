@@ -1,0 +1,30 @@
+PPT composition bound: 2(d-1) PPT maps compose to an entanglement-breaking map
+Copyright 2026 Physical Superintelligence PBC
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This repository is a release snapshot of a Lean 4 formalization of Theorem 1 of the PSI paper
+"Entanglement Breaking after 2(d-1) PPT Maps". The Lean files under PPTCompositionBound/ are taken
+from PSI's development repository, with the Lean module-system header added, one declaration made
+private as the module system requires, and minor comment edits; the axiom check
+PPTCompositionBound/Audit/FinalCheck.lean was added for this release.
+
+Comparator checks that the theorems proved in
+Solution.lean are exactly the statements in Challenge.lean, using only the three standard axioms,
+and the proofs are replayed by Lean's kernel and by independent kernels.
+
+Provenance and use of AI. This result was released by Physical Superintelligence (PSI). The
+mathematics was developed by PSI researchers working with AI models (OpenAI's GPT-5.6-Sol, GPT-5.6
+Pro and GPT-6-Astra and Anthropic's Claude Opus 5) in automated research workflows at PSI. The Lean
+formalization was written by AI agents (Anthropic's Claude Opus 5.5 in Claude Code, and OpenAI's GPT-6-Astra in Codex) under PSI's direction. David
+Turturean and Ning Bao are responsible for the correctness of the paper. The paper's AI disclosure
+has the details; formalization.yaml records which agent did which part.
+
+Third-party material:
+- The files scripts/check-lean-sources.py, scripts/validate-formalization.rb,
+  scripts/verify-comparator.sh, test/validate_formalization_test.rb, .github/workflows/ci.yml,
+  Gemfile and Gemfile.lock are adapted from the Palomar template
+  (https://github.com/PalomarRegistry/PalomarTemplate).
+- Mathlib (https://github.com/leanprover-community/mathlib4, Apache License 2.0) is a dependency
+  fetched at build time; it is not redistributed here.
+- Cited papers keep their own licences; none is redistributed here.

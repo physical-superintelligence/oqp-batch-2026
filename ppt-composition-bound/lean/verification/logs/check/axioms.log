@@ -1,0 +1,56 @@
+PPTCompositionBound.choi_isCompletelyPositive_iff {d p : ℕ}
+  (Φ : Matrix (Fin d) (Fin d) ℂ →ₗ[ℂ] Matrix (Fin p) (Fin p) ℂ) :
+  PPTCompositionBound.IsCompletelyPositive Φ ↔
+    ((PPTCompositionBound.refMap (Fin d) Φ)
+        (PPTCompositionBound.pureState fun x => if x.1 = x.2 then 1 else 0)).PosSemidef
+PPTCompositionBound.choi_isEntanglementBreaking_iff {d p : ℕ}
+  (Φ : Matrix (Fin d) (Fin d) ℂ →ₗ[ℂ] Matrix (Fin p) (Fin p) ℂ) :
+  PPTCompositionBound.IsEntanglementBreaking Φ ↔
+    PPTCompositionBound.IsSeparable
+      ((PPTCompositionBound.refMap (Fin d) Φ) (PPTCompositionBound.pureState fun x => if x.1 = x.2 then 1 else 0))
+PPTCompositionBound.choi_isPPTMap_iff {d p : ℕ} (Φ : Matrix (Fin d) (Fin d) ℂ →ₗ[ℂ] Matrix (Fin p) (Fin p) ℂ) :
+  PPTCompositionBound.IsPPTMap Φ ↔
+    ((PPTCompositionBound.refMap (Fin d) Φ)
+          (PPTCompositionBound.pureState fun x => if x.1 = x.2 then 1 else 0)).PosSemidef ∧
+      (PPTCompositionBound.partialTransposeRef
+          ((PPTCompositionBound.refMap (Fin d) Φ)
+            (PPTCompositionBound.pureState fun x => if x.1 = x.2 then 1 else 0))).PosSemidef
+PPTCompositionBound.compList_pair {d : ℕ} (Φ₁ Φ₂ : Module.End ℂ (Matrix (Fin d) (Fin d) ℂ)) :
+  PPTCompositionBound.compList [Φ₁, Φ₂] = Φ₂ ∘ₗ Φ₁
+PPTCompositionBound.compose_at_least_ppt_maps_entanglementBreaking (d : ℕ) (hd : 2 ≤ d) (N : ℕ) (hN : 2 * (d - 1) ≤ N)
+  (Φ : Fin N → Module.End ℂ (Matrix (Fin d) (Fin d) ℂ)) (hΦ : ∀ (i : Fin N), PPTCompositionBound.IsPPTMap (Φ i)) :
+  PPTCompositionBound.IsEntanglementBreaking (PPTCompositionBound.compList (List.ofFn Φ))
+PPTCompositionBound.compose_ppt_map_interleaved_entanglementBreaking (d : ℕ) (hd : 2 ≤ d)
+  (T : Module.End ℂ (Matrix (Fin d) (Fin d) ℂ)) (hT : PPTCompositionBound.IsPPTMap T)
+  (S : Fin (2 * (d - 1) - 1) → Module.End ℂ (Matrix (Fin d) (Fin d) ℂ))
+  (hS : ∀ (i : Fin (2 * (d - 1) - 1)), PPTCompositionBound.IsCompletelyPositive (S i)) :
+  PPTCompositionBound.IsEntanglementBreaking (PPTCompositionBound.compList (T :: List.ofFn fun i => T ∘ₗ S i))
+PPTCompositionBound.compose_ppt_maps_entanglementBreaking (d : ℕ) (hd : 2 ≤ d)
+  (Φ : Fin (2 * (d - 1)) → Module.End ℂ (Matrix (Fin d) (Fin d) ℂ))
+  (hΦ : ∀ (i : Fin (2 * (d - 1))), PPTCompositionBound.IsPPTMap (Φ i)) :
+  PPTCompositionBound.IsEntanglementBreaking (PPTCompositionBound.compList (List.ofFn Φ))
+PPTCompositionBound.ebIndex_id_eq_top (d : ℕ) (hd : 2 ≤ d) : PPTCompositionBound.ebIndex LinearMap.id = ⊤
+PPTCompositionBound.ebIndex_le_of_isPPTMap (d : ℕ) (hd : 2 ≤ d) (T : Module.End ℂ (Matrix (Fin d) (Fin d) ℂ))
+  (hT : PPTCompositionBound.IsPPTMap T) : PPTCompositionBound.ebIndex T ≤ ↑(2 * (d - 1))
+PPTCompositionBound.exists_posSemidef_not_isSeparable (d : ℕ) (hd : 2 ≤ d) :
+  ∃ X, X.PosSemidef ∧ ¬PPTCompositionBound.IsSeparable X
+PPTCompositionBound.id_not_entanglementBreaking (d : ℕ) (hd : 2 ≤ d) :
+  ¬PPTCompositionBound.IsEntanglementBreaking LinearMap.id
+PPTCompositionBound.transposeMap_isCompletelyCopositive_not_isCompletelyPositive :
+  PPTCompositionBound.IsCompletelyCopositive (PPTCompositionBound.transposeMap (Fin 2)) ∧
+    ¬PPTCompositionBound.IsCompletelyPositive (PPTCompositionBound.transposeMap (Fin 2))
+PPTCompositionBound.zero_map_isPPTMap_and_ebIndex_eq_one (d : ℕ) :
+  PPTCompositionBound.IsPPTMap 0 ∧ PPTCompositionBound.ebIndex 0 = 1
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"PPTCompositionBound.choi_isCompletelyPositive_iff"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"PPTCompositionBound.choi_isEntanglementBreaking_iff"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"PPTCompositionBound.choi_isPPTMap_iff"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"PPTCompositionBound.compList_pair"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"PPTCompositionBound.compose_at_least_ppt_maps_entanglementBreaking"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"PPTCompositionBound.compose_ppt_map_interleaved_entanglementBreaking"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"PPTCompositionBound.compose_ppt_maps_entanglementBreaking"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"PPTCompositionBound.ebIndex_id_eq_top"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"PPTCompositionBound.ebIndex_le_of_isPPTMap"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"PPTCompositionBound.exists_posSemidef_not_isSeparable"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"PPTCompositionBound.id_not_entanglementBreaking"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"PPTCompositionBound.transposeMap_isCompletelyCopositive_not_isCompletelyPositive"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"PPTCompositionBound.zero_map_isPPTMap_and_ebIndex_eq_one"}

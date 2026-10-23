@@ -1,0 +1,35 @@
+The power of CGLMP inequalities (Open Quantum Problems, Problem 27): Lean 4 formalization
+Copyright 2026 Physical Superintelligence PBC
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This repository is a release snapshot of a Lean 4 formalization of the answers to Problem 27 of the
+Open Quantum Problems list, from the PSI paper "CGLMP optimality and the strength of Bell tests". The
+Lean files under CGLMPBounds/ are taken from PSI's development repository (the import cone of the
+theorems in Challenge.lean), with the Lean module-system header added, the changes the module system
+requires (four definitions made public, three Mathlib imports added, two proofs that unfolded
+non-exposed Mathlib definitions rewritten with Mathlib's public lemmas), one hypothesis renamed
+(hC6), and comment edits. The axiom pin CGLMPBounds/Audit/FinalCheck.lean was written for this
+release.
+
+Comparator checks that the theorems proved in
+Solution.lean are exactly the statements in Challenge.lean, using only the three standard axioms, and
+the proofs are replayed by Lean's kernel and by independent kernels.
+
+Provenance and use of AI. This result was released by Physical Superintelligence (PSI). The
+mathematics was developed by PSI researchers working with AI models (OpenAI's GPT-6-Astra and
+Anthropic's Claude Fable 5.1) in automated research workflows at PSI. The Lean formalization was
+written by AI agents (Anthropic's Claude Opus 5.5 in Claude Code, and OpenAI's GPT-6-Astra in Codex) under PSI's direction. David Turturean and Ning Bao
+are responsible for the correctness of the paper. The paper's AI disclosure has the details;
+formalization.yaml records which agent did which part.
+
+Third-party material:
+- The files scripts/check-lean-sources.py, scripts/validate-formalization.rb,
+  scripts/verify-comparator.sh, test/validate_formalization_test.rb, .github/workflows/ci.yml,
+  Gemfile and Gemfile.lock are adapted from the Palomar template
+  (https://github.com/PalomarRegistry/PalomarTemplate).
+- Mathlib (https://github.com/leanprover-community/mathlib4, Apache License 2.0) is a dependency
+  fetched at build time; it is not redistributed here.
+- The text of Problem 27 quoted in docs/OQP_STATEMENT.md, Challenge.lean and README.md is from the
+  Open Quantum Problems list (IQOQI Vienna).
+- Cited papers keep their own licences; none is redistributed here.

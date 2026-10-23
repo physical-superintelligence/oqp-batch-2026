@@ -1,0 +1,99 @@
+OQP27.bgp_facet :
+  Module.finrank ℝ ↥(vectorSpan ℝ (OQP27.localSet (Fin 4) (Fin 4))) = 48 ∧
+    Module.finrank ℝ ↥(vectorSpan ℝ (OQP27.localSet (Fin 4) (Fin 4) ∩ {q | OQP27.bgpFunctional q = 0})) = 47 ∧
+      ∀ q ∈ OQP27.localSet (Fin 4) (Fin 4), OQP27.bgpFunctional q ≤ 0
+OQP27.bgp_no_fusion.{u_1, u_2} {α : Type u_1} {β : Type u_2} (fA : Fin 2 → Fin 4 → α) (fB : Fin 2 → Fin 4 → β)
+  (hf : (∃ x, ¬Function.Injective (fA x)) ∨ ∃ y, ¬Function.Injective (fB y)) :
+  ¬∃ G,
+      ∀ (s : OQP27.Strategy (Fin 4) (Fin 4)),
+        OQP27.bgpFunctional (OQP27.detTable s) = G (fun x => fA x (s.1 x), fun y => fB y (s.2 y))
+OQP27.bgp_no_signalling_violation :
+  ∃ p, OQP27.IsNoSignalling p ∧ (∀ (x y : Fin 2) (a b : Fin 4), ∃ r, p x y a b = ↑r) ∧ OQP27.bgpFunctional p = 1 / 144
+OQP27.bgp_not_cglmp_four :
+  ¬∃ e,
+      ∀ (s : OQP27.Strategy (Fin 4) (Fin 4)),
+        OQP27.bgpFunctional (OQP27.detTable s) = 0 ↔ OQP27.cglmp 4 (OQP27.detTable (e s)) = 2
+OQP27.bgp_relative_interior_point (pbar : OQP27.Table (Fin 4) (Fin 4))
+  (hpbar : pbar = (1 / 72) • ∑ s with OQP27.bgpFunctional (OQP27.detTable s) = 0, OQP27.detTable s) :
+  pbar ∈ OQP27.localSet (Fin 4) (Fin 4) ∧
+    OQP27.bgpFunctional pbar = 0 ∧
+      OQP27.IsNoSignalling pbar ∧
+        (∀ (x y : Fin 2) (a b : Fin 4), 1 / 72 ≤ pbar x y a b) ∧
+          (∃ x y a b, pbar x y a b = 1 / 72) ∧ pbar ∈ intrinsicInterior ℝ {q | OQP27.IsNoSignalling q}
+OQP27.cglmp_local_bound (d : ℕ) [NeZero d] (hd : 2 ≤ d) :
+  (∀ q ∈ OQP27.localSet (ZMod d) (ZMod d), OQP27.cglmp d q ≤ 2) ∧
+    ∃ q ∈ OQP27.localSet (ZMod d) (ZMod d), OQP27.cglmp d q = 2
+OQP27.cglmp_witness_tolerance {d n : ℕ} [NeZero d] [NeZero n] (hd : 2 ≤ d)
+  (P : Fin 4 → ZMod d → Matrix (Fin n) (Fin n) ℂ) (hP : ∀ (t : Fin 4), OQP27.IsPVM (P t))
+  (hviolation : 2 < OQP27.cglmp d (OQP27.tracialTable ![P 0, P 2] ![P 1, P 3])) :
+  have q := OQP27.tracialTable ![P 0, P 2] ![P 1, P 3];
+  (∀ (v : ℝ), 2 < OQP27.cglmp d (OQP27.noisy v q) ↔ 2 / OQP27.cglmp d q < v) ∧
+    2 / OQP27.cglmpFourierValue d ≤ 2 / OQP27.cglmp d q ∧
+      (2 / OQP27.cglmp d q = 2 / OQP27.cglmpFourierValue d ↔
+        ∃ k U,
+          n = d * k ∧
+            U * U.conjTranspose = 1 ∧
+              U.conjTranspose * U = 1 ∧
+                ∀ (t : Fin 4) (a : ZMod d),
+                  P t a =
+                    U * Matrix.kroneckerMap (fun x1 x2 => x1 * x2) (OQP27.fourierProjector d (↑t) a) 1 *
+                      U.conjTranspose)
+OQP27.fourier_attains_cglmp_value (d : ℕ) [NeZero d] (hd : 2 ≤ d) :
+  OQP27.cglmp d (OQP27.fourierTable d) = OQP27.cglmpFourierValue d ∧
+    2 < OQP27.cglmpFourierValue d ∧
+      ∀ (v : ℝ), 2 < OQP27.cglmp d (OQP27.noisy v (OQP27.fourierTable d)) ↔ 2 / OQP27.cglmpFourierValue d < v
+OQP27.fourier_projectors_pvm (d : ℕ) [NeZero d] (t : ℕ) : OQP27.IsPVM (OQP27.fourierProjector d t)
+OQP27.noise_separation_955 (m : ℕ) (hm : 955 ≤ m) :
+  OQP27.critVisibility (OQP27.TensorCHSH.tensorCHSHTable m) < 3049 / 5000 ∧
+    3049 / 5000 < OQP27.critVisibility (OQP27.fourierTable (2 ^ m))
+OQP27.partB_kl_discrimination_not_optimal (m : ℕ) (hm : 41 ≤ m) :
+  ⨆ μ ∈ {μ | (∀ (x y : Fin 2), 0 ≤ μ x y) ∧ ∑ x, ∑ y, μ x y = 1}, OQP27.statStrength μ (OQP27.fourierTable (2 ^ m)) <
+    OQP27.statStrength (fun x x_1 => 1 / 4) (OQP27.TensorCHSH.tensorCHSHTable m)
+OQP27.partB_maximizers_are_fourier_phase {d n : ℕ} [NeZero d] [NeZero n] (hd : 2 ≤ d)
+  (P : Fin 4 → ZMod d → Matrix (Fin n) (Fin n) ℂ) (hP : ∀ (t : Fin 4), OQP27.IsPVM (P t)) :
+  OQP27.cglmp d (OQP27.tracialTable ![P 0, P 2] ![P 1, P 3]) ≤ OQP27.cglmpFourierValue d ∧
+    (OQP27.cglmp d (OQP27.tracialTable ![P 0, P 2] ![P 1, P 3]) = OQP27.cglmpFourierValue d ↔
+      ∃ k U,
+        n = d * k ∧
+          U * U.conjTranspose = 1 ∧
+            U.conjTranspose * U = 1 ∧
+              ∀ (t : Fin 4) (a : ZMod d),
+                P t a =
+                  U * Matrix.kroneckerMap (fun x1 x2 => x1 * x2) (OQP27.fourierProjector d (↑t) a) 1 * U.conjTranspose)
+OQP27.partB_noise_resistance_not_optimal (m : ℕ) (hm : 955 ≤ m) :
+  OQP27.critVisibility (OQP27.TensorCHSH.tensorCHSHTable m) < OQP27.critVisibility (OQP27.fourierTable (2 ^ m))
+OQP27.statistical_separation (m : ℕ) (hm : 41 ≤ m) :
+  ENNReal.ofReal (9 / 14 * Real.logb 2 (4 / 3)) <
+      OQP27.statStrength (fun x x_1 => 1 / 4) (OQP27.TensorCHSH.tensorCHSHTable m) ∧
+    16 / 25 * Real.logb 2 (4 / 3) < 9 / 14 * Real.logb 2 (4 / 3) ∧
+      ⨆ μ ∈ {μ | (∀ (x y : Fin 2), 0 ≤ μ x y) ∧ ∑ x, ∑ y, μ x y = 1},
+          OQP27.statStrength μ (OQP27.fourierTable (2 ^ m)) <
+        ENNReal.ofReal (16 / 25 * Real.logb 2 (4 / 3))
+OQP27.tensor_chsh_rank_one_pvm (m : ℕ) (t : Fin 4) :
+  OQP27.IsPVM (OQP27.TensorCHSH.tensorProjectorFin m ↑t) ∧
+    (∀ (a : Fin m → Bool), (OQP27.TensorCHSH.tensorProjectorFin m (↑t) a).trace = 1) ∧
+      ∀ (a : Fin m → Bool), (OQP27.TensorCHSH.tensorProjectorFin m (↑t) a).rank = 1
+OQP27.tracial_table_physical.{u_1, u_2} (n : ℕ) [NeZero n] {α : Type u_1} {β : Type u_2} [Fintype α] [Fintype β]
+  (A : Fin 2 → α → Matrix (Fin n) (Fin n) ℂ) (B : Fin 2 → β → Matrix (Fin n) (Fin n) ℂ) :
+  OQP27.IsDensityMatrix (OQP27.phiState n) ∧
+    OQP27.quantumTable (OQP27.phiState n) (fun x a => (A x a).transpose) B = OQP27.tracialTable A B ∧
+      ((∀ (x : Fin 2), OQP27.IsPVM (A x)) →
+        (∀ (y : Fin 2), OQP27.IsPVM (B y)) →
+          (∀ (x : Fin 2), OQP27.IsPVM fun a => (A x a).transpose) ∧
+            OQP27.tracialTable A B ∈ OQP27.quantumBehaviours α β)
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"OQP27.bgp_facet"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"OQP27.bgp_no_fusion"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"OQP27.bgp_no_signalling_violation"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"OQP27.bgp_not_cglmp_four"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"OQP27.bgp_relative_interior_point"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"OQP27.cglmp_local_bound"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"OQP27.cglmp_witness_tolerance"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"OQP27.fourier_attains_cglmp_value"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"OQP27.fourier_projectors_pvm"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"OQP27.noise_separation_955"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"OQP27.partB_kl_discrimination_not_optimal"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"OQP27.partB_maximizers_are_fourier_phase"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"OQP27.partB_noise_resistance_not_optimal"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"OQP27.statistical_separation"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"OQP27.tensor_chsh_rank_one_pvm"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"OQP27.tracial_table_physical"}

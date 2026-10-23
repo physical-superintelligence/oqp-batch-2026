@@ -1,0 +1,250 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{10}
+
+\bibitem{Araki64}
+H.~Araki, \emph{Von {N}eumann algebras of local observables for free scalar
+  field}, Journal of Mathematical Physics \textbf{5} (1964), 1--13,
+  \doi{10.1063/1.1704063}.
+
+\bibitem{Bargmann61}
+V.~Bargmann, \emph{On a {H}ilbert space of analytic functions and an associated
+  integral transform. {P}art {I}}, Communications on Pure and Applied
+  Mathematics \textbf{14} (1961), 187--214, \doi{10.1002/cpa.3160140303}.
+
+\bibitem{Beigi13}
+S.~Beigi, \emph{Sandwiched {R}\'enyi divergence satisfies data processing
+  inequality}, Journal of Mathematical Physics \textbf{54} (2013), 122202,
+  \doi{10.1063/1.4838855}; \arxiv{1306.5920v6}.
+
+\bibitem{BW75}
+J.~J. Bisognano and E.~H. Wichmann, \emph{On the duality condition for a
+  {H}ermitian scalar field}, Journal of Mathematical Physics \textbf{16}
+  (1975), 985--1007, \doi{10.1063/1.522605}.
+
+\bibitem{BR87}
+O.~Bratteli and D.~W. Robinson, \emph{Operator algebras and quantum statistical
+  mechanics 1: {$C^*$}- and {$W^*$}-algebras, symmetry groups, decomposition of
+  states}, second ed., Springer, Berlin, 1987, \doi{10.1007/978-3-662-02520-8}.
+
+\bibitem{BGL02}
+R.~Brunetti, D.~Guido, and R.~Longo, \emph{Modular localization and {W}igner
+  particles}, Reviews in Mathematical Physics \textbf{14} (2002), 759--785,
+  \doi{10.1142/S0129055X02001387}; \arxiv{math-ph/0203021v2}.
+
+\bibitem{Buchholz74}
+D.~Buchholz, \emph{Product states for local algebras}, Communications in
+  Mathematical Physics \textbf{36} (1974), 287--304, \doi{10.1007/BF01646201}.
+
+\bibitem{BDL07}
+D.~Buchholz, C.~D'Antoni, and R.~Longo, \emph{Nuclearity and thermal states in
+  conformal field theory}, Communications in Mathematical Physics \textbf{270}
+  (2007), 267--293, \doi{10.1007/s00220-006-0127-9}; \arxiv{math-ph/0603083v2}.
+
+\bibitem{BL04}
+D.~Buchholz and G.~Lechner, \emph{Modular nuclearity and localization}, Annales
+  Henri Poincar\'e \textbf{5} (2004), 1065--1080,
+  \doi{10.1007/s00023-004-0190-8}; \arxiv{math-ph/0402072v1}.
+
+\bibitem{Tsirelson80}
+B.~S. Cirel'son, \emph{Quantum generalizations of {B}ell's inequality}, Letters
+  in Mathematical Physics \textbf{4} (1980), 93--100, \doi{10.1007/BF00417500};
+  the author's name is also transliterated as B.~S. Tsirelson.
+
+\bibitem{CHSH69}
+J.~F. Clauser, M.~A. Horne, A.~Shimony, and R.~A. Holt, \emph{Proposed
+  experiment to test local hidden-variable theories}, Physical Review Letters
+  \textbf{23} (1969), 880--884, \doi{10.1103/PhysRevLett.23.880}.
+
+\bibitem{EO73}
+J.-P. Eckmann and K.~Osterwalder, \emph{An application of {T}omita's theory of
+  modular {H}ilbert algebras: duality for free {B}ose fields}, Journal of
+  Functional Analysis \textbf{13} (1973), 1--12,
+  \doi{10.1016/0022-1236(73)90062-1}.
+
+\bibitem{FG89}
+F.~Figliolini and D.~Guido, \emph{The {T}omita operator for the free scalar
+  field}, Annales de l'Institut Henri Poincar\'e, Physique th\'eorique
+  \textbf{51} (1989), 419--435,
+  \url{https://www.numdam.org/item/AIHPA_1989__51_4_419_0/}.
+
+\bibitem{FL13}
+R.~L. Frank and E.~H. Lieb, \emph{Monotonicity of a relative {R}\'enyi
+  entropy}, Journal of Mathematical Physics \textbf{54} (2013), 122201,
+  \doi{10.1063/1.4838835}; \arxiv{1306.5358v3}.
+
+\bibitem{Haag96}
+R.~Haag, \emph{Local quantum physics: Fields, particles, algebras}, second ed.,
+  Springer, Berlin, 1996, \doi{10.1007/978-3-642-61458-3}.
+
+\bibitem{HC00}
+H.~Halvorson and R.~Clifton, \emph{Generic {B}ell correlation between arbitrary
+  local algebras in quantum field theory}, Journal of Mathematical Physics
+  \textbf{41} (2000), 1711--1717, \doi{10.1063/1.533253};
+  \arxiv{math-ph/9909013v3}.
+
+\bibitem{Hansen80}
+F.~Hansen, \emph{An operator inequality}, Mathematische Annalen \textbf{246}
+  (1980), 249--250, \doi{10.1007/BF01371046}.
+
+\bibitem{Heinz51}
+E.~Heinz, \emph{Beitr{\"a}ge zur {S}t{\"o}rungstheorie der
+  {S}pektralzerlegung}, Mathematische Annalen \textbf{123} (1951), 415--438,
+  \doi{10.1007/BF02054965}.
+
+\bibitem{HS18}
+S.~Hollands and K.~Sanders, \emph{Entanglement measures and their properties in
+  quantum field theory}, SpringerBriefs in Mathematical Physics, vol.~34,
+  Springer, Cham, 2018, \doi{10.1007/978-3-319-94902-4}; \arxiv{1702.04924v3}.
+
+\bibitem{Hormander03}
+L.~H{\"o}rmander, \emph{The analysis of linear partial differential operators
+  {I}: Distribution theory and {F}ourier analysis}, second ed., Classics in
+  Mathematics, Springer, Berlin, 2003, \doi{10.1007/978-3-642-61497-2}.
+
+\bibitem{OQP12}
+{IQOQI Vienna}, \emph{{O}pen {Q}uantum {P}roblems, {P}roblem 12: {B}ell
+  inequalities for long range vacuum correlations},
+  \url{https://oqp.iqoqi.oeaw.ac.at/bell-inequalities-for-long-range-vacuum-correlations},
+  Archived copy of 29 October 2023,
+  \url{https://web.archive.org/web/20231029013530/https://oqp.iqoqi.oeaw.ac.at/bell-inequalities-for-long-range-vacuum-correlations};
+  accessed October 21, 2026.
+
+\bibitem{KW05}
+O.~Kr{\"u}ger and R.~F. Werner, \emph{Some open problems in quantum information
+  theory}, \arxiv{quant-ph/0504166v1}, 2005, Open problems in quantum
+  information theory, Institut f{\"u}r Mathematische Physik, TU Braunschweig;
+  version of 21 April 2005.
+
+\bibitem{KA80}
+F.~Kubo and T.~Ando, \emph{Means of positive linear operators}, Mathematische
+  Annalen \textbf{246} (1980), 205--224, \doi{10.1007/BF01371042}.
+
+\bibitem{Landau87}
+L.~J. Landau, \emph{On the violation of {B}ell's inequality in quantum theory},
+  Physics Letters A \textbf{120} (1987), 54--56,
+  \doi{10.1016/0375-9601(87)90075-2}.
+
+\bibitem{LS16}
+G.~Lechner and K.~Sanders, \emph{Modular nuclearity: a generally covariant
+  perspective}, Axioms \textbf{5} (2016), 5, \doi{10.3390/axioms5010005};
+  \arxiv{1511.09027v1}.
+
+\bibitem{MN20}
+A.~Matsumura and Y.~Nambu, \emph{Violation of {B}ell-{CHSH} inequalities
+  through optimal local filters in the vacuum}, Quantum Reports \textbf{2}
+  (2020), 542--559, \doi{10.3390/quantum2040038}; \arxiv{1808.03896v2}.
+
+\bibitem{ML13}
+M.~M{\"u}ller-Lennert, F.~Dupuis, O.~Szehr, S.~Fehr, and M.~Tomamichel,
+  \emph{On quantum {R}\'enyi entropies: a new generalization and some
+  properties}, Journal of Mathematical Physics \textbf{54} (2013), 122203,
+  \doi{10.1063/1.4838856}; \arxiv{1306.3142v3}.
+
+\bibitem{DLMF}
+{National Institute of Standards and Technology}, \emph{{NIST} {D}igital
+  {L}ibrary of {M}athematical {F}unctions}, \url{https://dlmf.nist.gov/10.32},
+  2026, Release 1.2.8 of 2026-09-15, F.~W.~J. Olver, A.~B. Olde~Daalhuis, D.~W.
+  Lozier, B.~I. Schneider, R.~F. Boisvert, C.~W. Clark, B.~R. Miller, B.~V.
+  Saunders, H.~S. Cohl, and M.~A. McClain, eds.; Chapter 10, Section 10.32,
+  Integral representations; accessed October 21, 2026.
+
+\bibitem{RS61}
+H.~Reeh and S.~Schlieder, \emph{Bemerkungen zur {Unit{\"a}r{\"a}quivalenz} von
+  lorentzinvarianten {Feldern}}, Il Nuovo Cimento \textbf{22} (1961),
+  1051--1068, \doi{10.1007/BF02787889}.
+
+\bibitem{RRS05}
+B.~Reznik, A.~Retzker, and J.~Silman, \emph{Violating {B}ell's inequalities in
+  vacuum}, Physical Review A \textbf{71} (2005), 042104,
+  \doi{10.1103/PhysRevA.71.042104}; \arxiv{quant-ph/0310058v2}.
+
+\bibitem{RvD77}
+M.~A. Rieffel and A.~{van Daele}, \emph{A bounded operator approach to
+  {T}omita--{T}akesaki theory}, Pacific Journal of Mathematics \textbf{69}
+  (1977), 187--221, \doi{10.2140/pjm.1977.69.187}.
+
+\bibitem{SLW18}
+K.~P. Seshadreesan, L.~Lami, and M.~M. Wilde, \emph{{R}\'enyi relative
+  entropies of quantum {G}aussian states}, Journal of Mathematical Physics
+  \textbf{59} (2018), 072204, \doi{10.1063/1.5007167}; \arxiv{1706.09885v2}.
+
+\bibitem{Simon05}
+B.~Simon, \emph{Trace ideals and their applications}, second ed., Mathematical
+  Surveys and Monographs, vol. 120, American Mathematical Society, Providence,
+  RI, 2005, \doi{10.1090/surv/120}.
+
+\bibitem{Summers90}
+S.~J. Summers, \emph{On the independence of local algebras in quantum field
+  theory}, Reviews in Mathematical Physics \textbf{2} (1990), 201--247,
+  \doi{10.1142/S0129055X90000090}.
+
+\bibitem{Summers11}
+\bysame, \emph{Yet more ado about nothing: the remarkable relativistic vacuum
+  state}, Deep Beauty: Understanding the Quantum World through Mathematical
+  Innovation (H.~Halvorson, ed.), Cambridge University Press, Cambridge, 2011,
+  pp.~317--342, \doi{10.1017/CBO9780511976971.009}; \arxiv{0802.1854v1}.
+
+\bibitem{SW85}
+S.~J. Summers and R.~F. Werner, \emph{The vacuum violates {B}ell's
+  inequalities}, Physics Letters A \textbf{110} (1985), 257--259,
+  \doi{10.1016/0375-9601(85)90093-3}.
+
+\bibitem{SW87a}
+\bysame, \emph{{B}ell's inequalities and quantum field theory. {I}. {G}eneral
+  setting}, Journal of Mathematical Physics \textbf{28} (1987), 2440--2447,
+  \doi{10.1063/1.527733}.
+
+\bibitem{SW87b}
+\bysame, \emph{{B}ell's inequalities and quantum field theory. {II}. {B}ell's
+  inequalities are maximally violated in the vacuum}, Journal of Mathematical
+  Physics \textbf{28} (1987), 2448--2456, \doi{10.1063/1.527734}.
+
+\bibitem{SW87c}
+\bysame, \emph{Maximal violation of {B}ell's inequalities is generic in quantum
+  field theory}, Communications in Mathematical Physics \textbf{110} (1987),
+  247--259, \doi{10.1007/BF01207366}.
+
+\bibitem{SW88}
+\bysame, \emph{Maximal violation of {B}ell's inequalities for algebras of
+  observables in tangent spacetime regions}, Annales de l'Institut Henri
+  Poincar\'e, Physique th\'eorique \textbf{49} (1988), 215--243,
+  \url{https://www.numdam.org/item/AIHPA_1988__49_2_215_0/}.
+
+\bibitem{VW05}
+R.~Verch and R.~F. Werner, \emph{Distillability and positivity of partial
+  transposes in general quantum field systems}, Reviews in Mathematical Physics
+  \textbf{17} (2005), 545--576, \doi{10.1142/S0129055X05002364};
+  \arxiv{quant-ph/0403089v3}.
+
+\bibitem{WWY14}
+M.~M. Wilde, A.~Winter, and D.~Yang, \emph{Strong converse for the classical
+  capacity of entanglement-breaking and {H}adamard channels via a sandwiched
+  {R}\'enyi relative entropy}, Communications in Mathematical Physics
+  \textbf{331} (2014), 593--622, \doi{10.1007/s00220-014-2122-x};
+  \arxiv{1306.1586v4}.
+
+\bibitem{Williamson36}
+J.~Williamson, \emph{On the algebraic problem concerning the normal forms of
+  linear dynamical systems}, American Journal of Mathematics \textbf{58}
+  (1936), 141--163, \doi{10.2307/2371062}.
+
+\bibitem{Witten18}
+E.~Witten, \emph{{APS} {M}edal for {E}xceptional {A}chievement in {R}esearch:
+  {I}nvited article on entanglement properties of quantum field theory},
+  Reviews of Modern Physics \textbf{90} (2018), 045003,
+  \doi{10.1103/RevModPhys.90.045003}; \arxiv{1803.04993v6}, titled ``Notes on
+  some entanglement properties of quantum field theory''.
+
+\bibitem{Zych10}
+M.~Zych, F.~Costa, J.~Kofler, and {\v C}.~Brukner, \emph{Entanglement between
+  smeared field operators in the {K}lein--{G}ordon vacuum}, Physical Review D
+  \textbf{81} (2010), 125019, \doi{10.1103/PhysRevD.81.125019};
+  \arxiv{1003.3354v2}.
+
+\end{thebibliography}

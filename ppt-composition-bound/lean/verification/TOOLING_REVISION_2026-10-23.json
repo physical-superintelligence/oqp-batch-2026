@@ -1,0 +1,261 @@
+{
+  "format": "tooling-revision-v1",
+  "date": "2026-10-23",
+  "scope": "Static tooling revision; existing proof verification records retain their original scope.",
+  "baseline_batch_commit": "2505acc6028e9b331e3581c6ace8df1b2ff69fa1",
+  "baseline_project_path": "ppt-composition-bound/lean",
+  "revision_files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "baseline_sha256": "60579f392498625a58f033ff6ea42a2e5a742002cd6b4d776a3e5ead062ebd4d",
+      "revision_sha256": "30f4e8dd220fea7c82026c91b4602ef83329186a58853c9a98b8719144f0a358",
+      "baseline_git_blob": "41019b686212c6e1b2fdff03231f316afea85e48",
+      "revision_git_blob": "2957c292a77feebd41b7fddef73beb8d81a1bb00",
+      "historical_entries": [
+        {
+          "record_path": "verification/RECEIPTS.md",
+          "line": 97,
+          "recorded_sha256": "60579f392498625a58f033ff6ea42a2e5a742002cd6b4d776a3e5ead062ebd4d",
+          "record_file_sha256": "0ca4475a2a3f578261370f8da84430023a014638e6f70ca2843692c07dabe4e1",
+          "matches_baseline": true
+        }
+      ]
+    },
+    {
+      "path": "scripts/check-lean-sources.py",
+      "mode": "100644",
+      "baseline_sha256": "6919911f9905fcc9f01cac96e8c98a348a192a5550a10d127b0b3ced2d74bc5a",
+      "revision_sha256": "d5f8c62f1b7eb7af2010291d5cd5594a0360330976be5d7d6c0762a55b0605eb",
+      "baseline_git_blob": "5265fd6eca81be3c2ead4388ebe637440cbe1399",
+      "revision_git_blob": "fd8a68624903d62cc3e5e52b1f0f08357cde80fc",
+      "historical_entries": [
+        {
+          "record_path": "verification/RECEIPTS.md",
+          "line": 156,
+          "recorded_sha256": "6919911f9905fcc9f01cac96e8c98a348a192a5550a10d127b0b3ced2d74bc5a",
+          "record_file_sha256": "0ca4475a2a3f578261370f8da84430023a014638e6f70ca2843692c07dabe4e1",
+          "matches_baseline": true
+        }
+      ]
+    },
+    {
+      "path": "scripts/verify-comparator.sh",
+      "mode": "100755",
+      "baseline_sha256": "4fefa0e6c779448143b3164f56e96c3b6f719de67da335fa445127ab55f9b1e2",
+      "revision_sha256": "d76056c61272f72224f21d5f1a4193fc5cfe2690364a6e07f875d11da3b9d7b9",
+      "baseline_git_blob": "2175ef098878f9d01749f2f8a82e6179c1af8426",
+      "revision_git_blob": "e20d21c6e629d67a99e20cfd6393cbfcee03b824",
+      "historical_entries": [
+        {
+          "record_path": "verification/RECEIPTS.md",
+          "line": 158,
+          "recorded_sha256": "4fefa0e6c779448143b3164f56e96c3b6f719de67da335fa445127ab55f9b1e2",
+          "record_file_sha256": "0ca4475a2a3f578261370f8da84430023a014638e6f70ca2843692c07dabe4e1",
+          "matches_baseline": true
+        }
+      ]
+    },
+    {
+      "path": "test/validate_formalization_test.rb",
+      "mode": "100644",
+      "baseline_sha256": "18801495c735d5ef93848b7ca045d44e71f11081e14a6ebed21159154d9177f8",
+      "revision_sha256": "50ac011fa35816e50c7141daf0ad959a862dd773508fd26857688a53049c2eb5",
+      "baseline_git_blob": "ae93237be184807569ee699f2f14cf3d14192797",
+      "revision_git_blob": "eb2ba01aca13d716708b26ba59428914f53d82f7",
+      "historical_entries": [
+        {
+          "record_path": "verification/RECEIPTS.md",
+          "line": 159,
+          "recorded_sha256": "18801495c735d5ef93848b7ca045d44e71f11081e14a6ebed21159154d9177f8",
+          "record_file_sha256": "0ca4475a2a3f578261370f8da84430023a014638e6f70ca2843692c07dabe4e1",
+          "matches_baseline": true
+        }
+      ]
+    }
+  ],
+  "historical_record_files": {
+    "verification/RECEIPTS.md": {
+      "sha256": "0ca4475a2a3f578261370f8da84430023a014638e6f70ca2843692c07dabe4e1",
+      "git_blob": "b571ccbb012f85fd4137b8308ba82241e5d15052"
+    }
+  },
+  "historical_records_modified": false,
+  "proof_verification_performed_for_revision": false,
+  "historical_verification_reissued_for_revision": false,
+  "proof_source_binding": {
+    "comparison": "Current baseline source bytes are unchanged by the tooling revision.",
+    "inventory_format": "UTF-8; entries sorted by relative path; SHA-256, two spaces, path, LF.",
+    "file_count": 43,
+    "inventory_sha256": "cd089f0064be8093cdd8ef4b1cd7c896b7e8f0ed7b9596fe2b1f40126235a04a",
+    "entries": [
+      "7884d35d4686261c2283024b300265ee3a311f4a9a7108c80cff3caef4544f84  Challenge.lean",
+      "14a58fac5dfbd311f29fe64394cb058e21f2513c101b919a45fa437c50908dc4  PPTCompositionBound.lean",
+      "1c030fecc688b96cfe9a60239a710dd91a802cd4ac39694f3360e06fe3aa8b86  PPTCompositionBound/AtLeast.lean",
+      "0e08797b0289724b40f24cdd2044369137033f12403391669d215ea563f40e33  PPTCompositionBound/Audit/FinalCheck.lean",
+      "6c1dd8bbe0258b24c8ba4240c72576de6c790cf4e50ea75a21d6d43ec7376866  PPTCompositionBound/ChoiBridge.lean",
+      "fb011c05adaaad9c0302c792a0a4beca49c377a6e638b42914226a6d458e095b  PPTCompositionBound/CompatibleRangeTransport.lean",
+      "320cba05e0a60087a8f5ca468208150e321d95f20bdc569987ea739cc798d31e  PPTCompositionBound/Counterexample.lean",
+      "1b56bd723ed6978c823b2dbba4d2d088d4b2eaa7ed063b82c117a41cd85c8703  PPTCompositionBound/Defs.lean",
+      "91d2500d18c3b36aa7d23996c2baf60cb5ba6344fbd4fdd339fcd2ba88f9ab49  PPTCompositionBound/ForMathlib/PositiveRankOneCoefficient.lean",
+      "a555a99614995f912393be95f6063475585c74bcee78ad58b58ec9ab56504e42  PPTCompositionBound/ForMathlib/PositiveRankOneSubtraction.lean",
+      "494905bbb752d048d8b306943a8bfff386f1066a1bed0e8b643592d66b138a3c  PPTCompositionBound/ForMathlib/PseudoInverse.lean",
+      "e6e1ceb18d58d3191246be2044a3d8689e39566325c5d9e9a3bdc24abc508fc1  PPTCompositionBound/ForMathlib/RankFactorization.lean",
+      "8565e4ac257d3cfda372e0d915307af4491e2de43834cbbcd8392f0ade877b69  PPTCompositionBound/ForMathlib/SVDComponents.lean",
+      "5ff2f8e38513e0d9392b4def4802a560ce9b127fe1c240926791a0ea876af0da  PPTCompositionBound/ForMathlib/SchmidtBridges.lean",
+      "f70b9d87c48293bd20068465062b191819297738eff3a41465b6db90cd6401dd  PPTCompositionBound/ForMathlib/SingularValueDecomposition.lean",
+      "a78eceec91dd498a6cb158e4f2bb3d988da5857e788640fc41b0d2c501c3d6fc  PPTCompositionBound/ForMathlib/SupportedSVD.lean",
+      "e155cb123485d6fd0d321b4c008da070e053f002475fd612b907114e78db3d92  PPTCompositionBound/ForMathlib/ThinSingularValueDecomposition.lean",
+      "9c491d5673a02956afc7cd9317ce1bf9141ed1619df214bb82b0b7304520749b  PPTCompositionBound/ForMathlib/TwoUnitaryFormula.lean",
+      "d20b7bdebebcc8e0e98990e31effb7a98d0e82aab3b29f9f51173aa8efae9a92  PPTCompositionBound/ForMathlib/UnitaryEigenbasis.lean",
+      "21f75c0963a8575ae1b53c9e825e825e85c895e500b1d117f274d8109bb0a5b9  PPTCompositionBound/ForMathlib/UnitaryResolution.lean",
+      "6e3ea3f1840b7538b8212ab3b153aef174fe76aa9a2a28a5790b75a492eb63c4  PPTCompositionBound/GurvitsBarnum.lean",
+      "bd44f499a9bcb5df333e1cadb93e241a42e717e6ee71d6aadb5f667826bca2cd  PPTCompositionBound/GurvitsBarnumCore.lean",
+      "b04421e04ddf6d1f77f08bca489b69e4b3c1ed18a374dbfb611ad57b1ae98870  PPTCompositionBound/GurvitsBarnumSVD.lean",
+      "0c41487f7bef2e083dfae1eaced9bf61ae4ff2baf354b5bc17dcbd12569a8a3e  PPTCompositionBound/Iteration.lean",
+      "bfbc4fd33be47ef74d7a6c5893d94ef87ce2fd6814158231f10e29e2dcb80a25  PPTCompositionBound/Lift.lean",
+      "ad62bc131c731a1a65bbd9b45b45ce45ad9b68af047c1c2ec9dfea874272ce57  PPTCompositionBound/Main.lean",
+      "0b43679d390938c82011577acfb0042b93b9475c277226837189422dc7d23ddb  PPTCompositionBound/Maps.lean",
+      "21bfa6ce66cee3ce71d5d7d90ca7d6ddd9e2934109e33cd981e1ce6304c72120  PPTCompositionBound/NonTrivial.lean",
+      "3b2ecd7c28de5301bd788a43b9255b0a4428f015bb9ac614602a020f53c512f5  PPTCompositionBound/PPTDecomposition.lean",
+      "6b1bce2a9ba078e76d09498308d28ef20a5efdf46e68c9cf721f084c8fa222fe  PPTCompositionBound/PPTDecompositionSVD.lean",
+      "cde16295fa0bda9a9741524782cf79e9d0cc8b831d9a36c0fbb12629309e3810  PPTCompositionBound/PPTSubtraction.lean",
+      "c50a92147f18309b406df8e088acdc4fe6f85770be0efec35536e5b088efd531  PPTCompositionBound/Pair.lean",
+      "f24d85ff9265e5929ff718de3425eb2fc3ad49085a9c0aa4264b00c62aa8bb95  PPTCompositionBound/PairLemma.lean",
+      "dbed573b7e93fb1d67e6621042dd69f43160f0842a284a11fd4752556d709986  PPTCompositionBound/QubitBlocks.lean",
+      "490937bfdf6d2bf4f7ab52783bb464a77581ef4514cd7a8a53796bfea2ffcdc5  PPTCompositionBound/QubitNormalization.lean",
+      "7f569fa96235499d54ef8810e13280e59040538ef5ba6d63ef5b9b39abf81bfa  PPTCompositionBound/Reduction.lean",
+      "a23ff77056e2ac77583af6be59c9f0c504e12c952b883f2408d4581ae573f625  PPTCompositionBound/SchmidtDecomposition.lean",
+      "98daa469c9a3290fd4372383f7bfb2ae8a52eef61b0a047411d078829eb1f8cc  PPTCompositionBound/SchmidtFacts.lean",
+      "1fe32eb71c5294767b2d1494f3326981b0cb61439a1420bbf2c903cf515f497b  PPTCompositionBound/SchmidtNumber.lean",
+      "e4c86fff93d629ae8b6d3fc49bda5625d267c0b532c15b451dade0c5aafe37e4  PPTCompositionBound/Separable.lean",
+      "d661554d71b71f9993d2af05b56758470caed2a3f54a9f143c1a65823b561fa7  PPTCompositionBound/SeparablePure.lean",
+      "716d6d3e57dd57fccce0f653f2d105cd5beadc7139785e72eff6fa7a4a9371f2  PPTCompositionBound/TensorMaps.lean",
+      "d31c2aea17a80f5cff37906fb922d6e5c873950b8ccc75cded2a11e4ac695226  Solution.lean"
+    ],
+    "configuration": [
+      {
+        "path": "lean-toolchain",
+        "sha256": "8f89aa44fccdb1a0b6cc768c7c9f54b94cd40e47a08d582f82d1235f13075cf7"
+      },
+      {
+        "path": "lakefile.toml",
+        "sha256": "1e0f253f20969684172ba6c0900d9544be37e316aa510ebcb34356ede6c60df1"
+      },
+      {
+        "path": "lake-manifest.json",
+        "sha256": "f0151289d7e5b19cee0e83e16609bc33b816ec4a092579c4df21c9bffee67787"
+      },
+      {
+        "path": "comparator.json",
+        "sha256": "ba8aa0e78ca3b65088a257ec3b27580260017718422e0060b7ef560056f2e1cc"
+      }
+    ]
+  },
+  "semantics_comparison": {
+    "workflow": {
+      "yaml_parses": true,
+      "only_template_branch_removed_and_derived_step_unconditional": true,
+      "triggers_permissions_concurrency_all_other_steps_and_commands_byte_identical_except_change_notice": true,
+      "all_other_yaml_fields_identical": true,
+      "template_validator_cli_preserved": true
+    },
+    "python": {
+      "ast_excluding_only_module_docstring_identical": true,
+      "executable_ast_sha256": "bd91e261473ff4daeb137a97dd72b72200bf8c7f77bed01517b380d36d97547a",
+      "bytes_after_module_docstring_identical_except_change_notice": true,
+      "body_sha256": "be2d952adb8542134d3e3896087d578f18ad208babe8e93c3ca8932848e3fc86",
+      "inherited_attribution_line_4_preserved_verbatim": true
+    },
+    "shell": {
+      "noncomment_bytes_identical_after_three_exact_normalizations": true,
+      "normalizations": [
+        "toolchain_error_message",
+        "temporary_filename_prefix",
+        "config_error_message"
+      ],
+      "normalized_noncomment_sha256": "866ba7396e8818521316a4d390199bf5d958be8d9c4b39e9d241418d64709dc7",
+      "embedded_python_ast_identical_after_error_message_normalization": true,
+      "proof_commands_arguments_and_config_logic_identical": true
+    },
+    "cli_tests_unchanged": true
+  },
+  "file_local_change_notices": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "line": 1,
+      "notice": "# Modified 2026-10-23: validate project metadata unconditionally."
+    },
+    {
+      "path": "test/validate_formalization_test.rb",
+      "line": 2,
+      "notice": "# Modified 2026-10-23: test unconditional project metadata validation."
+    },
+    {
+      "path": "scripts/check-lean-sources.py",
+      "line": 6,
+      "notice": "# Modified 2026-10-23: clarify the source checking description."
+    },
+    {
+      "path": "scripts/verify-comparator.sh",
+      "line": 2,
+      "notice": "# Modified 2026-10-23: revise descriptions, error messages and temporary-file prefix."
+    }
+  ],
+  "local_validation": {
+    "runtime_versions": {
+      "ruby": "ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin26]",
+      "python": "Python 3.14.6",
+      "bash": "GNU bash, version 3.2.57(1)-release (arm64-apple-darwin26)"
+    },
+    "ruby_command": "ruby test/validate_formalization_test.rb",
+    "ruby": {
+      "runs": 16,
+      "assertions": 83,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    "ruby_syntax": "pass",
+    "bash_command": "bash -n scripts/verify-comparator.sh",
+    "bash_syntax": "pass",
+    "metadata": {
+      "command": "ruby scripts/validate-formalization.rb",
+      "validator_sha256": "47eeb73febf48a2e23036e67f3223ea0562604139a7e97723c70cc4d5c269782",
+      "baseline_metadata_sha256": "cd4ffe4bb558ff30585fb8d5a6c831fb3b096547cce18e27aa228bc9f0f8e506",
+      "baseline_result": "pass",
+      "contract": "The existing CLI contract and template-mode fixtures are unchanged.",
+      "integrated_metadata_snapshot_sha256": "b73ef6753b6ad48beaf66866350c2ca548d39a54fe533e75a52d23a0d8ab919b",
+      "integrated_metadata_snapshot_result": "pass",
+      "subsequent_integrated_metadata_snapshot": {
+        "checked_at": "2026-10-23T10:36:41.482381-04:00",
+        "integration_diff_sha256": "cf8b1dad872b283ea3a5b8fc3828dd551e5b8c519aa0d8c6982766c156906ba4",
+        "metadata_sha256": "b73ef6753b6ad48beaf66866350c2ca548d39a54fe533e75a52d23a0d8ab919b",
+        "result": "pass"
+      }
+    },
+    "actionlint": {
+      "version": "v1.7.12",
+      "checked_at": "2026-10-23T10:36:08.368610-04:00",
+      "archive_sha256": "aba9ced2dee8d27fecca3dc7feb1a7f9a52caefa1eb46f3271ea66b6e0e6953f",
+      "archive_matches_official_checksum": true,
+      "flags": [
+        "-no-color",
+        "-oneline"
+      ],
+      "workflow_path": ".github/workflows/ci.yml",
+      "workflow_sha256": "30f4e8dd220fea7c82026c91b4602ef83329186a58853c9a98b8719144f0a358",
+      "checked_in_six_file_invocation": true,
+      "returncode": 0,
+      "result": "pass",
+      "optional_shellcheck_available": false,
+      "optional_pyflakes_available": false
+    },
+    "ci_dispatch": false
+  },
+  "source_attribution": {
+    "path": "scripts/check-lean-sources.py",
+    "line": 4,
+    "inherited_line_preserved_verbatim": true
+  }
+}

@@ -1,0 +1,2414 @@
+% The vacuum Bell correlation of the massive free scalar field attains the
+% classical bound for bounded regions beyond a finite separation.
+% Physical Superintelligence (PSI), draft of 22 October 2026.
+% Compile with: pdflatex oqp12_prl_draft; bibtex oqp12_prl_draft; pdflatex; pdflatex
+
+\documentclass[aps,prl,reprint,longbibliography,raggedbottom]{revtex4-2}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{newtxtext,newtxmath}
+\usepackage{microtype}
+\usepackage{booktabs}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[hidelinks]{hyperref}
+\makeatletter\g@addto@macro{\UrlBreaks}{\do\-}\makeatother
+\hypersetup{
+  pdftitle={The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation},
+  pdfauthor={David Turturean}
+}
+\allowdisplaybreaks[1]
+\setcounter{secnumdepth}{3}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Rea}{Re}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\Ran}{Ran}
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\artanh}{artanh}
+\newcommand{\A}{\mathfrak A}
+\newcommand{\B}{\mathfrak B}
+\newcommand{\Hh}{\mathcal H}
+\newcommand{\Res}{\mathsf R}
+\newcommand{\JointRes}{\Res_{U_s}}
+\newcommand{\JointD}{\mathsf D}
+\newcommand{\Therm}{\mathsf H}
+\newcommand{\Qtil}{\widetilde Q}
+\newcommand{\cov}{\mathsf v}
+\newcommand{\sx}{\mathsf f}
+\newcommand{\sy}{\mathsf f'}
+\newcommand{\bx}{\mathbf x}
+\newcommand{\by}{\mathbf y}
+\newcommand{\bp}{\mathbf p}
+\newcommand{\bz}{\mathbf z}
+\newcommand{\eone}{\mathbf e_1}
+\newcommand{\Energy}{\mathcal E}
+\newcommand{\Weyl}{\mathsf W}
+\providecommand{\doi}[1]{\href{https://doi.org/#1}{\nolinkurl{doi:#1}}}
+\providecommand{\arxiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{arXiv:#1}}}
+
+\AtBeginDocument{\providecommand{\doi}{}\renewcommand{\doi}[1]{\href{https://doi.org/#1}{\nolinkurl{doi:#1}}}}
+\begin{document}
+
+\title{The vacuum Bell correlation of the massive free scalar field
+attains the classical bound for bounded regions beyond a finite
+separation}
+\author{David Turturean}\thanks{D.T. built and ran the automated research and formalization workflows at PSI that produced these results, steered the writing of the paper, and asked for AI reviews and revisions of the drafts.}
+\affiliation{Physical Superintelligence PBC, Cambridge, Massachusetts, USA}
+
+\begin{abstract}
+For the real free scalar field in $3+1$ dimensions we prove that a
+universal finite $C>2$ exists: for every mass $m>0$ and radius $R>0$,
+the vacuum Bell correlation of two equal-time double cones of radius
+$R$ equals its classical bound at centre separations $L\ge CR$. The
+supremum defining the Bell correlation includes all self-adjoint local
+contractions; the vacuum remains entangled. By isotony, CHSH violation
+is absent for fixed bounded regions moved sufficiently far apart along
+a fixed spacelike direction. This resolves the fixed-bounded-region
+version of Open Quantum Problem~12.
+\end{abstract}
+
+\maketitle
+
+{\raggedright\setlength{\parskip}{0.4\baselineskip}
+\section*{Acknowledgements}
+
+We thank Adam Levine for condensing the full manuscript into this letter and for his comments on the presentation, and Ning Bao for a referee report on an earlier draft of this letter; Ning Bao wrote the report as a paid contractor to PSI, not under one of his grants or as an employee of Northeastern University. We also thank Physical Superintelligence PBC, in which the author has a financial interest, for use of its resources, including its technology and frontier AI models. The author used these models to develop, derive, and compose this manuscript and its Lean~4 supplements.
+
+Results were formalized in Lean~4 by AI agents and checked by Lean's kernel; the formalization is at \url{https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp12-vacuum-bell-correlations/lean}.
+
+David Turturean reviewed and edited this paper and is responsible for its correctness. David Turturean is employed by PSI and has a financial interest in it.
+
+\par}
+\par\medskip\noindent\rule{\columnwidth}{0.4pt}\par\medskip
+
+
+\section{Statement of the result}\label{sec:statement}
+
+Let $O_1,O_2$ be spacelike separated regions of Minkowski space, with
+local von Neumann algebras $\A=\A(O_1)$ and $\B=\A(O_2)$, which commute,
+and let $\omega$ be a state. An observable measurable in $O_1$ whose
+values lie in $[-1,1]$ is a self-adjoint $A\in\A$ with $\norm A\le1$,
+a self-adjoint \emph{contraction} ($\norm\cdot$ is the operator norm).
+The CHSH inequality \cite{CHSH69} concerns two such observables on each
+side. Following Summers and Werner \cite{SW87a}, the \emph{Bell
+correlation} of $\omega$ is
+\begin{equation}
+\beta(\omega;\A,\B)
+=\sup\tfrac12\bigl\lvert\omega\bigl(A_0(B_0+B_1)+A_1(B_0-B_1)\bigr)\bigr\rvert,
+\label{eq:beta}
+\end{equation}
+the supremum over self-adjoint $A_i\in\A$ and $B_j\in\B$ of norm at
+most $1$. The CHSH inequality is the statement that in a \emph{local
+hidden variable model}, in which the four measured values are
+functions $a_i(\lambda),b_j(\lambda)\in[-1,1]$ of a shared classical
+variable $\lambda$ and expectations are averages over $\lambda$,
+\begin{equation}
+\tfrac12\abs{\langle a_0b_0\rangle+\langle a_0b_1\rangle
++\langle a_1b_0\rangle-\langle a_1b_1\rangle}\le1 ,
+\label{eq:CHSH}
+\end{equation}
+because $\abs{a_0(b_0+b_1)+a_1(b_0-b_1)}\le\abs{b_0+b_1}+\abs{b_0-b_1}\le2$
+for every $\lambda$. Quantum mechanics allows values of $\beta$ up to $\sqrt2$~\cite{Tsirelson80}:
+for \emph{reflections}, observables with $A_i^2=I$
+and $B_j^2=I$ and hence with outcomes $\pm1$, one has
+${\bigl(A_0(B_0+B_1)+A_1(B_0-B_1)\bigr)^2}=4I-[A_0,A_1][B_0,B_1]$, of norm
+at most $8$. The choice $A_i=B_j=I$ gives $1$, so $\beta\ge1$ always.
+If $\beta>1$, the correlations of $\omega$ between the two regions
+cannot be reproduced by any local hidden variable model; this is a
+\emph{Bell violation}. Note that the supremum in \eqref{eq:beta} is unchanged if
+it is restricted to reflections, because every self-adjoint contraction is an
+average of reflections and the expression is affine in each argument (Appendix~\ref{app:probability}, Step~1). (Verch and Werner
+\cite{VW05} omit the factor $\frac12$, so that their bounds are $2$ and
+$2\sqrt2$.)
+
+By the Reeh--Schlieder theorem the vacuum is entangled across any two
+spacelike separated regions \cite{HC00}, and the entanglement is
+distillable at any distance \cite{VW05}: local operations and
+classical communication can extract standard entangled pairs from it.
+Bell correlation is a
+stronger property. Summers and Werner proved $\beta=\sqrt2$ for the
+vacuum of a massive free field on complementary wedges
+($\{x^1>\abs{x^0}\}$ and its spatial mirror) and on tangent
+double cones \cite{SW85,SW87b,SW87c,SW88}, and for regions at a
+positive distance a mass gap $m>0$ gives
+$\beta\le1+2e^{-m\,t_{12}}$, where $t_{12}$ is the largest time
+through which one region can be shifted while the two stay spacelike
+separated \cite{SW87a,Summers11}. This is an upper bound; whether some
+violation survives at every distance is Problem~12 of the IQOQI Vienna
+Open Quantum Problems list~\cite{OQP12,KW05}: ``Decide whether some
+(necessarily small)
+violation of the inequalities is possible for regions arbitrarily far
+apart. For definiteness, consider a massive scalar free relativistic
+Bose field.'' Violations obtained after local filtering of coupled
+probes \cite{RRS05,MN20} concern a post-selected state and are not at
+issue here. Nor is entanglement itself: suitable local modes
+detect vacuum entanglement at every distance \cite{GK25}, but
+entanglement of the unfiltered vacuum does not imply a CHSH
+violation.
+
+\emph{Setting.---}Units $\hbar=c=1$, signature $(-,+,+,+)$, so that
+$x\cdot y=-x^0y^0+\bx\cdot\by$ for points $(x^0,\bx)$ with $\bx\in\R^3$;
+$B_R(\bx_0)=\{\bx\in\R^3:\abs{\bx-\bx_0}<R\}$ is the open ball of radius
+$R$; Fourier transforms are
+$\hat f(\bp)=\int e^{-\ii\bp\cdot\bx}f(\bx)\dd^3x$, and
+$\eone=(1,0,0)$. For $R>0$ the double cone
+$D_R=\{(x^0,\bx):\abs{x^0}+\abs\bx<R\}$ has base $B_R(0)$ at time zero,
+and $D_R+(0,L\eone)$ has its centre at distance $L$ along the first
+axis. We consider the real free scalar field of mass $m>0$ in $3+1$
+dimensions, its vacuum state $\omega$, and its local algebras
+$\A_m(O)$. For $L>2R$ the two bases are disjoint, the algebras of the
+two double cones commute, and we write
+\[
+\beta_m(R,L)=\beta\bigl(\omega;\A_m(D_R),\A_m(D_R+(0,L\eone))\bigr).
+\]
+The supremum in \eqref{eq:beta} runs over all bounded observables of
+the two regions; they may depend on $L$ and may involve events of
+arbitrarily small probability.
+
+\begin{theorem}[Finite separation cutoff]\label{thm:main}
+There is a finite constant $C_*>2$, independent of $m$ and $R$, such
+that
+\begin{equation}
+\forall\,m,R>0,\qquad
+L\ge C_*R\quad\Longrightarrow\quad\beta_m(R,L)=1.
+\label{eq:main}
+\end{equation}
+\end{theorem}
+
+\begin{corollary}[Fixed bounded regions]\label{cor:fixed}
+For every $m>0$, any two bounded regions $O_1,O_2$ and any fixed
+spacelike direction, the vacuum Bell correlation of $\A_m(O_1)$ and of
+the local algebra of the translate of $O_2$ equals $1$ for all
+sufficiently large translations of $O_2$ in that direction.
+\end{corollary}
+
+This answers Problem~12 in the negative for fixed bounded
+regions. The theorem supplies a finite sufficient separation, not a
+sharp threshold: it does not locate the smallest such separation, and
+for regions that grow with the separation, and for wedges at a
+positive gap, the question remains open. The theorem is an existence
+statement, and the constant $C_*$
+it produces is finite but not explicit. What the theorem excludes is a CHSH
+violation, however small and however rare its outcomes, between fixed
+bounded regions far enough apart.
+
+The proof compares the vacuum with the product of its
+restrictions to the two regions: the state with the same local physics
+and no correlations between the regions at all.
+Section~\ref{sec:probability} turns closeness to this product state
+into the classical bound $\beta=1$, and Sections \ref{sec:gaussian}
+and~\ref{sec:estimates} establish the closeness at large separation,
+uniformly in the mass.
+
+Section~\ref{sec:field} sets up the field and makes two reductions;
+Sections~\ref{sec:probability}--\ref{sec:completion} prove
+Theorem~\ref{thm:main}.
+
+
+\section{Setting and two reductions}\label{sec:field}
+
+At time zero the field is described by the smeared field and momentum
+\[
+\phi(f)=\int\phi(0,\bx)f(\bx)\dd^3x,\qquad
+\pi(g)=\int\dot\phi(0,\bx)g(\bx)\dd^3x,
+\]
+$f,g\in C_c^\infty(\R^3;\R)$, where
+$[\phi(0,\bx),\dot\phi(0,\by)]=\ii\delta^3(\bx-\by)$. We call $\sx=(f,g)$ a
+\emph{source}, denoted by the sans-serif letter of its field component,
+and write 
+\begin{align}\label{eq:comm}
+\Phi(\sx)=\phi(f)+\pi(g)
+\end{align} and
+$\Weyl(\sx)=e^{\ii\Phi(\sx)}$. The commutator is
+$[\Phi(\sx),\Phi(\sy)]=\ii\varsigma(\sx,\sy)$ with
+\begin{equation}
+\varsigma(\sx,\sy)=\int_{\R^3}(fg'-gf')\dd^3x,\qquad \sy=(f',g'),
+\label{eq:symplectic}
+\end{equation}
+so $\Weyl(\sx)\Weyl(\sy)=e^{-\ii\varsigma(\sx,\sy)/2}\Weyl(\sx+\sy)$, and
+$\Weyl(\sx)$ and $\Weyl(\sy)$ commute when the supports of $\sx$ and
+$\sy$ are disjoint ($\supp\sx:=\supp f\cup\supp g$), since then
+$\varsigma(\sx,\sy)=\varsigma(\sy,\sx)=0$. For mass
+$\mu>0$, the vacuum is the
+Gaussian (quasi-free) state \cite{Haag96}
+\begin{equation}
+\begin{gathered}
+\omega(\Weyl(\sx))=e^{-\cov_\mu(\sx,\sx)/2},\\
+\cov_\mu(\sx,\sy)=\tfrac12\bigl(\ip f{(\mu^2-\nabla^2)^{-1/2}f'}+\ip g{(\mu^2-\nabla^2)^{1/2}g'}\bigr),
+\end{gathered}
+\label{eq:covariance}
+\end{equation}
+with $\ip\cdot\cdot$ the $L^2(\R^3)$ inner product; $\cov_\mu$ is the
+\emph{covariance}, and $\cov_\mu(\sx,\sx)=\omega(\Phi(\sx)^2)$. (The
+covariances of \cite{SLW18} are twice ours.) By Araki's time-slice
+theorem \cite{Araki64,EO73},
+\begin{equation}
+\A_\mu(D_R)=\{\Weyl(f,g):f,g\in C_c^\infty(B_R(0);\R)\}'' ,
+\label{eq:time-slice}
+\end{equation}
+(the double prime is the double commutant, the smallest von Neumann
+algebra containing the set in braces), and likewise for the translated
+double cone with sources in
+$B_R(L\eone)$. An \emph{effect} is an operator $0\le E\le I$, the
+quantum analogue of an event, with probability $\omega(E)$; a
+\emph{projection} is an effect with $E^2=E$; a self-adjoint
+contraction $A$ has the two effects $(I\pm A)/2$, which are projections
+when $A^2=I$, in which case we call $A$ a \emph{reflection}.
+
+\begin{lemma}[Dilation; cf.~{\cite[Section~2]{BV98}}]\label{lem:scaling}
+$\beta_m(R,L)=\beta_{mR}(1,L/R)$ for all $m,R>0$ and $L>2R$.
+\end{lemma}
+
+\begin{proof}
+The map $(f,g)\mapsto(\tilde f,\tilde g)$, $\tilde f(\by)=R^2f(R\by)$,
+$\tilde g(\by)=Rg(R\by)$, carries sources in $B_R(0)$ and $B_R(L\eone)$
+to sources in $B_1(0)$ and $B_1(s\eone)$, $s=L/R$, preserves
+\eqref{eq:symplectic}, and carries the covariance of mass $m$ to that
+of mass $mR$, since $\hat{\tilde f}(\mathbf q)=R^{-1}\hat f(\mathbf q/R)$,
+$\hat{\tilde g}(\mathbf q)=R^{-2}\hat g(\mathbf q/R)$ and
+$\sqrt{(mR)^2+\abs{\mathbf q}^2}=R\sqrt{m^2+\abs{\mathbf q/R}^2}$. It therefore induces a unitary
+between the two vacuum representations that fixes the vacuum and maps
+each local algebra of \eqref{eq:time-slice} onto its counterpart, so the
+two suprema \eqref{eq:beta} coincide.
+\end{proof}
+
+From now on $\mu>0$ is arbitrary (the letter $\mu$ keeps this mass
+distinct from the physical $m$ of Theorem~\ref{thm:main}), the balls are $B_1(0)$ and
+$B_1(s\eone)$ with $s>2$, and
+\[
+\A=\A_\mu(D_1),\qquad \B=\A_\mu(D_1+(0,s\eone)).
+\]
+Theorem~\ref{thm:main} is the statement that $\beta(\omega;\A,\B)=1$
+whenever $s\ge C_*$.
+
+\emph{One-particle vectors.---}The one-particle space of the field of
+mass $\mu$ is $L^2(H_\mu^+,\dd\mathfrak m_\mu)$,
+$H_\mu^+=\{p:p_0=\sqrt{\mu^2+\abs\bp^2}\}$,
+$\dd\mathfrak m_\mu=\dd^3p/(2(2\pi)^3p_0)$, and the one-particle vector
+of a source is
+\begin{equation}
+(\kappa\sx)(p)=\hat f(\bp)+\ii p_0\hat g(\bp) .
+\label{eq:kappa}
+\end{equation}
+By Plancherel's formula, for real sources,
+\begin{equation}
+\ip{\kappa\sx}{\kappa\sy}=\cov_\mu(\sx,\sy)+\tfrac\ii2\varsigma(\sx,\sy)
+\label{eq:gram}
+\end{equation}
+(inner products are antilinear in the first argument; on the left it
+is that of $L^2(H_\mu^+,\dd\mathfrak m_\mu)$).
+For a nonempty bounded open $U\subset\R^3$, let $\mathcal X_{\mu,U}$ be
+the completion of the real smooth sources in $U$ in the norm
+$\cov_\mu(\sx,\sx)^{1/2}$, and $\Hh_{\mu,U}$ its complexification, with inner product
+$\ip\cdot\cdot_{\mu,U}$ extending $\cov_\mu$ sesquilinearly; by
+\eqref{eq:gram}, $\kappa$ extends to a bounded map
+$\kappa_U\colon\Hh_{\mu,U}\to L^2(H_\mu^+,\dd\mathfrak m_\mu)$,
+isometric on real sources. Real-linear maps such as inclusions of
+source spaces are extended complex-linearly without change of
+notation.
+
+\begin{lemma}[Injectivity and density]\label{lem:standard}
+$\kappa_U$ is injective and has dense range.
+\end{lemma}
+
+The proof (Appendix~\ref{app:evaluation}) uses that the Fourier
+transforms of compactly supported sources are entire. The statement that $\kappa_U$ has dense range is the one-particle form of the Reeh--Schlieder
+property; injectivity is what will give the strict uncertainty relation
+\eqref{eq:strict-uncertainty} below.
+
+\subsection{Modes and finite canonical systems}
+A \emph{mode} is one
+canonical degree of freedom of the field in a region. This corresponds to a pair of sources
+$\sx,\sy$ there with $\varsigma(\sx,\sy)=1$, so that
+$[\Phi(\sx),\Phi(\sy)]=\ii$ by \eqref{eq:comm}. The local algebras of a free massive scalar carry no density matrices
+(Section~\ref{sec:gaussian}), so every comparison in this paper is
+made on finitely many modes at a time: the degrees of freedom seen by
+a detector that couples to finitely many smeared fields $\Phi(\sx)$ in
+the region.
+
+A \emph{finite canonical system} is a finite collection of
+independent modes. Formally, it is a
+finite-dimensional real space $F$
+of smooth sources in a bounded open set, on which $\varsigma$ is
+nondegenerate: in a basis with
+$\varsigma(\sx_k,\sx_l)=(J_n)_{kl}$, $J_n=\bigoplus_{j=1}^n\left(\!\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\!\right)$,
+the $2n$ operators $\Phi(\sx_k)$ form $n$ canonical pairs,
+$[\Phi(\sx_{2j-1}),\Phi(\sx_{2j})]=\ii$ with all other commutators
+zero. 
+
+By the Stone--von Neumann theorem \cite{Haag96}, the algebra generated by
+$\Weyl(\sx)$, $\sx\in F$, is a copy of the bounded operators on
+$L^2(\R^n)$---ordinary quantum mechanics of $n$ degrees of
+freedom---possibly with multiplicity, and the vacuum restricted to
+it is given by a density matrix, since a vector state is normal.
+By \eqref{eq:covariance} its characteristic function is Gaussian,
+\begin{align}\label{eq:Weyl}
+\omega\Bigl(\Weyl\Bigl(\sum_k\xi_k\sx_k\Bigr)\Bigr)=e^{-\xi^TV\xi/2}
+\end{align}
+for $\xi\in\R^{2n}$, and a density matrix is determined by its
+characteristic function \cite{SLW18}; so the restriction is the
+Gaussian state $\rho_F$ with
+covariance matrix $V_{kl}=\cov_\mu(\sx_k,\sx_l)$.
+
+A finite collection of sources in an open set $U$ need not form
+canonical pairs by itself: field sources $(f,0)$, for instance, all
+commute. Nevertheless, such a finite collection can always be completed into a finite canonical system
+supported inside $U$ by adjoining finitely many further sources. The only
+obstruction to such a construction would be if there were a direction $\sx=(f,g)$ in the span that commutes with
+the whole span, but we can always include the missing partner $(0,f)$ since $\varsigma(\sx,(0,f))=\int f^2>0$
+if $f\ne0$ or $(-g,0)$ if $f=0$ since $\varsigma(\sx,(-g,0))=\int g^2>0$. Each such adjoined
+partner lowers the number of independent partnerless
+sources by one, so finitely many steps complete the pairs. Such a construction allows us to always complete
+two finite canonical systems in $U$ into a common third system,
+which Lemma~\ref{lem:exhaustion} below needs. 
+
+Given a Gaussian state on a given finite canonical system, Williamson's normal
+form \cite{Williamson36} writes $V=S(\bigoplus_j\upsilon_jI_2)S^T$ with
+$S$ a linear canonical transformation and $I_2$ the identity on the corresponding canonical pair. In these normal-mode
+coordinates $\rho_F$ is a product of $n$ oscillator states, the $j$th
+with covariance $\upsilon_jI_2$. Each normal mode is thermal:
+with $N_j$ its number operator, the $j$th factor is proportional to
+$e^{-\beta_jN_j}$ for an inverse temperature $\beta_j\in(0,\infty]$,
+and the \emph{symplectic eigenvalue} $\upsilon_j\ge\frac12$ is related to the inverse temperature of the mode by 
+\begin{equation}
+\upsilon_j=\tfrac12\coth(\beta_j/2)=\bar n_j+\tfrac12.
+\label{eq:mode-temperature}
+\end{equation}
+ Deriving this is a standard exercise in the Heisenberg algebra together with equation \eqref{eq:Weyl}. One can see that a pure mode has
+$\upsilon_j=\frac12$ ($\beta_j=\infty$), while a mixed/thermal one has
+$\upsilon_j>\frac12$. The vacuum restricted to a finite canonical system
+satisfies the strict uncertainty relation
+\begin{equation}
+V+\tfrac\ii2J_n>0,\quad\text{equivalently}\quad\upsilon_j>\tfrac12
+\text{ for all }j,
+\label{eq:strict-uncertainty}
+\end{equation}
+because $V+\frac\ii2J_n$ is the Gram matrix of the one-particle
+vectors of $\sx_1,\dots,\sx_{2n}$, which are linearly independent by
+Lemma~\ref{lem:standard} (see \eqref{eq:gram}). Hence $\rho_F$ is
+\emph{faithful}: it has no zero eigenvalues.
+
+\begin{lemma}[Passage to all local effects]\label{lem:exhaustion}
+Let $h$ be continuous on $[0,1]^3$, and suppose that
+\[
+h\bigl(\omega(E),\omega(P),\omega(EP)\bigr)\le0
+\]
+for \emph{every} finite canonical system $F_A$ in $B_1(0)$, every
+finite canonical system $F_B$ in $B_1(s\eone)$, every effect $E$ of
+the algebra of $F_A$ and every effect $P$ of the algebra of $F_B$.
+Then the inequality holds for all effects $E\in\A$, $P\in\B$. The
+same holds for a bound on $\abs{\omega(AB)-\omega(A)\omega(B)}$ over
+self-adjoint contractions.
+\end{lemma}
+
+\begin{proof}
+The union of the algebras of all finite canonical systems in $B_1(0)$
+is a $*$-algebra
+(two systems lie in a third system) containing the generators of $\A$, so it
+is strongly dense in $\A$. By Kaplansky's density theorem
+\cite[Theorem~2.4.16]{BR87}, every self-adjoint contraction of $\A$ is
+a strong limit of self-adjoint contractions of the union; applied to
+$2E-I$ this gives effects $E_\alpha\to E$ strongly, each belonging to
+the algebra of some finite canonical system, and likewise
+$P_\beta\to P$ in $\B$. Products of bounded strongly convergent nets
+converge strongly, and the vacuum, a vector state, is strongly
+continuous (as is any normal state, on bounded sets), so
+$\bigl(\omega(E_\alpha),\omega(P_\beta),\omega(E_\alpha P_\beta)\bigr)
+\to\bigl(\omega(E),\omega(P),\omega(EP)\bigr)$, and by the
+continuity of $h$ the closed condition $h\le0$ passes to the limit.
+\end{proof}
+
+\section{A probability criterion for the classical bound}
+\label{sec:probability}
+
+In this section $\omega$ is any state on the algebra generated by two
+commuting von Neumann algebras $\A,\B$. For $r>1$, the \emph{event comparison
+constants} are
+\begin{equation}
+K_{r,+}=\sup_{E,P}\frac{\omega(EP)^r}{(\omega(E)\omega(P))^{r-1}},
+\quad
+K_{r,-}=\sup_{E,P}\frac{(\omega(E)\omega(P))^r}{\omega(EP)^{r-1}},
+\label{eq:K}
+\end{equation}
+over projections $E\in\A$, $P\in\B$ with $\omega(E)\omega(P)>0$; a
+positive numerator over a zero denominator counts as $+\infty$. Both
+constants are at least $1$ ($E=P=I$). For $r_+>1$ and $r_->1$, taking
+roots in \eqref{eq:K} gives, for all projections,
+\begin{equation}
+\begin{gathered}
+\omega(EP)\le K_{r_+,+}^{1/r_+}\,
+\bigl(\omega(E)\omega(P)\bigr)^{1-1/r_+},\\
+\omega(EP)\ge K_{r_-,-}^{-1/(r_--1)}\,
+\bigl(\omega(E)\omega(P)\bigr)^{r_-/(r_--1)};
+\end{gathered}
+\label{eq:event-orders}
+\end{equation}
+if $\omega(E)\omega(P)=0$ then $\omega(EP)=0$ since $EP\le E,P$. Thus a
+finite $K_{r,+}$ says that a joint event is never much more probable
+than a power of the product of its marginals, and a finite $K_{r,-}$
+says it is never much less probable.
+
+\begin{theorem}[Two event bounds and clustering]\label{thm:probability}
+Let $r_+>2$, $1<r_-<2$, and
+\begin{equation}
+\begin{gathered}
+b=1-\frac1{r_+},\quad a=1-\frac1{r_-},\quad
+\eta=1-\frac{1-b}{ab^2},\\
+\nu_+=\frac{1+b}{ar_+b^2},\quad \nu_-=\frac{1-a}{a}.
+\end{gathered}
+\label{eq:probability-exponents}
+\end{equation}
+Suppose $\eta>0$, $K_{r_+,+},K_{r_-,-}<\infty$, and, for some
+$q_{\mathrm{cl}}\ge0$,
+\begin{equation}
+\abs{\omega(AB)-\omega(A)\omega(B)}\le q_{\mathrm{cl}}
+\label{eq:additive-cluster}
+\end{equation}
+for all self-adjoint contractions $A\in\A$, $B\in\B$. If
+\begin{equation}
+q_{\mathrm{cl}}^{\eta}K_{r_+,+}^{\nu_+}K_{r_-,-}^{\nu_-}\le2^{-2/(ab)},
+\label{eq:probability-cutoff}
+\end{equation}
+then $\beta(\omega;\A,\B)=1$.
+\end{theorem}
+
+The proof is in Appendix~\ref{app:probability}. In outline: a
+self-adjoint contraction is an average of reflections and the CHSH
+expression is affine in each argument, so a violation by contractions
+implies a violation by four reflections $A_0,A_1,B_0,B_1$. Their
+spectral projections $E_i^\pm=(I\pm A_i)/2$ and $P_j^\pm=(I\pm B_j)/2$
+define sixteen joint probabilities $\omega(E_i^\pm P_j^\pm)$, and a
+violation forces the least likely of the eight that enter the CHSH
+value with a positive sign---by the symmetries of the expression, this
+cell can be taken to be $E_0^-P_0^-$---to satisfy two incompatible
+bounds: the event bounds \eqref{eq:event-orders} give
+\begin{equation}
+\omega(E_0^-P_0^-)^{\eta}\,K_{r_+,+}^{\nu_+}K_{r_-,-}^{\nu_-}
+>2^{-2/(ab)},
+\label{eq:outline-lower}
+\end{equation}
+while \eqref{eq:additive-cluster} forces
+$\omega(E_0^-P_0^-)<q_{\mathrm{cl}}$, and together these contradict
+\eqref{eq:probability-cutoff}.
+
+\emph{What remains.---}Theorem~\ref{thm:probability} reduces
+Theorem~\ref{thm:main} to verifying its hypotheses for the vacuum and
+the two algebras $\A,\B$ at large separation $s$: bounds on
+$K_{r_+,+},K_{r_-,-}$ tending to $1$, and a clustering constant
+$q_{\mathrm{cl}}$ tending to $0$, fast enough that
+\eqref{eq:probability-cutoff} holds for all $s\ge C_*$. Both come from
+comparing the vacuum with the product of its marginals.
+The comparison degenerates on modes that are nearly pure in the
+vacuum; it is rescued by the monogamy stated in
+Section~\ref{sec:statement}---purity of a mode in one ball suppresses
+its correlation with the other ball at a faster rate.
+Section~\ref{sec:gaussian} bounds the quotients in \eqref{eq:K}, for
+the vacuum restricted to finitely many modes, by R\'enyi divergences
+between the restricted vacuum and the product of its marginals, and
+bounds $q_{\mathrm{cl}}$ by their trace distance;
+Lemma~\ref{lem:exhaustion} then removes the restriction to finitely
+many modes. The divergences are bounded in turn by covariance
+differences (Theorem~\ref{thm:gaussian}), which
+Section~\ref{sec:estimates} bounds by negative powers of $s$,
+uniformly in the mass. Section~\ref{sec:completion} fixes $r_\pm$ and
+assembles \eqref{eq:probability-cutoff} with $q_{\mathrm{cl}}$
+proportional to $1/s$.
+
+\section{Gaussian comparison and the weight operator}
+\label{sec:gaussian}
+
+This section carries out the first step of the programme at the end of
+Section~\ref{sec:probability}: for the vacuum restricted to finitely
+many modes in the two balls, the quotients in \eqref{eq:K} are bounded
+by R\'enyi divergences between the restricted vacuum $\rho_F$ and the
+product $\sigma_F$ of its marginals. Furthermore, $q_{\mathrm{cl}}$ is bounded by their
+trace distance. Theorem~\ref{thm:gaussian} then bounds the divergences
+by covariance differences as in \eqref{eq:gaussian-bound}.
+The section then confronts the main difficulty of the argument,
+uniformity over the choice of modes, and resolves it by the monogamy
+mechanism of Section~\ref{sec:statement}.
+
+
+\emph{A divergence with data processing.---}For faithful density
+operators $\rho,\sigma$ and $r>1$, let
+\begin{equation}
+\Qtil_r(\rho\|\sigma)=\Tr\bigl(\sigma^{-\tau/2}\rho\,\sigma^{-\tau/2}\bigr)^r,
+\qquad\tau=\frac{r-1}r,
+\label{eq:renyi}
+\end{equation}
+with the value $+\infty$ if the operator inside has infinite $r$-norm.
+Its logarithm divided by $r-1$ is the sandwiched R\'enyi divergence
+\cite{WWY14,ML13}, a one-parameter family of measures of how
+distinguishable two states are; $\Qtil_r=1$ if $\rho=\sigma$ and
+$\Qtil_r\ge1$ in general. Its basic property is data processing: it
+cannot increase under any physical operation \cite{FL13,Beigi13}. We
+use two consequences. Here $\rho(M)=\Tr(\rho M)$, and
+$\norm T_p=(\Tr\abs T^p)^{1/p}$ are the Schatten norms; $\norm T_1$,
+the \emph{trace norm}, is the sum of the singular values.
+
+\begin{lemma}[Effects and trace distance; cf.~{\cite{FL13,Beigi13,WWY14,TKRVV10}}]\label{lem:renyi-consequences}
+Let $\rho,\sigma$ be faithful density operators on one Hilbert space,
+with $\Qtil_r(\rho\|\sigma)<\infty$. Then every effect $M$ on that
+space satisfies
+\begin{equation}
+\rho(M)^r\le\Qtil_r(\rho\|\sigma)\,\sigma(M)^{r-1},
+\label{eq:effect-renyi}
+\end{equation}
+and, for $r\ge2$,
+\begin{equation}
+\norm{\rho-\sigma}_1\le\sqrt{\Qtil_r(\rho\|\sigma)^{1/(r-1)}-1}.
+\label{eq:trace-distance}
+\end{equation}
+\end{lemma}
+
+The proof is in Appendix~\ref{app:gaussian}. A word on where density
+matrices live: the restrictions of the vacuum to the local
+algebras $\A,\B$ are normal states, but these algebras are von Neumann
+algebras of type III, without a trace, so the restricted states have
+no intrinsic density matrix there. Density matrices exist on the
+finite canonical systems of Section~\ref{sec:field}, which are
+ordinary quantum mechanics by the Stone--von Neumann theorem; the
+density matrices used below represent the vacuum restricted to such
+systems, and every trace below is taken there. In the end, the resulting inequalities will be between
+the numbers $\omega(E)$, $\omega(P)$, $\omega(EP)$ with constants
+independent of the finite system, and so the limits can be uniformly taken to $\A,\B$, by
+Lemma~\ref{lem:exhaustion}.
+
+Returning to the vacuum
+$\omega$, let $F_A,F_B$ be
+finite canonical systems (finitely many modes) in $B_1(0)$ and $B_1(s\eone)$. Since
+$\varsigma$ vanishes between them, $F=F_A\oplus F_B$ is a finite
+canonical system whose two halves generate commuting algebras. Let
+$\rho_F$ be the vacuum on $F$ and
+\[
+\sigma_F=\rho_{F_A}\otimes\rho_{F_B},
+\]
+the product of the vacuum restrictions to the two halves (the
+marginals of $\rho_F$), both faithful Gaussian states by
+\eqref{eq:strict-uncertainty}. For effects $E$ of $F_A$ and $P$ of
+$F_B$, $EP$ is an effect with $\rho_F(EP)=\omega(EP)$ and
+$\sigma_F(EP)=\omega(E)\omega(P)$. Applying
+\eqref{eq:effect-renyi} to $(\rho_F,\sigma_F,r_+)$ and to
+$(\sigma_F,\rho_F,r_-)$ with $M=EP$,
+\begin{equation}
+\begin{gathered}
+\omega(EP)^{r_+}\le\Qtil_{r_+}(\rho_F\|\sigma_F)\,
+\bigl(\omega(E)\omega(P)\bigr)^{r_+-1},\\
+\bigl(\omega(E)\omega(P)\bigr)^{r_-}\le\Qtil_{r_-}(\sigma_F\|\rho_F)\,
+\omega(EP)^{r_--1}.
+\end{gathered}
+\label{eq:finite-events}
+\end{equation}
+These are exactly the quotients of \eqref{eq:K}. The task is to bound
+$\log\Qtil_{r_+}(\rho_F\|\sigma_F)$ and
+$\log\Qtil_{r_-}(\sigma_F\|\rho_F)$ by quantities that vanish as
+$s\to\infty$, uniformly in $\mu$ and in $F_A,F_B$.
+
+\emph{Thermal powers.---}If $\rho_V$ is a faithful Gaussian state with
+covariance $V$ and $0<\tau<1$, then $\rho_V^\tau/\Tr\rho_V^\tau$ is
+Gaussian with covariance $V^{[\tau]}$, which has the same normal modes
+as $V$ and the symplectic eigenvalues \cite[Proposition~1]{SLW18}
+\begin{equation}
+\upsilon_j^{[\tau]}=\tfrac12\coth\Bigl(\tau\artanh\frac1{2\upsilon_j}\Bigr),
+\label{eq:thermal-power}
+\end{equation}
+the $\tau$th power of a thermal state being the thermal state at
+$\tau$ times the inverse temperature. The \emph{thermal increment}
+$\Therm_\tau(V)=V^{[\tau]}-V$ is positive definite, since $\coth$
+decreases.
+
+\begin{theorem}[Gaussian R\'enyi comparison]\label{thm:gaussian}
+Let $\rho,\sigma$ be centred (zero-mean) faithful Gaussian states of the same $n$
+modes, with covariance matrices $V_\rho,V_\sigma$. For $r>1$ let
+\[
+\begin{gathered}
+\tau=\frac{r-1}r,\qquad k_r=\max\{2,\tau^{-1}\},\\
+\mathsf Z=\Therm_\tau(V_\sigma)^{-1/2}(V_\rho-V_\sigma)\Therm_\tau(V_\sigma)^{-1/2}.
+\end{gathered}
+\]
+If $\norm{\mathsf Z}\le(4k_r)^{-1}$, then
+\begin{equation}
+\log\Qtil_r(\rho\|\sigma)\le2rk_r\norm{\mathsf Z}_1 .
+\label{eq:gaussian-bound}
+\end{equation}
+\end{theorem}
+
+The proof is in Appendix~\ref{app:gaussian}. Neither $n$ nor the
+symplectic eigenvalues appear: the covariance difference enters only
+relative to the thermal increment of $\sigma$.
+
+\emph{The obstruction: nearly pure modes.---}Theorem~\ref{thm:gaussian}
+and \eqref{eq:finite-events} cannot be combined as they stand to prove the main result.
+Lemma~\ref{lem:exhaustion} demands constants independent of the chosen
+modes $F$, so $\norm{\mathsf Z}_1$ must first be bounded uniformly in
+$F$---and $\mathsf Z$ is the covariance difference \emph{divided by}
+the thermal increment of $\sigma_F$. Consider a single normal mode of
+$\sigma_F$, thermal at inverse temperature $\beta_j$ as in
+\eqref{eq:mode-temperature}. By \eqref{eq:thermal-power} and \eqref{eq:mode-temperature}, the thermal increment
+on the mode takes the form
+\[
+\begin{gathered}
+\upsilon_j^{[\tau]}-\upsilon_j
+=\tfrac12\coth(\tau\beta_j/2)-\tfrac12\coth(\beta_j/2)\\
+\sim e^{-\tau\beta_j},\qquad\beta_j\to\infty,
+\end{gathered}
+\]
+and so on that mode each side of $\mathsf Z$ divides the covariance
+difference by a quantity of order $e^{-\tau\beta_j/2}$. Nothing stops $F$ from
+containing modes with $\beta_j$ as large as one likes (physically,
+vacuum entanglement concentrates near the boundary of a region, and
+modes supported well inside a ball are nearly pure), so no bound on
+the covariance difference alone controls $\norm{\mathsf Z}_1$
+uniformly in $F$.
+
+\emph{The rescue: purity is monogamous.---}So what must be shown
+is that the covariance difference itself decays on nearly pure modes,
+at least as fast as $e^{-\tau\beta_j/2}$. Since
+$\sigma_F$ is the product of the marginals of $\rho_F$, the diagonal
+blocks of $V_\rho-V_\sigma$ cancel: what remains is the covariance
+between the two balls. And the vacuum is a pure state: across the
+split between the mode and the environment, the vacuum vector has a
+Schmidt decomposition with the thermal weights of
+\eqref{eq:mode-temperature},
+\[
+\Omega=\sum_{n\ge0}\sqrt{p_n}\;|n\rangle\otimes|\widetilde
+n\rangle,\qquad p_n=(1-e^{-\beta_j})\,e^{-\beta_jn},
+\]
+with $|n\rangle$ the $n$-quanta state of the mode and
+$|\widetilde n\rangle$ orthonormal vectors of the environment, which
+here means everything other than the mode. Let $q$ be the position of
+the mode, which connects $|n\rangle$ only to $|n\pm1\rangle$, with
+$\langle n+1|q|n\rangle=\sqrt{(n+1)/2}$, and let $\sy$ be any source
+in the other ball, so that the smeared field $\Phi(\sy)$ acts on the
+environment factor alone, with $\omega(\Phi(\sy))=0$. The covariance
+is
+\[
+\begin{aligned}
+\omega(q\,\Phi(\sy))&=\sum_{n}\sqrt{p_np_{n+1}}\,\sqrt{2(n+1)}\,
+\operatorname{Re}\langle\widetilde{n+1}|\Phi(\sy)|\widetilde n\rangle\\
+&=e^{-\beta_j/2}\sum_np_n\sqrt{2(n+1)}\,
+\operatorname{Re}\langle\widetilde{n+1}|\Phi(\sy)|\widetilde n\rangle,
+\end{aligned}
+\]
+because $p_{n+1}=e^{-\beta_j}p_n$: each term pays
+$e^{-\beta_j/2}$ for moving one step along the Schmidt sum. The
+Cauchy--Schwarz inequality and
+$\sum_np_n\langle\widetilde n|\Phi(\sy)^2|\widetilde n\rangle
+=\omega(\Phi(\sy)^2)=\cov_\mu(\sy,\sy)$ give
+\[
+\begin{aligned}
+\abs{\omega(q\,\Phi(\sy))}
+&\le e^{-\beta_j/2}\sqrt{2(\bar n_j+1)}\;\cov_\mu(\sy,\sy)^{1/2}\\
+&=\sqrt{2\bar n_j}\;\cov_\mu(\sy,\sy)^{1/2},
+\end{aligned}
+\]
+where $\bar n_j=\sum_nnp_n=1/(e^{\beta_j}-1)$ is the mean
+number of quanta in the mode, as in \eqref{eq:mode-temperature}, so
+that $e^{-\beta_j}(\bar n_j+1)=\bar n_j$; likewise for the momentum. A
+pure mode ($\bar n_j=0$) is
+therefore correlated with nothing---a pure state with a pure marginal
+factorizes---and every covariance of a nearly pure mode with its
+environment is suppressed by $\sqrt{2\bar n_j}\sim\sqrt2\,e^{-\beta_j/2}$.
+Since $\tau<1$, the
+covariance difference decays faster than the conjugation by
+$\Therm_\tau(V_\sigma)^{-1/2}$ in $\mathsf Z$ grows.
+
+Showing this rigorously is the
+plan for the rest of the proof. The operator $\Res$, constructed
+next, acts on the full source space of a ball and on mode $j$ as a
+multiple of $e^{-\beta_j/2}$: it is the per-mode factor of the
+covariance bound above, made independent of $F$. Dividing this factor
+out of the covariance difference on each side defines, schematically,
+\[
+Y=\Res^{-\tau}(V_\rho-V_\sigma)\Res^{-\tau},\quad\text{i.e.}\quad
+V_\rho-V_\sigma=\Res^{\,\tau}Y\Res^{\,\tau}.
+\]
+Since $\Res$ has eigenvalues accumulating at $0$, $\Res^{-\tau}$
+is unbounded and $Y$ could a priori be infinite. Section~\ref{sec:estimates}
+(Theorems \ref{thm:forward} and~\ref{thm:reverse}) shows that it is
+not: $Y$ is trace class, with $\norm Y_1$ decaying in $s$ and
+independent of $F$---the surplus $e^{-(1-\tau)\beta_j/2}$ per mode is
+what pays for this. In $\mathsf Z$,
+each factor $\Res^{\,\tau}$ then cancels one factor
+$\Therm_\tau(V_\sigma)^{-1/2}$: Lemma~\ref{lem:thermal-comparison}
+below shows that the two vanish at the same rate,
+Lemma~\ref{lem:compression} shows that restricting to $F$ does not
+spoil this, and the resulting bounds \eqref{eq:one-space} and
+\eqref{eq:trace-compression} on $\norm{\mathsf Z}_1$ do not depend on
+$F$.
+
+\emph{The weight operator.---}We now construct $\Res$, first on
+the $n$ modes of $F$. Choose coordinates in which $V_\sigma=I$, and
+let $\mathsf J$ be the real antisymmetric matrix of commutators in
+these coordinates, $[\Phi(\sx_k),\Phi(\sx_l)]=\ii\mathsf J_{kl}$,
+and let
+\[
+G=I+\tfrac\ii2\mathsf J,\qquad\overline G=I-\tfrac\ii2\mathsf J.
+\]
+In both applications below, $\sigma$ is the vacuum restricted to
+the modes in question (to the modes of one ball, or to all of $F$),
+so $V_\sigma=I$ means $\cov_\mu(\sx_k,\sx_l)=\delta_{kl}$, and by
+\eqref{eq:gram} $G_{kl}=\ip{\kappa\sx_k}{\kappa\sx_l}$ is the matrix
+of inner products of the one-particle vectors. In
+normal-mode coordinates rescaled to $V_\sigma=I$, mode $j$ has
+covariance $I_2$ and commutator block $J_1/\upsilon_j$, so $G$ and
+$\overline G$ have eigenvalues $1\pm d_j$, with
+\[
+d_j=\frac1{2\upsilon_j}=\tanh(\beta_j/2)\in(0,1)
+\]
+by \eqref{eq:mode-temperature} and \eqref{eq:strict-uncertainty}.
+Write $d$ for the matrix $\abs{\frac\ii2\mathsf J}$, with eigenvalues
+$d_j$. The \emph{weight operator} is
+\begin{equation}
+\Res=(G\overline G)^{1/2}=(I-d^2)^{1/2},
+\label{eq:reserve-finite}
+\end{equation}
+which acts on mode $j$ as
+$\operatorname{sech}(\beta_j/2)\sim2e^{-\beta_j/2}$: it vanishes
+exactly on pure modes, at the rate of the covariance bound above, and
+tends to $1$ on strongly mixed ones. In the same coordinates the
+thermal increment \eqref{eq:thermal-power} is
+\begin{equation}
+\Therm_\tau(I)=d\coth(\tau\artanh d)-I ,
+\label{eq:thermal-d}
+\end{equation}
+which acts on mode $j$ as
+$\tanh(\beta_j/2)\coth(\tau\beta_j/2)-1\sim2e^{-\tau\beta_j}$, the
+same rate as $\Res^{2\tau}$.
+
+Nothing in this construction needs $F$. On the full source space
+$\Hh_{\mu,U}$ of an open set $U$, with inner product $\cov_\mu$,
+define $\mathsf J$ by $\cov_\mu(\sx,\mathsf J\sy)=\varsigma(\sx,\sy)$;
+then, again by \eqref{eq:gram},
+\begin{equation}
+\begin{gathered}
+G_U=\kappa_U^*\kappa_U=I+\tfrac\ii2\mathsf J,\\
+\overline G_U=2I-G_U,\qquad
+\Res_U=(G_U\overline G_U)^{1/2}.
+\end{gathered}
+\label{eq:reserve}
+\end{equation}
+By Lemma~\ref{lem:standard}, $G_U$ and $\overline G_U$ are
+injective with spectrum in $[0,2]$, so $0<\Res_U\le I$; now the
+spectrum of $\Res_U$ may accumulate at $0$. A finite canonical system
+$F\subset U$ sits inside $\Hh_{\mu,U}$ through its inclusion $\iota$,
+and the matrix of an operator $X$ on $\Hh_{\mu,U}$ between vectors of
+$F$ is $\iota^*X\iota$. The next two lemmas, proved in
+Appendix~\ref{app:compression}, compare the thermal increment with
+$\Res$, and compare $\Res$ for $F$ with $\iota^*\Res_U\iota$.
+
+\begin{lemma}[Thermal comparison]\label{lem:thermal-comparison}
+On any source space, finite or full, and for $0<\tau<1$,
+\begin{equation}
+\Therm_\tau(I)\ge c_\tau\Res^{2\tau},\qquad
+c_\tau=\begin{cases}2^{1-2\tau},&0<\tau\le\frac12,\\
+(1-\tau)/\tau,&\frac12\le\tau<1,\end{cases}
+\label{eq:scalar-reserve}
+\end{equation}
+where on the full source space $\Therm_\tau(I)$ is defined by
+\eqref{eq:thermal-d} in the functional calculus of $d$.
+\end{lemma}
+
+\begin{lemma}[Compression]\label{lem:compression}
+Let $\iota$ be the inclusion of a finite canonical system $F$ into a
+full source space---isometric for the covariance norm and preserving
+$\varsigma$, so that $\iota^*\mathsf J\iota$ is the commutator form of
+$F$---and let
+$G_F=\iota^*G\iota$, $\overline G_F=\iota^*\overline G\iota$,
+$\Res_F=(G_F\overline G_F)^{1/2}$ be the operators \eqref{eq:reserve}
+of $F$ itself. For $0<a\le\frac12$,
+\begin{equation}
+\Res_F^{2a}\ge\iota^*\Res^{2a}\iota ,
+\label{eq:low-compression}
+\end{equation}
+and for an integer $r\ge2$ and $b=(r-1)/r$,
+\begin{equation}
+\Therm_b(I_F)\ge\iota^*\Therm_b(I)\iota\ge
+(r-1)^{-1}\,\iota^*\Res^{2b}\iota .
+\label{eq:high-compression}
+\end{equation}
+\end{lemma}
+
+Together, the two lemmas give the cancellation announced above.
+For $0<a\le\frac12$, \eqref{eq:scalar-reserve} on $F$ and
+\eqref{eq:low-compression} give
+$\Therm_a(I_F)\ge2^{1-2a}\,\iota^*\Res^{2a}\iota$, that is,
+$\norm{\Res^a\iota\,\Therm_a(I_F)^{-1/2}}^2\le2^{2a-1}$. Since
+$\norm{ABC}_1\le\norm A\norm B_1\norm C$, every trace-class $Y$
+satisfies
+\begin{equation}
+\begin{split}
+\bigl\|\Therm_a(I_F)^{-1/2}\iota^*&\Res^aY\Res^a\iota\,
+\Therm_a(I_F)^{-1/2}\bigr\|_1\\
+&\le2^{2a-1}\norm Y_1 .
+\end{split}
+\label{eq:one-space}
+\end{equation}
+In the same way, for the two balls, with weight operators
+$\Res_A=\Res_{B_1(0)}$ and $\Res_B=\Res_{B_1(s\eone)}$ and inclusions
+$\iota_A\colon F_A\to\mathcal X_{\mu,B_1(0)}$ and
+$\iota_B\colon F_B\to\mathcal X_{\mu,B_1(s\eone)}$,
+\eqref{eq:high-compression} gives, for an integer $r\ge2$,
+$b=(r-1)/r$ and every trace-class $X$,
+\begin{equation}
+\begin{split}
+\bigl\|\Therm_b(I_{F_A})^{-1/2}\iota_A^*&\Res_A^{\,b}X\Res_B^{\,b}
+\iota_B\,\Therm_b(I_{F_B})^{-1/2}\bigr\|_1\\
+&\le(r-1)\norm X_1 .
+\end{split}
+\label{eq:trace-compression}
+\end{equation}
+
+\section{The two field estimates}\label{sec:estimates}
+
+This section proves the factorization
+$V_\rho-V_\sigma=\Res^{\,\tau}Y\Res^{\,\tau}$ of
+Section~\ref{sec:gaussian}, with $\norm Y_1$ bounded by a negative
+power of $s$ uniformly in $\mu$. It is needed twice, because
+\eqref{eq:finite-events} uses two divergences: the \emph{forward}
+comparison $\Qtil_{r_+}(\rho_F\|\sigma_F)$, which conjugates by the
+thermal increment of $\sigma_F$, and the \emph{reverse} comparison
+$\Qtil_{r_-}(\sigma_F\|\rho_F)$, which conjugates by that of $\rho_F$.
+For each there is one operator on full source spaces whose matrix on
+$F$ is the covariance difference.
+
+For the forward comparison it is the \emph{cross-covariance
+operator} $\mathsf C_{\mu,s}\colon\Hh_{\mu,B_1(s\eone)}\to\Hh_{\mu,B_1(0)}$,
+defined by
+\begin{equation}
+\ip\sx{\mathsf C_{\mu,s}\sy}_{\mu,B_1(0)}=\cov_\mu(\sx,\sy).
+\label{eq:C-def}
+\end{equation}
+For the reverse comparison, let $U_s=B_1(0)\cup B_1(s\eone)$ and
+split each source on $U_s$ as $\sx=\sx_A+\sx_B$ into its parts in the
+two balls. The \emph{product-minus-joint operator} $\JointD_{\mu,s}$
+on $\Hh_{\mu,U_s}$, which carries the joint covariance $\cov_\mu$ as
+inner product, is defined by deleting the cross terms:
+\begin{equation}
+\begin{split}
+\ip\sx{\JointD_{\mu,s}\sy}_{\mu,U_s}
+&=\cov_\mu(\sx_A,\sy_A)+\cov_\mu(\sx_B,\sy_B)-\cov_\mu(\sx,\sy)\\
+&=-\cov_\mu(\sx_A,\sy_B)-\cov_\mu(\sx_B,\sy_A).
+\end{split}
+\label{eq:D-joint}
+\end{equation}
+Section~\ref{sec:completion} checks that
+$\iota_A^*\mathsf C_{\mu,s}\iota_B$ is the off-diagonal block of
+$V_{\rho_F}-V_{\sigma_F}$ in coordinates with $V_{\sigma_F}=I$, and
+that $\iota_F^*\JointD_{\mu,s}\iota_F=V_{\sigma_F}-V_{\rho_F}$ in
+coordinates with $V_{\rho_F}=I$, where $\iota_F$ is the inclusion of
+$F$ into $\Hh_{\mu,U_s}$. The trace-class factor called $Y$ in
+Section~\ref{sec:gaussian} is $X_{b,\mu,s}$ below for the forward
+comparison and $Y_{\mu,s}$ for the reverse one.
+
+\begin{theorem}[Forward estimate]\label{thm:forward}
+For each $\frac12\le b<1$ there are finite $S_b,F_b$, independent of
+$\mu$, such that for all $\mu>0$ and $s\ge S_b$ there is a trace-class
+$X_{b,\mu,s}$ with
+\begin{equation}
+\mathsf C_{\mu,s}=\Res_A^{\,b}X_{b,\mu,s}\Res_B^{\,b},\qquad
+\norm{X_{b,\mu,s}}_1\le F_bs^{-2}.
+\label{eq:forward-trace}
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Reverse estimate]\label{thm:reverse}
+Let $a=2^{-18}$, $\gamma=2(1-2^{-17})$, and let $\JointRes$ be the
+weight operator \eqref{eq:reserve} of $U_s$. There are finite
+$S_{\mathrm{rev}},\mathcal J_0$, independent of $\mu$, such that for
+all $\mu>0$ and $s\ge S_{\mathrm{rev}}$ there is a self-adjoint
+trace-class $Y_{\mu,s}$ with
+\begin{equation}
+\JointD_{\mu,s}=\JointRes^{\,a}Y_{\mu,s}\JointRes^{\,a},
+\quad
+\norm{Y_{\mu,s}}_1\le\mathcal J_0s^{-\gamma}.
+\label{eq:reverse-trace}
+\end{equation}
+\end{theorem}
+
+As in Section~\ref{sec:gaussian}, the content of each theorem is
+that the middle factor exists and is trace class, although
+$\Res_A^{-b}$, $\Res_B^{-b}$ and $\JointRes^{-a}$ are unbounded. The
+decay is uniform in $\mu$, including $\mu s\to0$; since at $\mu=0$
+vacuum correlations decay only as a power of the distance, it can only
+be polynomial. The proofs are in Appendix~\ref{app:estimates}. They
+rest on the following bound, which controls the one-particle vector
+$\kappa\sx$ of a source in a ball, continued to complex momenta, by
+the weighted norm $\norm{\Res_U^b\sx}$.
+
+\begin{theorem}[Weighted complex-shell evaluation]\label{thm:evaluation}
+For a source $\sx=(f,g)$ let $\Psi_\sx(z)=\hat f(\bz)+\ii z_0\hat g(\bz)$,
+$z\in\C^4$, an entire function that equals $\kappa\sx$ on $H_\mu^+$,
+and let $H_\mu^{\C}=\{z\in\C^4:z\cdot z=-\mu^2\}$ be the complex
+mass shell, where $z\cdot z=-z_0^2+\bz\cdot\bz$ is the Minkowski product
+extended bilinearly, without complex conjugation. For every $0<c<\frac12$ there are finite $C_c,\lambda_c\ge1$
+such that for all $\mu,T>0$, nonempty bounded open $U\subset B_T(0)$,
+$\sx\in\Hh_{\mu,U}$ and every energy scale $\Energy\ge\mu$,
+\begin{equation}
+\abs{\Psi_\sx(z)}^2\le C_c\Energy^{-2}e^{2\lambda_cT\Energy}
+\norm{G_U^{1/2-c}\overline G_U^{\,c}\sx}^2
+\label{eq:evaluation}
+\end{equation}
+for all $z\in H_\mu^{\C}$ with $\abs z_{\mathrm E}\le2\Energy$
+(Euclidean norm on $\C^4$); $\lambda_c=2048/\sin(2\pi c)$ is admissible.
+\end{theorem}
+
+The right-hand side is a weighted norm of $\sx$. Indeed, let
+$\frac12\le b<1$. Since $\Res_U^b=G_U^{b/2}\overline G_U^{\,b/2}$
+and $G_U+\overline G_U=2I$,
+\[
+G_U^{1/2-c}\overline G_U^{\,c}=\begin{cases}
+\Res_U^b\,\overline G_U^{\,(1-2b)/2},&c=\frac{1-b}2,\\[2pt]
+\Res_U^b\,G_U^{(1-2b)/2},&c=\frac b2,
+\end{cases}
+\]
+and the second factor is at most $1$ on the part of the spectrum
+where $G_U\le1$ in the first case and where $G_U\ge1$ in the second.
+Using each choice on its part, for the same $z$,
+\begin{equation}
+\abs{\Psi_\sx(z)}\le\bigl(C_{(1-b)/2}^{1/2}+C_{b/2}^{1/2}\bigr)
+\Energy^{-1}e^{\lambda_{b/2}T\Energy}\norm{\Res_U^{\,b}\sx},
+\label{eq:symmetric-evaluation}
+\end{equation}
+with $\lambda_{(1-b)/2}=\lambda_{b/2}=2048/\sin(\pi b)$.
+
+The bound \eqref{eq:evaluation} comes from the
+Bisognano--Wichmann theorem, which needs the following definitions.
+A closed real
+subspace $\mathcal K$ of a complex Hilbert space is \emph{standard} if
+$\mathcal K\cap\ii\mathcal K=\{0\}$ and $\mathcal K+\ii\mathcal K$ is
+dense; the antilinear map $\mathsf s_{\mathcal K}(u+\ii v)=u-\ii v$,
+$u,v\in\mathcal K$, is then well defined and closable, and
+$\Delta_{\mathcal K}=\mathsf s_{\mathcal K}^*\mathsf s_{\mathcal K}$
+is a positive operator, the \emph{modular operator} of $\mathcal K$
+\cite{RvD77}. For a region, take the closed real span of the
+one-particle vectors of the real sources it contains: $\mathcal K_U$
+for the ball $U$, standard by Lemma~\ref{lem:standard}, and
+$\mathcal K_{\mathcal W_\ell}$ for the wedge
+$\mathcal W_\ell=\{x^1<\ell-\abs{x^0}\}$, with sources in the base
+$\{x^1<\ell\}$. The wedge subspace $\mathcal K_{\mathcal W_\ell}$
+is standard too: it contains the ball's
+$\mathcal K_U$, so
+$\mathcal K_{\mathcal W_\ell}+\ii\mathcal K_{\mathcal W_\ell}$ is
+dense; and if $\xi$ and $-\ii\xi$ both lie in
+$\mathcal K_{\mathcal W_\ell}$, then for every source $\sy$ in a ball
+$U'$ in the opposite half-space $\{x^1>\ell\}$ the numbers
+$\ip\xi{\kappa_{U'}\sy}$ and $\ii\ip\xi{\kappa_{U'}\sy}$ are both
+real, because $\varsigma$ vanishes between the half-spaces
+\eqref{eq:gram}; so $\xi\perp\kappa_{U'}\sy$, these vectors are dense
+by Lemma~\ref{lem:standard}, and $\xi=0$.
+
+The Bisognano--Wichmann theorem \cite{BW75}, in its
+one-particle form \cite{BGL02}, says that
+$\Delta_{\mathcal W_\ell}^{\ii y}$ is the boost of rapidity $2\pi y$
+that fixes the edge $\{x^0=0,\,x^1=\ell\}$ of the wedge, that is, the
+boost along the first axis conjugated by the translation by
+$\ell\eone$. Continued to imaginary $y$,
+$\Delta_{\mathcal W_\ell}^{\,c}$ for $0<c<\frac12$ is a boost by the
+imaginary rapidity $\ii\varphi$, $\varphi=2\pi c$, and acts on
+$\kappa_U\sx$ by evaluating $\Psi_\sx$ at complex momenta; the
+translation contributes the factor
+$\abs{e^{\ii\ell(p_1\cos\varphi+\ii p_0\sin\varphi)}}^2
+=e^{-2\ell p_0\sin\varphi}$:
+\begin{equation}
+\norm{\Delta_{\mathcal W_\ell}^{\,c}\kappa_U\sx}^2
+=\int_{H_\mu^+}e^{-2\ell p_0\sin\varphi}
+\abs{\Psi_\sx(b_\varphi(p))}^2\dd\mathfrak m_\mu(p),
+\label{eq:wedge-contour}
+\end{equation}
+with
+\[
+b_\varphi(p)=(p_0\cos\varphi+\ii p_1\sin\varphi,\ p_1\cos\varphi+\ii p_0\sin\varphi,\ p_2,\ p_3).
+\]
+To bring in $\Res_U$, let $U\subset B_T(0)$ with $T\le\ell$, so
+that $D_T\subset\mathcal W_\ell$ and
+$\mathcal K_U\subset\mathcal K_{\mathcal W_\ell}$. Then
+$\mathsf s_{\mathcal K_U}$ is a restriction of
+$\mathsf s_{\mathcal K_{\mathcal W_\ell}}$, so
+$\norm{\Delta_{\mathcal W_\ell}^{1/2}\xi}=\norm{\Delta_{\mathcal K_U}^{1/2}\xi}$
+on the domain of $\mathsf s_{\mathcal K_U}$, and
+$\Delta_{\mathcal W_\ell}\le\Delta_{\mathcal K_U}$ as quadratic forms.
+Because $t\mapsto t^{2c}$ is operator monotone for $0<2c<1$
+(L\"owner--Heinz \cite{Heinz51}),
+$\Delta_{\mathcal W_\ell}^{2c}\le\Delta_{\mathcal K_U}^{2c}$. Finally,
+with the polar decomposition $\kappa_U=\mathcal U_UG_U^{1/2}$, one has
+$\Delta_{\mathcal K_U}=\mathcal U_U\overline G_UG_U^{-1}\mathcal U_U^*$
+(Appendix~\ref{app:evaluation}), so
+\begin{equation}
+\norm{\Delta_{\mathcal W_\ell}^{\,c}\kappa_U\sx}
+\le\norm{G_U^{1/2-c}\overline G_U^{\,c}\sx}.
+\label{eq:inclusion}
+\end{equation}
+Together, \eqref{eq:wedge-contour} and \eqref{eq:inclusion} bound
+an integral of $\abs{\Psi_\sx}^2$ over the complex momenta $b_\varphi(p)$,
+$p\in H_\mu^+$, by $\norm{G_U^{1/2-c}\overline G_U^{\,c}\sx}^2$.
+Appendix~\ref{app:evaluation} turns this into the pointwise bound
+\eqref{eq:evaluation} in three steps. (i) Repeating the bound for a
+compact family of Lorentz transforms of the wedge and averaging bounds
+the integral of $\abs{\Psi_\sx}^2$ over an open patch of
+$H_\mu^{\C}$. (ii) $\Psi_\sx$ is holomorphic, so $\abs{\Psi_\sx}^2$ at
+a point is at most its average over a small neighbourhood in
+$H_\mu^{\C}$; this bounds $\abs{\Psi_\sx}^2$ on the patch. (iii) For
+the same reason, $\abs{\Psi_\sx}^2$ at the centre of a complex disc
+lying in $H_\mu^{\C}$ is at most its average over the boundary circle;
+every $z\in H_\mu^{\C}$ with $\abs z_{\mathrm E}\le2\Energy$ is the
+centre of such a disc whose boundary lies in the patch.
+
+\emph{Outline of the proofs of Theorems \ref{thm:forward}
+and~\ref{thm:reverse}.---}At the two shell points
+$z_\pm=(\pm\sqrt{\mu^2+\bz\cdot\bz},\bz)$ one has
+$\hat f(\bz)=\frac12({\Psi_\sx(z_+)+\Psi_\sx(z_-)})$, and similarly for
+$\hat g$, so \eqref{eq:symmetric-evaluation} bounds $\hat f$ and
+$\hat g$ on $\C^3$. Since the derivatives of $\hat f$ at $0$ are the
+moments of $f$, Cauchy estimates then bound the moments of a source
+about a centre $\bx_0$,
+\[
+\Bigl|\int(\bx-\bx_0)^\alpha f\Bigr|
+\le M_b(B_bT)^{\abs\alpha}e^{\Lambda_b\mu T}\,\norm{\Res_U^{\,b}\sx},
+\]
+and similarly for $g$, for every multi-index $\alpha\in\N^3$ and
+$U\subset B_T(\bx_0)$, with constants $M_b,B_b,\Lambda_b$ depending
+only on $b$ (Lemma~\ref{lem:moments}, which also keeps a factor
+$T/(1+\mu T)$ omitted here). Between the two balls the covariance is an
+integral against a smooth kernel, a Bessel function of $\by-\bx$
+(Appendix~\ref{app:estimates}). For the forward estimate, expand this
+kernel in a Taylor series in $\bx$ and $\by$ about the two centres:
+\[
+\cov_\mu(\sx,\sy)=\sum_{\alpha,\beta}c_{\alpha\beta}
+\int\bx^\alpha f\int\by^\beta f'+(\text{same for }g,g').
+\]
+Each moment of $\sx$ is bounded by $\norm{\Res_A^b\sx}$ and each
+moment of $\sy$ by $\norm{\Res_B^b\sy}$, so each term is a rank-one
+operator of the form $\Res_A^b(\cdot)\Res_B^b$, and the sum $X_{b,\mu,s}$
+of the middle factors converges in trace norm. For the reverse
+estimate, $\JointD_{\mu,s}$ has the kernel $-\cov_\mu$ between the two
+balls and $0$ within each ball (by \eqref{eq:D-joint}), so it is not a
+single Taylor series. It is approximated by finite-rank operators
+$\mathsf F_n$ with polynomial kernels, and each increment
+$\mathsf G_n=\mathsf F_{n+1}-\mathsf F_n$ satisfies two bounds: a
+decaying one, with $\norm{\mathsf G_n}_1$ of order
+$s^{-2}(c_{\mathrm{pol}}/s)^n$ for a constant $c_{\mathrm{pol}}$, up
+to factors polynomial in $n$ and bounded in $\mu$, and a
+weighted one,
+$\mathsf G_n=\JointRes^{1/2}\mathsf B_n\JointRes^{1/2}$ with
+$\norm{\mathsf B_n}_1$ growing geometrically in $n$. Interpolating
+between them (Hadamard's three-lines theorem) gives, for
+$0<\theta<1$,
+\[
+\norm{\JointRes^{-\theta/2}\mathsf G_n\JointRes^{-\theta/2}}_1
+\le\norm{\mathsf G_n}_1^{1-\theta}\norm{\mathsf B_n}_1^{\theta}.
+\]
+The growth of $\norm{\mathsf B_n}_1$ must be overcome by the decay
+of $\norm{\mathsf G_n}_1$, which forces $\theta$ to be small; the
+proof takes $\theta=2^{-17}$, which gives the power $a=\theta/2=2^{-18}$
+and the decay $s^{-2(1-\theta)}=s^{-\gamma}$.
+
+\section{Completion of the proof}\label{sec:completion}
+
+This section fixes the R\'enyi orders $r_\pm$; combines
+Theorems \ref{thm:forward} and~\ref{thm:reverse} with
+Section~\ref{sec:gaussian} to bound $K_{r_\pm,\pm}$
+\eqref{eq:full-K} and the clustering constant, $q_{\mathrm{cl}}=Q_0/s$
+\eqref{eq:cluster}; checks the cutoff \eqref{eq:probability-cutoff} of
+Theorem~\ref{thm:probability} for $s\ge C_*$; and so proves
+Theorem~\ref{thm:main} and Corollary~\ref{cor:fixed}.
+
+\emph{Parameters.---}With $a=2^{-18}$ from Theorem~\ref{thm:reverse},
+fix
+\begin{equation}
+\begin{gathered}
+r_-=\frac1{1-a}=\frac{2^{18}}{2^{18}-1},\qquad
+r_+=\frac4a=2^{20},\\
+b=1-\frac1{r_+}=1-2^{-20}.
+\end{gathered}
+\label{eq:orders}
+\end{equation}
+Then $1<r_-<2$, $r_+$ is an integer as \eqref{eq:high-compression}
+requires, $a=1-1/r_-$ and $b=1-1/r_+$ as in
+\eqref{eq:probability-exponents}, and
+\begin{equation}
+\begin{gathered}
+\eta=1-\frac{1-b}{ab^2}=1-\frac1{4b^2}>0,\\
+\nu_+=\frac{1+b}{4b^2},\qquad \nu_-=2^{18}-1 .
+\end{gathered}
+\label{eq:completion-exponents}
+\end{equation}
+The small reverse exponent forces the large forward order: $\eta>0$
+needs $r_+>1/(ab^2)$. With $F_b$ from Theorem~\ref{thm:forward} and
+$\mathcal J_0$ from Theorem~\ref{thm:reverse}, put
+\begin{equation}
+\varepsilon_+(s)=(r_+-1)F_b\,s^{-2},\qquad
+\varepsilon_-(s)=2^{2a-1}\mathcal J_0\,s^{-\gamma}.
+\label{eq:envelopes}
+\end{equation}
+
+\emph{Forward comparison.---}Choose coordinates on
+$F=F_A\oplus F_B$ in which $V_{\sigma_F}=I$; since
+$\sigma_F=\rho_{F_A}\otimes\rho_{F_B}$, these are coordinates on
+$F_A$ and on $F_B$ orthonormal for $\cov_\mu$, and the inclusions
+$\iota_A\colon F_A\to\mathcal X_{\mu,B_1(0)}$ and
+$\iota_B\colon F_B\to\mathcal X_{\mu,B_1(s\eone)}$ are isometric. By
+\eqref{eq:C-def},
+\[
+V_{\rho_F}-V_{\sigma_F}=\begin{pmatrix}0&\iota_A^*\mathsf C_{\mu,s}\iota_B\\
+(\iota_A^*\mathsf C_{\mu,s}\iota_B)^*&0\end{pmatrix}.
+\]
+The thermal increment of the product $\sigma_F$ at $\tau=b$ is
+block diagonal, with blocks $\Therm_b(I_{F_A})$ and
+$\Therm_b(I_{F_B})$, so the matrix $\mathsf Z$ of
+Theorem~\ref{thm:gaussian} for $(\rho_F,\sigma_F,r_+)$, which we call
+$\mathsf Z_{+,F}$, has zero diagonal blocks and the off-diagonal
+block
+\[
+\mathsf Z_{AB}=\Therm_b(I_{F_A})^{-1/2}\,
+\iota_A^*\mathsf C_{\mu,s}\iota_B\,\Therm_b(I_{F_B})^{-1/2};
+\]
+its norms do not depend on the choice of coordinates
+(Appendix~\ref{app:gaussian}). For $s\ge S_b$,
+\eqref{eq:forward-trace} and \eqref{eq:trace-compression} with
+$r=r_+$ give
+$\norm{\mathsf Z_{AB}}_1\le(r_+-1)F_bs^{-2}=\varepsilon_+(s)$,
+and since the eigenvalues of $\mathsf Z_{+,F}$ are $\pm$ the singular
+values of $\mathsf Z_{AB}$ and zeros,
+\begin{equation}
+\norm{\mathsf Z_{+,F}}\le\varepsilon_+(s),\qquad
+\norm{\mathsf Z_{+,F}}_1\le2\varepsilon_+(s).
+\label{eq:finite-forward}
+\end{equation}
+Here $k_{r_+}=\max\{2,1/b\}=2$, so if $\varepsilon_+(s)\le\frac18$,
+Theorem~\ref{thm:gaussian} gives
+\begin{equation}
+\log\Qtil_{r_+}(\rho_F\|\sigma_F)\le8r_+\varepsilon_+(s).
+\label{eq:Qforward}
+\end{equation}
+
+\emph{Reverse comparison.---}Now choose coordinates on $F$ in
+which $V_{\rho_F}=I$, that is, orthonormal for the joint covariance
+$\cov_\mu$, so that the inclusion $\iota_F\colon F\to\mathcal X_{\mu,U_s}$
+is isometric. By \eqref{eq:D-joint},
+$V_{\sigma_F}-V_{\rho_F}=\iota_F^*\JointD_{\mu,s}\iota_F$, so the
+matrix $\mathsf Z$ of Theorem~\ref{thm:gaussian} for
+$(\sigma_F,\rho_F,r_-)$ is
+\[
+\mathsf Z_{-,F}=\Therm_a(I_F)^{-1/2}\,\iota_F^*\JointD_{\mu,s}\iota_F\,\Therm_a(I_F)^{-1/2},
+\]
+and for $s\ge S_{\mathrm{rev}}$, \eqref{eq:reverse-trace} and
+\eqref{eq:one-space} with $\Res=\JointRes$ give
+\begin{equation}
+\norm{\mathsf Z_{-,F}}_1\le2^{2a-1}\mathcal J_0s^{-\gamma}=\varepsilon_-(s).
+\label{eq:finite-reverse}
+\end{equation}
+Here $k_{r_-}=1/a$, so if $\varepsilon_-(s)\le a/4$,
+\begin{equation}
+\log\Qtil_{r_-}(\sigma_F\|\rho_F)\le\frac{2r_-}a\varepsilon_-(s).
+\label{eq:Qreverse}
+\end{equation}
+Neither bound depends on $F_A$, $F_B$ or the temperatures
+$\beta_j$ of their modes.
+
+\emph{All local events.---}Inserting \eqref{eq:Qforward} and
+\eqref{eq:Qreverse} into \eqref{eq:finite-events},
+\begin{equation}
+\begin{gathered}
+\omega(EP)^{r_+}\le e^{8r_+\varepsilon_+(s)}
+\bigl(\omega(E)\omega(P)\bigr)^{r_+-1},\\
+\bigl(\omega(E)\omega(P)\bigr)^{r_-}\le e^{2r_-\varepsilon_-(s)/a}\,
+\omega(EP)^{r_--1},
+\end{gathered}
+\label{eq:events}
+\end{equation}
+for effects of the finite algebras. Both are free of denominators and
+continuous in the three probabilities, with constants depending only
+on $s$, so Lemma~\ref{lem:exhaustion} extends them to all $E\in\A$,
+$P\in\B$; for projections with $\omega(E)\omega(P)>0$ they bound the
+quotients in \eqref{eq:K}, the second forcing $\omega(EP)>0$. Hence
+the event comparison constants satisfy
+\begin{equation}
+\log K_{r_+,+}\le8r_+\varepsilon_+(s),\qquad
+\log K_{r_-,-}\le\frac{2r_-}a\varepsilon_-(s).
+\label{eq:full-K}
+\end{equation}
+For the correlations, \eqref{eq:trace-distance} with $r_+\ge2$ and
+\eqref{eq:Qforward} give
+\[
+\norm{\rho_F-\sigma_F}_1\le\sqrt{\exp\Bigl(\frac{8\varepsilon_+(s)}b\Bigr)-1},
+\]
+using $r_+/(r_+-1)=1/b$; for contractions $A,B$ of the finite
+algebras, $\omega(AB)-\omega(A)\omega(B)=\Tr((\rho_F-\sigma_F)AB)$ is
+bounded by this, and Lemma~\ref{lem:exhaustion} extends the bound to
+$\A,\B$. If $\varepsilon_+(s)\le b/8$, then $e^x-1\le2x$ on $[0,1]$
+gives
+\begin{equation}
+\abs{\omega(AB)-\omega(A)\omega(B)}\le\frac{Q_0}s,\qquad
+Q_0=4\sqrt{(r_+-1)F_b/b}.
+\label{eq:cluster}
+\end{equation}
+
+\emph{The constant.---}Define
+\begin{align}
+C_{\mathrm{prob}}&=Q_0\exp\Bigl(\frac{2\log2/(ab)+\nu_++\nu_-}{\eta}\Bigr),
+\label{eq:Cprob}\\
+C_*&=\max\Bigl\{5,\ S_b,\ S_{\mathrm{rev}},\ \sqrt{8r_+(r_+-1)F_b},
+\nonumber\\
+&\qquad\qquad
+\Bigl(\frac{2^{2a+1}\mathcal J_0}{a}\Bigr)^{1/\gamma},\ C_{\mathrm{prob}}\Bigr\}.
+\label{eq:Cstar}
+\end{align}
+Every entry is finite and independent of $\mu$. For the parameters
+\eqref{eq:orders}, $C_{\mathrm{prob}}=Q_0\,10^{362\,232.284166\ldots}$;
+the power of ten is an explicit multiplier relative to $Q_0$, not
+a numerical determination of $C_*$:
+$F_b$, $\mathcal J_0$ and hence $Q_0$ are defined through finite
+covers and approximation bounds and are known only to be finite. The
+first entry gives $C_*\ge5>2$ independently of $Q_0$, and the proof of
+Theorem~\ref{thm:forward} takes
+$S_b\ge(4+80\sqrt3)\,\Lambda_b$ with
+$\Lambda_b=2^{15}/\sin(\pi b)$ as in \eqref{eq:Lambda}
+(Appendix~\ref{app:estimates}), which at $b=1-2^{-20}$ exceeds
+$1.5\times10^{12}$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix $\mu>0$ and $s\ge C_*$. Then $s\ge5>2$, $s\ge S_b$ and
+$s\ge S_{\mathrm{rev}}$, so \eqref{eq:finite-forward} and
+\eqref{eq:finite-reverse} hold for all finite systems. From
+$s^2\ge8r_+(r_+-1)F_b$, $\varepsilon_+(s)\le1/(8r_+)\le b/8<\frac18$,
+using $r_+b=r_+-1\ge1$; from $s^\gamma\ge2^{2a+1}\mathcal J_0/a$,
+$\varepsilon_-(s)\le a/4$.
+Hence \eqref{eq:Qforward}, \eqref{eq:Qreverse}, \eqref{eq:full-K} and
+\eqref{eq:cluster} hold, with $\log K_{r_+,+}\le1$ and
+$\log K_{r_-,-}\le r_-/2<1$. Take $q_{\mathrm{cl}}=Q_0/s$; since
+$s\ge C_{\mathrm{prob}}$,
+\[
+\Bigl(\frac{Q_0}s\Bigr)^\eta K_{r_+,+}^{\nu_+}K_{r_-,-}^{\nu_-}
+\le\Bigl(\frac{Q_0}{C_{\mathrm{prob}}}\Bigr)^\eta e^{\nu_++\nu_-}
+=2^{-2/(ab)},
+\]
+which is \eqref{eq:probability-cutoff}. The algebras $\A,\B$ commute,
+$r_+>2$, $1<r_-<2$ and $\eta>0$, so Theorem~\ref{thm:probability} gives
+$\beta_\mu(1,s)=1$. For $m,R>0$ and $L\ge C_*R$,
+Lemma~\ref{lem:scaling} gives $\beta_m(R,L)=\beta_{mR}(1,L/R)=1$, and
+$C_*$ does not depend on $m,R$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:fixed}]
+Let $e$ be the unit vector of the given direction and $\mathcal L$ a
+Lorentz transformation with $\mathcal Le=(0,\eone)$. The vacuum is
+Poincar\'e invariant, and the unitary implementing $\mathcal L$ carries
+$\A_m(O)$ onto $\A_m(\mathcal LO)$, so the Bell correlation of
+$\A_m(O_1)$ and $\A_m(O_2+Le)$ equals that of $\A_m(\mathcal LO_1)$
+and $\A_m(\mathcal LO_2+(0,L\eone))$. Choose $R$ with
+$\mathcal LO_1\cup\mathcal LO_2\subset D_R$. By isotony,
+$O\subset O'$ implies $\A_m(O)\subset\A_m(O')$, the two algebras
+lie in $\A_m(D_R)$ and $\A_m(D_R+(0,L\eone))$, which commute for
+$L>2R$, and enlarging both algebras can only increase the supremum
+\eqref{eq:beta}; so the Bell correlation is at most $\beta_m(R,L)=1$
+for $L\ge C_*R$, and it is always at least $1$.
+\end{proof}
+
+\appendix
+
+\section{Proof of the probability criterion}\label{app:probability}
+
+This appendix proves Theorem~\ref{thm:probability}.
+
+\emph{Step 1: reduction to reflections.} The choice
+$A_i=B_j=I$ gives the value $1$
+in \eqref{eq:beta}, so $\beta(\omega;\A,\B)=1$ unless some self-adjoint
+contractions $A_0,A_1\in\A$ and $B_0,B_1\in\B$ give the CHSH expression
+an absolute value larger than $1$. The expression is real, because the
+$A_i$ and $B_j$ commute, and negating both observables in one of the
+two regions
+changes its sign, so we may assume a value larger than $1$. Every
+self-adjoint contraction is a norm-convergent average of reflections,
+$A=\frac12\int_{-1}^1(2\mathbf 1_{\{A\ge u\}}-I)\dd u$, where
+$\mathbf 1_{\{A\ge u\}}$ is the spectral projection of $A$ for the
+interval $[u,1]$, and these reflections lie in every von Neumann algebra that
+contains $A$. The CHSH expression is
+affine and norm-continuous in each of its four arguments, so a value
+larger than $1$ at $A_0$ gives a value larger than $1$ at one of these
+reflections; replacing $A_0,A_1,B_0,B_1$ in turn, a strict violation by
+contractions becomes a strict violation by four reflections. For
+reflections, the \emph{score} is
+$S=\frac12\omega\bigl(A_0(B_0+B_1)+A_1(B_0-B_1)\bigr)$.
+
+\emph{Step 2: cells and their symmetries.} With
+$E_i^\pm=(I\pm A_i)/2$ and $P_j^\pm=(I\pm B_j)/2$, which are
+projections, the sixteen \emph{cells} are the joint probabilities
+$\omega(E_i^\pm P_j^\pm)$; the index pair $(i,j)$ is called the
+\emph{setting pair}. A cell of the setting pair $(i,j)$ is
+\emph{winning} when the product of its two outcomes equals the sign
+with which $\omega(A_iB_j)$ enters
+$S=\frac12(\omega(A_0B_0)+\omega(A_0B_1)+\omega(A_1B_0)-\omega(A_1B_1))$;
+so the winning cells are $E_i^+P_j^+$ and $E_i^-P_j^-$ for
+$(i,j)\ne(1,1)$, and $E_1^+P_1^-$ and $E_1^-P_1^+$ for $(i,j)=(1,1)$.
+Since $\pm\omega(A_iB_j)$, with the sign it carries in $S$, equals the
+sum of the two winning cells of $(i,j)$ minus the sum of the two losing
+ones, and the four cells of each setting pair add up to $1$, the value
+$S+2$ is the sum of the eight winning cells.
+The three replacements
+$(A_0,A_1,B_0,B_1)\mapsto(A_0,-A_1,B_1,B_0)$,
+$(A_1,A_0,B_0,-B_1)$ and $(-A_0,-A_1,-B_0,-B_1)$ carry reflection
+quartets to reflection quartets, leave $S$ unchanged, and permute the
+eight winning cells, and every winning cell can be moved to every
+other by composing them: the first two exchange the settings
+at one site and flip one outcome to compensate the sign of the
+$(1,1)$ correlator, and the third exchanges the two winning cells of
+each setting pair. We may therefore assume that a least likely winning
+cell is $w=\omega(E_0^-P_0^-)$.
+
+\emph{Step 3: the probability form of $S>1$.} Write
+$e_A=\omega(E_0^-)$, $e_B=\omega(P_0^-)$, $x_A=\omega(E_1^-)$,
+$x_B=\omega(P_1^-)$. Since $A_i=I-2E_i^-$ and $B_j=I-2P_j^-$, and
+$\omega((I-2E)(I-2P))=1-2\omega(E)-2\omega(P)+4\omega(EP)$, the four
+correlators are $1-2e_A-2e_B+4w$, $1-2e_A-2x_B+4\omega(E_0^-P_1^-)$,
+$1-2x_A-2e_B+4\omega(E_1^-P_0^-)$ and $1-2x_A-2x_B+4\omega(E_1^-P_1^-)$.
+Inserting them into $S$, the terms in $x_A,x_B$ cancel, and using
+$\omega(E_0^-P_1^+)=e_A-\omega(E_0^-P_1^-)$ and
+$\omega(E_1^+P_0^-)=e_B-\omega(E_1^-P_0^-)$,
+\[
+S=1+2\bigl\{w-\omega(E_0^-P_1^+)-\omega(E_1^+P_0^-)-\omega(E_1^-P_1^-)\bigr\}.
+\]
+So $S>1$ reads
+\begin{equation}
+w>\omega(E_0^-P_1^+)+\omega(E_1^+P_0^-)+\omega(E_1^-P_1^-).
+\label{eq:probability-CHSH}
+\end{equation}
+The three terms on the right are nonnegative, so $w>0$ and each of them
+is smaller than $w$.
+
+\emph{Step 4: the neighbouring winning cells.} The cells $E_0^-P_1^-$
+and $E_1^-P_0^-$ are winning, so their probabilities are at least
+$w$; by Step~3 they are also $e_A-\omega(E_0^-P_1^+)>e_A-w$ and
+$e_B-\omega(E_1^+P_0^-)>e_B-w$. Hence
+$\omega(E_0^-P_1^-)\ge\max\{w,e_A-w\}\ge e_A/2$ and
+$\omega(E_1^-P_0^-)\ge e_B/2$.
+
+\emph{Step 5: the marginals $x_A,x_B$.} With the exponents $a,b$ of
+\eqref{eq:probability-exponents}, abbreviate $\overline k=K_{r_+,+}^{1/r_+}$ and
+$\underline k=K_{r_-,-}^{-1/(r_--1)}$, so that \eqref{eq:event-orders} reads
+$\omega(EP)\le\overline k(\omega(E)\omega(P))^{b}$ and
+$\omega(EP)\ge\underline k(\omega(E)\omega(P))^{1/a}$. The upper bound at
+the two neighbouring cells gives
+$e_A/2\le\overline k(e_Ax_B)^b$ and $e_B/2\le\overline k(x_Ae_B)^b$. Since
+$e_A\ge w>0$ and $e_B\ge w>0$, dividing and taking the power $1/b$,
+\[
+x_B\ge(2\overline k)^{-1/b}e_A^{(1-b)/b},\qquad x_A\ge(2\overline k)^{-1/b}e_B^{(1-b)/b}.
+\]
+
+\emph{Step 6: a lower bound on $w$.} The upper bound at $E_0^-P_0^-$
+reads $w\le\overline k(e_Ae_B)^b$, that is, $e_Ae_B\ge(w/\overline k)^{1/b}$. By
+\eqref{eq:probability-CHSH}, the lower bound in
+\eqref{eq:event-orders} at $E_1^-P_1^-$, Step~5, and this inequality
+raised to the positive power $(1-b)/(ab)$,
+\begin{align*}
+w>\omega(E_1^-P_1^-)&\ge\underline k(x_Ax_B)^{1/a}\\
+&\ge\underline k(2\overline k)^{-2/(ab)}(e_Ae_B)^{(1-b)/(ab)}\\
+&\ge\underline k\,2^{-2/(ab)}\overline k^{\,-(1+b)/(ab^2)}w^{(1-b)/(ab^2)},
+\end{align*}
+the exponents of $\overline k$ adding up to $-2/(ab)-(1-b)/(ab^2)=-(1+b)/(ab^2)$.
+Dividing by $w^{(1-b)/(ab^2)}$ and using
+\[
+\overline k^{\,-(1+b)/(ab^2)}=K_{r_+,+}^{-\nu_+}\quad\text{and}\quad
+\underline k=K_{r_-,-}^{-1/(r_--1)}=K_{r_-,-}^{-\nu_-},
+\]
+which hold by
+\eqref{eq:probability-exponents} because $r_--1=a/(1-a)$,
+\begin{equation}
+w^\eta K_{r_+,+}^{\nu_+}K_{r_-,-}^{\nu_-}>2^{-2/(ab)}.
+\label{eq:necessary-cell}
+\end{equation}
+
+\emph{Step 7: an upper bound on $w$ from clustering.} Let
+$S_{\mathrm{prod}}$ be $S$ with each $\omega(A_iB_j)$ replaced by
+$\omega(A_i)\omega(B_j)$. Since $\abs{\omega(A_i)}\le1$ and
+$\frac12(\abs{x+y}+\abs{x-y})=\max\{\abs x,\abs y\}$,
+$S_{\mathrm{prod}}\le\max_j\abs{\omega(B_j)}$. The
+bound \eqref{eq:additive-cluster} on the four pairs gives
+$\abs{S-S_{\mathrm{prod}}}\le2q_{\mathrm{cl}}$, so
+$1<S\le\max_j\abs{\omega(B_j)}+2q_{\mathrm{cl}}$. For the $j$
+attaining the maximum, the less probable outcome of $B_j$ has
+probability $(1-\abs{\omega(B_j)})/2<q_{\mathrm{cl}}$. If that outcome
+is $P_j^\pm$,
+the cell $E_0^\pm P_j^\pm$ is winning, because $\omega(A_0B_j)$ enters
+$S$ with the sign $+$, and $E_0^\pm P_j^\pm\le P_j^\pm$; so
+$w\le\omega(P_j^\pm)<q_{\mathrm{cl}}$.
+
+\emph{Conclusion.} Since $\eta>0$, $0<w<q_{\mathrm{cl}}$ and
+$K_{r_\pm,\pm}\ge1$, we get
+$w^\eta K_{r_+,+}^{\nu_+}K_{r_-,-}^{\nu_-}
+<q_{\mathrm{cl}}^\eta K_{r_+,+}^{\nu_+}K_{r_-,-}^{\nu_-}\le2^{-2/(ab)}$
+by \eqref{eq:probability-cutoff}, contradicting
+\eqref{eq:necessary-cell}. Hence no reflection quartet has $S>1$, and
+$\beta(\omega;\A,\B)=1$ by Step~1. \qed
+
+\section{Proofs of the Gaussian comparison and of its consequences}
+\label{app:gaussian}
+
+\emph{Gaussian conventions.---}For $n$ modes with commutation matrix
+$J_n$, a centred Gaussian state $\rho_V$ with covariance $V$ has
+characteristic function $\Tr(\rho_Ve^{\ii x^T(q,p)})=e^{-x^TVx/2}$,
+$x\in\R^{2n}$, where $(q,p)=(\Phi(\sx_1),\dots,\Phi(\sx_{2n}))$ is the
+column of canonical operators in a basis as in
+Section~\ref{sec:field}, in the normalization where the oscillator
+ground state has covariance $I/2$ \cite{SLW18}. For faithful $\sigma$ with covariance
+$V_\sigma$, abbreviate $\mathsf T_\tau=V_\sigma^{[\tau]}$ and
+$\mathsf L=(\mathsf T_\tau^2-I/4)^{1/2}$, and work in Williamson
+normal-mode coordinates of $\sigma$, $V_\sigma=\bigoplus_j\upsilon_jI_2$:
+the trace formula below is coordinate independent, but the covariance
+formula holds only there. For
+$\Theta=\sigma^{-\tau/2}\rho\,\sigma^{-\tau/2}$, the two Gaussian
+sandwich formulas
+\begin{equation}
+\Tr\Theta=\frac{\Tr\sigma^{1-\tau}}{\sqrt{\det(I-\mathsf Z)}},\qquad
+V_\Theta=-\mathsf T_\tau+\mathsf L(\mathsf T_\tau-V_\rho)^{-1}\mathsf L,
+\label{eq:sandwich}
+\end{equation}
+hold whenever $V_\rho<\mathsf T_\tau$ (verified in Step~2 below),
+where $V_\Theta$ is the covariance
+of the Gaussian state $\Theta/\Tr\Theta$ and $\mathsf Z$ is the matrix
+of Theorem~\ref{thm:gaussian}. The trace formula is that of
+Seshadreesan, Lami and Wilde \cite[Theorem~22]{SLW18}, who compute
+$\Qtil_r$ for Gaussian states from the opposite sandwich
+$\rho^{1/2}\sigma^{-\tau}\rho^{1/2}$; it transfers because
+$\rho^{1/2}\sigma^{-\tau}\rho^{1/2}=(\sigma^{-\tau/2}\rho^{1/2})^*(\sigma^{-\tau/2}\rho^{1/2})$
+and $\Theta=(\sigma^{-\tau/2}\rho^{1/2})(\sigma^{-\tau/2}\rho^{1/2})^*$
+have the same nonzero spectrum. The covariance formula is specific to
+the sandwich used here; both follow from the coherent-state (Bargmann)
+representation~\cite{Bargmann61}. By
+\eqref{eq:mode-temperature}, the $j$th mode of $\sigma$ is
+${(1-e^{-\beta_j})e^{-\beta_jN_j}}$, $N_j$ its number operator, and
+$t^{N_j}$ acts on the Bargmann space of entire functions by scaling
+the $j$th variable with $t$; so $\Theta$ has the integral kernel of
+$\rho$ with both arguments scaled by
+$\mathbb T=\bigoplus_je^{\tau\beta_j/2}I_2$, times
+$\prod_j(1-e^{-\beta_j})^{-\tau}$. The kernel of $\rho$ is the exponential
+of a quadratic form determined by $V_\rho$, and the scaling keeps it
+Gaussian, so the trace and the characteristic function of $\Theta$ are
+Gaussian integrals; they converge, and $\Theta$ is trace class,
+exactly when $V_\rho<\mathsf T_\tau$, and a Schur complement yields
+\eqref{eq:sandwich} through the mode identities
+\[
+\mathsf T_\tau-\tfrac12I=(\mathbb T^2-I)^{-1},\qquad
+\mathsf L=\mathbb T\,(\mathbb T^2-I)^{-1}.
+\]
+
+\begin{proof}[Proof of Theorem~\ref{thm:gaussian}]
+\emph{Step 1: coordinate independence.} For a real invertible $S$, a
+positive $\Gamma$ and a real symmetric $\Xi$, the matrix
+$(S\Gamma S^T)^{-1/2}S\Gamma^{1/2}$ is orthogonal, so
+$(S\Gamma S^T)^{-1/2}\,S\Xi S^T\,(S\Gamma S^T)^{-1/2}$ is orthogonally
+equivalent to $\Gamma^{-1/2}\Xi\Gamma^{-1/2}$. A real linear change of
+the canonical coordinates replaces $V_\rho$, $V_\sigma$ and
+$\Therm_\tau(V_\sigma)$ by $SV_\rho S^T$ and so on, so with
+$\Gamma=\Therm_\tau(V_\sigma)$ and $\Xi=V_\rho-V_\sigma$ it replaces
+$\mathsf Z$ by an orthogonally equivalent matrix. Hence $\norm{\mathsf Z}$,
+$\norm{\mathsf Z}_1$ and the hypothesis are coordinate independent, as
+is $\Qtil_r(\rho\|\sigma)$. We work in Williamson coordinates of
+$\sigma$, in which $V_\sigma$, $\mathsf T_\tau$,
+$\mathsf L$ and $\mathsf T_{1-\tau}=V_\sigma^{[1-\tau]}$ are all
+diagonal.
+
+\emph{Step 2: the condition $V_\rho<\mathsf T_\tau$.} With
+$\delta=\norm{\mathsf Z}\le(4k_r)^{-1}\le\frac18$,
+$\mathsf T_\tau-V_\rho=\Therm_\tau(V_\sigma)-(V_\rho-V_\sigma)
+=\Therm_\tau(V_\sigma)^{1/2}(I-\mathsf Z)\Therm_\tau(V_\sigma)^{1/2}>0$, so \eqref{eq:sandwich}
+applies.
+
+\emph{Step 3: the perturbed covariance.} At $V_\rho=V_\sigma$ the
+sandwich is $\sigma^{1-\tau}$, whose normalized state has covariance
+$\mathsf T_{1-\tau}$, so \eqref{eq:sandwich} gives
+$\mathsf T_{1-\tau}=-\mathsf T_\tau+\mathsf L\,\Therm_\tau(V_\sigma)^{-1}\mathsf L$.
+Subtracting this from \eqref{eq:sandwich} and using Step~2,
+\[
+\begin{gathered}
+V_\Theta-\mathsf T_{1-\tau}
+=\mathsf P\bigl((I-\mathsf Z)^{-1}-I\bigr)\mathsf P,\\
+\mathsf P=\mathsf L\,\Therm_\tau(V_\sigma)^{-1/2},\qquad
+\mathsf P^2=\mathsf T_{1-\tau}+\mathsf T_\tau .
+\end{gathered}
+\]
+Mode by mode, with $u=\artanh(1/(2\upsilon_j))$, the entries of
+$\mathsf T_\tau$ and $\mathsf T_{1-\tau}$ are $\frac12\coth(\tau u)$
+and $\frac12\coth((1-\tau)u)$ by \eqref{eq:thermal-power}; since
+$x\coth x$ increases and $\coth$ decreases,
+$\coth(\tau u)/\coth(({1-\tau})u)\le\max\{1,({1-\tau})/\tau\}$, so
+$\mathsf P^2\le k_r\mathsf T_{1-\tau}$. The relative change of
+the covariance of $\Theta$, the analogue of $\mathsf Z$ for $\Theta$,
+is
+\[
+\begin{aligned}
+\mathsf Z_\Theta&=\mathsf T_{1-\tau}^{-1/2}(V_\Theta-\mathsf T_{1-\tau})\mathsf T_{1-\tau}^{-1/2}\\
+&=(\mathsf T_{1-\tau}^{-1/2}\mathsf P)\,\mathsf Z(I-\mathsf Z)^{-1}\,(\mathsf P\mathsf T_{1-\tau}^{-1/2}).
+\end{aligned}
+\]
+Since the eigenvalues of $\mathsf Z$ lie in $[-\delta,\delta]$ and
+$\norm{\mathsf T_{1-\tau}^{-1/2}\mathsf P}^2\le k_r$,
+\begin{equation}
+\norm{\mathsf Z_\Theta}\le\frac{k_r\delta}{1-\delta}\le\frac27,\qquad
+\norm{\mathsf Z_\Theta}_1\le\frac{k_r}{1-\delta}\norm{\mathsf Z}_1 .
+\label{eq:purity-perturbation}
+\end{equation}
+
+\emph{Step 4: the purity function.} For a \emph{physical} covariance
+$V$, one with $V+\frac\ii2J_n\ge0$, with symplectic eigenvalues
+$\upsilon_j$, let
+$\mathscr P_r(V)=\log\Tr\rho_V^r=-\sum_j\log f_r(\upsilon_j)$ with
+$f_r(x)=(x+\frac12)^r-(x-\frac12)^r$; the second expression holds mode
+by mode, since a thermal mode is $(1-e^{-\beta})e^{-\beta N}$, $N$
+the number operator, with $e^{-\beta}=(\upsilon-\frac12)/(\upsilon+\frac12)$
+by \eqref{eq:mode-temperature}, and
+$\Tr((1-e^{-\beta})e^{-\beta N})^r=1/f_r(\upsilon)$. One checks
+$0\le xf_r'(x)/f_r(x)\le r$ for $x\ge\frac12$. The symplectic
+eigenvalues are the positive eigenvalues of $\ii J_nV$; for a function
+$F$ of the covariance write
+$\dd F(V)[\dot V]=\frac{\dd}{\dd t}F(V+t\dot V)\big|_{t=0}$, $\dot V$
+symmetric. First-order perturbation at
+$\Upsilon=\bigoplus_j\upsilon_jI_2$ with distinct $\upsilon_j$ gives $\dd\upsilon_j[\dot V]=\frac12\Tr\dot V_{jj}$ for the
+$j$th $2\times2$ diagonal block, whence
+$\abs{\dd\mathscr P_r(\Upsilon)[\dot V]}
+\le\frac r2\sum_j\abs{\Tr(\upsilon_j^{-1}\dot V_{jj})}
+\le\frac r2\norm{\Upsilon^{-1/2}\dot V\Upsilon^{-1/2}}_1$. By the
+invariance of $\mathscr P_r$ under $V\mapsto SVS^T$ with $S$
+symplectic, and by Step~1, at every faithful
+covariance
+\begin{equation}
+\abs{\dd\mathscr P_r(V)[\dot V]}\le\frac r2\norm{V^{-1/2}\dot VV^{-1/2}}_1 ,
+\label{eq:purity-derivative}
+\end{equation}
+first where the $\upsilon_j$ are distinct, then everywhere by
+continuity, since $\mathscr P_r(V)=-\frac12\Tr\log f_r(\abs{V^{1/2}\ii J_nV^{1/2}})$
+is smooth on faithful covariances.
+
+\emph{Step 5: integration.} The segment
+$V(v)=\mathsf T_{1-\tau}^{1/2}(I+v\mathsf Z_\Theta)\mathsf T_{1-\tau}^{1/2}$,
+$0\le v\le1$, joins $\mathsf T_{1-\tau}$ to $V_\Theta$ through physical
+covariances, faithful for $v<1$ because
+$\mathsf T_{1-\tau}+\frac\ii2J_n>0$. Its derivative is
+$\mathsf T_{1-\tau}^{1/2}\mathsf Z_\Theta\mathsf T_{1-\tau}^{1/2}$, and by
+Step~1 the relative perturbation $V(v)^{-1/2}\dot VV(v)^{-1/2}$ has the
+trace norm of $\mathsf Z_\Theta(I+v\mathsf Z_\Theta)^{-1}$, at most
+$\norm{\mathsf Z_\Theta}_1/(1-\norm{\mathsf Z_\Theta})$. Integrating
+\eqref{eq:purity-derivative} and letting $v\to1$,
+\[
+\abs{\mathscr P_r(V_\Theta)-\mathscr P_r(\mathsf T_{1-\tau})}
+\le\frac r2\frac{\norm{\mathsf Z_\Theta}_1}{1-\norm{\mathsf Z_\Theta}}
+\le\frac r2\frac{k_r\norm{\mathsf Z}_1}{(1-\delta)(1-\norm{\mathsf Z_\Theta})}.
+\]
+
+\emph{Step 6: assembly.} Since $\Theta/\Tr\Theta$ is Gaussian with
+covariance $V_\Theta$, \eqref{eq:renyi} and \eqref{eq:sandwich} give
+$\Qtil_r(\rho\|\sigma)=(\Tr\Theta)^re^{\mathscr P_r(V_\Theta)}
+=(\Tr\sigma^{1-\tau})^r\det(I-\mathsf Z)^{-r/2}e^{\mathscr P_r(V_\Theta)}$,
+and $(\Tr\sigma^{1/r})^re^{\mathscr P_r(\mathsf T_{1-\tau})}=\Tr\sigma=1$
+because $\sigma^{1/r}/\Tr\sigma^{1/r}$ has covariance
+$\mathsf T_{1-\tau}$ and $r(1-\tau)=1$. Hence
+\[
+\log\Qtil_r(\rho\|\sigma)
+=-\frac r2\Tr\log(I-\mathsf Z)+\mathscr P_r(V_\Theta)-\mathscr P_r(\mathsf T_{1-\tau}).
+\]
+The bound $\abs{\log(1-t)}\le\abs t/(1-\abs t)$ on the eigenvalues of
+$\mathsf Z$ gives $\abs{\Tr\log(I-\mathsf Z)}\le\norm{\mathsf Z}_1/(1-\delta)$.
+With Step~5, $1/(1-\delta)\le8/7$ and $1/(1-\norm{\mathsf Z_\Theta})\le7/5$,
+\[
+\log\Qtil_r(\rho\|\sigma)
+\le r\Bigl(\frac47+\frac45k_r\Bigr)\norm{\mathsf Z}_1
+\le2rk_r\norm{\mathsf Z}_1 ,
+\]
+the last step because $k_r\ge2$.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:renyi-consequences}]
+Both parts are known: \eqref{eq:effect-renyi} is the two-outcome case
+of the data-processing inequality for the sandwiched divergence, proved
+for all $r>1$ by Frank and Lieb~\cite{FL13} and by Beigi~\cite{Beigi13}
+and used in this form in strong-converse arguments \cite{WWY14}, and at
+$r=2$ the quantity $\Qtil_2(\rho\|\sigma)-1$ is a quantum
+$\chi^2$-divergence, which dominates the squared trace distance
+\cite{TKRVV10}. We include the short proofs.
+
+\emph{The effect bound.} Finiteness of $\Qtil_r(\rho\|\sigma)$ means
+that $\Theta=\sigma^{-\tau/2}\rho\sigma^{-\tau/2}$ has finite $r$-norm
+$\norm\Theta_r=\Qtil_r(\rho\|\sigma)^{1/r}$, and
+$\rho=\sigma^{\tau/2}\Theta\sigma^{\tau/2}$. Since $\tau+1/r=1$,
+H\"older's inequality for Schatten norms,
+$\abs{\Tr(XY)}\le\norm X_p\norm Y_q$ for $1/p+1/q=1$ \cite{Simon05},
+gives
+$\rho(M)=\Tr(\Theta\,\sigma^{\tau/2}M\sigma^{\tau/2})
+\le\norm\Theta_r\norm{\sigma^{\tau/2}M\sigma^{\tau/2}}_{1/\tau}$. The
+operator $\sigma^{\tau/2}M\sigma^{\tau/2}$ has the same nonzero spectrum
+as $M^{1/2}\sigma^\tau M^{1/2}$, and Hansen's inequality for the operator
+monotone function $t\mapsto t^\tau$ (monotone: $0\le X\le Y$ implies
+$X^\tau\le Y^\tau$) and the contraction $M^{1/2}$ \cite{Hansen80}
+gives
+$M^{1/2}\sigma^\tau M^{1/2}\le(M^{1/2}\sigma M^{1/2})^\tau$; so the
+second factor is at most $(\Tr M^{1/2}\sigma M^{1/2})^\tau=\sigma(M)^\tau$.
+Raising $\rho(M)\le\Qtil_r^{1/r}\sigma(M)^\tau$ to the power $r$ gives
+\eqref{eq:effect-renyi}.
+
+\emph{Comparison of the orders $2$ and $r$.} For $r\ge2$, interpolation by
+Hadamard's three-lines theorem for Schatten norms \cite{Simon05},
+applied to $z\mapsto\sigma^{-\tau z/2}\rho\sigma^{-\tau z/2}$ on
+the strip $0\le\Rea z\le1$, between the trace norm at $\Rea z=0$
+(where the sandwiching factors are unitary) and the $r$-norm at
+$\Rea z=1$, evaluated at $z=1/(2\tau)\in(0,1]$ where the interpolated
+exponent is $2$, gives
+$\Qtil_2(\rho\|\sigma)\le\Qtil_r(\rho\|\sigma)^{1/(r-1)}$. To justify
+the interpolation for the unbounded inverse powers, restrict
+$\rho,\sigma$ to the spectral subspace of $\sigma$ for $[\epsilon,1]$,
+where $\sigma^{-1}$ is bounded, and let $\epsilon\downarrow0$. This is the monotonicity of the sandwiched
+divergence in its order~\cite[Theorem~7]{Beigi13},
+\cite[Theorem~7]{ML13}.
+
+\emph{The trace distance.} With
+$\Theta_{1/2}=\sigma^{-1/4}\rho\sigma^{-1/4}$, the sandwich $\Theta$ at
+$r=2$, i.e.\ $\tau=\frac12$,
+one has $\Tr(\Theta_{1/2}\sigma^{1/2})=\Tr\rho=1$, so
+$\norm{\Theta_{1/2}-\sigma^{1/2}}_2^2=\Qtil_2(\rho\|\sigma)-1$, and
+$\rho-\sigma=\sigma^{1/4}({\Theta_{1/2}-\sigma^{1/2}})\sigma^{1/4}$ with
+$\norm{\sigma^{1/4}}_4=1$. H\"older's inequality gives
+$\norm{\rho-\sigma}_1\le\sqrt{\Qtil_2(\rho\|\sigma)-1}$, and the order
+comparison gives \eqref{eq:trace-distance}.
+\end{proof}
+
+\section{Thermal weights and compression}\label{app:compression}
+
+\begin{proof}[Proof of Lemma~\ref{lem:thermal-comparison}]
+By the functional calculus of $d=\abs{\tfrac\ii2\mathsf J}$, as in
+\eqref{eq:reserve-finite}, it suffices to show that
+$\mathfrak q_\tau(d)=(d\coth(\tau\artanh d)-1)(1-d^2)^{-\tau}\ge c_\tau$
+for $0<d<1$; at $d=0$ and $d=1$, which the spectrum may reach on the
+full source space, \eqref{eq:thermal-d} means the continuous extension
+(values $(1-\tau)/\tau$ and $0$), and the bound follows by continuity.
+Write $d=\tanh u$, $u>0$ (on mode $j$ of a finite system,
+$u=\beta_j/2$). Then $(1-d^2)^{-\tau}=\cosh(u)^{2\tau}$
+and $\tanh u\coth(\tau u)-1=\sinh((1-\tau)u)/(\cosh u\sinh(\tau u))$,
+so
+\[
+\mathfrak q_\tau(\tanh u)=\frac{\sinh((1-\tau)u)}{\sinh(\tau u)}\cosh(u)^{2\tau-1},
+\]
+with limits $(1-\tau)/\tau$ at $u\to0$ and $2^{1-2\tau}$ at
+$u\to\infty$. For fixed $u$ the function $\mathfrak h(v)=v\coth(vu)$ is
+convex in $v$, with $\mathfrak h'(v)\le\mathfrak h'(1)\le\tanh u$ for
+$0<v\le1$, the last inequality being $\tanh u\le u$. By the mean value
+theorem,
+$\frac{\dd}{\dd u}\log\mathfrak q_\tau(\tanh u)
+=\mathfrak h(1-\tau)-\mathfrak h(\tau)+(2\tau-1)\tanh u
+=(1-2\tau)(\mathfrak h'(v_0)-\tanh u)$ at some
+$v_0$ between $\tau$ and $1-\tau$, which is $\le0$ for $\tau\le\frac12$ and $\ge0$ for
+$\tau\ge\frac12$. So $\mathfrak q_\tau(\tanh u)$ is monotone in $u$, and its infimum is
+the limit at infinity for $\tau\le\frac12$ and the limit at zero for
+$\tau\ge\frac12$, which is $c_\tau$.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:compression}]
+\emph{Step 1: compression of parallel sums and geometric means.} For
+positive invertible $A,B$, the \emph{parallel sum}
+$(A^{-1}+B^{-1})^{-1}$ has the variational formula
+$\ip z{(A^{-1}+B^{-1})^{-1}z}=\inf_{x+y=z}\{\ip xAx+\ip yBy\}$, which shows
+that restricting $x,y$ to the range of $\iota$ increases the infimum,
+so $\iota^*(A^{-1}+B^{-1})^{-1}\iota\le((\iota^*A\iota)^{-1}+(\iota^*B\iota)^{-1})^{-1}$,
+and likewise for more than two summands. The weighted geometric mean
+$A\#_\tau B=A^{1/2}(A^{-1/2}BA^{-1/2})^\tau A^{1/2}$ has the integral
+representation
+$\frac{\sin\pi\tau}\pi\int_0^\infty v^{\tau-1}(A^{-1}+vB^{-1})^{-1}\dd v$
+through parallel sums, so
+$\iota^*(A\#_\tau B)\iota\le(\iota^*A\iota)\#_\tau(\iota^*B\iota)$
+\cite{KA80}.
+
+\emph{Step 2: the weight operator.} $G$ and $\overline G$ commute, before and
+after compression, because their sum is $2I$ and
+$\iota^*(2I)\iota=2I_F$. For commuting operators
+$A\#_{1/2}B=(AB)^{1/2}$, so Step~1 at $\tau=\frac12$ gives
+$\Res_F\ge\iota^*\Res\iota$. Since $x\mapsto x^{2a}$ is operator monotone ($0\le X\le Y$ implies
+$X^{2a}\le Y^{2a}$) and operator concave on $[0,\infty)$ for
+$0<2a\le1$,
+$\Res_F^{2a}\ge(\iota^*\Res\iota)^{2a}\ge\iota^*\Res^{2a}\iota$, the
+second step being Jensen's inequality
+$\iota^*X^{2a}\iota\le(\iota^*X\iota)^{2a}$ for the isometry $\iota$~\cite{Hansen80}.
+This is
+\eqref{eq:low-compression}.
+
+\emph{Step 3: the thermal weight.} For an integer $r\ge2$, the thermal
+increment is a parallel sum of geometric means,
+\begin{equation}
+\Therm_{(r-1)/r}(I)=\Bigl[\sum_{k=1}^{r-1}(G\#_{k/r}\overline G)^{-1}\Bigr]^{-1}
+\label{eq:parallel-thermal}
+\end{equation}
+(for noninvertible $G,\overline G$ both sides are decreasing limits
+over $G+\epsilon I$, $\overline G+\epsilon I$; Step~4). Indeed, at a
+spectral value $d=\tanh u$ of $\frac\ii2\mathsf J$---here $d$ is
+signed, but both sides of \eqref{eq:parallel-thermal} are even in it,
+so $u>0$ suffices---one has
+$G=1+d$, $\overline G=1-d$ and
+$G\#_{k/r}\overline G=(1+d)e^{-2uk/r}$, so the
+right-hand side equals
+\[
+\frac{(1+d)e^{-2u(r-1)/r}\bigl(1-e^{-2u/r}\bigr)}{1-e^{-2u(r-1)/r}}
+=\frac{\sinh(u/r)}{\cosh u\,\sinh((r-1)u/r)},
+\]
+which is
+$d\coth(\frac{r-1}r\artanh d)-1$ by the computation in the previous
+proof. Compressing each geometric mean and then the parallel sum by
+Step~1, and using \eqref{eq:parallel-thermal} on $F$, whose own $G$,
+$\overline G$ are $G_F,\overline G_F$, gives
+$\Therm_b(I_F)\ge\iota^*\Therm_b(I)\iota$, and
+Lemma~\ref{lem:thermal-comparison} at $\tau=(r-1)/r\ge\frac12$, where
+$c_\tau=(1-\tau)/\tau=(r-1)^{-1}$, gives the second inequality in
+\eqref{eq:high-compression}.
+
+\emph{Step 4: the full source space.} On the full space $G$ and
+$\overline G$ are injective but need not be invertible. The
+inequalities hold for $G+\epsilon I$ and $\overline G+\epsilon I$, and
+as $\epsilon\downarrow0$ the geometric means and parallel sums decrease
+to those of $G,\overline G$, which is how the noninvertible case is
+defined, while the compressions converge to the invertible $G_F$,
+$\overline G_F$. The inequalities pass to the limit.
+\end{proof}
+
+\section{Complex-shell evaluation and weighted moments}
+\label{app:evaluation}
+
+\begin{proof}[Proof of Lemma~\ref{lem:standard}]
+The components of an element of $\Hh_{\mu,U}$ are distributions
+supported in $\overline U$, with $H^{\mp1/2}$ Sobolev norms (Fourier
+weights $(1+\abs\bp^2)^{\mp1/2}$) controlled by the covariance norm
+for fixed $\mu$; their Fourier transforms therefore extend to entire
+functions on $\C^3$, by the Paley--Wiener--Schwartz theorem
+\cite{Hormander03}. If $\kappa_U(f,g)=0$, then
+$\hat f(\bp)+\ii\sqrt{\mu^2+\abs\bp^2}\,\hat g(\bp)=0$ on $\R^3$; for
+fixed real $\bp_\perp=(p_2,p_3)$, squaring and continuing in the first
+variable gives
+$\hat f(z_1,\bp_\perp)^2
+=-(z_1^2+\mu^2+\abs{\bp_\perp}^2)\,\hat g(z_1,\bp_\perp)^2$
+for all $z_1\in\C$. At $z_1=\ii\sqrt{\mu^2+\abs{\bp_\perp}^2}$ the
+right side has a simple zero, so it has odd vanishing order unless it
+vanishes identically, while the left side has even order; both sides
+vanish, and $f=g=0$. For the density, in the spatial realization
+$\kappa_U(f,g)=2^{-1/2}\bigl((\mu^2-\nabla^2)^{-1/4}f+\ii(\mu^2-\nabla^2)^{1/4}g\bigr)$ of the
+one-particle space as $L^2(\R^3)$, a vector $v$ orthogonal to the
+complex range gives $u=(\mu^2-\nabla^2)^{-1/4}v$ with $u=0$ and $(\mu^2-\nabla^2)^{1/2}u=0$ on
+$U$. The function $W(t)=e^{-t(\mu^2-\nabla^2)^{1/2}}u$, with $t>0$
+a Euclidean time, solves
+the elliptic equation $(-\partial_t^2-\nabla^2+\mu^2)W=0$ with
+Dirichlet and Neumann data $u$ and $-(\mu^2-\nabla^2)^{1/2}u$ at
+$t=0$, which vanish on a ball
+$B\subset U$; its extension by zero across $\{0\}\times B$ is a weak
+solution on the connected set $((0,\infty)\times\R^3)\cup(\R\times B)$
+that vanishes on an open subset, hence everywhere by analytic elliptic
+regularity and unique continuation \cite{Hormander03}. So $u=0$ and
+$v=0$. For regions with smooth boundary this is the anti-locality
+argument of Figliolini and Guido \cite{FG89}.
+\end{proof}
+
+\emph{The modular operator of a ball.---}Let
+$\mathcal K_U=\kappa_U\mathcal X_{\mu,U}$ be the closed real subspace of
+one-particle vectors of real sources in $U$. By
+Lemma~\ref{lem:standard}, $\mathcal K_U\cap\ii\mathcal K_U=\{0\}$ and
+$\mathcal K_U+\ii\mathcal K_U$ is dense, so $\mathsf s_U(u+\ii v)=u-\ii v$
+and $\Delta_U=\mathsf s_U^*\mathsf s_U$ are the standard-subspace
+operators of Section~\ref{sec:estimates}, here for
+$\mathcal K=\mathcal K_U$.
+In the polar decomposition $\kappa_U=\mathcal U_UG_U^{1/2}$ the factor
+$\mathcal U_U$ is unitary. The defining relation
+$\mathsf s_U\kappa_U\sx=\kappa_U\mathsf c_U\sx$, where $\mathsf c_U$ is
+complex conjugation on $\Hh_{\mu,U}$, and
+$\overline G_U=\mathsf c_UG_U\mathsf c_U$ give
+$\norm{\Delta_U^{1/2}\kappa_U\sx}^2=\norm{\kappa_U\mathsf c_U\sx}^2
+=\ip\sx{\overline G_U\sx}$; comparing quadratic forms on the common
+form domain $\Ran G_U^{1/2}$ (the set where both quadratic forms are
+finite),
+\begin{equation}
+\Delta_U=\mathcal U_U\,\overline G_UG_U^{-1}\,\mathcal U_U^*,\qquad
+\Delta_U^{\,c}\kappa_U=\mathcal U_U\,G_U^{1/2-c}\overline G_U^{\,c}
+\label{eq:modular-source}
+\end{equation}
+for $0\le c\le\frac12$ \cite{RvD77,LS16}.
+
+The proof of \eqref{eq:inclusion} given in
+Section~\ref{sec:estimates} applies verbatim to any standard subspace
+$\mathcal K\supset\mathcal K_U$, in particular to that of a Lorentz
+transformed wedge; equivalently, $\Delta_{\mathcal K}^c\Delta_U^{-c}$
+is a contraction \cite[Section~2]{BDL07}.
+
+\emph{The wedge identity \eqref{eq:wedge-contour}.---}In rapidity
+coordinates $p_0=m_\perp\cosh\chi$, $p_1=m_\perp\sinh\chi$, where
+$\chi$ is the rapidity, $\bp_\perp=(p_2,p_3)$ and
+$m_\perp=\sqrt{\mu^2+\abs{\bp_\perp}^2}$, the invariant measure is
+$\dd\mathfrak m_\mu=(2(2\pi)^3)^{-1}\dd\chi\dd^2p_\perp$ and the boosts
+along the first axis translate $\chi$. By the Bisognano--Wichmann
+theorem \cite{BW75,BGL02}, $\Delta_{\mathcal W_0}^{\ii y}$ is the boost
+of rapidity $2\pi y$, so after a Fourier transform in $\chi$ it is
+multiplication by $e^{-2\pi\ii yk}$, $k$ the variable dual to $\chi$,
+and $\Delta_{\mathcal W_0}^{\,c}$
+is multiplication by $e^{-\varphi k}$, $\varphi=2\pi c$. By the Paley--Wiener
+theorem for a strip \cite{Hormander03}, a wave function $\psi$ whose restriction to each
+line of fixed $\bp_\perp$ extends holomorphically to $0<\Ima\chi<\varphi$,
+with square-integrable bounds, lies in the domain of
+$\Delta_{\mathcal W_0}^{\,c}$ and
+$(\Delta_{\mathcal W_0}^{\,c}\psi)(\chi,\bp_\perp)=\psi(\chi+\ii\varphi,\bp_\perp)$.
+For a smooth source $\sx$ with compact support in $\{x^1<0\}$, the
+function $\chi\mapsto\Psi_\sx(\mathcal L_1(\chi)(m_\perp,0,\bp_\perp))$,
+where $\mathcal L_1(\chi)$ is the boost of rapidity $\chi$ along the
+first axis,
+$(p_0,p_1)\mapsto(p_0\cosh\chi+p_1\sinh\chi,\,p_1\cosh\chi+p_0\sinh\chi)$,
+is entire and equals $\kappa_U\sx$ at real $\chi$. On the strip, write
+the continued rapidity as $\chi+\ii\varphi'$ with
+$0\le\varphi'\le\varphi$; then $\abs{e^{-\ii\bz\cdot\bx}}\le1$ on the
+support because $\Ima z_1=m_\perp\cosh\chi\sin\varphi'\ge0$, and integration by parts gives
+rapid decay in $\abs\bz$. Hence
+$\Delta_{\mathcal W_0}^{\,c}\kappa_U\sx=\Psi_\sx\circ b_\varphi$, since
+$\mathcal L_1(\chi+\ii\varphi)=\mathcal L_1(\ii\varphi)\mathcal L_1(\chi)$. Translating
+the wedge edge by $\ell$ conjugates $\Delta$ by the translation
+$e^{-\ii\ell p_1}$, and the continuation $p_1\mapsto p_1\cos\varphi+\ii p_0\sin\varphi$
+turns $e^{\ii\ell p_1}$ into a phase times $e^{-\ell p_0\sin\varphi}$,
+which gives \eqref{eq:wedge-contour} for smooth sources in the base of
+$\mathcal W_\ell$. For a proper orthochronous Lorentz transformation
+$\mathcal L$, the subspace of $\mathcal L\mathcal W_\ell$ is
+$\mathsf U(\mathcal L)\mathcal K_{\mathcal W_\ell}$, where $\mathsf U$
+is the unitary one-particle representation of the Poincar\'e group,
+$(\mathsf U(\mathcal L)\psi)(p)=\psi(\mathcal L^{-1}p)$; its modular
+operator is the conjugate of $\Delta_{\mathcal W_\ell}$, and if
+$D_T\subset\mathcal L\mathcal W_\ell$ then every real source in
+$U\subset B_T(0)$ has $\kappa_U\sx\in\mathcal K_{\mathcal L\mathcal W_\ell}$%
+---and so, by complex linearity, every $\sx\in\Hh_{\mu,U}$ has
+$\kappa_U\sx\in\mathcal K_{\mathcal L\mathcal W_\ell}
++\ii\mathcal K_{\mathcal L\mathcal W_\ell}
+=\operatorname{Dom}\mathsf s_{\mathcal L\mathcal W_\ell}$---%
+with $\Psi_\sx(\mathcal Lb_\varphi(p))$ in place of $\Psi_\sx(b_\varphi(p))$
+by Lorentz covariance of the field and the identity theorem on the
+connected complex manifold $H_\mu^{\C}$. Finally, since
+$\mathsf s_{\mathcal W_\ell}$ fixes $\mathcal K_{\mathcal W_\ell}$
+pointwise,
+$\norm{\Delta_{\mathcal W_\ell}^{1/2}\xi}=\norm\xi$ there, so
+$\norm{\Delta^c_{\mathcal W_\ell}\xi}\le2\norm\xi$, and approximation
+of an arbitrary $\sx\in\Hh_{\mu,U}$ by smooth sources, together with the
+continuity of $\sx\mapsto\Psi_\sx(z)$ on $\Hh_{\mu,U}$ (the values
+$\hat f(\bz)$, $\hat g(\bz)$ are pairings of $f\in H^{-1/2}$ and
+$g\in H^{1/2}$ with a fixed smooth function), extends the identity to
+all sources.
+
+\emph{Averaged wedges.---}For $U\subset B_T(0)$ and a compact family
+$\mathscr L$ of Lorentz transformations, the choice
+$\ell_{\mathscr L}>\sqrt2\sup_{\mathcal L\in\mathscr L}\norm{\mathcal L^{-1}}_{\mathrm E}$,
+with $\norm\cdot_{\mathrm E}$ the Euclidean operator norm on $\R^4$,
+ensures $D_T\subset\mathcal L\mathcal W_{\ell_{\mathscr L}T}$ for every
+$\mathcal L\in\mathscr L$, because $D_T$ lies in the Euclidean ball of
+radius $T$ and $x^1+\abs{x^0}\le\sqrt2\abs x_{\mathrm E}$. The wedge
+identity and \eqref{eq:inclusion}, integrated against a probability
+measure $\vartheta$ on $\mathscr L$, give
+\begin{equation}
+\begin{split}
+\int_{\mathscr L}\int_{H_\mu^+}&e^{-2\ell_{\mathscr L}Tp_0\sin\varphi}
+\abs{\Psi_\sx(\mathcal Lb_\varphi(p))}^2\dd\mathfrak m_\mu(p)\dd\vartheta(\mathcal L)\\
+&\le\norm{G_U^{1/2-c}\overline G_U^{\,c}\sx}^2 .
+\end{split}
+\label{eq:averaged-wedges}
+\end{equation}
+
+\begin{lemma}[Regular shell patches]\label{lem:regular-patches}
+Let $0<c<\frac12$, $\varphi=2\pi c$, and let
+$\mathscr Z=\{(t,z):0\le t\le1,\ z\in H_t^{\C},\ \abs z_{\mathrm E}\le16,\ (\Rea z)^2\ge16\}$,
+where $(\Rea z)^2=\Rea z\cdot\Rea z$ is the Minkowski square, positive
+for spacelike vectors. There are a compact set
+$\mathscr L_c$ of proper orthochronous Lorentz transformations with
+$\sup_{\mathscr L_c}\norm{\mathcal L^{-1}}_{\mathrm E}<32/\sin\varphi$, a
+probability measure $\vartheta_c$ on $\mathscr L_c$ with smooth density
+with respect to Haar measure, a
+neighbourhood $\mathcal V$ of $\mathscr Z$ in the shell family
+$\{(t,z):0\le t\le1,\ z\in H_t^{\C}\}$, and $\delta_c>0$, such that
+the image of the measure
+$\dd\vartheta_c\otimes\mathbf 1_{\{p_0\le M_c\}}\dd\mathfrak m_t$,
+$M_c=32/\sin\varphi$, under $(\mathcal L,p)\mapsto\mathcal Lb_\varphi(p)$
+assigns to every subset of the slice
+$\mathcal V_t=\{z:(t,z)\in\mathcal V\}$ at least $\delta_c$ times its
+six-dimensional Euclidean volume $\vol$; the formulas for
+$\dd\mathfrak m_t$ extend to $t=0$, the measure on the forward light
+cone. Moreover, there are a chart radius $r_c>0$ and
+$C_{\mathrm{sub}}\ge1$ such that every $(t,z)\in\mathscr Z$ has a
+holomorphic chart of radius $r_c$ in $H_t^{\C}$ centred at $z$, with
+image $\mathcal B_z\subset\mathcal V_t$ and volume Jacobian between $1$
+and $C_{\mathrm{sub}}$; hence every nonnegative plurisubharmonic $F$
+on $\C^4$ (subharmonic on every complex line), in particular
+the squared modulus of any holomorphic function, satisfies
+$F(z)\le C_{\mathrm{sub}}\vol(\mathcal B_z)^{-1}\int_{\mathcal B_z}F\dd\vol$.
+\end{lemma}
+
+\begin{proof}[Proof (condensed)]
+A point $z=u+\ii v\in H_t^{\C}$ with $(t,z)\in\mathscr Z$ has
+$u\cdot v=0$, $u^2=\rho_0^2$ with $\rho_0\in[4,16]$, and
+$v^2=t^2+\rho_0^2$, since $z\cdot z=u^2-v^2+2\ii\,u\cdot v=-t^2$. The
+pair $(u,v)$ is the Lorentz image of the
+real and imaginary parts of $b_\varphi(p)$ at $p_1=p_3=0$,
+$p_0=\sqrt{t^2+\rho_0^2}/\sin\varphi$, $p_2=\sqrt{p_0^2-t^2}$, where
+these parts are orthogonal with the same Minkowski squares; the matching transformation
+$\mathcal L=\mathcal L_{\mathrm{tar}}\mathcal L_{\mathrm{src}}^{-1}$,
+where $\mathcal L_{\mathrm{src}}$ and $\mathcal L_{\mathrm{tar}}$ are
+proper orthochronous transformations carrying the standard frame to
+orthonormal frames whose first two spacelike legs are the two pairs,
+satisfies
+$\norm{\mathcal L}_{\mathrm E}=\norm{\mathcal L^{-1}}_{\mathrm E}\le2\sqrt{34}/\sin\varphi<32/\sin\varphi$
+(the Euclidean norms of a Lorentz matrix and of its inverse coincide) and
+$p_0\le\sqrt{257}/\sin\varphi<32/\sin\varphi$: for the
+normalized legs $u/\rho_0$ and $v/\sqrt{t^2+\rho_0^2}$, the bound
+$\abs z_{\mathrm E}^2=2(u_0^2+v_0^2)+2\rho_0^2+t^2\le256$ gives
+\[
+\frac{u_0^2}{\rho_0^2}+\frac{v_0^2}{t^2+\rho_0^2}
+\le\frac{u_0^2+v_0^2}{\rho_0^2}\le\frac{128}{\rho_0^2}-1\le7,
+\]
+so, completing the pair by a third spacelike leg with zero time
+component, the Lorentz factor of $\mathcal L_{\mathrm{tar}}$ (the time
+component of the image of the time axis) is at most $\sqrt8$; that of
+$\mathcal L_{\mathrm{src}}$ is
+$\sqrt{1+(17/16)\cot^2\varphi}\le\sqrt{17}/(4\sin\varphi)$, since
+$t\le1$ and $\rho_0^2\ge16$; a proper orthochronous matrix of Lorentz
+factor $\gamma$ has Euclidean norm
+$\gamma+\sqrt{\gamma^2-1}\le2\gamma$, and the two norms multiply. The
+map $(\mathcal L,p)\mapsto\mathcal Lb_\varphi(p)$ is a submersion at such
+preimages: the Lorentz orbit of the ordered pair $(u,v)$ has dimension
+five (the stabilizer of an orthogonal spacelike pair is the
+one-parameter boost group of the complementary timelike plane), and
+varying $p_2$ changes the invariant $(\Rea z)^2$ with
+nonzero derivative:
+\[
+\begin{gathered}
+(\Rea b_\varphi)^2=-p_0^2\cos^2\varphi+p_2^2
+=(t^2+p_2^2)\sin^2\varphi-t^2,\\
+\partial_{p_2}(\Rea b_\varphi)^2=2p_2\sin^2\varphi\ne0 .
+\end{gathered}
+\]
+Including $t$ as a parameter, the submersion
+theorem and Fubini's theorem give, near each point of $\mathscr Z$, a
+push-forward density that is continuous in $(t,z)$, $t=0$ included,
+and positive (the preimages have $p_2\ge\rho_0\ge4$, uniformly
+away from the apex of the cone, so $\dd\mathfrak m_t$ and the local
+Jacobians stay regular down to $t=0$); compactness of $\mathscr Z$ gives a finite cover, one
+smooth Lorentz density supported in the open set
+$\{\norm{\mathcal L^{-1}}_{\mathrm E}<32/\sin\varphi\}$, and $\delta_c>0$.
+The charts come from the holomorphic implicit function theorem applied
+to $z\cdot z=-t^2$ in a coordinate $z_k$ with $\abs{z_k}\ge4/\sqrt3$,
+uniformly over the compact set $\mathscr Z$; the Jacobian bounds and
+the sub-mean-value property of $F$ composed with the chart give the
+last claim.
+\end{proof}
+
+\begin{lemma}[Null analytic discs]\label{lem:null-discs}
+If $z\in H_\mu^{\C}$, $\Energy\ge\mu$ and $\abs z_{\mathrm E}\le2\Energy$,
+there is an analytic disc $\zeta\mapsto z(\zeta)$ in $H_\mu^{\C}$,
+$\abs\zeta\le1$, with $z(0)=z$, whose boundary points satisfy
+$\abs{\Rea\bz(\zeta)}\ge6\Energy$, $\abs{\Rea z_0(\zeta)}\le2\Energy$,
+$(\Rea z(\zeta))^2\ge32\Energy^2$ and $\abs{z(\zeta)}_{\mathrm E}<14\Energy$;
+in particular $(\mu/\Energy,z(\zeta)/\Energy)\in\mathscr Z$.
+\end{lemma}
+
+\begin{proof}
+Choose $\mathbf n\in\C^3$, $\mathbf n\ne0$, with $\bz\cdot\mathbf n=0$
+and $\mathbf n\cdot\mathbf n=0$ (an \emph{isotropic} vector): the
+first equation defines a complex subspace of dimension at least two,
+and a quadratic form on such a subspace has a nonzero isotropic
+vector. Normalizing, $\abs{\Rea\mathbf n}=\abs{\Ima\mathbf n}=1$ and
+$\Rea\mathbf n\perp\Ima\mathbf n$, so $\abs{\Rea(\zeta\mathbf n)}=1$
+for $\abs\zeta=1$. The disc $z(\zeta)=z+8\Energy\zeta(0,\mathbf n)$ lies
+in $H_\mu^{\C}$ because $\bz\cdot\mathbf n=\mathbf n\cdot\mathbf n=0$,
+and on its boundary $z_0$ is unchanged while
+$\abs{\Rea\bz(\zeta)}\ge8\Energy-\abs{\Rea\bz}\ge6\Energy$; the
+Minkowski-square bound follows, and
+$\abs{z(\zeta)}_{\mathrm E}\le(2+8\sqrt2)\Energy<14\Energy$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:evaluation}]
+Let $\sx$ be smooth with compact support in $U$, and write
+$\mu=t\Energy$ with $t\in(0,1]$; the substitution $p=\Energy p'$ scales
+the shell measure by $\Energy^2$. For $(t,z)\in\mathscr Z$, the
+plurisubharmonic function $F=\abs{\Psi_\sx(\Energy\,\cdot)}^2$, the chart
+bound of Lemma~\ref{lem:regular-patches}, the push-forward bound on
+$\mathcal B_z\subset\mathcal V_t$, the insertion of the factor
+$e^{2\ell_cT(\Energy M_c-p_0)\sin\varphi}\ge1$ on $\{p_0\le\Energy M_c\}$, and
+\eqref{eq:averaged-wedges} with $\mathscr L=\mathscr L_c$,
+$\ell_{\mathscr L}=\ell_c=64/\sin\varphi$ (which exceeds
+$\sqrt2\cdot32/\sin\varphi$, as required) give
+\[
+\abs{\Psi_\sx(\Energy z)}^2
+\le\frac{C_{\mathrm{sub}}\Energy^{-2}e^{2\ell_cM_cT\Energy\sin\varphi}}
+{\delta_c\vol(\mathcal B_z)}
+\norm{G_U^{1/2-c}\overline G_U^{\,c}\sx}^2,
+\]
+with $\ell_cM_c\sin\varphi=2048/\sin(2\pi c)=\lambda_c$ and
+$C_c=\max\{1,C_{\mathrm{sub}}/(\delta_c\inf_{\mathscr Z}\vol(\mathcal B_z))\}$,
+finite because $\vol(\mathcal B_z)\ge\vol(B_{r_c})$. For a general $z$ with
+$\abs z_{\mathrm E}\le2\Energy$, Lemma~\ref{lem:null-discs} and the mean
+value property of holomorphic functions,
+$\abs{\Psi_\sx(z)}\le\max_{\abs\zeta=1}\abs{\Psi_\sx(z(\zeta))}$,
+reduce the claim to boundary points of the form $\Energy z'$ with
+$(t,z')\in\mathscr Z$.
+Density of smooth sources and continuity of both sides in $\sx$ give
+the statement on $\Hh_{\mu,U}$. The set $U$ enters only through
+$U\subset B_T(0)$.
+\end{proof}
+
+\emph{Weighted moments.---}For a multi-index $\alpha\in\N^3$ and a
+centre $\bx_0$, let $\mathsf m_\alpha^f(\sx)=\int(\bx-\bx_0)^\alpha f(\bx)\dd^3x$
+and $\mathsf m_\alpha^g(\sx)=\int({\bx-\bx_0})^\alpha g(\bx)\dd^3x$. For
+$\frac12\le b<1$ fix
+\begin{equation}
+\Lambda_b=\frac{2^{15}}{\sin(\pi b)}=16\lambda_{b/2},\qquad
+B_b=5\Lambda_b .
+\label{eq:Lambda}
+\end{equation}
+
+\begin{lemma}[Weighted moments]\label{lem:moments}
+Let $\frac12\le b<1$. There is a finite $M_b$, depending only on $b$,
+such that for all $\mu,T>0$, all $\bx_0\in\R^3$, every nonempty bounded
+open $U\subset B_T(\bx_0)$, every $\sx\in\Hh_{\mu,U}$ and every
+$\alpha\in\N^3$,
+\begin{equation}
+\begin{aligned}
+\abs{\mathsf m_\alpha^f(\sx)}
+&\le M_b\frac{T}{1+\mu T}e^{\Lambda_b\mu T}(B_bT)^{\abs\alpha}
+\norm{\Res_U^{\,b}\sx},\\
+\abs{\mathsf m_\alpha^g(\sx)}
+&\le M_b\frac{T^2}{(1+\mu T)^2}e^{\Lambda_b\mu T}(B_bT)^{\abs\alpha}
+\norm{\Res_U^{\,b}\sx}.
+\end{aligned}
+\label{eq:moments}
+\end{equation}
+\end{lemma}
+
+By the Riesz representation theorem, each bound says that there is a
+vector $\mathsf u\in\Hh_{\mu,U}$, of norm at most the stated constant,
+with $\mathsf m_\alpha^\bullet(\sx)=\ip{\mathsf u}{\Res_U^b\sx}$ for all
+$\sx$.
+
+\begin{proof}[Proof of Lemma~\ref{lem:moments}]
+Work in coordinates centred at $\bx_0$; translation preserves
+$\varsigma$, $\cov_\mu$ and $\Res_U$. By \eqref{eq:symmetric-evaluation},
+for $\Energy\ge\mu$,
+$\abs{\Psi_\sx(z)}\le\bigl(C_{(1-b)/2}^{1/2}+C_{b/2}^{1/2}\bigr)\Energy^{-1}e^{\lambda_{b/2}T\Energy}\norm{\Res_U^b\sx}$
+on $\{z\in H_\mu^{\C}:\abs z_{\mathrm E}\le2\Energy\}$. For $\bz\in\C^3$ take
+$\Energy=\mu+1/(\Lambda_bT)+\abs\bz$. The two shell points
+$z_\pm=(\pm\sqrt{\mu^2+\bz\cdot\bz},\bz)$ have
+$\abs{z_\pm}_{\mathrm E}<\sqrt2\Energy$, and
+$\hat f(\bz)=\frac12(\Psi_\sx(z_+)+\Psi_\sx(z_-))$, so
+$\abs{\hat f(\bz)}\le\bigl({C_{(1-b)/2}^{1/2}+C_{b/2}^{1/2}}\bigr)\Energy^{-1}e^{\lambda_{b/2}T\Energy}\norm{\Res_U^b\sx}$.
+For $\hat g$, the difference ${\Psi_\sx(z_+)-\Psi_\sx(z_-)}=2\ii\sqrt{\mu^2+\bz\cdot\bz}\,\hat g(\bz)$
+is useless near zero energy, so move $z_1$ on a circle: for
+$\abs\zeta=1$ put $\bz_\zeta=(z_1+8\Energy\zeta,z_2,z_3)$. Then
+$\abs{\mu^2+\bz_\zeta\cdot\bz_\zeta}\ge47\Energy^2$, the shell points
+over $\bz_\zeta$ have Euclidean norm below $14\Energy$, and
+\eqref{eq:symmetric-evaluation} at the energy $7\Energy$ gives
+$\abs{\hat g(\bz_\zeta)}\le\bigl(C_{(1-b)/2}^{1/2}+C_{b/2}^{1/2}\bigr)(7\sqrt{47})^{-1}\Energy^{-2}e^{7\lambda_{b/2}T\Energy}\norm{\Res_U^b\sx}$;
+the mean value property of $\zeta\mapsto\hat g(\bz_\zeta)$ transfers
+the bound to $\hat g(\bz)$.
+Since $\Lambda_b=16\lambda_{b/2}$, both exponents are at most
+$\Lambda_bT\Energy=\Lambda_b\mu T+1+\Lambda_bT\abs\bz$, and
+$\Energy^{-1}\le\Lambda_bT/(1+\mu T)$; so, for all $\bz\in\C^3$,
+\[
+\begin{gathered}
+\abs{\hat f(\bz)}\le e\bigl(C_{(1-b)/2}^{1/2}+C_{b/2}^{1/2}\bigr)\Lambda_b\frac T{1+\mu T}\,
+e^{\Lambda_bT(\mu+\abs\bz)}\norm{\Res_U^b\sx},\\
+\abs{\hat g(\bz)}\le e\bigl(C_{(1-b)/2}^{1/2}+C_{b/2}^{1/2}\bigr)\Lambda_b^2\frac{T^2}{(1+\mu T)^2}\,
+e^{\Lambda_bT(\mu+\abs\bz)}\norm{\Res_U^b\sx}.
+\end{gathered}
+\]
+Finally $\partial^\alpha\hat f(0)=(-\ii)^{\abs\alpha}\mathsf m_\alpha^f(\sx)$,
+and for $\abs\alpha\ge1$ the Cauchy estimate on the polydisc of radius
+$\abs\alpha/(\sqrt3\Lambda_bT)$, where $e^{\Lambda_bT\abs\bz}\le e^{\abs\alpha}$,
+gives the factor $\alpha!(\sqrt3\Lambda_bT/\abs\alpha)^{\abs\alpha}e^{\abs\alpha}
+\le(e\sqrt3\Lambda_bT)^{\abs\alpha}\le(B_bT)^{\abs\alpha}$; for
+$\alpha=0$ the displayed bounds at $\bz=0$ are \eqref{eq:moments}
+directly. Thus
+\eqref{eq:moments} holds with
+$M_b=e\bigl(C_{(1-b)/2}^{1/2}+C_{b/2}^{1/2}\bigr)\Lambda_b^2$.
+\end{proof}
+
+\section{The forward and reverse estimates}\label{app:estimates}
+
+Throughout this appendix, $C$ is a universal constant whose value may
+change from occurrence to occurrence; subscripted constants keep their
+values.
+
+\emph{Covariance kernels.---}Away from the diagonal, the covariance
+\eqref{eq:covariance} is given by integral kernels: for sources with
+disjoint supports,
+$\cov_\mu(\sx,\sy)=\iint[f(\bx)\mathfrak X_\mu(\by-\bx)f'(\by)
++g(\bx)\mathfrak P_\mu({\by-\bx})g'(\by)]\dd^3x\dd^3y$ with
+\begin{equation}
+\mathfrak X_\mu(\mathbf w)=\frac{\mu}{4\pi^2\varrho}K_1(\mu\varrho),\qquad
+\mathfrak P_\mu(\mathbf w)=-\frac{\mu^2}{4\pi^2\varrho^2}K_2(\mu\varrho),
+\label{eq:kernels}
+\end{equation}
+where $\varrho=\sqrt{\mathbf w\cdot\mathbf w}$ and $K_1,K_2$ are
+modified Bessel functions of the second kind \cite{DLMF}. These formulas come from the
+heat-kernel representation of $(\mu^2-\nabla^2)^{-1/2}$ and the integral
+representation $K_1(x)=(x/4)\int_0^\infty t^{-2}e^{-t-x^2/(4t)}\dd t$
+\cite[Eq.~10.32.10]{DLMF}, and $\mathfrak P_\mu=(-\nabla^2+\mu^2)\mathfrak X_\mu$
+by the Bessel recurrences. From $K_j(x)=\int_0^\infty e^{-x\cosh u}\cosh(ju)\dd u$
+\cite[Eq.~10.32.9]{DLMF}, for $x>0$,
+\begin{equation}
+xK_1(x)\le3(1+x)^{1/2}e^{-x},\qquad x^2K_2(x)\le8(1+x)^{3/2}e^{-x},
+\label{eq:Bessel-scaled}
+\end{equation}
+and $\abs{K_j(z)}\le K_j(\Rea z)$ for $\Rea z>0$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:forward}]
+Measure $\bx$ and $\by$ from the centres of the two balls, so that
+$\mathbf w=s\eone+\by-\bx$, and put $d_{0,b}=4\sqrt3\,B_b$ and
+$S_b=2(2\Lambda_b+2d_{0,b})=(4+80\sqrt3)\,\Lambda_b$, which is at
+least $4$ and $4d_{0,b}$; let $s\ge S_b$ and $\xi=\mu s$.
+
+\emph{Step 1: the kernels on a polydisc.} On the six-variable polydisc
+(a product of discs, one per complex coordinate)
+$\abs{x_j},\abs{y_j}\le2B_b$ one has
+$\mathbf w\cdot\mathbf w=s^2(1+\epsilon)$ with
+$\abs\epsilon\le2d_{0,b}/s+(d_{0,b}/s)^2\le9/16$ since
+$s\ge4d_{0,b}$, so the principal branch
+$\varrho=s\sqrt{1+\epsilon}$ is holomorphic there with
+$\Rea\varrho\ge s-2d_{0,b}\ge s/2$ and $\abs\varrho\le5s/4$. With
+\eqref{eq:Bessel-scaled}, the polydisc suprema of the two kernels are
+at most $Cs^{-2}(1+\xi)^{1/2}e^{-\xi+2\mu d_{0,b}}$ and
+$Cs^{-4}({1+\xi})^{3/2}e^{-\xi+2\mu d_{0,b}}$, and their Taylor coefficients
+$c^f_{\alpha\beta},c^g_{\alpha\beta}$ in $\bx^\alpha\by^\beta$ are
+bounded by these suprema times $(2B_b)^{-\abs\alpha-\abs\beta}$.
+The series converge absolutely on the unit balls.
+
+\emph{Step 2: the rank-one series.} For smooth real sources $\sx,\sy$
+in the two balls, term-by-term integration gives
+\[
+\cov_\mu(\sx,\sy)=\sum_{\alpha,\beta}\bigl(c^f_{\alpha\beta}\mathsf m^f_\alpha(\sx)\mathsf m^f_\beta(\sy)
++c^g_{\alpha\beta}\mathsf m^g_\alpha(\sx)\mathsf m^g_\beta(\sy)\bigr).
+\]
+By Lemma~\ref{lem:moments} at $T=1$ and the Riesz representation,
+there are, for $\bullet\in\{f,g\}$, vectors
+$\mathsf u^\bullet_{A,\alpha}$, $\mathsf u^\bullet_{B,\beta}$ with
+$\mathsf m^\bullet_\alpha(\sx)=\ip{\mathsf u^\bullet_{A,\alpha}}{\Res_A^b\sx}$,
+$\mathsf m^\bullet_\beta(\sy)=\ip{\mathsf u^\bullet_{B,\beta}}{\Res_B^b\sy}$,
+of norms at most $M_be^{\Lambda_b\mu}B_b^{\abs\alpha}/({1+\mu})$ for
+$\bullet=f$ and $M_be^{\Lambda_b\mu}B_b^{\abs\alpha}/(1+\mu)^2$ for
+$\bullet=g$. Put
+$X_{b,\mu,s}=\sum_{\bullet,\alpha,\beta}c^\bullet_{\alpha\beta}\,
+\mathsf u^\bullet_{A,\alpha}\ip{\mathsf u^\bullet_{B,\beta}}{\cdot}$.
+Since $B_b/(2B_b)=\tfrac12$ and
+$\sum_{\alpha,\beta}2^{-\abs\alpha-\abs\beta}=64$, the series converges
+in trace norm, with
+\[
+\begin{split}
+\norm{X_{b,\mu,s}}_1
+\le{}& CM_b^2e^{(2\Lambda_b+2d_{0,b})\mu-\xi}\\
+&\times\Bigl[\frac{s^{-2}(1+\xi)^{1/2}}{(1+\mu)^2}
++\frac{s^{-4}(1+\xi)^{3/2}}{(1+\mu)^4}\Bigr].
+\end{split}
+\]
+
+\emph{Step 3: the constant and the identification.} Since
+$s\ge S_b=2(2\Lambda_b+2d_{0,b})$, one has
+$(2\Lambda_b+2d_{0,b})\mu\le\xi/2$, so the right side is at most
+$2CM_b^2s^{-2}(1+\xi)^{3/2}e^{-\xi/2}\le F_bs^{-2}$ with
+$F_b=2\cdot3^{3/2}e^{-1}CM_b^2$, the supremum of $(1+\xi)^{3/2}e^{-\xi/2}$
+being attained at $\xi=2$. On pairs of smooth real sources,
+$\ip\sx{\Res_A^bX_{b,\mu,s}\Res_B^b\sy}$ equals the series of Step~2,
+hence $\cov_\mu(\sx,\sy)=\ip\sx{\mathsf C_{\mu,s}\sy}$; by sesquilinearity and
+density the two bounded operators coincide.
+\end{proof}
+
+\emph{Smooth kernels in the joint norm.---}For $s\ge5$, let $K$ be a
+kernel on $(B_2(0)\cup B_2(s\eone))^2$ with derivatives of order at
+most two in each variable bounded by $M_0$. Fix a smooth function equal
+to $1$ on $U_s$, supported within distance $1$ of it and with
+$s$-independent derivative bounds, and let $K^\circ$ be $K$ multiplied
+by that function in each variable. The Hilbert--Schmidt norm (the
+square root of the sum of the squared singular values) of
+$(1-\nabla^2)^{1/4}K^\circ(1-\nabla^2)^{1/4}$ is bounded by $CM_0$,
+and the $L^2(\R^3)$ comparisons
+$\norm{(1-\nabla^2)^{-1/4}f}_{L^2}
+\le\max\{1,\mu\}^{1/2}\norm{({\mu^2-\nabla^2})^{-1/4}f}_{L^2}$ and,
+for $g$ supported in $U_s$,
+$\norm g_{L^2}^2\le2\norm{(\mu^2-\nabla^2)^{1/4}g}_{L^2}^2$ (less
+than half of $\norm g_{L^2}^2$ sits at frequencies $\abs\bp<1$, by the
+volume of $U_s$) give, for sources $\sx=(f,g)$, $\sy=(f',g')$ supported
+in $U_s$ and in the joint norm,
+\begin{equation}
+\begin{gathered}
+\Bigl|\iint fKf'\Bigr|\le C\max\{1,\mu\}M_0\norm\sx\norm\sy,\\
+\Bigl|\iint gKg'\Bigr|\le CM_0\norm\sx\norm\sy ,
+\end{gathered}
+\label{eq:smooth-kernel}
+\end{equation}
+with $C$ independent of $s\ge5$ and $\mu$.
+
+The polynomial \emph{selectors}
+\begin{equation}
+\mathsf p_N(z)=(1-z)^N\sum_{k=0}^{N-1}\binom{N+k-1}kz^k
+\label{eq:selectors}
+\end{equation}
+have degree $2N-1$; $\mathsf p_N-1$ vanishes to order $N$ at $z=0$ and
+$\mathsf p_N$ vanishes to order $N$ at $z=1$. So
+$\mathsf p_N(x_1/s)\approx1$ near the ball $B_1(0)$ and
+$\mathsf p_N(x_1/s)\approx0$ near $B_1(s\eone)$: multiplying a kernel
+by such factors switches it on between the two balls and off within
+each ball, as the kernel of $\JointD_{\mu,s}$ requires.
+
+\begin{lemma}[Polynomial increments]\label{lem:polynomial}
+There are universal finite constants
+$C_1,C_2,c_{\mathrm{pol}},K_{\mathrm{pol}}$ and $S_{\mathrm{pol}}$ such
+that for every $\mu>0$ and $s\ge S_{\mathrm{pol}}$, with $\xi=\mu s$,
+there are real self-adjoint finite-rank operators $\mathsf F_n$ on
+$\Hh_{\mu,U_s}$ with polynomial kernels, $\mathsf F_0=0$ and
+$\mathsf F_n\to\JointD_{\mu,s}$ in operator norm, whose increments
+$\mathsf G_n=\mathsf F_{n+1}-\mathsf F_n$ satisfy
+\begin{align}
+\norm{\mathsf G_n}_1&\le C_1(n+1)^3s^{-2}(1+\xi)^2e^{-\xi/2}(c_{\mathrm{pol}}/s)^n,
+\label{eq:increment-unweighted}\\
+\mathsf G_n&=\JointRes^{1/2}\mathsf B_n\JointRes^{1/2},\quad
+\norm{\mathsf B_n}_1\le C_2e^{-\xi/2}e^{2\Lambda_0\mu T}K_{\mathrm{pol}}^n,
+\label{eq:increment-weighted}
+\end{align}
+where $\Lambda_0=\Lambda_{1/2}=2^{15}$ and, here and below,
+$B_{1/2},M_{1/2}$ are the constants of Lemma~\ref{lem:moments} at
+$b=\frac12$, $T=s/2+1$ is the radius of a ball about $s\eone/2$
+containing $U_s$ (the value at which Lemma~\ref{lem:moments} is
+applied), and the $\mathsf B_n$ are real self-adjoint of finite rank.
+\end{lemma}
+
+\begin{proof}[Proof (condensed)]
+By \eqref{eq:D-joint} and \eqref{eq:kernels}, the kernel of
+$\JointD_{\mu,s}$ is $-\mathfrak X_\mu(\by-\bx)$ on field sources and
+$-\mathfrak P_\mu(\by-\bx)$ on momentum sources when $\bx$ and $\by$
+lie in different balls, and $0$ when they lie in the same ball. The approximating kernel $q_{n,\bullet}$ below is
+a Taylor polynomial of the cross kernel, multiplied by selectors that
+keep it only between the balls.
+In the coordinates $\mathbf u=\bx/s$, $\mathbf v=\by/s$, with
+components $u_j,v_j$, the cross kernels
+$\mathfrak X_\mu(s(\mathbf v-\mathbf u))$ and
+$\mathfrak P_\mu(s(\mathbf v-\mathbf u))$ are holomorphic
+on the polydisc of radius $2r_0=1/50$ (so $r_0=1/100$) about
+$(0,\eone)$, with suprema
+$M_f=Cs^{-2}(1+\xi)^{1/2}e^{-\xi/2}$ and
+$M_g=Cs^{-4}(1+\xi)^{3/2}e^{-\xi/2}$ by \eqref{eq:Bessel-scaled}, and
+Taylor coefficients bounded by $M_\bullet r_0^{-\abs\alpha-\abs\beta}$.
+Let $\mathcal T_{n,\bullet}$ be their Taylor polynomials of degree
+$n-1$ in the six variables $(\mathbf u,\mathbf v-\eone)$ about the
+origin, and define the polynomial kernel
+\begin{align*}
+q_{n,\bullet}(\bx,\by)={}&-\mathsf p_{2n}(u_1)\mathsf p_{2n}(1-v_1)\mathcal T_{n,\bullet}(\mathbf u,\mathbf v-\eone)\\
+&-\mathsf p_{2n}(v_1)\mathsf p_{2n}(1-u_1)\mathcal T_{n,\bullet}(\mathbf v,\mathbf u-\eone),
+\end{align*}
+real and symmetric, of degree at most $9n$, with the selectors
+\eqref{eq:selectors}; $\mathsf F_n$ is the operator with the
+field-source form of $q_{n,f}$ plus the momentum-source form of
+$q_{n,g}$. Its form depends on $\sx$ only through the moments of
+degree at most $9n$, so $\rank\mathsf F_n\le C(n+1)^3$. The endpoint
+bounds $\abs{\mathsf p_N(z)-1}\le(4r(1+r))^N/(2(1-2r))$ for
+$\abs z\le r$ and $\abs{\mathsf p_N(z)}\le(4r(1+r))^N$ for
+$\abs{z-1}\le r$, $r<\frac12$, together with the Taylor tail in
+six variables,
+\[
+\sum_{k\ge n}\binom{k+5}5\Bigl(\frac r{r_0}\Bigr)^k
+\le C(n+1)^5\Bigl(\frac r{r_0}\Bigr)^n,\qquad r\le\frac{r_0}2,
+\]
+applied at $r=3/s$, show
+that on the radius-$3/s$ complex neighbourhoods of the four blocks
+$B_2(\cdot)\times B_2(\cdot)$ of $(B_2(0)\cup B_2(s\eone))^2$, the
+target kernel $\mathfrak K_\bullet$ of $\JointD_{\mu,s}$, equal to
+$-\mathfrak X_\mu$ (for $\bullet=f$) and $-\mathfrak P_\mu$ (for
+$\bullet=g$) on the two cross blocks $B_2(0)\times B_2(s\eone)$ and
+$B_2(s\eone)\times B_2(0)$, and to zero on the two diagonal blocks,
+satisfies
+$\sup\abs{\mathfrak K_\bullet-q_{n,\bullet}}\le C(n+1)^6M_\bullet(c_0/s)^n$
+with a universal $c_0\ge3/r_0$. The four blocks separate as
+follows: on its own cross block, a summand of $q_{n,\bullet}$ differs
+from the target by the Taylor tail plus the selector defects
+$\mathsf p_{2n}-1$; on each of the other three blocks, where the
+nonzero target (if any) is matched by the other summand, the evaluated
+Taylor polynomial is finite with at most geometric coefficient growth,
+$\abs{\mathcal T_{n,\bullet}}\le C(n+1)^5M_\bullet(2/r_0)^n$ there,
+while at least one of its selector factors sits at its order-$2n$ zero
+and is bounded by $(4r(1+r))^{2n}\le(C/s)^{2n}$, which absorbs the
+growth after enlarging $c_0$; no convergence of the Taylor series
+outside its polydisc is used.
+Then Cauchy estimates bound the derivatives of order at most two on the
+real blocks by $CM_\bullet(c_{\mathrm{pol}}/s)^n$ with
+$c_{\mathrm{pol}}=2^6c_0$. By \eqref{eq:smooth-kernel},
+$\norm{\JointD_{\mu,s}-\mathsf F_n}\le Cs^{-2}(1+\xi)^2e^{-\xi/2}(c_{\mathrm{pol}}/s)^n$,
+which gives the convergence with
+$S_{\mathrm{pol}}=\max\{5,2c_{\mathrm{pol}}\}$ (the bound
+\eqref{eq:smooth-kernel} requires $s\ge5$; and since $c_0\ge3/r_0$,
+$s\ge2c_{\mathrm{pol}}$ keeps the complex neighbourhoods of the
+blocks, of radius $3/s$ in the scaled variables, inside the polydisc
+of holomorphy), and
+multiplied by the rank of $\mathsf G_n$ gives
+\eqref{eq:increment-unweighted}. For \eqref{eq:increment-weighted},
+expand $q_{n+1,\bullet}-q_{n,\bullet}$ in the midpoint monomials
+$(({\bx-s\eone/2})/s)^\alpha(({\by-s\eone/2})/s)^\beta$; the coefficient sums
+are at most $CM_\bullet K_{\mathrm{mid}}^n$ for a universal
+$K_{\mathrm{mid}}$, because the selectors and shifts multiply
+coefficient sums by at most geometric factors. Lemma~\ref{lem:moments}
+at $b=\frac12$, with $U=U_s\subset B_T(s\eone/2)$, $T=s/2+1\le s$,
+bounds each normalized moment
+$s^{-\abs\alpha}\mathsf m^\bullet_\alpha$ by
+$M_{1/2}\,T(1+\mu T)^{-1}e^{\Lambda_0\mu T}B_{1/2}^{\abs\alpha}$ for
+$\bullet=f$, and with $T^2(1+\mu T)^{-2}$ in place of
+$T(1+\mu T)^{-1}$ for $\bullet=g$, in the sense that the moment is
+$\ip{\psi}{\JointRes^{1/2}\,\cdot\,}$ for a vector $\psi$ of at most
+that norm, so the increment is
+$\JointRes^{1/2}\mathsf B_n\JointRes^{1/2}$ with $\mathsf B_n$ a finite combination of
+rank-one operators of total trace norm at most
+$C(1+K_{\mathrm{mid}})B_{1/2}^9M_{1/2}^2e^{2\Lambda_0\mu T}(K_{\mathrm{mid}}B_{1/2}^9)^n$
+times $[M_fT^2(1+\mu T)^{-2}+M_gT^4(1+\mu T)^{-4}]\le Ce^{-\xi/2}$,
+using $T\le s$ and $1+\mu T\ge(1+\xi)/2$. This is
+\eqref{eq:increment-weighted} with $K_{\mathrm{pol}}=K_{\mathrm{mid}}B_{1/2}^9$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:reverse}]
+Let $\theta=1/(4\Lambda_0)=2^{-17}$, so that $a=\theta/2$ and
+$\gamma=2(1-\theta)$. For each increment, the analytic family
+$z\mapsto\JointRes^{(1-z)/2}\mathsf B_n\JointRes^{(1-z)/2}$ on
+$0\le\Rea z\le1$ is continuous in trace norm and holomorphic inside
+(it is a finite combination of rank-one operators, and
+$w\mapsto\JointRes^w$ is strongly continuous on $\Rea w\ge0$), with
+boundary trace norms $\norm{\mathsf G_n}_1$ at $\Rea z=0$, where the
+imaginary powers are unitary, and $\norm{\mathsf B_n}_1$ at $\Rea z=1$. Hadamard's
+three-lines theorem for the trace norm \cite{Simon05} at $z=\theta$
+gives
+$Y_n=\JointRes^{(1-\theta)/2}\mathsf B_n\JointRes^{(1-\theta)/2}$ with
+$\norm{Y_n}_1\le\norm{\mathsf G_n}_1^{1-\theta}\norm{\mathsf B_n}_1^\theta$ and
+$\mathsf G_n=\JointRes^aY_n\JointRes^a$. Inserting
+\eqref{eq:increment-unweighted} and \eqref{eq:increment-weighted}, with
+$2\Lambda_0\theta=\frac12$, $s^{-2(1-\theta)}=s^{-\gamma}$ and
+$\mu T/2\le3\xi/8$ for $s\ge4$,
+\[
+\norm{Y_n}_1\le C_1^{1-\theta}C_2^\theta s^{-\gamma}(1+\xi)^2e^{-\xi/8}
+(n+1)^3\bigl[(c_{\mathrm{pol}}/s)^{1-\theta}K_{\mathrm{pol}}^\theta\bigr]^n .
+\]
+Choose $S_{\mathrm{rev}}\ge\max\{S_{\mathrm{pol}},5\}$ so large that
+the bracket is at most $\frac12$ for $s\ge S_{\mathrm{rev}}$. Since
+$\sum_{n\ge0}(n+1)^32^{-n}=52$ and $\sup_{\xi\ge0}(1+\xi)^2e^{-\xi/8}\le256$,
+the series $Y_{\mu,s}=\sum_nY_n$ converges in trace norm with
+$\norm{Y_{\mu,s}}_1\le\mathcal J_0s^{-\gamma}$,
+$\mathcal J_0=52\cdot256\,C_1^{1-\theta}C_2^\theta$. Each $Y_n$ is
+self-adjoint because $\mathsf B_n$ is, and
+$\JointRes^aY_{\mu,s}\JointRes^a=\sum_n\mathsf G_n=\lim_N\mathsf F_{N+1}=\JointD_{\mu,s}$.
+\end{proof}
+
+% Reference list ragged right; no line break right after "doi:", "arXiv:"
+% or "https:", and breaks after hyphens in URLs only where unavoidable.
+\raggedright
+\def\UrlNoBreaks{\do\(\do\[\do\{\do\<\do\:}\mathchardef\UrlBigBreakPenalty=900\relax
+\bibliography{vacuum-bell}
+
+\end{document}
+

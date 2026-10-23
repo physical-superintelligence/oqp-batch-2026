@@ -1,0 +1,1206 @@
+✔ [9026/9103] Built CausalNonpurifiability.Definitions.EffectCore (2.5s)
+✔ [9027/9103] Built CausalNonpurifiability.Definitions.Causality (2.7s)
+✔ [9028/9103] Built CausalNonpurifiability.Certificates.Soundness (2.8s)
+✔ [9029/9103] Built CausalNonpurifiability.Linear.Indices (2.9s)
+⚠ [9030/9103] Built CausalNonpurifiability.Purification.Sector (3.5s)
+warning: CausalNonpurifiability/Purification/Sector.lean:41:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.star_dotProduct_mulVec_adjoint`:
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: CausalNonpurifiability/Purification/Sector.lean:49:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.star_dotProduct_eq_star`:
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: CausalNonpurifiability/Purification/Sector.lean:74:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: CausalNonpurifiability/Purification/Sector.lean:55:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.exists_orthogonal_split`:
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: CausalNonpurifiability/Purification/Sector.lean:78:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: CausalNonpurifiability/Purification/Sector.lean:97:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: CausalNonpurifiability/Purification/Sector.lean:78:8: Unused tactic linter: `exact
+  (by
+    have hmem : (WithLp.toLp 2 e₀ : EuclideanSpace ℂ P) ∈ K' ⊔ K'.orthogonal :=
+      by
+      rw [Submodule.sup_orthogonal_of_completeSpace]
+      exact Submodule.mem_top
+    obtain ⟨y, hy, z, hz, h⟩ := Submodule.mem_sup.mp hmem
+    exact ⟨y, hy, z, hz, h.symm⟩)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: CausalNonpurifiability/Purification/Sector.lean:97:10: Unused tactic linter: `exact (Submodule.mem_orthogonal K' z).mp hz _ hu'` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: CausalNonpurifiability/Purification/Sector.lean:108:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.range_mem_sectorSpace`:
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: CausalNonpurifiability/Purification/Sector.lean:112:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.mulVec_mem_sectorSpace`:
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: CausalNonpurifiability/Purification/Sector.lean:117:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.sectorSpace_le`:
+  [DecidableEq P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9031/9103] Built CausalNonpurifiability.Data.Local (5.4s)
+✔ [9032/9103] Built CausalNonpurifiability.Definitions.OCBGame (2.8s)
+✔ [9033/9103] Built CausalNonpurifiability.Linear.OpNormDefinition (2.7s)
+⚠ [9034/9103] Built CausalNonpurifiability.Definitions.HeisenbergCore (2.9s)
+warning: CausalNonpurifiability/Definitions/HeisenbergCore.lean:40:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.heis_add`:
+  [Fintype N]
+  [DecidableEq K]
+  [DecidableEq N]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype N] [DecidableEq K] [DecidableEq N] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: CausalNonpurifiability/Definitions/HeisenbergCore.lean:45:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.heis_smul`:
+  [Fintype N]
+  [DecidableEq K]
+  [DecidableEq N]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype N] [DecidableEq K] [DecidableEq N] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9035/9103] Built CausalNonpurifiability.Linear.Positive (3.3s)
+✔ [9036/9103] Built CausalNonpurifiability.Definitions.PortsSwapCore (2.5s)
+✔ [9037/9103] Built CausalNonpurifiability.Linear.PartialTrace (3.2s)
+⚠ [9038/9103] Built CausalNonpurifiability.Classical.Transport (3.9s)
+warning: CausalNonpurifiability/Classical/Transport.lean:155:6: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Classical/Transport.lean:161:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Classical/Transport.lean:235:19: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Classical/Transport.lean:237:23: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: CausalNonpurifiability/Classical/Transport.lean:251:25: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Classical/Transport.lean:253:25: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Classical/Transport.lean:281:19: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Classical/Transport.lean:283:23: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: CausalNonpurifiability/Classical/Transport.lean:300:21: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Classical/Transport.lean:302:25: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: CausalNonpurifiability/Classical/Transport.lean:304:25: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Classical/Transport.lean:336:83: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+✔ [9039/9103] Built CausalNonpurifiability.StatementCore (2.2s)
+✔ [9040/9103] Built CausalNonpurifiability.Definitions.ProcessFamily (2.4s)
+✔ [9041/9103] Built CausalNonpurifiability.Definitions.Bias (2.4s)
+✔ [9042/9103] Built CausalNonpurifiability.Definitions.OCB (2.4s)
+✔ [9043/9103] Built CausalNonpurifiability.Certificates.QubitCore (2.5s)
+✔ [9044/9103] Built CausalNonpurifiability.Data.QubitCore (2.5s)
+✔ [9045/9103] Built CausalNonpurifiability.Linear.Unitary (3.1s)
+✔ [9046/9103] Built CausalNonpurifiability.Definitions.ProcessSwapCore (2.6s)
+✔ [9047/9103] Built CausalNonpurifiability.Linear.OpNorm (4.6s)
+✔ [9048/9103] Built CausalNonpurifiability.EC.SOS (3.1s)
+✔ [9049/9103] Built CausalNonpurifiability.Definitions.SharedInputMarginalsCore (2.5s)
+✔ [9050/9103] Built CausalNonpurifiability.Definitions.Purity (2.9s)
+⚠ [9051/9103] Built CausalNonpurifiability.Linear.Spectral (3.3s)
+warning: CausalNonpurifiability/Linear/Spectral.lean:256:57: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+⚠ [9052/9103] Built CausalNonpurifiability.Linear.Replacement (3.6s)
+warning: CausalNonpurifiability/Linear/Replacement.lean:155:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Linear/Replacement.lean:155:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Linear/Replacement.lean:156:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Linear/Replacement.lean:156:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Linear/Replacement.lean:164:59: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Linear/Replacement.lean:394:17: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Linear/Replacement.lean:406:22: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Linear/Replacement.lean:418:22: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Linear/Replacement.lean:504:29: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Linear/Replacement.lean:520:29: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+⚠ [9053/9103] Built CausalNonpurifiability.Purification.Unitary (2.5s)
+warning: CausalNonpurifiability/Purification/Unitary.lean:42:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.relabelMatrix_conjTranspose_mul`:
+  [Fintype α]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype α] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: CausalNonpurifiability/Purification/Unitary.lean:58:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.relabelMatrix_mul_conjTranspose`:
+  [Fintype β]
+  [DecidableEq α]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype β] [DecidableEq α] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: CausalNonpurifiability/Purification/Unitary.lean:87:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.relabelChoi_ne_zero`:
+  [Fintype α]
+  [Fintype β]
+  [DecidableEq α]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype α] [Fintype β] [DecidableEq α] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9054/9103] Built CausalNonpurifiability.Definitions.LinkAlgebra (2.4s)
+✔ [9055/9103] Built CausalNonpurifiability.Data.Qubit (3.9s)
+✔ [9056/9103] Built CausalNonpurifiability.Definitions.LVEquations (2.2s)
+✔ [9057/9103] Built CausalNonpurifiability.Definitions.ProcessCore (2.3s)
+✔ [9058/9103] Built CausalNonpurifiability.Definitions.SeparationCore (2.3s)
+✔ [9059/9103] Built CausalNonpurifiability.Definitions.OrderedMarginalCore (2.4s)
+✔ [9060/9103] Built CausalNonpurifiability.Definitions.ConvexFormCore (2.4s)
+✔ [9061/9103] Built CausalNonpurifiability.Definitions.InstrumentsCore (2.5s)
+✔ [9062/9103] Built CausalNonpurifiability.Definitions.BallCore (2.4s)
+⚠ [9063/9103] Built CausalNonpurifiability.Definitions.Process (3.0s)
+warning: CausalNonpurifiability/Definitions/Process.lean:127:4: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:130:15: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:135:19: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:151:15: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:154:19: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:175:15: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:177:18: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:186:15: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:188:18: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:236:15: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:239:18: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:271:4: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:279:15: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:284:18: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:308:15: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Definitions/Process.lean:311:18: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+✔ [9064/9103] Built CausalNonpurifiability.Definitions.CausalProcessCore (2.2s)
+✔ [9065/9103] Built CausalNonpurifiability.Definitions.Hypotheses (2.4s)
+✔ [9066/9103] Built CausalNonpurifiability.Definitions.OrderedMarginal (2.7s)
+✔ [9067/9103] Built CausalNonpurifiability.Definitions.ConvexForm (2.6s)
+⚠ [9068/9103] Built CausalNonpurifiability.Boundary.Order (2.9s)
+warning: CausalNonpurifiability/Boundary/Order.lean:65:30: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Boundary/Order.lean:95:41: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Boundary/Order.lean:105:41: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+✔ [9069/9103] Built CausalNonpurifiability.Boundary.Swap (3.0s)
+✔ [9070/9103] Built CausalNonpurifiability.Definitions.Instruments (3.2s)
+✔ [9071/9103] Built CausalNonpurifiability.Statement (2.7s)
+✔ [9072/9103] Built CausalNonpurifiability.Definitions.CausalProcess (2.7s)
+✔ [9073/9103] Built CausalNonpurifiability.Definitions.ExtensibleGeneral (3.2s)
+⚠ [9074/9103] Built CausalNonpurifiability.Definitions.Channels (3.8s)
+warning: CausalNonpurifiability/Definitions/Channels.lean:67:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Definitions/Channels.lean:70:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [9075/9103] Built CausalNonpurifiability.Boundary.Dilation (5.0s)
+warning: CausalNonpurifiability/Boundary/Dilation.lean:133:21: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Boundary/Dilation.lean:142:4: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Boundary/Dilation.lean:225:60: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Boundary/Dilation.lean:311:15: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Boundary/Dilation.lean:334:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Boundary/Dilation.lean:661:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Boundary/Dilation.lean:675:57: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Boundary/Dilation.lean:1037:74: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Boundary/Dilation.lean:1068:85: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Boundary/Dilation.lean:1070:50: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Boundary/Dilation.lean:1224:23: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Boundary/Dilation.lean:1232:19: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+⚠ [9076/9103] Built CausalNonpurifiability.Purification.Heisenberg (2.5s)
+warning: CausalNonpurifiability/Purification/Heisenberg.lean:40:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.heis_one`:
+  [Fintype N]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype N] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: CausalNonpurifiability/Purification/Heisenberg.lean:44:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.heis_mul`:
+  [DecidableEq N]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq N] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: CausalNonpurifiability/Purification/Heisenberg.lean:59:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.heis_conjTranspose`:
+  [Fintype N]
+  [DecidableEq K]
+  [DecidableEq N]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype N] [DecidableEq K] [DecidableEq N] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: CausalNonpurifiability/Purification/Heisenberg.lean:66:0: automatically included section variable(s) unused in theorem `CausalNonpurifiability.conjTranspose_mul_one_kronecker_apply`:
+  [Fintype N]
+  [DecidableEq K]
+  [DecidableEq N]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype N] [DecidableEq K] [DecidableEq N] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9077/9103] Built CausalNonpurifiability.EC.Compression (8.1s)
+⚠ [9078/9103] Built CausalNonpurifiability.Certificates.Qubit (11s)
+warning: CausalNonpurifiability/Certificates/Qubit.lean:754:48: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+⚠ [9079/9103] Built CausalNonpurifiability.Purification.Family (4.2s)
+warning: CausalNonpurifiability/Purification/Family.lean:50:10: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hx]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Family.lean:168:33: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:285:15: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:287:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:295:15: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:297:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:411:15: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:413:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:449:15: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:451:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:545:41: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:547:41: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:648:15: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:648:26: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:650:15: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:650:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:652:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:652:26: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:654:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:654:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:676:15: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:676:26: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:678:15: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:678:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:680:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:680:26: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:682:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Family.lean:682:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [9080/9103] Built CausalNonpurifiability.Purification.Separation (4.5s)
+warning: CausalNonpurifiability/Purification/Separation.lean:89:6: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:98:6: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:114:55: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:114:67: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:116:33: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:119:35: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:134:55: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:134:67: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:136:35: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:139:32: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:212:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:213:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:222:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:223:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:241:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:242:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:260:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:260:28: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:261:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:261:28: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:264:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:264:28: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:265:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:265:28: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:269:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:269:28: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:270:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:270:28: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:273:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:273:28: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:274:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:274:28: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:261:39: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_pos ht, if_pos ho, Matrix.sub_mul, Matrix.mul_sub, Matrix.mul_zero, Matrix.zero_mul,
+    Matrix.sub_apply, Matrix.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:262:8: This simp argument is unused:
+  Matrix.mul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_pos ht, if_pos ho, sub_zero, Matrix.sub_mul, Matrix.mul_sub, Matrix.zero_mul, Matrix.sub_apply,
+    Matrix.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:262:25: This simp argument is unused:
+  Matrix.zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_pos ht, if_pos ho, sub_zero, Matrix.sub_mul, Matrix.mul_sub, Matrix.mul_zero, Matrix.sub_apply,
+    Matrix.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:262:60: This simp argument is unused:
+  Matrix.zero_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_pos ht, if_pos ho, sub_zero, Matrix.sub_mul, Matrix.mul_sub, Matrix.mul_zero, Matrix.zero_mul,
+    Matrix.sub_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:265:65: This simp argument is unused:
+  Matrix.mul_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_pos ht, if_neg ho, sub_zero, Matrix.sub_mul, Matrix.mul_zero, Matrix.zero_mul, Matrix.sub_apply,
+    Matrix.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:266:8: This simp argument is unused:
+  Matrix.mul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_pos ht, if_neg ho, sub_zero, Matrix.sub_mul, Matrix.mul_sub, Matrix.zero_mul, Matrix.sub_apply,
+    Matrix.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:266:25: This simp argument is unused:
+  Matrix.zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_pos ht, if_neg ho, sub_zero, Matrix.sub_mul, Matrix.mul_sub, Matrix.mul_zero, Matrix.sub_apply,
+    Matrix.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:266:60: This simp argument is unused:
+  Matrix.zero_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_pos ht, if_neg ho, sub_zero, Matrix.sub_mul, Matrix.mul_sub, Matrix.mul_zero, Matrix.zero_mul,
+    Matrix.sub_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:270:49: This simp argument is unused:
+  Matrix.sub_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg ht, if_pos ho, sub_zero, Matrix.mul_sub, Matrix.mul_zero, Matrix.zero_mul, Matrix.sub_apply,
+    Matrix.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:271:8: This simp argument is unused:
+  Matrix.mul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg ht, if_pos ho, sub_zero, Matrix.sub_mul, Matrix.mul_sub, Matrix.zero_mul, Matrix.sub_apply,
+    Matrix.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:271:25: This simp argument is unused:
+  Matrix.zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg ht, if_pos ho, sub_zero, Matrix.sub_mul, Matrix.mul_sub, Matrix.mul_zero, Matrix.sub_apply,
+    Matrix.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:271:60: This simp argument is unused:
+  Matrix.zero_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg ht, if_pos ho, sub_zero, Matrix.sub_mul, Matrix.mul_sub, Matrix.mul_zero, Matrix.zero_mul,
+    Matrix.sub_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:274:49: This simp argument is unused:
+  Matrix.sub_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg ht, if_neg ho, sub_zero, Matrix.mul_sub, Matrix.mul_zero, Matrix.zero_mul, Matrix.sub_apply,
+    Matrix.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:274:65: This simp argument is unused:
+  Matrix.mul_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg ht, if_neg ho, sub_zero, Matrix.sub_mul, Matrix.mul_zero, Matrix.zero_mul, Matrix.sub_apply,
+    Matrix.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:275:8: This simp argument is unused:
+  Matrix.mul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg ht, if_neg ho, sub_zero, Matrix.sub_mul, Matrix.mul_sub, Matrix.zero_mul, Matrix.sub_apply,
+    Matrix.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:275:25: This simp argument is unused:
+  Matrix.zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg ht, if_neg ho, sub_zero, Matrix.sub_mul, Matrix.mul_sub, Matrix.mul_zero, Matrix.sub_apply,
+    Matrix.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:275:42: This simp argument is unused:
+  Matrix.sub_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg ht, if_neg ho, sub_zero, Matrix.sub_mul, Matrix.mul_sub, Matrix.mul_zero, Matrix.zero_mul,
+    Matrix.zero_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:275:60: This simp argument is unused:
+  Matrix.zero_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg ht, if_neg ho, sub_zero, Matrix.sub_mul, Matrix.mul_sub, Matrix.mul_zero, Matrix.zero_mul,
+    Matrix.sub_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/Purification/Separation.lean:318:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:318:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:319:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:319:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:391:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:391:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:392:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:392:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:402:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:402:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:403:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:403:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:421:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:421:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:422:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:422:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:439:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:439:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:440:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:440:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:448:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: CausalNonpurifiability/Purification/Separation.lean:457:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:465:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:465:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:467:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:467:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:475:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: CausalNonpurifiability/Purification/Separation.lean:484:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:492:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:492:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:494:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Purification/Separation.lean:494:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [9081/9103] Built CausalNonpurifiability.Boundary.Transpose (3.5s)
+warning: CausalNonpurifiability/Boundary/Transpose.lean:75:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:75:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:76:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:76:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:83:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:83:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:84:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:84:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:91:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:91:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:92:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:92:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:99:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:99:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:100:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Boundary/Transpose.lean:100:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [9082/9103] Built CausalNonpurifiability.BellCHSH (3.7s)
+warning: CausalNonpurifiability/BellCHSH.lean:100:82: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.submatrix_apply, Matrix.cons_val_zero, Matrix.cons_val_one, toC_apply, e00, e01, e10,
+    e11] at hdet
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [9083/9103] Built CausalNonpurifiability.EC.Rectangles (4.5s)
+✔ [9084/9103] Built CausalNonpurifiability.Uniform (5.2s)
+✔ [9085/9103] Built CausalNonpurifiability.Purification.Necessity (2.7s)
+✔ [9086/9103] Built CausalNonpurifiability.Certificates.Witness (5.4s)
+✔ [9087/9103] Built CausalNonpurifiability.OCB (6.0s)
+✔ [9088/9103] Built CausalNonpurifiability.EC.Bridge (2.1s)
+✔ [9089/9103] Built CausalNonpurifiability.Main (2.2s)
+✔ [9090/9103] Built CausalNonpurifiability.EC.Components (2.6s)
+✔ [9091/9103] Built CausalNonpurifiability.Robustness (4.2s)
+⚠ [9092/9103] Built CausalNonpurifiability.RobustnessEC (3.4s)
+warning: CausalNonpurifiability/RobustnessEC.lean:72:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/RobustnessEC.lean:72:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/RobustnessEC.lean:74:27: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/RobustnessEC.lean:78:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/RobustnessEC.lean:78:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/RobustnessEC.lean:86:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/RobustnessEC.lean:86:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/RobustnessEC.lean:88:27: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/RobustnessEC.lean:92:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/RobustnessEC.lean:92:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/RobustnessEC.lean:103:27: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/RobustnessEC.lean:117:27: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+✔ [9093/9103] Built CausalNonpurifiability.Full (2.4s)
+⚠ [9094/9103] Built CausalNonpurifiability.Definitions.Separability (2.7s)
+warning: CausalNonpurifiability/Definitions/Separability.lean:34:34: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9095/9103] Built CausalNonpurifiability.Propositions (3.1s)
+warning: CausalNonpurifiability/Propositions.lean:118:15: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: CausalNonpurifiability/Propositions.lean:121:19: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: CausalNonpurifiability/Propositions.lean:193:32: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: CausalNonpurifiability/Propositions.lean:193:44: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: CausalNonpurifiability/Propositions.lean:193:32: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: CausalNonpurifiability/Propositions.lean:193:44: Unused tactic linter: `norm_num` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9096/9103] Built CausalNonpurifiability.Dichotomy (2.4s)
+✔ [9097/9103] Built CausalNonpurifiability.Bias (2.5s)
+⚠ [9098/9103] Built CausalNonpurifiability.Classes (2.9s)
+warning: CausalNonpurifiability/Classes.lean:199:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Classes.lean:201:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Classes.lean:205:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Classes.lean:207:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Classes.lean:211:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Classes.lean:213:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Classes.lean:217:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Classes.lean:220:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Classes.lean:224:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Classes.lean:226:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Classes.lean:229:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Classes.lean:231:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Classes.lean:238:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Classes.lean:238:28: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Classes.lean:244:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Classes.lean:244:30: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: CausalNonpurifiability/Classes.lean:248:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: CausalNonpurifiability/Classes.lean:248:30: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [9099/9103] Built CausalNonpurifiability.Unconditional (2.1s)
+✔ [9100/9103] Built CausalNonpurifiability.MainTheorem (4.8s)
+⚠ [9101/9103] Built CausalNonpurifiability.OCBGame (14s)
+warning: CausalNonpurifiability/OCBGame.lean:171:31: This simp argument is unused:
+  toC_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ptraceOut, ptraceOutQ, Matrix.of_apply, Rat.cast_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/OCBGame.lean:171:59: This simp argument is unused:
+  Rat.cast_sum
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ptraceOut, ptraceOutQ, toC_apply, Matrix.of_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/OCBGame.lean:249:52: This simp argument is unused:
+  RBOq_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [GA, GB, RAOq_add, RBOq_add, RAOq_smul, RAOq_kron4, RBOq_kron4, trace_one_div_self hd,
+    trace_one_div_self he, one_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CausalNonpurifiability/OCBGame.lean:308:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: CausalNonpurifiability/OCBGame.lean:308:10: Unused tactic linter: `rw [← Complex.ofReal_mul, ← Complex.ofReal_ofNat 2, ← Complex.ofReal_mul, hR,
+  Complex.ofReal_one]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9102/9103] Built CausalNonpurifiability (1.9s)
+✔ [9103/9103] Built Solution (2.1s)
+Build completed successfully (9103 jobs).

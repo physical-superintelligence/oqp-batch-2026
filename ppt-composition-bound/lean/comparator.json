@@ -1,0 +1,25 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "PPTCompositionBound.compose_ppt_maps_entanglementBreaking",
+    "PPTCompositionBound.ebIndex_le_of_isPPTMap",
+    "PPTCompositionBound.compose_at_least_ppt_maps_entanglementBreaking",
+    "PPTCompositionBound.compose_ppt_map_interleaved_entanglementBreaking",
+    "PPTCompositionBound.exists_posSemidef_not_isSeparable",
+    "PPTCompositionBound.id_not_entanglementBreaking",
+    "PPTCompositionBound.choi_isCompletelyPositive_iff",
+    "PPTCompositionBound.choi_isPPTMap_iff",
+    "PPTCompositionBound.choi_isEntanglementBreaking_iff",
+    "PPTCompositionBound.transposeMap_isCompletelyCopositive_not_isCompletelyPositive",
+    "PPTCompositionBound.compList_pair",
+    "PPTCompositionBound.zero_map_isPPTMap_and_ebIndex_eq_one",
+    "PPTCompositionBound.ebIndex_id_eq_top"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

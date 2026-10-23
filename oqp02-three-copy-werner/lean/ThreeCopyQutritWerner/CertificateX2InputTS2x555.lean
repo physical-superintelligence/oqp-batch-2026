@@ -1,0 +1,242 @@
+module
+
+public import ThreeCopyQutritWerner.CertificateX2InputU2x555x0
+
+@[expose] public section
+
+
+/-! S-pipeline T-tables of the type triple (5, 5, 5) of sector 2 and their specification (sigma * x2EmbedS at every label triple). -/
+
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+set_option exponentiation.threshold 1000000
+
+open scoped Matrix
+
+namespace ThreeCopyQutritWerner.X2.InK2x555
+open ThreeCopyQutritWerner ThreeCopyQutritWerner.X2
+
+x2_ub_table UBT ub 10 10
+x2_tt_gen TT UBT 10 10 10 0
+
+theorem shape : ∀ a0 < x2Mult 2 5, ∀ a1 < x2Mult 2 5, ((UBT.getD a0 []).getD a1 []).length = x2Mult 2 5 ∧ ∀ l ∈ (UBT.getD a0 []).getD a1 [], l.length = x2Mult 2 5 := by
+  show ∀ a0 < 10, ∀ a1 < 10, ((UBT.getD a0 []).getD a1 []).length = 10 ∧ ∀ l ∈ (UBT.getD a0 []).getD a1 [], l.length = 10
+  intro a0 h0 a1 h1
+  interval_cases a0 <;> interval_cases a1
+  · exact ⟨(ubc_0_0).2.1, (ubc_0_0).2.2⟩
+  · exact ⟨(ubc_0_1).2.1, (ubc_0_1).2.2⟩
+  · exact ⟨(ubc_0_2).2.1, (ubc_0_2).2.2⟩
+  · exact ⟨(ubc_0_3).2.1, (ubc_0_3).2.2⟩
+  · exact ⟨(ubc_0_4).2.1, (ubc_0_4).2.2⟩
+  · exact ⟨(ubc_0_5).2.1, (ubc_0_5).2.2⟩
+  · exact ⟨(ubc_0_6).2.1, (ubc_0_6).2.2⟩
+  · exact ⟨(ubc_0_7).2.1, (ubc_0_7).2.2⟩
+  · exact ⟨(ubc_0_8).2.1, (ubc_0_8).2.2⟩
+  · exact ⟨(ubc_0_9).2.1, (ubc_0_9).2.2⟩
+  · exact ⟨(ubc_1_0).2.1, (ubc_1_0).2.2⟩
+  · exact ⟨(ubc_1_1).2.1, (ubc_1_1).2.2⟩
+  · exact ⟨(ubc_1_2).2.1, (ubc_1_2).2.2⟩
+  · exact ⟨(ubc_1_3).2.1, (ubc_1_3).2.2⟩
+  · exact ⟨(ubc_1_4).2.1, (ubc_1_4).2.2⟩
+  · exact ⟨(ubc_1_5).2.1, (ubc_1_5).2.2⟩
+  · exact ⟨(ubc_1_6).2.1, (ubc_1_6).2.2⟩
+  · exact ⟨(ubc_1_7).2.1, (ubc_1_7).2.2⟩
+  · exact ⟨(ubc_1_8).2.1, (ubc_1_8).2.2⟩
+  · exact ⟨(ubc_1_9).2.1, (ubc_1_9).2.2⟩
+  · exact ⟨(ubc_2_0).2.1, (ubc_2_0).2.2⟩
+  · exact ⟨(ubc_2_1).2.1, (ubc_2_1).2.2⟩
+  · exact ⟨(ubc_2_2).2.1, (ubc_2_2).2.2⟩
+  · exact ⟨(ubc_2_3).2.1, (ubc_2_3).2.2⟩
+  · exact ⟨(ubc_2_4).2.1, (ubc_2_4).2.2⟩
+  · exact ⟨(ubc_2_5).2.1, (ubc_2_5).2.2⟩
+  · exact ⟨(ubc_2_6).2.1, (ubc_2_6).2.2⟩
+  · exact ⟨(ubc_2_7).2.1, (ubc_2_7).2.2⟩
+  · exact ⟨(ubc_2_8).2.1, (ubc_2_8).2.2⟩
+  · exact ⟨(ubc_2_9).2.1, (ubc_2_9).2.2⟩
+  · exact ⟨(ubc_3_0).2.1, (ubc_3_0).2.2⟩
+  · exact ⟨(ubc_3_1).2.1, (ubc_3_1).2.2⟩
+  · exact ⟨(ubc_3_2).2.1, (ubc_3_2).2.2⟩
+  · exact ⟨(ubc_3_3).2.1, (ubc_3_3).2.2⟩
+  · exact ⟨(ubc_3_4).2.1, (ubc_3_4).2.2⟩
+  · exact ⟨(ubc_3_5).2.1, (ubc_3_5).2.2⟩
+  · exact ⟨(ubc_3_6).2.1, (ubc_3_6).2.2⟩
+  · exact ⟨(ubc_3_7).2.1, (ubc_3_7).2.2⟩
+  · exact ⟨(ubc_3_8).2.1, (ubc_3_8).2.2⟩
+  · exact ⟨(ubc_3_9).2.1, (ubc_3_9).2.2⟩
+  · exact ⟨(ubc_4_0).2.1, (ubc_4_0).2.2⟩
+  · exact ⟨(ubc_4_1).2.1, (ubc_4_1).2.2⟩
+  · exact ⟨(ubc_4_2).2.1, (ubc_4_2).2.2⟩
+  · exact ⟨(ubc_4_3).2.1, (ubc_4_3).2.2⟩
+  · exact ⟨(ubc_4_4).2.1, (ubc_4_4).2.2⟩
+  · exact ⟨(ubc_4_5).2.1, (ubc_4_5).2.2⟩
+  · exact ⟨(ubc_4_6).2.1, (ubc_4_6).2.2⟩
+  · exact ⟨(ubc_4_7).2.1, (ubc_4_7).2.2⟩
+  · exact ⟨(ubc_4_8).2.1, (ubc_4_8).2.2⟩
+  · exact ⟨(ubc_4_9).2.1, (ubc_4_9).2.2⟩
+  · exact ⟨(ubc_5_0).2.1, (ubc_5_0).2.2⟩
+  · exact ⟨(ubc_5_1).2.1, (ubc_5_1).2.2⟩
+  · exact ⟨(ubc_5_2).2.1, (ubc_5_2).2.2⟩
+  · exact ⟨(ubc_5_3).2.1, (ubc_5_3).2.2⟩
+  · exact ⟨(ubc_5_4).2.1, (ubc_5_4).2.2⟩
+  · exact ⟨(ubc_5_5).2.1, (ubc_5_5).2.2⟩
+  · exact ⟨(ubc_5_6).2.1, (ubc_5_6).2.2⟩
+  · exact ⟨(ubc_5_7).2.1, (ubc_5_7).2.2⟩
+  · exact ⟨(ubc_5_8).2.1, (ubc_5_8).2.2⟩
+  · exact ⟨(ubc_5_9).2.1, (ubc_5_9).2.2⟩
+  · exact ⟨(ubc_6_0).2.1, (ubc_6_0).2.2⟩
+  · exact ⟨(ubc_6_1).2.1, (ubc_6_1).2.2⟩
+  · exact ⟨(ubc_6_2).2.1, (ubc_6_2).2.2⟩
+  · exact ⟨(ubc_6_3).2.1, (ubc_6_3).2.2⟩
+  · exact ⟨(ubc_6_4).2.1, (ubc_6_4).2.2⟩
+  · exact ⟨(ubc_6_5).2.1, (ubc_6_5).2.2⟩
+  · exact ⟨(ubc_6_6).2.1, (ubc_6_6).2.2⟩
+  · exact ⟨(ubc_6_7).2.1, (ubc_6_7).2.2⟩
+  · exact ⟨(ubc_6_8).2.1, (ubc_6_8).2.2⟩
+  · exact ⟨(ubc_6_9).2.1, (ubc_6_9).2.2⟩
+  · exact ⟨(ubc_7_0).2.1, (ubc_7_0).2.2⟩
+  · exact ⟨(ubc_7_1).2.1, (ubc_7_1).2.2⟩
+  · exact ⟨(ubc_7_2).2.1, (ubc_7_2).2.2⟩
+  · exact ⟨(ubc_7_3).2.1, (ubc_7_3).2.2⟩
+  · exact ⟨(ubc_7_4).2.1, (ubc_7_4).2.2⟩
+  · exact ⟨(ubc_7_5).2.1, (ubc_7_5).2.2⟩
+  · exact ⟨(ubc_7_6).2.1, (ubc_7_6).2.2⟩
+  · exact ⟨(ubc_7_7).2.1, (ubc_7_7).2.2⟩
+  · exact ⟨(ubc_7_8).2.1, (ubc_7_8).2.2⟩
+  · exact ⟨(ubc_7_9).2.1, (ubc_7_9).2.2⟩
+  · exact ⟨(ubc_8_0).2.1, (ubc_8_0).2.2⟩
+  · exact ⟨(ubc_8_1).2.1, (ubc_8_1).2.2⟩
+  · exact ⟨(ubc_8_2).2.1, (ubc_8_2).2.2⟩
+  · exact ⟨(ubc_8_3).2.1, (ubc_8_3).2.2⟩
+  · exact ⟨(ubc_8_4).2.1, (ubc_8_4).2.2⟩
+  · exact ⟨(ubc_8_5).2.1, (ubc_8_5).2.2⟩
+  · exact ⟨(ubc_8_6).2.1, (ubc_8_6).2.2⟩
+  · exact ⟨(ubc_8_7).2.1, (ubc_8_7).2.2⟩
+  · exact ⟨(ubc_8_8).2.1, (ubc_8_8).2.2⟩
+  · exact ⟨(ubc_8_9).2.1, (ubc_8_9).2.2⟩
+  · exact ⟨(ubc_9_0).2.1, (ubc_9_0).2.2⟩
+  · exact ⟨(ubc_9_1).2.1, (ubc_9_1).2.2⟩
+  · exact ⟨(ubc_9_2).2.1, (ubc_9_2).2.2⟩
+  · exact ⟨(ubc_9_3).2.1, (ubc_9_3).2.2⟩
+  · exact ⟨(ubc_9_4).2.1, (ubc_9_4).2.2⟩
+  · exact ⟨(ubc_9_5).2.1, (ubc_9_5).2.2⟩
+  · exact ⟨(ubc_9_6).2.1, (ubc_9_6).2.2⟩
+  · exact ⟨(ubc_9_7).2.1, (ubc_9_7).2.2⟩
+  · exact ⟨(ubc_9_8).2.1, (ubc_9_8).2.2⟩
+  · exact ⟨(ubc_9_9).2.1, (ubc_9_9).2.2⟩
+theorem hchk : ∀ a0 < x2Mult 2 5, ∀ a1 < x2Mult 2 5, ibBatchOK 256 (x2Mult 2 5 * x2Mult 2 5 * x2Mult 2 5) 302 (x2Mult 2 5) (x2Mult 2 5 * x2Mult 2 5) 0 (x2Mult 2 5) ((a0 * x2Mult 2 5 + a1) * x2Mult 2 5) (ks.flatMap Prod.snd) ((UBT.getD a0 []).getD a1 []).flatten = true := by
+  show ∀ a0 < 10, ∀ a1 < 10, ibBatchOK 256 1000 302 10 100 0 10 ((a0 * 10 + a1) * 10) (ks.flatMap Prod.snd) ((UBT.getD a0 []).getD a1 []).flatten = true
+  intro a0 h0 a1 h1
+  interval_cases a0 <;> interval_cases a1
+  · exact (ubc_0_0).1
+  · exact (ubc_0_1).1
+  · exact (ubc_0_2).1
+  · exact (ubc_0_3).1
+  · exact (ubc_0_4).1
+  · exact (ubc_0_5).1
+  · exact (ubc_0_6).1
+  · exact (ubc_0_7).1
+  · exact (ubc_0_8).1
+  · exact (ubc_0_9).1
+  · exact (ubc_1_0).1
+  · exact (ubc_1_1).1
+  · exact (ubc_1_2).1
+  · exact (ubc_1_3).1
+  · exact (ubc_1_4).1
+  · exact (ubc_1_5).1
+  · exact (ubc_1_6).1
+  · exact (ubc_1_7).1
+  · exact (ubc_1_8).1
+  · exact (ubc_1_9).1
+  · exact (ubc_2_0).1
+  · exact (ubc_2_1).1
+  · exact (ubc_2_2).1
+  · exact (ubc_2_3).1
+  · exact (ubc_2_4).1
+  · exact (ubc_2_5).1
+  · exact (ubc_2_6).1
+  · exact (ubc_2_7).1
+  · exact (ubc_2_8).1
+  · exact (ubc_2_9).1
+  · exact (ubc_3_0).1
+  · exact (ubc_3_1).1
+  · exact (ubc_3_2).1
+  · exact (ubc_3_3).1
+  · exact (ubc_3_4).1
+  · exact (ubc_3_5).1
+  · exact (ubc_3_6).1
+  · exact (ubc_3_7).1
+  · exact (ubc_3_8).1
+  · exact (ubc_3_9).1
+  · exact (ubc_4_0).1
+  · exact (ubc_4_1).1
+  · exact (ubc_4_2).1
+  · exact (ubc_4_3).1
+  · exact (ubc_4_4).1
+  · exact (ubc_4_5).1
+  · exact (ubc_4_6).1
+  · exact (ubc_4_7).1
+  · exact (ubc_4_8).1
+  · exact (ubc_4_9).1
+  · exact (ubc_5_0).1
+  · exact (ubc_5_1).1
+  · exact (ubc_5_2).1
+  · exact (ubc_5_3).1
+  · exact (ubc_5_4).1
+  · exact (ubc_5_5).1
+  · exact (ubc_5_6).1
+  · exact (ubc_5_7).1
+  · exact (ubc_5_8).1
+  · exact (ubc_5_9).1
+  · exact (ubc_6_0).1
+  · exact (ubc_6_1).1
+  · exact (ubc_6_2).1
+  · exact (ubc_6_3).1
+  · exact (ubc_6_4).1
+  · exact (ubc_6_5).1
+  · exact (ubc_6_6).1
+  · exact (ubc_6_7).1
+  · exact (ubc_6_8).1
+  · exact (ubc_6_9).1
+  · exact (ubc_7_0).1
+  · exact (ubc_7_1).1
+  · exact (ubc_7_2).1
+  · exact (ubc_7_3).1
+  · exact (ubc_7_4).1
+  · exact (ubc_7_5).1
+  · exact (ubc_7_6).1
+  · exact (ubc_7_7).1
+  · exact (ubc_7_8).1
+  · exact (ubc_7_9).1
+  · exact (ubc_8_0).1
+  · exact (ubc_8_1).1
+  · exact (ubc_8_2).1
+  · exact (ubc_8_3).1
+  · exact (ubc_8_4).1
+  · exact (ubc_8_5).1
+  · exact (ubc_8_6).1
+  · exact (ubc_8_7).1
+  · exact (ubc_8_8).1
+  · exact (ubc_8_9).1
+  · exact (ubc_9_0).1
+  · exact (ubc_9_1).1
+  · exact (ubc_9_2).1
+  · exact (ubc_9_3).1
+  · exact (ubc_9_4).1
+  · exact (ubc_9_5).1
+  · exact (ubc_9_6).1
+  · exact (ubc_9_7).1
+  · exact (ubc_9_8).1
+  · exact (ubc_9_9).1
+theorem TTr_0 : (List.range 55).all (fun k => tRowOK UBT (nS 2 5) (pairsU (x2Mult 2 5)) ((pairsU (x2Mult 2 5)).getD (0 + k) (0, 0)) (TT.getD (0 + k) [])) = true := by decide +kernel
+theorem TTrows : ∀ i < nS 2 5, tRowOK UBT (nS 2 5) (pairsU (x2Mult 2 5)) ((pairsU (x2Mult 2 5)).getD i (0, 0)) (TT.getD i []) = true := by
+  show ∀ i < 55, tRowOK UBT (nS 2 5) (pairsU (x2Mult 2 5)) ((pairsU (x2Mult 2 5)).getD i (0, 0)) (TT.getD i []) = true
+  intro i hi
+  exact rangeAll_sound (fun i => tRowOK UBT (nS 2 5) (pairsU (x2Mult 2 5)) ((pairsU (x2Mult 2 5)).getD i (0, 0)) (TT.getD i [])) 0 55 TTr_0 i (Nat.zero_le i) (by omega)
+
+theorem spec (N : X2Blocks 2) (hN : ∀ k, (N k)ᵀ = N k) (hN113 : N k113 = x2TrialForm 2 k113) (hN114 : N k114 = x2TrialForm 2 k114) (hN115 : N k115 = x2TrialForm 2 k115) :
+    TTspecS 2 N 5 5 5 TT ∧ TCspecS 2 N 5 5 5 TT := by
+  have hk := keys N hN113 hN114 hN115
+  have htt := tripleSpecS 2 (by decide) N hN 5 5 5 (by decide) (by decide) ks hks hnd hk hlen UBT shape hchk (fun i0 i1 => (TT.getD i1 []).getD i0 0) (tTT_of_rows 2 (by decide) UBT 5 5 5 TT TTrows)
+  exact ⟨htt, tcSpec_of_tt_eq 2 N 5 5 TT htt⟩
+
+end ThreeCopyQutritWerner.X2.InK2x555

@@ -1,0 +1,172 @@
+%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (0) allowed
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{40}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Clauser}\ \emph {et~al.}(1969)\citenamefont {Clauser}, \citenamefont {Horne}, \citenamefont {Shimony},\ and\ \citenamefont {Holt}}]{CHSH69}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~F.}\ \bibnamefont {Clauser}}, \bibinfo {author} {\bibfnamefont {M.~A.}\ \bibnamefont {Horne}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Shimony}},\ and\ \bibinfo {author} {\bibfnamefont {R.~A.}\ \bibnamefont {Holt}},\ }\bibfield  {title} {\bibinfo {title} {Proposed experiment to test local hidden-variable theories},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Physical Review Letters}\ }\textbf {\bibinfo {volume} {23}},\ \bibinfo {pages} {880} (\bibinfo {year} {1969})},\ \bibinfo {note} {\doi{10.1103/PhysRevLett.23.880}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Summers}\ and\ \citenamefont {Werner}(1987{\natexlab{a}})}]{SW87a}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~J.}\ \bibnamefont {Summers}}\ and\ \bibinfo {author} {\bibfnamefont {R.~F.}\ \bibnamefont {Werner}},\ }\bibfield  {title} {\bibinfo {title} {{B}ell's inequalities and quantum field theory. {I}. {G}eneral setting},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Journal of Mathematical Physics}\ }\textbf {\bibinfo {volume} {28}},\ \bibinfo {pages} {2440} (\bibinfo {year} {1987}{\natexlab{a}})},\ \bibinfo {note} {\doi{10.1063/1.527733}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cirel'son}(1980)}]{Tsirelson80}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.~S.}\ \bibnamefont {Cirel'son}},\ }\bibfield  {title} {\bibinfo {title} {Quantum generalizations of {B}ell's inequality},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Letters in Mathematical Physics}\ }\textbf {\bibinfo {volume} {4}},\ \bibinfo {pages} {93} (\bibinfo {year} {1980})},\ \bibinfo {note} {\doi{10.1007/BF00417500}; the author's name is also transliterated as B.~S. Tsirelson}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Verch}\ and\ \citenamefont {Werner}(2005)}]{VW05}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Verch}}\ and\ \bibinfo {author} {\bibfnamefont {R.~F.}\ \bibnamefont {Werner}},\ }\bibfield  {title} {\bibinfo {title} {Distillability and positivity of partial transposes in general quantum field systems},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Reviews in Mathematical Physics}\ }\textbf {\bibinfo {volume} {17}},\ \bibinfo {pages} {545} (\bibinfo {year} {2005})},\ \bibinfo {note} {\doi{10.1142/S0129055X05002364}; \arxiv{quant-ph/0403089v3}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Halvorson}\ and\ \citenamefont {Clifton}(2000)}]{HC00}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Halvorson}}\ and\ \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Clifton}},\ }\bibfield  {title} {\bibinfo {title} {Generic {B}ell correlation between arbitrary local algebras in quantum field theory},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Journal of Mathematical Physics}\ }\textbf {\bibinfo {volume} {41}},\ \bibinfo {pages} {1711} (\bibinfo {year} {2000})},\ \bibinfo {note} {\doi{10.1063/1.533253}; \arxiv{math-ph/9909013v3}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Summers}\ and\ \citenamefont {Werner}(1985)}]{SW85}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~J.}\ \bibnamefont {Summers}}\ and\ \bibinfo {author} {\bibfnamefont {R.~F.}\ \bibnamefont {Werner}},\ }\bibfield  {title} {\bibinfo {title} {The vacuum violates {B}ell's inequalities},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Physics Letters A}\ }\textbf {\bibinfo {volume} {110}},\ \bibinfo {pages} {257} (\bibinfo {year} {1985})},\ \bibinfo {note} {\doi{10.1016/0375-9601(85)90093-3}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Summers}\ and\ \citenamefont {Werner}(1987{\natexlab{b}})}]{SW87b}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~J.}\ \bibnamefont {Summers}}\ and\ \bibinfo {author} {\bibfnamefont {R.~F.}\ \bibnamefont {Werner}},\ }\bibfield  {title} {\bibinfo {title} {{B}ell's inequalities and quantum field theory. {II}. {B}ell's inequalities are maximally violated in the vacuum},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Journal of Mathematical Physics}\ }\textbf {\bibinfo {volume} {28}},\ \bibinfo {pages} {2448} (\bibinfo {year} {1987}{\natexlab{b}})},\ \bibinfo {note} {\doi{10.1063/1.527734}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Summers}\ and\ \citenamefont {Werner}(1987{\natexlab{c}})}]{SW87c}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~J.}\ \bibnamefont {Summers}}\ and\ \bibinfo {author} {\bibfnamefont {R.~F.}\ \bibnamefont {Werner}},\ }\bibfield  {title} {\bibinfo {title} {Maximal violation of {B}ell's inequalities is generic in quantum field theory},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Communications in Mathematical Physics}\ }\textbf {\bibinfo {volume} {110}},\ \bibinfo {pages} {247} (\bibinfo {year} {1987}{\natexlab{c}})},\ \bibinfo {note} {\doi{10.1007/BF01207366}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Summers}\ and\ \citenamefont {Werner}(1988)}]{SW88}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~J.}\ \bibnamefont {Summers}}\ and\ \bibinfo {author} {\bibfnamefont {R.~F.}\ \bibnamefont {Werner}},\ }\bibfield  {title} {\bibinfo {title} {Maximal violation of {B}ell's inequalities for algebras of observables in tangent spacetime regions},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Annales de l'Institut Henri Poincar\'e, Physique th\'eorique}\ }\textbf {\bibinfo {volume} {49}},\ \bibinfo {pages} {215} (\bibinfo {year} {1988})},\ \bibinfo {note} {\url{https://www.numdam.org/item/AIHPA_1988__49_2_215_0/}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Summers}(2011)}]{Summers11}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~J.}\ \bibnamefont {Summers}},\ }\bibfield  {title} {\bibinfo {title} {Yet more ado about nothing: the remarkable relativistic vacuum state},\ }in\ \href@noop {} {\emph {\bibinfo {booktitle} {Deep Beauty: Understanding the Quantum World through Mathematical Innovation}}},\ \bibinfo {editor} {edited by\ \bibinfo {editor} {\bibfnamefont {H.}~\bibnamefont {Halvorson}}}\ (\bibinfo  {publisher} {Cambridge University Press},\ \bibinfo {address} {Cambridge},\ \bibinfo {year} {2011})\ \bibinfo {note} {pp.~317--342, \doi{10.1017/CBO9780511976971.009}; \arxiv{0802.1854v1}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{IQOQI Vienna}}(2026)}]{OQP12}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{IQOQI Vienna}}},\ }\href@noop {} {\bibinfo {title} {{O}pen {Q}uantum {P}roblems, {P}roblem 12: {B}ell inequalities for long range vacuum correlations}},\ \bibinfo {howpublished} {\url{https://oqp.iqoqi.oeaw.ac.at/bell-inequalities-for-long-range-vacuum-correlations}} (\bibinfo {year} {2026}),\ \bibinfo {note} {archived copy of 29 October 2023, \url{https://web.archive.org/web/20231029013530/https://oqp.iqoqi.oeaw.ac.at/bell-inequalities-for-long-range-vacuum-correlations}; accessed October 21, 2026}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kr{\"u}ger}\ and\ \citenamefont {Werner}(2005)}]{KW05}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {O.}~\bibnamefont {Kr{\"u}ger}}\ and\ \bibinfo {author} {\bibfnamefont {R.~F.}\ \bibnamefont {Werner}},\ }\href@noop {} {\bibinfo {title} {Some open problems in quantum information theory}},\ \bibinfo {howpublished} {\arxiv{quant-ph/0504166v1}} (\bibinfo {year} {2005}),\ \bibinfo {note} {open problems in quantum information theory, Institut f{\"u}r Mathematische Physik, TU Braunschweig; version of 21 April 2005}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Reznik}\ \emph {et~al.}(2005)\citenamefont {Reznik}, \citenamefont {Retzker},\ and\ \citenamefont {Silman}}]{RRS05}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Reznik}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Retzker}},\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Silman}},\ }\bibfield  {title} {\bibinfo {title} {Violating {B}ell's inequalities in vacuum},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Physical Review A}\ }\textbf {\bibinfo {volume} {71}},\ \bibinfo {pages} {042104} (\bibinfo {year} {2005})},\ \bibinfo {note} {\doi{10.1103/PhysRevA.71.042104}; \arxiv{quant-ph/0310058v2}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Matsumura}\ and\ \citenamefont {Nambu}(2020)}]{MN20}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Matsumura}}\ and\ \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Nambu}},\ }\bibfield  {title} {\bibinfo {title} {Violation of {B}ell-{CHSH} inequalities through optimal local filters in the vacuum},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Quantum Reports}\ }\textbf {\bibinfo {volume} {2}},\ \bibinfo {pages} {542} (\bibinfo {year} {2020})},\ \bibinfo {note} {\doi{10.3390/quantum2040038}; \arxiv{1808.03896v2}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gao}\ and\ \citenamefont {Klco}(2025)}]{GK25}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Gao}}\ and\ \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Klco}},\ }\bibfield  {title} {\bibinfo {title} {Detecting spacelike vacuum entanglement at all distances and promoting negativity to a necessary and sufficient entanglement measure in many-body regimes},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Physical Review A}\ }\textbf {\bibinfo {volume} {112}},\ \bibinfo {pages} {012430} (\bibinfo {year} {2025})},\ \bibinfo {note} {\doi{10.1103/m9w1-ppqz}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Haag}(1996)}]{Haag96}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Haag}},\ }\href@noop {} {\emph {\bibinfo {title} {Local Quantum Physics: Fields, Particles, Algebras}}},\ \bibinfo {edition} {2nd}\ ed.\ (\bibinfo  {publisher} {Springer},\ \bibinfo {address} {Berlin},\ \bibinfo {year} {1996})\ \bibinfo {note} {\doi{10.1007/978-3-642-61458-3}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Seshadreesan}\ \emph {et~al.}(2018)\citenamefont {Seshadreesan}, \citenamefont {Lami},\ and\ \citenamefont {Wilde}}]{SLW18}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~P.}\ \bibnamefont {Seshadreesan}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Lami}},\ and\ \bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont {Wilde}},\ }\bibfield  {title} {\bibinfo {title} {{R}\'enyi relative entropies of quantum {G}aussian states},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Journal of Mathematical Physics}\ }\textbf {\bibinfo {volume} {59}},\ \bibinfo {pages} {072204} (\bibinfo {year} {2018})},\ \bibinfo {note} {\doi{10.1063/1.5007167}; \arxiv{1706.09885v2}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Araki}(1964)}]{Araki64}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Araki}},\ }\bibfield  {title} {\bibinfo {title} {Von {N}eumann algebras of local observables for free scalar field},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Journal of Mathematical Physics}\ }\textbf {\bibinfo {volume} {5}},\ \bibinfo {pages} {1} (\bibinfo {year} {1964})},\ \bibinfo {note} {\doi{10.1063/1.1704063}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Eckmann}\ and\ \citenamefont {Osterwalder}(1973)}]{EO73}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.-P.}\ \bibnamefont {Eckmann}}\ and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Osterwalder}},\ }\bibfield  {title} {\bibinfo {title} {An application of {T}omita's theory of modular {H}ilbert algebras: duality for free {B}ose fields},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Journal of Functional Analysis}\ }\textbf {\bibinfo {volume} {13}},\ \bibinfo {pages} {1} (\bibinfo {year} {1973})},\ \bibinfo {note} {\doi{10.1016/0022-1236(73)90062-1}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Buchholz}\ and\ \citenamefont {Verch}(1998)}]{BV98}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Buchholz}}\ and\ \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Verch}},\ }\bibfield  {title} {\bibinfo {title} {Scaling algebras and renormalization group in algebraic quantum field theory. {II}. {I}nstructive examples},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Reviews in Mathematical Physics}\ }\textbf {\bibinfo {volume} {10}},\ \bibinfo {pages} {775} (\bibinfo {year} {1998})},\ \bibinfo {note} {\arxiv{hep-th/9708095v1}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Williamson}(1936)}]{Williamson36}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Williamson}},\ }\bibfield  {title} {\bibinfo {title} {On the algebraic problem concerning the normal forms of linear dynamical systems},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {American Journal of Mathematics}\ }\textbf {\bibinfo {volume} {58}},\ \bibinfo {pages} {141} (\bibinfo {year} {1936})},\ \bibinfo {note} {\doi{10.2307/2371062}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bratteli}\ and\ \citenamefont {Robinson}(1987)}]{BR87}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {O.}~\bibnamefont {Bratteli}}\ and\ \bibinfo {author} {\bibfnamefont {D.~W.}\ \bibnamefont {Robinson}},\ }\href@noop {} {\emph {\bibinfo {title} {Operator Algebras and Quantum Statistical Mechanics 1: {$C^*$}- and {$W^*$}-Algebras, Symmetry Groups, Decomposition of States}}},\ \bibinfo {edition} {2nd}\ ed.\ (\bibinfo  {publisher} {Springer},\ \bibinfo {address} {Berlin},\ \bibinfo {year} {1987})\ \bibinfo {note} {\doi{10.1007/978-3-662-02520-8}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wilde}\ \emph {et~al.}(2014)\citenamefont {Wilde}, \citenamefont {Winter},\ and\ \citenamefont {Yang}}]{WWY14}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont {Wilde}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Winter}},\ and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Yang}},\ }\bibfield  {title} {\bibinfo {title} {Strong converse for the classical capacity of entanglement-breaking and {H}adamard channels via a sandwiched {R}\'enyi relative entropy},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Communications in Mathematical Physics}\ }\textbf {\bibinfo {volume} {331}},\ \bibinfo {pages} {593} (\bibinfo {year} {2014})},\ \bibinfo {note} {\doi{10.1007/s00220-014-2122-x}; \arxiv{1306.1586v4}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {M{\"u}ller-Lennert}\ \emph {et~al.}(2013)\citenamefont {M{\"u}ller-Lennert}, \citenamefont {Dupuis}, \citenamefont {Szehr}, \citenamefont {Fehr},\ and\ \citenamefont {Tomamichel}}]{ML13}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {M{\"u}ller-Lennert}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Dupuis}}, \bibinfo {author} {\bibfnamefont {O.}~\bibnamefont {Szehr}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Fehr}},\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Tomamichel}},\ }\bibfield  {title} {\bibinfo {title} {On quantum {R}\'enyi entropies: a new generalization and some properties},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Journal of Mathematical Physics}\ }\textbf {\bibinfo {volume} {54}},\ \bibinfo {pages} {122203} (\bibinfo {year} {2013})},\ \bibinfo {note} {\doi{10.1063/1.4838856}; \arxiv{1306.3142v3}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Frank}\ and\ \citenamefont {Lieb}(2013)}]{FL13}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.~L.}\ \bibnamefont {Frank}}\ and\ \bibinfo {author} {\bibfnamefont {E.~H.}\ \bibnamefont {Lieb}},\ }\bibfield  {title} {\bibinfo {title} {Monotonicity of a relative {R}\'enyi entropy},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Journal of Mathematical Physics}\ }\textbf {\bibinfo {volume} {54}},\ \bibinfo {pages} {122201} (\bibinfo {year} {2013})},\ \bibinfo {note} {\doi{10.1063/1.4838835}; \arxiv{1306.5358v3}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Beigi}(2013)}]{Beigi13}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Beigi}},\ }\bibfield  {title} {\bibinfo {title} {Sandwiched {R}\'enyi divergence satisfies data processing inequality},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Journal of Mathematical Physics}\ }\textbf {\bibinfo {volume} {54}},\ \bibinfo {pages} {122202} (\bibinfo {year} {2013})},\ \bibinfo {note} {\doi{10.1063/1.4838855}; \arxiv{1306.5920v6}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Temme}\ \emph {et~al.}(2010)\citenamefont {Temme}, \citenamefont {Kastoryano}, \citenamefont {Ruskai}, \citenamefont {Wolf},\ and\ \citenamefont {Verstraete}}]{TKRVV10}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Temme}}, \bibinfo {author} {\bibfnamefont {M.~J.}\ \bibnamefont {Kastoryano}}, \bibinfo {author} {\bibfnamefont {M.~B.}\ \bibnamefont {Ruskai}}, \bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont {Wolf}},\ and\ \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Verstraete}},\ }\bibfield  {title} {\bibinfo {title} {The $\chi^2$-divergence and mixing times of quantum {M}arkov processes},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Journal of Mathematical Physics}\ }\textbf {\bibinfo {volume} {51}},\ \bibinfo {pages} {122201} (\bibinfo {year} {2010})},\ \bibinfo {note} {\arxiv{1005.2358v2}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Rieffel}\ and\ \citenamefont {{van Daele}}(1977)}]{RvD77}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~A.}\ \bibnamefont {Rieffel}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {{van Daele}}},\ }\bibfield  {title} {\bibinfo {title} {A bounded operator approach to {T}omita--{T}akesaki theory},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Pacific Journal of Mathematics}\ }\textbf {\bibinfo {volume} {69}},\ \bibinfo {pages} {187} (\bibinfo {year} {1977})},\ \bibinfo {note} {\doi{10.2140/pjm.1977.69.187}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bisognano}\ and\ \citenamefont {Wichmann}(1975)}]{BW75}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~J.}\ \bibnamefont {Bisognano}}\ and\ \bibinfo {author} {\bibfnamefont {E.~H.}\ \bibnamefont {Wichmann}},\ }\bibfield  {title} {\bibinfo {title} {On the duality condition for a {H}ermitian scalar field},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Journal of Mathematical Physics}\ }\textbf {\bibinfo {volume} {16}},\ \bibinfo {pages} {985} (\bibinfo {year} {1975})},\ \bibinfo {note} {\doi{10.1063/1.522605}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Brunetti}\ \emph {et~al.}(2002)\citenamefont {Brunetti}, \citenamefont {Guido},\ and\ \citenamefont {Longo}}]{BGL02}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Brunetti}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Guido}},\ and\ \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Longo}},\ }\bibfield  {title} {\bibinfo {title} {Modular localization and {W}igner particles},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Reviews in Mathematical Physics}\ }\textbf {\bibinfo {volume} {14}},\ \bibinfo {pages} {759} (\bibinfo {year} {2002})},\ \bibinfo {note} {\doi{10.1142/S0129055X02001387}; \arxiv{math-ph/0203021v2}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Heinz}(1951)}]{Heinz51}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Heinz}},\ }\bibfield  {title} {\bibinfo {title} {Beitr{\"a}ge zur {S}t{\"o}rungstheorie der {S}pektralzerlegung},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Mathematische Annalen}\ }\textbf {\bibinfo {volume} {123}},\ \bibinfo {pages} {415} (\bibinfo {year} {1951})},\ \bibinfo {note} {\doi{10.1007/BF02054965}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bargmann}(1961)}]{Bargmann61}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {V.}~\bibnamefont {Bargmann}},\ }\bibfield  {title} {\bibinfo {title} {On a {H}ilbert space of analytic functions and an associated integral transform. {P}art {I}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Communications on Pure and Applied Mathematics}\ }\textbf {\bibinfo {volume} {14}},\ \bibinfo {pages} {187} (\bibinfo {year} {1961})},\ \bibinfo {note} {\doi{10.1002/cpa.3160140303}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Simon}(2005)}]{Simon05}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Simon}},\ }\href@noop {} {\emph {\bibinfo {title} {Trace Ideals and Their Applications}}},\ \bibinfo {edition} {2nd}\ ed.,\ \bibinfo {series} {Mathematical Surveys and Monographs}, Vol.\ \bibinfo {volume} {120}\ (\bibinfo  {publisher} {American Mathematical Society},\ \bibinfo {address} {Providence, RI},\ \bibinfo {year} {2005})\ \bibinfo {note} {\doi{10.1090/surv/120}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Hansen}(1980)}]{Hansen80}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Hansen}},\ }\bibfield  {title} {\bibinfo {title} {An operator inequality},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Mathematische Annalen}\ }\textbf {\bibinfo {volume} {246}},\ \bibinfo {pages} {249} (\bibinfo {year} {1980})},\ \bibinfo {note} {\doi{10.1007/BF01371046}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kubo}\ and\ \citenamefont {Ando}(1980)}]{KA80}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Kubo}}\ and\ \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Ando}},\ }\bibfield  {title} {\bibinfo {title} {Means of positive linear operators},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Mathematische Annalen}\ }\textbf {\bibinfo {volume} {246}},\ \bibinfo {pages} {205} (\bibinfo {year} {1980})},\ \bibinfo {note} {\doi{10.1007/BF01371042}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {H{\"o}rmander}(2003)}]{Hormander03}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {H{\"o}rmander}},\ }\href@noop {} {\emph {\bibinfo {title} {The Analysis of Linear Partial Differential Operators {I}: Distribution Theory and {F}ourier Analysis}}},\ \bibinfo {edition} {2nd}\ ed.,\ Classics in Mathematics\ (\bibinfo  {publisher} {Springer},\ \bibinfo {address} {Berlin},\ \bibinfo {year} {2003})\ \bibinfo {note} {\doi{10.1007/978-3-642-61497-2}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Figliolini}\ and\ \citenamefont {Guido}(1989)}]{FG89}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Figliolini}}\ and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Guido}},\ }\bibfield  {title} {\bibinfo {title} {The {T}omita operator for the free scalar field},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Annales de l'Institut Henri Poincar\'e, Physique th\'eorique}\ }\textbf {\bibinfo {volume} {51}},\ \bibinfo {pages} {419} (\bibinfo {year} {1989})},\ \bibinfo {note} {\url{https://www.numdam.org/item/AIHPA_1989__51_4_419_0/}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Lechner}\ and\ \citenamefont {Sanders}(2016)}]{LS16}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Lechner}}\ and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Sanders}},\ }\bibfield  {title} {\bibinfo {title} {Modular nuclearity: a generally covariant perspective},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Axioms}\ }\textbf {\bibinfo {volume} {5}},\ \bibinfo {pages} {5} (\bibinfo {year} {2016})},\ \bibinfo {note} {\doi{10.3390/axioms5010005}; \arxiv{1511.09027v1}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Buchholz}\ \emph {et~al.}(2007)\citenamefont {Buchholz}, \citenamefont {D'Antoni},\ and\ \citenamefont {Longo}}]{BDL07}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Buchholz}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {D'Antoni}},\ and\ \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Longo}},\ }\bibfield  {title} {\bibinfo {title} {Nuclearity and thermal states in conformal field theory},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Communications in Mathematical Physics}\ }\textbf {\bibinfo {volume} {270}},\ \bibinfo {pages} {267} (\bibinfo {year} {2007})},\ \bibinfo {note} {\doi{10.1007/s00220-006-0127-9}; \arxiv{math-ph/0603083v2}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{National Institute of Standards and Technology}}(2026)}]{DLMF}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{National Institute of Standards and Technology}}},\ }\href@noop {} {\bibinfo {title} {{NIST} {D}igital {L}ibrary of {M}athematical {F}unctions}},\ \bibinfo {howpublished} {\url{https://dlmf.nist.gov/10.32}} (\bibinfo {year} {2026}),\ \bibinfo {note} {release 1.2.8 of 2026-09-15, F.~W.~J. Olver, A.~B. Olde~Daalhuis, D.~W. Lozier, B.~I. Schneider, R.~F. Boisvert, C.~W. Clark, B.~R. Miller, B.~V. Saunders, H.~S. Cohl, and M.~A. McClain, eds.; Chapter 10, Section 10.32, Integral representations; accessed October 21, 2026}\BibitemShut {NoStop}%
+\end{thebibliography}%

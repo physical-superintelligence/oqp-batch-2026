@@ -1,0 +1,30 @@
+module
+
+public import ThreeCopyQutritWerner.CertificateX2CoreS2gT3_0
+public import ThreeCopyQutritWerner.CertificateX2CoreS2gT3_1
+public import ThreeCopyQutritWerner.CertificateX2CoreS2gT3_2
+public import ThreeCopyQutritWerner.CertificateX2CoreS2gT3_3
+public import ThreeCopyQutritWerner.CertificateX2CoreS2gT3_4
+public import ThreeCopyQutritWerner.CertificateX2CoreS2gT3_5
+public import ThreeCopyQutritWerner.CertificateX2CoreS2gT3_6
+public import ThreeCopyQutritWerner.CertificateX2CoreS2gT3_7
+public import ThreeCopyQutritWerner.CertificateX2CoreS2gT3_8
+public import ThreeCopyQutritWerner.CertificateX2CoreS2gT3_9
+public import ThreeCopyQutritWerner.CertificateX2CoreS2gT3_10
+public import ThreeCopyQutritWerner.CertificateX2CoreS2gT3_11
+
+@[expose] public section
+
+
+/-! Batched core S2g: axis-0 stage table. -/
+
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+set_option exponentiation.threshold 1000000
+
+namespace ThreeCopyQutritWerner.X2.CoreS2g
+open ThreeCopyQutritWerner ThreeCopyQutritWerner.X2
+
+x2_core_table t3 282
+
+end ThreeCopyQutritWerner.X2.CoreS2g

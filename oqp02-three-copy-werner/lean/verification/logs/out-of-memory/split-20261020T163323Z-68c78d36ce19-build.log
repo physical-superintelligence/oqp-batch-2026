@@ -1,0 +1,1973 @@
+✔ [3377/3826] Built ThreeCopyQutritWerner.CertificatePackedMaskedDigits (2.4s)
+✔ [3378/3826] Built ThreeCopyQutritWerner.Imports (2.5s)
+⚠ [3379/3826] Built ThreeCopyQutritWerner.CertificateX2PackedLiteral (3.4s)
+warning: ThreeCopyQutritWerner/CertificateX2PackedLiteral.lean:92:42: `Lean.levelZero` has been deprecated: Use `Lean.Level.zero` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.levelZero` to `Level.zero x`).
+
+Hint: Replace the deprecated name:
+  l̵e̵v̵e̵l̵Z̵e̵r̵o̵L̲e̲v̲e̲l̲.̲z̲e̲r̲o̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedLiteral.lean:94:35: `Lean.levelZero` has been deprecated: Use `Lean.Level.zero` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.levelZero` to `Level.zero x`).
+
+Hint: Replace the deprecated name:
+  l̵e̵v̵e̵l̵Z̵e̵r̵o̵L̲e̲v̲e̲l̲.̲z̲e̲r̲o̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedLiteral.lean:95:73: `Lean.levelZero` has been deprecated: Use `Lean.Level.zero` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.levelZero` to `Level.zero x`).
+
+Hint: Replace the deprecated name:
+  l̵e̵v̵e̵l̵Z̵e̵r̵o̵L̲e̲v̲e̲l̲.̲z̲e̲r̲o̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedLiteral.lean:107:41: `Lean.levelZero` has been deprecated: Use `Lean.Level.zero` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.levelZero` to `Level.zero x`).
+
+Hint: Replace the deprecated name:
+  l̵e̵v̵e̵l̵Z̵e̵r̵o̵L̲e̲v̲e̲l̲.̲z̲e̲r̲o̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedLiteral.lean:109:58: `Lean.levelZero` has been deprecated: Use `Lean.Level.zero` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.levelZero` to `Level.zero x`).
+
+Hint: Replace the deprecated name:
+  l̵e̵v̵e̵l̵Z̵e̵r̵o̵L̲e̲v̲e̲l̲.̲z̲e̲r̲o̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedLiteral.lean:110:36: `Lean.levelZero` has been deprecated: Use `Lean.Level.zero` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.levelZero` to `Level.zero x`).
+
+Hint: Replace the deprecated name:
+  l̵e̵v̵e̵l̵Z̵e̵r̵o̵L̲e̲v̲e̲l̲.̲z̲e̲r̲o̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedLiteral.lean:112:73: `Lean.levelZero` has been deprecated: Use `Lean.Level.zero` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.levelZero` to `Level.zero x`).
+
+Hint: Replace the deprecated name:
+  l̵e̵v̵e̵l̵Z̵e̵r̵o̵L̲e̲v̲e̲l̲.̲z̲e̲r̲o̲
+⚠ [3380/3826] Built ThreeCopyQutritWerner.CertificateX2PackedCore (1.9s)
+warning: ThreeCopyQutritWerner/CertificateX2PackedCore.lean:131:13: `Int.ofNat_eq_coe` has been deprecated: Use `Int.ofNat_eq_natCast` instead
+
+Hint: Replace the deprecated name:
+  Int.ofNat_eq_c̵o̵e̵n̲a̲t̲C̲a̲s̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedCore.lean:230:30: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThreeCopyQutritWerner/CertificateX2PackedCore.lean:230:30: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+✔ [3381/3826] Built ThreeCopyQutritWerner.Basic (1.0s)
+⚠ [3382/3826] Built ThreeCopyQutritWerner.CertificateX2PackedAxpy (1.9s)
+warning: ThreeCopyQutritWerner/CertificateX2PackedAxpy.lean:65:6: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedAxpy.lean:67:35: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThreeCopyQutritWerner/CertificateX2PackedAxpy.lean:67:35: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThreeCopyQutritWerner/CertificateX2PackedAxpy.lean:93:13: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedAxpy.lean:129:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3383/3826] Built ThreeCopyQutritWerner.CertificateX2PackedSound (2.2s)
+warning: ThreeCopyQutritWerner/CertificateX2PackedSound.lean:67:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedSound.lean:67:25: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedSound.lean:69:16: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedSound.lean:71:16: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedSound.lean:101:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedSound.lean:106:6: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedSound.lean:107:4: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedSound.lean:148:32: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThreeCopyQutritWerner/CertificateX2PackedSound.lean:157:32: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThreeCopyQutritWerner/CertificateX2PackedSound.lean:148:32: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThreeCopyQutritWerner/CertificateX2PackedSound.lean:157:32: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [3384/3826] Built ThreeCopyQutritWerner.CertificateX2PackedNatAxpy (2.1s)
+warning: ThreeCopyQutritWerner/CertificateX2PackedNatAxpy.lean:42:36: Variable name `oA` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _oA
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThreeCopyQutritWerner/CertificateX2PackedNatAxpy.lean:91:37: This simp argument is unused:
+  natFibers
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [natDot, sScalars, lincomb]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThreeCopyQutritWerner/CertificateX2PackedNatAxpy.lean:111:52: Unused tactic linter: `push_cast [Nat.cast_sub hoff]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThreeCopyQutritWerner/CertificateX2PackedNatAxpy.lean:111:52: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThreeCopyQutritWerner/CertificateX2PackedNatAxpy.lean:123:52: Unused tactic linter: `push_cast [Nat.cast_sub hoff]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThreeCopyQutritWerner/CertificateX2PackedNatAxpy.lean:123:52: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThreeCopyQutritWerner/CertificateX2PackedNatAxpy.lean:171:54: Unused tactic linter: `push_cast [Nat.cast_sub hmodle]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThreeCopyQutritWerner/CertificateX2PackedNatAxpy.lean:171:54: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+✔ [3385/3826] Built ThreeCopyQutritWerner.CertificateX2Reduced (4.8s)
+✔ [3386/3826] Built ThreeCopyQutritWerner.CertificateX2PackedGlue (1.5s)
+⚠ [3387/3826] Built ThreeCopyQutritWerner.CertificateX2InputDig (1.8s)
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:67:66: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:84:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:84:26: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:88:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:91:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:91:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:93:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:93:23: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:63:33: Variable name `hW` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:111:42: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:124:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:124:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:124:32: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:125:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:128:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:135:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:151:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:151:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:152:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:155:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:155:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:157:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:157:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:191:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:197:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:197:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:200:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:200:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:202:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:202:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:268:6: Unused tactic linter: `all_goals ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:268:16: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThreeCopyQutritWerner/CertificateX2InputDig.lean:293:76: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [3388/3826] Built ThreeCopyQutritWerner.CertificateX2PackedStage (1.8s)
+warning: ThreeCopyQutritWerner/CertificateX2PackedStage.lean:54:54: `Lean.levelZero` has been deprecated: Use `Lean.Level.zero` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.levelZero` to `Level.zero x`).
+
+Hint: Replace the deprecated name:
+  l̵e̵v̵e̵l̵Z̵e̵r̵o̵L̲e̲v̲e̲l̲.̲z̲e̲r̲o̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedStage.lean:55:32: `Lean.levelZero` has been deprecated: Use `Lean.Level.zero` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.levelZero` to `Level.zero x`).
+
+Hint: Replace the deprecated name:
+  l̵e̵v̵e̵l̵Z̵e̵r̵o̵L̲e̲v̲e̲l̲.̲z̲e̲r̲o̲
+warning: ThreeCopyQutritWerner/CertificateX2PackedStage.lean:73:56: `Lean.levelZero` has been deprecated: Use `Lean.Level.zero` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.levelZero` to `Level.zero x`).
+
+Hint: Replace the deprecated name:
+  l̵e̵v̵e̵l̵Z̵e̵r̵o̵L̲e̲v̲e̲l̲.̲z̲e̲r̲o̲
+⚠ [3389/3826] Built ThreeCopyQutritWerner.CertificateX2InputBlocks (1.9s)
+warning: ThreeCopyQutritWerner/CertificateX2InputBlocks.lean:67:40: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputBlocks.lean:103:10: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputBlocks.lean:104:17: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputBlocks.lean:104:29: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputBlocks.lean:105:10: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputBlocks.lean:106:12: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputBlocks.lean:107:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputBlocks.lean:108:10: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputBlocks.lean:174:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputBlocks.lean:193:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ThreeCopyQutritWerner/CertificateX2InputBlocks.lean:176:13: This simp argument is unused:
+  ← Fin.sum_univ_eq_sum_range (fun y0 => ∑ y1 ∈ Finset.range (x2KeyMult s k 1), _)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [← Fin.sum_univ_eq_sum_range (fun y1 => ∑ y2 ∈ Finset.range (x2KeyMult s k 2), _),
+    ← Fin.sum_univ_eq_sum_range (fun y2 => _), hJ]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThreeCopyQutritWerner/CertificateX2InputBlocks.lean:177:4: This simp argument is unused:
+  ← Fin.sum_univ_eq_sum_range (fun y1 => ∑ y2 ∈ Finset.range (x2KeyMult s k 2), _)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [← Fin.sum_univ_eq_sum_range (fun y0 => ∑ y1 ∈ Finset.range (x2KeyMult s k 1), _),
+    ← Fin.sum_univ_eq_sum_range (fun y2 => _), hJ]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3390/3826] Built ThreeCopyQutritWerner.CertificateX2InputSite (2.1s)
+warning: ThreeCopyQutritWerner/CertificateX2InputSite.lean:128:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSite.lean:142:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSite.lean:390:80: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [3391/3826] Built ThreeCopyQutritWerner.CertificateX2CoreLemmas (2.5s)
+warning: ThreeCopyQutritWerner/CertificateX2CoreLemmas.lean:40:8: This simp argument is unused:
+  List.getD_eq_getElem _ _ h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThreeCopyQutritWerner/CertificateX2CoreLemmas.lean:71:30: `cond_false` has been deprecated: Use `Bool.cond_false` instead
+
+Hint: Replace the deprecated name:
+  B̲o̲o̲l̲.̲cond_false
+warning: ThreeCopyQutritWerner/CertificateX2CoreLemmas.lean:75:30: `cond_true` has been deprecated: Use `Bool.cond_true` instead
+
+Hint: Replace the deprecated name:
+  B̲o̲o̲l̲.̲cond_true
+warning: ThreeCopyQutritWerner/CertificateX2CoreLemmas.lean:87:30: `cond_false` has been deprecated: Use `Bool.cond_false` instead
+
+Hint: Replace the deprecated name:
+  B̲o̲o̲l̲.̲cond_false
+warning: ThreeCopyQutritWerner/CertificateX2CoreLemmas.lean:90:30: `cond_true` has been deprecated: Use `Bool.cond_true` instead
+
+Hint: Replace the deprecated name:
+  B̲o̲o̲l̲.̲cond_true
+warning: ThreeCopyQutritWerner/CertificateX2CoreLemmas.lean:430:5: Variable name `hT0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3392/3826] Built ThreeCopyQutritWerner.CertificateX2InputSym (3.1s)
+warning: ThreeCopyQutritWerner/CertificateX2InputSym.lean:178:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSym.lean:201:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSym.lean:204:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [3393/3826] Built ThreeCopyQutritWerner.CertificateX2OutLemmas (2.3s)
+warning: ThreeCopyQutritWerner/CertificateX2OutLemmas.lean:61:5: Variable name `hJc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThreeCopyQutritWerner/CertificateX2OutLemmas.lean:61:54: Variable name `hY` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hY
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThreeCopyQutritWerner/CertificateX2OutLemmas.lean:226:13: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2OutLemmas.lean:263:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2OutLemmas.lean:265:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2OutLemmas.lean:265:44: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2OutLemmas.lean:274:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2OutLemmas.lean:274:45: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [3394/3826] Built ThreeCopyQutritWerner.CertificateX2CoreGen (2.7s)
+✔ [3395/3826] Built ThreeCopyQutritWerner.CertificateX2CoreBatch (2.1s)
+⚠ [3396/3826] Built ThreeCopyQutritWerner.CertificateX2InputV (5.6s)
+warning: ThreeCopyQutritWerner/CertificateX2InputV.lean:86:33: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThreeCopyQutritWerner/CertificateX2InputV.lean:86:46: Variable name `hB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [3397/3826] Built ThreeCopyQutritWerner.CertificateX2Trans (14s)
+✔ [3398/3826] Built ThreeCopyQutritWerner.CertificateX2CoreBatchGen (1.0s)
+⚠ [3399/3826] Built ThreeCopyQutritWerner.CertificateX2InputIB (2.6s)
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:35:38: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:65:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:65:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:66:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:66:48: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:67:6: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:80:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:82:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:82:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:83:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:83:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:84:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:84:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:97:30: Variable name `h` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:192:59: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputIB.lean:196:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [3400/3826] Built ThreeCopyQutritWerner.CertificateX2CoreT0Gen (2.3s)
+✔ [3401/3826] Built ThreeCopyQutritWerner.CertificateX2InputF0 (1.6s)
+✔ [3402/3826] Built ThreeCopyQutritWerner.CertificateX2InputT2 (1.9s)
+✔ [3403/3826] Built ThreeCopyQutritWerner.CertificateX2InputMeta (3.9s)
+✔ [3404/3826] Built ThreeCopyQutritWerner.CertificateX2FacesTrialData (28s)
+✔ [3405/3826] Built ThreeCopyQutritWerner.CertificateX2Images (63s)
+✔ [3406/3826] Built ThreeCopyQutritWerner.CertificateX2InputGen (2.7s)
+✔ [3407/3826] Built ThreeCopyQutritWerner.CertificateX2InputVGen (1.9s)
+✔ [3408/3826] Built ThreeCopyQutritWerner.CertificateX2InputTripGen (2.7s)
+✔ [3409/3826] Built ThreeCopyQutritWerner.CertificateX2Data (33s)
+⚠ [3410/3826] Built ThreeCopyQutritWerner.CertificateX2InputGlueV (1.8s)
+warning: ThreeCopyQutritWerner/CertificateX2InputGlueV.lean:33:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [3411/3826] Built ThreeCopyQutritWerner.CertificateX2InputJSym (2.5s)
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:184:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:184:39: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:185:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:185:54: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:197:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:197:39: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:198:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:198:54: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:233:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:254:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:255:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:257:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:258:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:272:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:273:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:275:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:276:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:288:10: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:289:17: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:289:29: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:293:10: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:294:12: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:295:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:296:10: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:337:0: automatically included section variable(s) unused in theorem `ThreeCopyQutritWerner.X2.x2Stab_case0`:
+  h01
+  h12
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit h01 h12 in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:340:0: automatically included section variable(s) unused in theorem `ThreeCopyQutritWerner.X2.x2Stab_case1`:
+  h01
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit h01 in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:345:0: automatically included section variable(s) unused in theorem `ThreeCopyQutritWerner.X2.x2Stab_case2`:
+  h12
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit h12 in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym.lean:397:13: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [3412/3826] Built ThreeCopyQutritWerner.CertificateX2InputJSym2 (2.8s)
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym2.lean:101:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym2.lean:101:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym2.lean:101:50: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym2.lean:108:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym2.lean:108:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym2.lean:109:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym2.lean:209:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym2.lean:224:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym2.lean:224:19: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym2.lean:224:31: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputJSym2.lean:272:13: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+✔ [3413/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChkD5 (27s)
+✔ [3414/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChkD2 (27s)
+✔ [3415/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChkD4 (27s)
+✔ [3416/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChkD3 (27s)
+✔ [3417/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChk2 (31s)
+✔ [3418/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChk7 (31s)
+✔ [3419/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChk9 (33s)
+✔ [3420/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChk3 (34s)
+✔ [3421/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChk10 (34s)
+✔ [3422/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChk0 (34s)
+✔ [3423/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChk8 (34s)
+✔ [3424/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChk11 (35s)
+✔ [3425/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChk1 (35s)
+✔ [3426/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChk5 (37s)
+✔ [3427/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChk6 (37s)
+✔ [3428/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChk4 (42s)
+✔ [3429/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChkD1 (25s)
+✔ [3430/3826] Built ThreeCopyQutritWerner.CertificateX2InputJChkD0 (25s)
+✔ [3431/3826] Built ThreeCopyQutritWerner.CertificateX2InputJInv (19s)
+✔ [3432/3826] Built ThreeCopyQutritWerner.CertificateX2InputJInv2 (14s)
+✔ [3433/3826] Built ThreeCopyQutritWerner.CertificateX2InputSorted (1.6s)
+⚠ [3434/3826] Built ThreeCopyQutritWerner.CertificateX2InputNormal (1.9s)
+warning: ThreeCopyQutritWerner/CertificateX2InputNormal.lean:78:15: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputNormal.lean:80:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [3435/3826] Built ThreeCopyQutritWerner.CertificateX2InputSel (2.1s)
+warning: ThreeCopyQutritWerner/CertificateX2InputSel.lean:139:10: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSel.lean:139:28: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSel.lean:142:10: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSel.lean:142:37: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSel.lean:143:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSel.lean:143:35: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [3436/3826] Built ThreeCopyQutritWerner.CertificateX2InputGlueKey (1.9s)
+warning: ThreeCopyQutritWerner/CertificateX2InputGlueKey.lean:43:50: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [3437/3826] Built ThreeCopyQutritWerner.CertificateX2InputKeys (2.0s)
+⚠ [3438/3826] Built ThreeCopyQutritWerner.CertificateX2InputTrip (3.5s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTrip.lean:280:67: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputTrip.lean:499:69: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [3439/3826] Built ThreeCopyQutritWerner.CertificateX2InputSeg (2.4s)
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:274:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:276:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:279:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:282:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:285:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:289:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:292:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:295:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:297:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:299:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:302:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:305:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:308:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:312:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:315:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:318:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:320:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:329:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:332:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:335:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:345:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSeg.lean:348:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [3440/3826] Built ThreeCopyQutritWerner.CertificateX2InputLab (23s)
+✔ [3441/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x457 (7.7s)
+⚠ [3442/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x477 (7.8s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x477.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3443/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x577 (8.0s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x577.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3444/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x777 (8.4s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x777.lean:92:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3445/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x557 (9.1s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x557.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3446/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x555 (11s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x555.lean:94:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3447/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x677 (15s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x677.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3448/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x447 (8.6s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x447.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3449/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x455 (9.2s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x455.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3450/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x445 (9.3s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x445.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3451/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x444 (9.8s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x444.lean:94:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3452/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x377 (8.4s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x377.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3453/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x567 (20s)
+⚠ [3454/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x556 (21s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x556.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3455/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x467 (22s)
+✔ [3456/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x357 (8.7s)
+✔ [3457/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x456 (27s)
+⚠ [3458/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x355 (9.4s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x355.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3459/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x446 (20s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x446.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3460/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x347 (9.7s)
+⚠ [3461/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x344 (9.1s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x344.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3462/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x345 (10s)
+⚠ [3463/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x337 (12s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x337.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3464/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x277 (9.5s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x277.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3465/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x267 (8.6s)
+⚠ [3466/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x334 (13s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x334.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3467/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x335 (13s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x335.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3468/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x333 (14s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x333.lean:92:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3469/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x367 (32s)
+✔ [3470/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x257 (8.9s)
+✔ [3471/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x247 (7.6s)
+✔ [3472/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x256 (9.1s)
+⚠ [3473/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x255 (8.9s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x255.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3474/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x246 (9.5s)
+✔ [3475/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x245 (7.4s)
+⚠ [3476/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x266 (18s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x266.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3477/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x237 (7.9s)
+⚠ [3478/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x244 (8.2s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x244.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3479/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x356 (39s)
+✔ [3480/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x235 (8.5s)
+✔ [3481/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x236 (10s)
+✔ [3482/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x234 (7.9s)
+⚠ [3483/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x227 (7.3s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x227.lean:50:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3484/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x346 (43s)
+⚠ [3485/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x224 (6.8s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x224.lean:50:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3486/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x226 (7.9s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x226.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3487/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x177 (7.0s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x177.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3488/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x157 (6.6s)
+✔ [3489/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x167 (9.0s)
+✔ [3490/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x156 (8.0s)
+⚠ [3491/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x155 (8.2s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x155.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3492/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x147 (7.7s)
+✔ [3493/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x145 (7.6s)
+✔ [3494/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x146 (8.1s)
+✔ [3495/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x137 (6.8s)
+⚠ [3496/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x144 (8.2s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x144.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3497/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x166 (17s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x166.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3498/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x136 (10s)
+✔ [3499/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x135 (7.6s)
+✔ [3500/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x134 (7.1s)
+✔ [3501/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x127 (7.3s)
+✔ [3502/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x125 (6.6s)
+⚠ [3503/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x336 (52s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x336.lean:76:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3504/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x126 (7.6s)
+✔ [3505/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x124 (6.6s)
+⚠ [3506/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x116 (7.8s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x116.lean:52:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3507/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x077 (6.8s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x077.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3508/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x067 (6.9s)
+✔ [3509/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x056 (6.1s)
+✔ [3510/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x057 (6.7s)
+✔ [3511/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x047 (6.0s)
+⚠ [3512/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x055 (6.5s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x055.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3513/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x046 (6.5s)
+⚠ [3514/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x066 (8.7s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x066.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3515/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x045 (6.2s)
+⚠ [3516/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x667 (86s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x667.lean:91:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3517/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x044 (6.5s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x044.lean:67:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3518/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x037 (6.4s)
+✔ [3519/3826] Built ThreeCopyQutritWerner.CertificateX2InputTripA (3.9s)
+✔ [3520/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x027 (5.9s)
+✔ [3521/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x034 (6.0s)
+✔ [3522/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x036 (7.1s)
+✔ [3523/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x035 (6.7s)
+✔ [3524/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x026 (6.6s)
+✔ [3525/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x024 (6.4s)
+✔ [3526/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x016 (6.6s)
+✔ [3527/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x006 (6.0s)
+✔ [3528/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x457x0 (7.6s)
+✔ [3529/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x777x0 (5.4s)
+✔ [3530/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x577x0 (6.4s)
+✔ [3531/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x477x0 (7.0s)
+✔ [3532/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x557x0 (7.4s)
+✔ [3533/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x447x0 (7.8s)
+✔ [3534/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x555x0 (9.2s)
+✔ [3535/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x445x0 (8.7s)
+✔ [3536/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x455x0 (9.2s)
+✔ [3537/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x444x0 (9.4s)
+✔ [3538/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x377x0 (9.8s)
+✔ [3539/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x357x0 (10s)
+✔ [3540/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x347x0 (10s)
+✔ [3541/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x355x0 (14s)
+✔ [3542/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x277x0 (2.9s)
+✔ [3543/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x344x0 (13s)
+✔ [3544/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x345x0 (11s)
+⚠ [3545/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x466 (119s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x466.lean:103:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3546/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x267x0 (5.9s)
+⚠ [3547/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x566 (120s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x566.lean:103:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3548/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x677x0 (30s)
+✔ [3549/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x247x0 (2.5s)
+✔ [3550/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x257x0 (2.9s)
+✔ [3551/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x337x0 (15s)
+✔ [3552/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x255x0 (2.8s)
+✔ [3553/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x256x0 (4.1s)
+✔ [3554/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x245x0 (2.9s)
+✔ [3555/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x246x0 (4.7s)
+✔ [3556/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x237x0 (2.6s)
+✔ [3557/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x567x0 (33s)
+⚠ [3558/3826] Built ThreeCopyQutritWerner.CertificateX2InputZS1 (130s)
+warning: ThreeCopyQutritWerner/CertificateX2InputZS1.lean:183:37: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks033, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThreeCopyQutritWerner/CertificateX2InputZS1.lean:203:37: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks112, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThreeCopyQutritWerner/CertificateX2InputZS1.lean:216:37: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks113, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThreeCopyQutritWerner/CertificateX2InputZS1.lean:229:37: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks114, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThreeCopyQutritWerner/CertificateX2InputZS1.lean:242:37: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks115, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThreeCopyQutritWerner/CertificateX2InputZS1.lean:255:37: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks117, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThreeCopyQutritWerner/CertificateX2InputZS1.lean:290:37: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks133, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThreeCopyQutritWerner/CertificateX2InputZS1.lean:310:37: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks223, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThreeCopyQutritWerner/CertificateX2InputZS1.lean:323:37: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks225, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThreeCopyQutritWerner/CertificateX2InputZS1.lean:336:37: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks233, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3559/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x244x0 (2.9s)
+✔ [3560/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x456x0 (31s)
+✔ [3561/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x235x0 (3.4s)
+✔ [3562/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x227x0 (2.3s)
+✔ [3563/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x234x0 (3.2s)
+✔ [3564/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x335x0 (17s)
+✔ [3565/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x224x0 (2.1s)
+✔ [3566/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x334x0 (19s)
+✔ [3567/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x226x0 (2.2s)
+✔ [3568/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x236x0 (5.6s)
+✔ [3569/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x177x0 (2.6s)
+✔ [3570/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x157x0 (2.5s)
+✔ [3571/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x155x0 (3.1s)
+✔ [3572/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x156x0 (3.8s)
+✔ [3573/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x147x0 (2.6s)
+✔ [3574/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x556x0 (42s)
+✔ [3575/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x145x0 (2.8s)
+✔ [3576/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x167x0 (5.0s)
+✔ [3577/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x144x0 (2.6s)
+✔ [3578/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x146x0 (4.1s)
+✔ [3579/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x137x0 (3.2s)
+✔ [3580/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x446x0 (40s)
+✔ [3581/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x135x0 (3.2s)
+✔ [3582/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x134x0 (2.9s)
+✔ [3583/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x333x0 (25s)
+✔ [3584/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x127x0 (2.3s)
+✔ [3585/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x136x0 (4.5s)
+✔ [3586/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x125x0 (2.6s)
+✔ [3587/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x126x0 (2.5s)
+✔ [3588/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x077x0 (2.1s)
+✔ [3589/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x124x0 (2.2s)
+✔ [3590/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x116x0 (2.4s)
+✔ [3591/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x266x0 (20s)
+✔ [3592/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x056x0 (2.5s)
+✔ [3593/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x057x0 (2.2s)
+✔ [3594/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x067x0 (2.9s)
+✔ [3595/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x055x0 (2.3s)
+✔ [3596/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x047x0 (2.5s)
+✔ [3597/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x046x0 (2.6s)
+✔ [3598/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x045x0 (2.7s)
+✔ [3599/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x037x0 (2.3s)
+✔ [3600/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x027x0 (2.0s)
+✔ [3601/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x044x0 (2.5s)
+✔ [3602/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x034x0 (2.3s)
+✔ [3603/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x066x0 (6.0s)
+✔ [3604/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x024x0 (2.1s)
+✔ [3605/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x036x0 (2.7s)
+✔ [3606/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x026x0 (2.5s)
+✔ [3607/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x035x0 (2.7s)
+✔ [3608/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x016x0 (2.6s)
+✔ [3609/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x006x0 (2.1s)
+✔ [3610/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x166x0 (16s)
+✔ [3611/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x777 (4.9s)
+✔ [3612/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x557 (5.5s)
+✔ [3613/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x577 (6.3s)
+✔ [3614/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x447 (4.9s)
+✔ [3615/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x477 (6.9s)
+✔ [3616/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x457 (8.4s)
+✔ [3617/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x445 (5.1s)
+✔ [3618/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x555 (7.6s)
+✔ [3619/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x444 (5.9s)
+✔ [3620/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x277 (2.6s)
+✔ [3621/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x455 (8.2s)
+✔ [3622/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x377 (9.7s)
+⚠ [3623/3826] Built ThreeCopyQutritWerner.CertificateX2InputSegA (21s)
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:207:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:209:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:212:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:215:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:218:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:222:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:225:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:228:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:230:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:232:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:235:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:238:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:241:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:245:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:248:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:251:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:253:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:262:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:265:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:268:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:278:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ThreeCopyQutritWerner/CertificateX2InputSegA.lean:281:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [3624/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x467x0 (71s)
+✔ [3625/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x347 (10s)
+✔ [3626/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x357 (12s)
+✔ [3627/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x356x0 (45s)
+✔ [3628/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x247 (3.2s)
+✔ [3629/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x367x0 (56s)
+✔ [3630/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x345 (11s)
+✔ [3631/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x257 (2.7s)
+✔ [3632/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x346x0 (47s)
+✔ [3633/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x255 (2.8s)
+✔ [3634/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x267 (12s)
+✔ [3635/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x256 (2.9s)
+✔ [3636/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x245 (3.2s)
+✔ [3637/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x246 (3.5s)
+✔ [3638/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x344 (19s)
+✔ [3639/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x237 (3.1s)
+✔ [3640/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x227 (2.2s)
+✔ [3641/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x244 (3.0s)
+✔ [3642/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x337 (9.8s)
+✔ [3643/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x235 (3.4s)
+✔ [3644/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x224 (2.3s)
+✔ [3645/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x234 (3.1s)
+✔ [3646/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x226 (2.3s)
+✔ [3647/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x236 (3.2s)
+✔ [3648/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x456 (9.3s)
+✔ [3649/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x177 (3.2s)
+✔ [3650/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x157 (2.8s)
+✔ [3651/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x155 (3.4s)
+✔ [3652/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x677 (25s)
+✔ [3653/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x335 (10s)
+✔ [3654/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x156 (2.9s)
+✔ [3655/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x147 (2.6s)
+✔ [3656/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x145 (3.1s)
+✔ [3657/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x144 (2.0s)
+✔ [3658/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x146 (3.2s)
+✔ [3659/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x556 (5.6s)
+✔ [3660/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x137 (3.4s)
+✔ [3661/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x167 (6.9s)
+✔ [3662/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x135 (3.2s)
+✔ [3663/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x134 (3.0s)
+✔ [3664/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x446 (5.3s)
+✔ [3665/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x355 (44s)
+✔ [3666/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x127 (2.1s)
+✔ [3667/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x136 (3.1s)
+✔ [3668/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x126 (2.2s)
+✔ [3669/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x125 (2.3s)
+✔ [3670/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x124 (2.2s)
+✔ [3671/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x334 (21s)
+⚠ [3672/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x077 (2.4s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x077.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x077.lean:36:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3673/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x116 (2.6s)
+⚠ [3674/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x056 (2.5s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x056.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x056.lean:37:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3675/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x057 (2.3s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x057.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x057.lean:37:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3676/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x055 (2.7s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x055.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x055.lean:37:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3677/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x047 (2.9s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x047.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x047.lean:37:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3678/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x045 (2.3s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x045.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x045.lean:37:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3679/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x046 (2.5s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x046.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x046.lean:37:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3680/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x037 (2.8s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x037.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x037.lean:39:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3681/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x067 (5.9s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x067.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x067.lean:47:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3682/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x027 (2.3s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x027.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x027.lean:32:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3683/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x044 (2.3s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x044.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x044.lean:37:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3684/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x034 (2.5s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x034.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x034.lean:39:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3685/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x024 (2.3s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x024.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x024.lean:32:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3686/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x036 (2.6s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x036.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x036.lean:39:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3687/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x026 (2.3s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x026.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x026.lean:32:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3688/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x035 (2.9s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x035.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x035.lean:39:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3689/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x016 (2.1s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x016.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x016.lean:32:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3690/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x006 (2.3s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x006.lean:25:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x006.lean:30:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3691/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x066 (5.8s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x066.lean:26:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTS1x066.lean:47:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3692/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x266 (12s)
+⚠ [3693/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x006 (2.5s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x006.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x006.lean:34:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3694/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x016 (2.2s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x016.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x016.lean:35:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3695/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x567 (39s)
+✔ [3696/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x336x0 (80s)
+⚠ [3697/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x035 (2.4s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x035.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x035.lean:42:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3698/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x026 (2.4s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x026.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x026.lean:35:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3699/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x024 (2.4s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x024.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x024.lean:35:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3700/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x036 (2.8s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x036.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x036.lean:42:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3701/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x034 (2.4s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x034.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x034.lean:42:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3702/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x044 (2.2s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x044.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x044.lean:40:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3703/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x166 (6.0s)
+⚠ [3704/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x027 (2.7s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x027.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x027.lean:35:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3705/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x366 (209s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x366.lean:129:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3706/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x045 (2.3s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x045.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x045.lean:40:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3707/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x037 (2.6s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x037.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x037.lean:42:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3708/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x046 (2.4s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x046.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x046.lean:40:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3709/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x047 (2.4s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x047.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x047.lean:40:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3710/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x055 (2.5s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x055.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x055.lean:40:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3711/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x066 (5.8s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x066.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x066.lean:50:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3712/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x057 (2.5s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x057.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x057.lean:40:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3713/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x056 (2.4s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x056.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x056.lean:40:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3714/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x116 (2.2s)
+✔ [3715/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x166 (10s)
+⚠ [3716/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x077 (2.2s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x077.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x077.lean:39:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3717/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x124 (2.4s)
+✔ [3718/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x126 (2.4s)
+✔ [3719/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x125 (2.5s)
+✔ [3720/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x127 (2.3s)
+⚠ [3721/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x067 (6.0s)
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x067.lean:29:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThreeCopyQutritWerner/CertificateX2InputTA1x067.lean:50:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3722/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x134 (3.0s)
+✔ [3723/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x135 (3.0s)
+✔ [3724/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x136 (3.5s)
+✔ [3725/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x137 (3.1s)
+✔ [3726/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x146 (3.1s)
+✔ [3727/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x144 (3.1s)
+✔ [3728/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x145 (2.7s)
+✔ [3729/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x147 (2.8s)
+✔ [3730/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x156 (2.9s)
+✔ [3731/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x155 (3.1s)
+✔ [3732/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x157 (3.2s)
+✔ [3733/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x177 (2.7s)
+✔ [3734/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x226 (2.2s)
+✔ [3735/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x236 (3.7s)
+✔ [3736/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x266 (14s)
+✔ [3737/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x446 (11s)
+✔ [3738/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x224 (2.3s)
+✔ [3739/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x167 (10s)
+✔ [3740/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x227 (2.3s)
+✔ [3741/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x556 (11s)
+✔ [3742/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x234 (3.6s)
+✔ [3743/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x235 (3.4s)
+✔ [3744/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x244 (2.0s)
+✔ [3745/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x237 (3.4s)
+✔ [3746/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x246 (3.3s)
+✔ [3747/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x245 (3.5s)
+✔ [3748/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x256 (3.0s)
+✔ [3749/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x255 (3.1s)
+✔ [3750/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x257 (2.8s)
+✔ [3751/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x247 (3.3s)
+✔ [3752/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x456 (11s)
+✔ [3753/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x267 (15s)
+✔ [3754/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x333 (66s)
+✔ [3755/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x277 (2.7s)
+✔ [3756/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x345 (17s)
+✔ [3757/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x335 (35s)
+✔ [3758/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x337 (32s)
+✔ [3759/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x344 (29s)
+✔ [3760/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x347 (16s)
+✔ [3761/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x357 (19s)
+✔ [3762/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x377 (14s)
+✔ [3763/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x444 (12s)
+✔ [3764/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x455 (10s)
+✔ [3765/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x445 (9.9s)
+✔ [3766/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x447 (9.8s)
+✔ [3767/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x477 (7.3s)
+✔ [3768/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x577 (7.4s)
+✔ [3769/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x557 (10s)
+✔ [3770/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x677 (54s)
+✔ [3771/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x334 (66s)
+✔ [3772/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x555 (16s)
+✔ [3773/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x777 (7.6s)
+✔ [3774/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x457 (10s)
+✔ [3775/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x356 (12s)
+✔ [3776/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x356 (18s)
+✔ [3777/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x346 (10s)
+✔ [3778/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x355 (63s)
+✔ [3779/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x336 (9.0s)
+✔ [3780/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x467 (36s)
+✔ [3781/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x346 (16s)
+✔ [3782/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x567 (103s)
+✔ [3783/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x566x1 (181s)
+✔ [3784/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x336 (30s)
+✔ [3785/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x367 (61s)
+✔ [3786/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x566x0 (235s)
+✔ [3787/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x333 (176s)
+✔ [3788/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x467 (101s)
+✔ [3789/3826] Built ThreeCopyQutritWerner.CertificateX2InputZA1 (109s)
+✔ [3790/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x466x1 (268s)
+✔ [3791/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x566 (37s)
+✔ [3792/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x667x0 (353s)
+✔ [3793/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x566 (97s)
+✔ [3794/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x367 (203s)
+✔ [3795/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x466x0 (352s)
+✔ [3796/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x366x1 (208s)
+✔ [3797/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x366x2 (210s)
+✔ [3798/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x366x0 (209s)
+✔ [3799/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x466 (37s)
+✔ [3800/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x667 (108s)
+✔ [3801/3826] Built ThreeCopyQutritWerner.CertificateX2InputTS1x366 (58s)
+✔ [3802/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x466 (103s)
+✔ [3803/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x366 (204s)
+⚠ [3804/3826] Built ThreeCopyQutritWerner.CertificateX2InputK1x666 (974s)
+warning: ThreeCopyQutritWerner/CertificateX2InputK1x666.lean:690:32: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ks, List.mem_cons, List.not_mem_nil, or_false] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✖ [3805/3826] Building ThreeCopyQutritWerner.CertificateX2InputU1x666x6 (155s)
+trace: .> LEAN_PATH=/var/lib/physics-vm-project/.lake/packages/Cli/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/batteries/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/Qq/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/aesop/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/proofwidgets/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/importGraph/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/plausible/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/mathlib/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/build/lib/lean /opt/lean/bin/lean /var/lib/physics-vm-project/ThreeCopyQutritWerner/CertificateX2InputU1x666x6.lean -o /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x6.olean -i /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x6.ilean -c /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x6.c --setup /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x6.setup.json --json
+error: Lean exited with code 137
+✖ [3806/3826] Building ThreeCopyQutritWerner.CertificateX2InputU1x666x8 (169s)
+trace: .> LEAN_PATH=/var/lib/physics-vm-project/.lake/packages/Cli/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/batteries/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/Qq/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/aesop/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/proofwidgets/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/importGraph/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/plausible/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/mathlib/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/build/lib/lean /opt/lean/bin/lean /var/lib/physics-vm-project/ThreeCopyQutritWerner/CertificateX2InputU1x666x8.lean -o /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x8.olean -i /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x8.ilean -c /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x8.c --setup /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x8.setup.json --json
+error: Lean exited with code 137
+✖ [3807/3826] Building ThreeCopyQutritWerner.CertificateX2InputU1x666x2 (180s)
+trace: .> LEAN_PATH=/var/lib/physics-vm-project/.lake/packages/Cli/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/batteries/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/Qq/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/aesop/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/proofwidgets/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/importGraph/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/plausible/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/mathlib/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/build/lib/lean /opt/lean/bin/lean /var/lib/physics-vm-project/ThreeCopyQutritWerner/CertificateX2InputU1x666x2.lean -o /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x2.olean -i /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x2.ilean -c /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x2.c --setup /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x2.setup.json --json
+error: Lean exited with code 137
+✖ [3808/3826] Building ThreeCopyQutritWerner.CertificateX2InputU1x666x7 (197s)
+trace: .> LEAN_PATH=/var/lib/physics-vm-project/.lake/packages/Cli/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/batteries/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/Qq/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/aesop/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/proofwidgets/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/importGraph/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/plausible/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/mathlib/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/build/lib/lean /opt/lean/bin/lean /var/lib/physics-vm-project/ThreeCopyQutritWerner/CertificateX2InputU1x666x7.lean -o /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x7.olean -i /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x7.ilean -c /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x7.c --setup /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x7.setup.json --json
+error: Lean exited with code 137
+✖ [3809/3826] Building ThreeCopyQutritWerner.CertificateX2InputU1x666x5 (215s)
+trace: .> LEAN_PATH=/var/lib/physics-vm-project/.lake/packages/Cli/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/batteries/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/Qq/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/aesop/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/proofwidgets/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/importGraph/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/plausible/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/mathlib/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/build/lib/lean /opt/lean/bin/lean /var/lib/physics-vm-project/ThreeCopyQutritWerner/CertificateX2InputU1x666x5.lean -o /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x5.olean -i /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x5.ilean -c /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x5.c --setup /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x5.setup.json --json
+error: Lean exited with code 137
+✔ [3810/3826] Built ThreeCopyQutritWerner.CertificateX2InputTA1x667 (699s)
+✖ [3811/3826] Building ThreeCopyQutritWerner.CertificateX2InputU1x666x4 (232s)
+trace: .> LEAN_PATH=/var/lib/physics-vm-project/.lake/packages/Cli/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/batteries/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/Qq/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/aesop/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/proofwidgets/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/importGraph/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/plausible/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/mathlib/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/build/lib/lean /opt/lean/bin/lean /var/lib/physics-vm-project/ThreeCopyQutritWerner/CertificateX2InputU1x666x4.lean -o /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x4.olean -i /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x4.ilean -c /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x4.c --setup /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x4.setup.json --json
+error: Lean exited with code 137
+✖ [3812/3826] Building ThreeCopyQutritWerner.CertificateX2InputU1x666x3 (254s)
+trace: .> LEAN_PATH=/var/lib/physics-vm-project/.lake/packages/Cli/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/batteries/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/Qq/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/aesop/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/proofwidgets/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/importGraph/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/plausible/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/mathlib/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/build/lib/lean /opt/lean/bin/lean /var/lib/physics-vm-project/ThreeCopyQutritWerner/CertificateX2InputU1x666x3.lean -o /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x3.olean -i /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x3.ilean -c /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x3.c --setup /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x3.setup.json --json
+error: Lean exited with code 137
+✖ [3813/3826] Building ThreeCopyQutritWerner.CertificateX2InputU1x666x13 (279s)
+trace: .> LEAN_PATH=/var/lib/physics-vm-project/.lake/packages/Cli/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/batteries/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/Qq/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/aesop/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/proofwidgets/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/importGraph/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/plausible/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/mathlib/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/build/lib/lean /opt/lean/bin/lean /var/lib/physics-vm-project/ThreeCopyQutritWerner/CertificateX2InputU1x666x13.lean -o /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x13.olean -i /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x13.ilean -c /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x13.c --setup /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x13.setup.json --json
+error: Lean exited with code 137
+✖ [3814/3826] Building ThreeCopyQutritWerner.CertificateX2InputU1x666x14 (319s)
+trace: .> LEAN_PATH=/var/lib/physics-vm-project/.lake/packages/Cli/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/batteries/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/Qq/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/aesop/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/proofwidgets/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/importGraph/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/plausible/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/mathlib/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/build/lib/lean /opt/lean/bin/lean /var/lib/physics-vm-project/ThreeCopyQutritWerner/CertificateX2InputU1x666x14.lean -o /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x14.olean -i /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x14.ilean -c /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x14.c --setup /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x14.setup.json --json
+error: Lean exited with code 137
+✖ [3815/3826] Building ThreeCopyQutritWerner.CertificateX2InputU1x666x11 (356s)
+trace: .> LEAN_PATH=/var/lib/physics-vm-project/.lake/packages/Cli/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/batteries/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/Qq/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/aesop/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/proofwidgets/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/importGraph/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/plausible/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/mathlib/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/build/lib/lean /opt/lean/bin/lean /var/lib/physics-vm-project/ThreeCopyQutritWerner/CertificateX2InputU1x666x11.lean -o /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x11.olean -i /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x11.ilean -c /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x11.c --setup /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x11.setup.json --json
+error: Lean exited with code 137
+✖ [3816/3826] Building ThreeCopyQutritWerner.CertificateX2InputU1x666x9 (464s)
+trace: .> LEAN_PATH=/var/lib/physics-vm-project/.lake/packages/Cli/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/batteries/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/Qq/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/aesop/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/proofwidgets/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/importGraph/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/plausible/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/packages/mathlib/.lake/build/lib/lean:/var/lib/physics-vm-project/.lake/build/lib/lean /opt/lean/bin/lean /var/lib/physics-vm-project/ThreeCopyQutritWerner/CertificateX2InputU1x666x9.lean -o /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x9.olean -i /var/lib/physics-vm-project/.lake/build/lib/lean/ThreeCopyQutritWerner/CertificateX2InputU1x666x9.ilean -c /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x9.c --setup /var/lib/physics-vm-project/.lake/build/ir/ThreeCopyQutritWerner/CertificateX2InputU1x666x9.setup.json --json
+error: Lean exited with code 137
+✔ [3817/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x666x15 (750s)
+✔ [3818/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x666x16 (752s)
+✔ [3819/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x666x12 (752s)
+✔ [3820/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x666x10 (759s)
+✔ [3821/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x666x0 (750s)
+✔ [3822/3826] Built ThreeCopyQutritWerner.CertificateX2InputU1x666x1 (764s)
+Some required targets logged failures:
+- ThreeCopyQutritWerner.CertificateX2InputU1x666x6
+- ThreeCopyQutritWerner.CertificateX2InputU1x666x8
+- ThreeCopyQutritWerner.CertificateX2InputU1x666x2
+- ThreeCopyQutritWerner.CertificateX2InputU1x666x7
+- ThreeCopyQutritWerner.CertificateX2InputU1x666x5
+- ThreeCopyQutritWerner.CertificateX2InputU1x666x4
+- ThreeCopyQutritWerner.CertificateX2InputU1x666x3
+- ThreeCopyQutritWerner.CertificateX2InputU1x666x13
+- ThreeCopyQutritWerner.CertificateX2InputU1x666x14
+- ThreeCopyQutritWerner.CertificateX2InputU1x666x11
+- ThreeCopyQutritWerner.CertificateX2InputU1x666x9
+error: build failed

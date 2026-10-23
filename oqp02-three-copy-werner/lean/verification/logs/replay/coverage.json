@@ -1,0 +1,108 @@
+{
+ "utc": "2026-10-21T10:48:11.175492+00:00",
+ "closure": "split-20261020T213838Z-0d55df765e94: verification/check-results/split-final/closure.json",
+ "closure_sha256": "cd695695219e5404468989388fcf0bd0063fd2b556f8743e980a122bca75c730",
+ "plan": "plan.json",
+ "plan_sha256": "ab25505a6cbc8a4418e5ff2b70533fe9396c46282e35cb125c0ea98c5bc7149f",
+ "closure_modules": 15121,
+ "planned_union_equals_closure": true,
+ "planned_disjoint": true,
+ "replayed_ok_modules": 15121,
+ "union_of_ok_lists_equals_closure": true,
+ "missing": [],
+ "extra": [],
+ "not_ok_anywhere": [],
+ "manifest_sha256": [
+  "b9fd17bfc3bb8bef75173c47fb2977c6948849c7aafb105302e1dfddf07cb61c"
+ ],
+ "one_manifest": true,
+ "expected_manifest_sha256": "b9fd17bfc3bb8bef75173c47fb2977c6948849c7aafb105302e1dfddf07cb61c",
+ "receipts": [
+  {
+   "receipt": "verification/logs/replay/heavy-01-receipt.json",
+   "shard": "heavy-01",
+   "check_result": "SPLIT REPLAY SHARD PASSED",
+   "manifest_sha256": "b9fd17bfc3bb8bef75173c47fb2977c6948849c7aafb105302e1dfddf07cb61c",
+   "counts": {
+    "ok": 525,
+    "failed": 0,
+    "timeout": 0,
+    "not_run": 0
+   }
+  },
+  {
+   "receipt": "verification/logs/replay/heavy-02-receipt.json",
+   "shard": "heavy-02",
+   "check_result": "SPLIT REPLAY SHARD PASSED",
+   "manifest_sha256": "b9fd17bfc3bb8bef75173c47fb2977c6948849c7aafb105302e1dfddf07cb61c",
+   "counts": {
+    "ok": 526,
+    "failed": 0,
+    "timeout": 0,
+    "not_run": 0
+   }
+  },
+  {
+   "receipt": "verification/logs/replay/heavy-03-receipt.json",
+   "shard": "heavy-03",
+   "check_result": "SPLIT REPLAY SHARD PASSED",
+   "manifest_sha256": "b9fd17bfc3bb8bef75173c47fb2977c6948849c7aafb105302e1dfddf07cb61c",
+   "counts": {
+    "ok": 526,
+    "failed": 0,
+    "timeout": 0,
+    "not_run": 0
+   }
+  },
+  {
+   "receipt": "verification/logs/replay/heavy-expansion-01-receipt.json",
+   "shard": "heavy-expansion-01",
+   "check_result": "NOT VERIFIED",
+   "manifest_sha256": "b9fd17bfc3bb8bef75173c47fb2977c6948849c7aafb105302e1dfddf07cb61c",
+   "counts": {
+    "ok": 0,
+    "failed": 1,
+    "timeout": 0,
+    "not_run": 0
+   }
+  },
+  {
+   "receipt": "verification/logs/replay/light-01-receipt.json",
+   "shard": "light-01",
+   "check_result": "SPLIT REPLAY SHARD PASSED",
+   "manifest_sha256": "b9fd17bfc3bb8bef75173c47fb2977c6948849c7aafb105302e1dfddf07cb61c",
+   "counts": {
+    "ok": 13108,
+    "failed": 0,
+    "timeout": 0,
+    "not_run": 0
+   }
+  },
+  {
+   "receipt": "verification/logs/replay/expansion-01-receipt.json",
+   "shard": "expansion-01",
+   "check_result": "SPLIT REPLAY SHARD PASSED",
+   "manifest_sha256": "b9fd17bfc3bb8bef75173c47fb2977c6948849c7aafb105302e1dfddf07cb61c",
+   "counts": {
+    "ok": 435,
+    "failed": 0,
+    "timeout": 0,
+    "not_run": 0
+   }
+  },
+  {
+   "receipt": "verification/logs/replay/heavy-expansion-01-t12-receipt.json",
+   "shard": "heavy-expansion-01-t12",
+   "check_result": "SPLIT REPLAY SHARD PASSED",
+   "manifest_sha256": "b9fd17bfc3bb8bef75173c47fb2977c6948849c7aafb105302e1dfddf07cb61c",
+   "counts": {
+    "ok": 1,
+    "failed": 0,
+    "timeout": 0,
+    "not_run": 0
+   }
+  }
+ ],
+ "manifest_matches": true,
+ "result": "COVERAGE COMPLETE"
+}

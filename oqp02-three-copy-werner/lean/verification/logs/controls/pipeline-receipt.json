@@ -1,0 +1,20 @@
+{
+  "mode": "controls",
+  "status": "NOT VERIFIED",
+  "utc": "2026-10-20T13:33:44.904596+00:00",
+  "independent_semantics": "NOT ASSESSED BY THIS SCRIPT",
+  "scope": "PIPELINE CONTROLS ONLY; no project endpoint or manuscript checked",
+  "pipeline_snapshot": {
+    "sha256": "fe1baa2fa0edfe25f470483b2ca637603a31a5dc98858e6e95e119ac5dd68dc3",
+    "files": {
+      "lean-toolchain": "8f89aa44fccdb1a0b6cc768c7c9f54b94cd40e47a08d582f82d1235f13075cf7",
+      "scripts/Audit.lean": "ab3e2ecff8c6bf8d148f6946ad7d619e2d3fde2cb9a6b2196d9b872b7471b04c",
+      "scripts/check.py": "6f1dfc0c4bf792f5d4ea996d21a74d9b2d181c1b9a0f505c5ddad13dc6ef5762",
+      "scripts/matrix_resources.py": "10162c5d4e12d5dc1468e28523b0e02e35fa0695d836127e4a0f0e09c11cd222",
+      "scripts/source_inputs.py": "82c7de974be809880828819ed2ea03005d399fb81e789cc8be3789ec26bd4bc9"
+    },
+    "toolchain": "leanprover/lean4:v4.35.0-rc4"
+  },
+  "check_result": "PIPELINE CONTROLS PASSED",
+  "exit_code": 0
+}

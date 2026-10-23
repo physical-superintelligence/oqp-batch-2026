@@ -1,0 +1,18 @@
+[ok] Prop. 3.1 continuation identity (symbolic) 
+[ok] Thm. 1.2 sharp value (1-2a)(1-a)^2 of 2^{-1/2}P_E x |u><u| x |v><v| (symbolic) 
+[ok] sharp family (N,A,B,T)=(1,4,5,2) (numeric) [1. 4. 5. 2.]
+[ok] sharp family q_alpha = (1-2a)(1-a)^2 (numeric) 
+[ok] Prop. 2.1 matrix form, d=3 
+[ok] (A1) on random vectors max deviation 1.1e-13
+[ok] (A2) on random vectors max deviation 1.6e-14
+[ok] (A3) two-site sum of squares, 3x4 balanced factors max deviation 2.6e-07
+[ok] Prop. 4.2(a) family I is a zero with singular values (2^-1/2, 2^-1/2, 0) q = -1.7e-16, svals = [0.707107 0.707107 0.      ]
+[ok] Prop. 4.2(a) family II is a zero with singular values (2^-1/2, 2^-1/2, 0) q = 4.4e-16, svals = [0.707107 0.707107 0.      ]
+[ok] Prop. 4.2(a) family III is a zero with singular values (2^-1/2, 2^-1/2, 0) q = -2.4e-16, svals = [0.707107 0.707107 0.      ]
+[ok] Lemma 2.4(a): q_alpha(C1 (x) C2) = q_1,alpha(C1) q_2,alpha(C2) 
+[ok] Lemma 2.4(b): q_alpha(V C V^dagger) = q_alpha(C) for local isometries 
+[ok] Remark 3.2(a) convex decomposition, d=3 
+[ok] Remark 3.2(a) convex decomposition, d=4 
+[ok] Remark 4.3 even r: Tr beta = 0 
+[ok] Remark 4.3 odd r: beta^2 = (Tr beta/2) beta 
+ALL CHECKS PASSED

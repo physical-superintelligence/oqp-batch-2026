@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Cite this qutrit formalization and its source manuscript of 21 October 2026 using the records below."
+title: "Three-copy nondistillability of the qutrit Werner state: Lean 4 formalization"
+type: software
+authors:
+  - given-names: "David"
+    family-names: "Turturean"
+license: Apache-2.0
+keywords:
+  - "Lean 4"
+  - "formalization"
+  - "quantum information"
+  - "entanglement distillation"
+  - "Werner states"
+  - "NPT"
+references:
+  - type: article
+    title: "Three-copy nondistillability of qutrit and ququart Werner states"
+    authors:
+      - name: "Physical Superintelligence (PSI)"
+    status: in-preparation
+    notes: "Manuscript of 21 October 2026."

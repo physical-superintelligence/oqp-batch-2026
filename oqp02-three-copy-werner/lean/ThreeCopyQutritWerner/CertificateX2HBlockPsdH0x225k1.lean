@@ -1,0 +1,53 @@
+module
+
+public import ThreeCopyQutritWerner.CertificateX2HBlockPsdH0x225k1Face
+public import ThreeCopyQutritWerner.CertificateX2Nh225k1
+
+@[expose] public section
+
+
+/-! Holomorphic block `225-1` (4 x 4, face dimension 4) in the certificate's quadratic-form coordinates: `N` are the numerators over `den = 57735991281730516779464839149788173726453690037306728120320000`. The kernel checks the face
+identity `Pᵀ A P = d² N` (`d = 1`), so `N` is positive semidefinite with its face block `A`. -/
+
+open scoped Matrix ComplexOrder
+
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+
+namespace ThreeCopyQutritWerner.X2HBlockPsdH0x225k1
+
+open ThreeCopyQutritWerner.X2HBlockPsdH0x225k1Face
+
+def N : Matrix (Fin 4) (Fin 4) ℤ :=
+  ThreeCopyQutritWerner.X2Nh.nh_225k1
+
+def P : Matrix (Fin 4) (Fin 4) ℤ :=
+  !![1, 0, 0, 0;
+    0, 1, 0, 0;
+    0, 0, 1, 0;
+    0, 0, 0, 1]
+
+def PtA : Matrix (Fin 4) (Fin 4) ℤ :=
+  !![2254747305211604919728244862150797820131648616133248212533471232, 765840067305829825574789068670101118927181585701933226373194240, 5261522451158291993907174026522152179163767168103937882816586240, -1136368600690235241303542631474032894415490645087961999201875968;
+    765840067305829825574789068670101118927181585701933226373194240, 4767983152833040259197704764267532801018330292824487984112197248, 9317759897027770000485057102502285132206674067884510473767849600, 54000579669685374455700930374244442860316044479396366320083456;
+    5261522451158291993907174026522152179163767168103937882816586240, 9317759897027770000485057102502285132206674067884510473767849600, 25821740761891104954514661046591718588344259002837478201067356800, -2662690324048992230058078129136449957792389660154195712989980160;
+    -1136368600690235241303542631474032894415490645087961999201875968, 54000579669685374455700930374244442860316044479396366320083456, -2662690324048992230058078129136449957792389660154195712989980160, 1337704030106966804353748323005748310622200997339784221526984704]
+
+theorem PtA_eq : Pᵀ * A = PtA := by decide +kernel
+
+theorem face_eq : PtA * P = (1 : ℤ) ^ 2 • N := by decide +kernel
+
+/-- The block numerators are positive semidefinite (exact). -/
+theorem psd : (N.map (Int.castRingHom ℂ)).PosSemidef :=
+  certificateX2_int_posSemidef_of_face N A P 1 (by norm_num) (by rw [PtA_eq]; exact face_eq) A_psd
+
+/-- The rational block `(1/den) • N` is positive semidefinite (exact). -/
+theorem psd_scaled : ((1 / ((57735991281730516779464839149788173726453690037306728120320000 : ℤ) : ℂ)) • N.map (Int.castRingHom ℂ)).PosSemidef :=
+  certificateX2_int_div_posSemidef N 57735991281730516779464839149788173726453690037306728120320000 (by norm_num) psd
+
+/-- The rational block `(1/den) • N`, in the bridge's `x2Complex` form (`x2Residual` blocks). -/
+theorem psd_rat : (((1 / ((57735991281730516779464839149788173726453690037306728120320000 : ℤ) : ℚ)) • N.map (Int.cast : ℤ → ℚ)).map
+    (fun q : ℚ => (q : ℂ))).PosSemidef :=
+  certificateX2_rat_int_div_posSemidef N 57735991281730516779464839149788173726453690037306728120320000 (by norm_num) psd
+
+end ThreeCopyQutritWerner.X2HBlockPsdH0x225k1

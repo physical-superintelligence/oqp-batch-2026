@@ -1,0 +1,587 @@
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[aps,pra,twocolumn,superscriptaddress,nofootinbib,longbibliography]{revtex4-2}
+\usepackage[utf8]{inputenc}
+\IfFileExists{lmodern.sty}{\usepackage[T1]{fontenc}\usepackage{lmodern}}{}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\definecolor{linkblue}{rgb}{0.1,0.1,0.5}
+\usepackage[colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue]{hyperref}
+\IfFileExists{xurl.sty}{\usepackage{xurl}\Urlmuskip=0mu plus 0.5mu\def\UrlBigBreaks{}}{}
+\hypersetup{pdftitle={Three copies of the Werner state: the sharp curve in dimensions three and four and a bound in every dimension},pdfauthor={Ian MacCormack and Ning Bao}}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Hh}{\mathcal H}
+\newcommand{\V}{\mathcal V}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle #1|}
+\newcommand{\Om}{\Omega}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\vecop}{vec}
+\newcommand{\T}{\mathsf T}
+\newcommand{\Yh}{\widehat Y}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\renewcommand{\thetheorem}{\arabic{section}.\arabic{theorem}}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\begin{document}
+
+\title{Three copies of the Werner state:\texorpdfstring{\\}{ }the sharp curve in dimensions three and four and a bound in every dimension}
+\author{Ian MacCormack}\thanks{I.M.\ chose the three-copy Werner problem as the arena for the NPT bound-entanglement question, scoped the project, and designed, ran and steered the automated research workflows at PSI over several months, including the campaigns in which the parameter $\alpha_0\approx0.4627$ of Theorem~\ref{thm:uniformthm} was first reached (the certificate presented here is a fresh derivation of that result). I.M.\ set the methodological directions that shaped the paper: that the hand mathematics should carry as much of the argument as possible and the computer as little; that certificates must couple the three sites through one lifted object rather than treat sectors separately; that the published endpoint certificates be used as inputs and replayed rather than reproduced; and that every computer-verified statement be stated as such with a minimal, re-runnable package. I.M.\ directed the editorial process (two independent drafts, an adversarial editorial debate between AI referees, and two rounds of referee revision), obtained and supplied a referee report on an earlier version, decided which of its recommendations to adopt, and reviewed and edited the final text.}
+\email{ian@psi.inc}
+\affiliation{Physical Superintelligence PBC, Cambridge, Massachusetts, USA}
+\author{Ning Bao}\thanks{N.B.\ contributed to the discussions that shaped the project and reviewed and edited the manuscript, as a paid contractor to PSI, not under one of his grants or as an employee of Northeastern University.}
+\affiliation{Department of Physics, Northeastern University, Boston, Massachusetts 02115, USA}
+\affiliation{Computational Science Initiative, Brookhaven National Laboratory, Upton, New York 11973, USA}
+\date{23 October 2026}
+
+\begin{abstract}
+Let $\rho_\alpha=(I-\alpha F)/d(d-\alpha)$ be the Werner state on $\C^d\otimes\C^d$. It is NPT for $\alpha>1/d$ and one-copy distillable for $\alpha>1/2$; whether the states in between are distillable from any number of copies is the NPT bound-entanglement problem. Exact rational certificates published in 2026 show that for $d=3,4$ three copies do not suffice at $\alpha=1/2$: the form $q(C)=\sum_S(-\tfrac12)^{|S|}\|\Tr_SC\|^2$ is nonnegative on every $d^3\times d^3$ matrix of rank at most two. From this single computer-verified input we prove by hand that for $0\le\alpha\le1/2$ the minimum of the corresponding form on unit matrices of rank at most two is exactly $(1-2\alpha)(1-\alpha)^2$, determine all minimisers for $0<\alpha<1/2$, exhibit three families of endpoint zeros and conjecture that they are all, and derive operational and higher-dimensional consequences. A second, dimension-uniform certificate---built from singular frames and the walled Brauer algebra, with a quantitative endpoint bound proved by hand as its only hand input---shows that three copies do not suffice for $0\le\alpha\le\alpha_0=0.4625$ in every finite local dimension, so NPT Werner states that survive three copies exist for every $d\ge3$. We explain both certificates and state exactly what the computer checks.
+\end{abstract}
+
+\maketitle
+
+\section*{Acknowledgements}
+
+We thank David Turturean, Adam Levine and Jim Halverson for discussions, encouragement and comments on this work, and David Turturean also for maintaining the Lean formalization; a referee for a detailed and constructive report on an earlier version, which led to Secs.~\ref{sec:setup}, \ref{sec:zeros} and~\ref{sec:certificate} being revised and to Corollary~\ref{cor:robust}; and the authors of \cite{Zenodo} and \cite{Liu} for making their certificates and verifiers public, which made the endpoint input of this paper replayable. We also thank Physical Superintelligence PBC, in which some of the authors have a financial interest, for use of its resources, including its technology and frontier AI models. The authors used these models to develop, derive, and compose this manuscript and its Lean~4 supplements.
+
+Results were formalized in Lean~4 by AI agents and checked by Lean's kernel; the formalization is at \url{https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp02-three-copy-werner/lean}.
+
+Ian MacCormack and Ning Bao reviewed and edited this paper and are responsible for its correctness. Ian MacCormack is employed by PSI and has a financial interest in it.
+
+\section{Introduction}\label{sec:intro}
+
+A bipartite state is \emph{distillable} if local operations and classical communication can extract maximally entangled qubit pairs from many copies of it. States with positive partial transpose (PPT) are not distillable \cite{HHH98}; whether every state with negative partial transpose (NPT) is distillable has been open since 1999, when \cite{DSSTT,DCLB} gave evidence that it fails for the Werner states \cite{Werner} (see \cite{HHHreview} for a review). With $F$ the swap on $\C^d\otimes\C^d$,
+\begin{equation}\label{eq:werner}
+\rho_\alpha=\frac{I-\alpha F}{d(d-\alpha)},\qquad -1\le\alpha\le1 ,
+\end{equation}
+is NPT exactly when $\alpha>1/d$ and one-copy distillable exactly when $\alpha>1/2$. The window $1/d<\alpha\le1/2$, nonempty for $d\ge3$, is the arena of the conjecture that no finite number of copies distils these states; since every NPT state can be brought to an NPT Werner state by local filtering and twirling \cite{HH99}, the Werner family is the whole problem (Problem~4 of \cite{HRZ}). Beyond one copy only partial results \cite{DSSTT,DCLB,VD,PPHH,QGWG,CostaRico} were known until July 2026, when two copies were settled in all dimensions by four independent groups \cite{FuGaoPark,SongChen,FHPV,BGH}. For three copies, Wu and Zou \cite{WuZou} proved the case of normal test matrices, and exact computer certificates for the general case appeared in October 2026 for $d=3$ \cite{Zenodo} and $d=4$ \cite{Liu}.
+
+The $n$-copy question is a question about matrices. For $C$ on $\Hh=(\C^d)^{\otimes3}$ let $\Tr_SC$ be its partial trace over the sites in $S\subseteq\{1,2,3\}$ and
+\begin{equation}\label{eq:q}
+q_\alpha(C)=\sum_{S\subseteq\{1,2,3\}}(-\alpha)^{|S|}\,\|\Tr_SC\|^2,\qquad q:=q_{1/2}.
+\end{equation}
+Then $\rho_\alpha$ is three-copy distillable if and only if $q_\alpha(C)<0$ for some $C$ of rank at most two (Proposition~\ref{prop:qform}). The published certificates establish:
+
+\begin{theorem}[endpoint; \cite{Zenodo} for $d=3$, \cite{Liu} for $d=4$]\label{thm:endpoint}
+Let $d\in\{3,4\}$. Then $q(C)\ge0$ for every $C\in\End(\Hh)$ of rank at most two.
+\end{theorem}
+
+By Lemma~\ref{lem:elementary}(b) the theorem holds for unequal local dimensions $2\le d_1,d_2,d_3\le4$, and the case $d=3$ is also a corollary of the case $d=4$, so the qutrit endpoint is established twice (Remark~\ref{rem:cert}). The endpoint inequality is the result of \cite{Zenodo,Liu} and is used as such; the threshold $\alpha\le\tfrac12$ already follows from it by a convex decomposition (Remark~\ref{rem:interval}). New here are the exact constant, the interior minimisers, the zero families (which extend the endpoint examples of \cite{WuZou}) and the consequences:
+
+\begin{theorem}[the three-copy curve]\label{thm:curve}
+For local dimensions $2\le d_i\le4$ and $0\le\alpha\le\tfrac12$,
+\begin{equation}\label{eq:curve}
+\min\{q_\alpha(C):\ \|C\|=1,\ \rank C\le2\}=(1-2\alpha)(1-\alpha)^2 ,
+\end{equation}
+and for $0<\alpha<\tfrac12$ the minimisers are exactly $2^{-1/2}P_E\otimes\ket u\bra u\otimes\ket v\bra v$ up to a phase and a permutation of the sites, with $P_E$ the projector onto a two-plane $E$ of one local space and $u,v$ unit vectors in the other two. Consequently $\rho_\alpha$ is three-copy distillable if and only if $\alpha>\tfrac12$.
+\end{theorem}
+
+The mechanism is an exact identity (Proposition~\ref{prop:cont}) that writes $q_\alpha-(1-2\alpha)(1-\alpha)^2\|C\|^2$ as a positive combination of the endpoint form $q$, the one-site form and the two-site forms on the three cuts of $C$; the single endpoint inequality therefore determines the whole curve, and the equality analysis gives the minimisers. An operational form (every two-qubit state obtained from three copies by a separable operation is separable), an extension to arbitrary dimensions when the local overlaps of range and corange have rank at most four, full-rank NPT states that survive three copies, and a quantitative robustness statement that uses the constant (Sec.~\ref{sec:consequences}) follow. At the endpoint the equality set is larger than the minimisers; we exhibit three families of zeros and conjecture, with evidence, that they exhaust it (Sec.~\ref{sec:zeros}).
+
+In dimensions $d\ge5$ the endpoint is open. A second certificate, uniform in the dimension, gives the sign on a slightly shorter interval:
+
+\begin{theorem}[every dimension]\label{thm:uniformthm}
+Let $\alpha_0=\tfrac{37}{80}$. For all finite local dimensions $d_1,d_2,d_3$ and $0\le\alpha\le\alpha_0$,
+\begin{equation}\label{eq:unifbound}
+q_\alpha(C)\ge(1-\alpha/\alpha_0)^3\,\|C\|^2
+\end{equation}
+for every $C$ of rank at most two. Consequently $\rho^{(d)}_\alpha$ is three-copy undistillable for $0\le\alpha\le\alpha_0$ in every dimension $d$, and the NPT window $1/d<\alpha\le\alpha_0$ of states that survive three copies is nonempty for every $d\ge3$.
+\end{theorem}
+
+The certificate behind Theorem~\ref{thm:uniformthm} (Sec.~\ref{sec:uniform}) lifts $C$ by its singular frames, replaces the moment matrix of Sec.~\ref{sec:certificate} by a $2\times2$ determinant, and tests positivity in the walled Brauer algebra, whose structure constants are polynomials in $d$; its only hand input is a quantitative bound on the endpoint form valid in every dimension, proved by hand in Appendix~\ref{app:bound}, and the value of $\alpha_0$ is what four replicas give in this way, not an optimality claim. The gap $\alpha_0<\alpha\le\tfrac12$ for $d\ge5$ remains (Sec.~\ref{sec:discussion}).
+
+Section~\ref{sec:certificate} explains the endpoint certificates: it derives by hand the lift of $C$ to a pair of vectors on which ``rank at most two'' is a linear condition, the expression of $q$ as a swap polynomial, and the averaging that makes the problem finite, so that Theorem~\ref{thm:endpoint} becomes a four-line deduction from an identity between explicitly stored rational matrices; Sec.~\ref{sec:uniform} does the same for the uniform certificate, and Sec.~\ref{sec:verification} states exactly which finite statements the computer checks. Every other numbered statement is proved in the paper, except Theorem~\ref{thm:twocopy} (cited), Theorems~\ref{thm:cert} and~\ref{thm:unif} (computer-verified, Sec.~\ref{sec:verification}) and Conjecture~\ref{conj:zeros}. Section~\ref{sec:setup} fixes conventions and derives the matrix form, Sec.~\ref{sec:interval} proves Theorem~\ref{thm:curve}, Sec.~\ref{sec:discussion} states what remains open, and Appendix~\ref{app:cut} writes the two-site theorem for rank two as an explicit sum of squares.
+
+\section{Distillability as a matrix inequality}\label{sec:setup}
+
+\emph{Conventions.} Inner products are conjugate-linear in the first argument, $\|\cdot\|$ is the Frobenius norm and $\|\cdot\|_1$ the trace norm. $\Hh=\Hh_1\otimes\Hh_2\otimes\Hh_3$ with $\Hh_i=\C^{d_i}$; the factors are the \emph{sites}, and $d_i=d$ unless said otherwise. $\Tr_SC$ is the unnormalised partial trace over the sites in $S$ ($\Tr_\emptyset C=C$). The expression \eqref{eq:q} on a tensor product of $n$ factors defines the $n$-site form $q^{(n)}_\alpha$, with $q^{(n)}:=q^{(n)}_{1/2}$; thus $q^{(1)}_\alpha(C)=\|C\|^2-\alpha|\Tr C|^2$ on one site, and on a bipartition $\Hh_L\otimes\Hh_R$ we write
+\begin{equation}\label{eq:Q}
+Q_{L|R}(C)=\|C\|^2-\tfrac12\|\Tr_LC\|^2-\tfrac12\|\Tr_RC\|^2+\tfrac14|\Tr C|^2
+\end{equation}
+for the two-site form $q^{(2)}$.
+``Rank'' means the rank of $C$ as a $d^3\times d^3$ matrix; a matrix of rank at most two is $C=XY^\dagger$ with $X,Y\in\C^{d^3\times2}$, and nothing else is assumed ($C$ need not be normal, its singular values may differ, its range and corange may be different planes). Row-first vectorisation sends $C=\sum_{ab}C_{ab}\ket a\bra b$ to $\vecop C=\sum_{ab}C_{ab}\ket a\ket b\in\Hh\otimes\Hh$, whose Schmidt rank across the two copies of $\Hh$ is $\rank C$. On $\C^d\otimes\C^d$ let $\ket\Om=\sum_j\ket{jj}$, $\Om=\ket\Om\bra\Om$, $F$ the swap and $\Gamma$ the partial transpose of the second factor, so $F^\Gamma=\Om$.
+
+\emph{Werner states and distillability.} We write $\rho^{(d)}_\alpha$ for \eqref{eq:werner} when the dimension matters; the parameter of \cite{Zenodo,Liu} is $-\alpha$. Since $\rho_\alpha^\Gamma=(I-\alpha\Om)/d(d-\alpha)$ and $\Om$ has the eigenvalue $d$ on $\ket\Om$, $\rho_\alpha$ is NPT exactly when $\alpha>1/d$, and it is separable exactly when it is PPT \cite{Werner,HHH96}. A state $\varrho$ is \emph{one-copy distillable} if $\ip\psi{\varrho^\Gamma\psi}<0$ for some vector $\psi$ of Schmidt rank at most two across the Alice--Bob cut; equivalently \cite{HHH98,DSSTT,DCLB}, local projections onto a two-qubit subspace turn one copy, with nonzero probability, into an entangled two-qubit state. It is \emph{$n$-copy distillable} if $\varrho^{\otimes n}$ is one-copy distillable, and \emph{distillable} if it is $n$-copy distillable for some $n$: a distillable state yields maximally entangled qubit pairs asymptotically from many such blocks, and conversely \cite{HHH98}. PPT states are not distillable.
+
+\begin{proposition}[matrix form]\label{prop:qform}
+For every $C\in\End(\Hh)$ and real $\alpha$,
+\begin{equation}\label{eq:qform}
+\Bigl\langle\vecop C,\ \textstyle\bigotimes_{i}\bigl(I-\alpha\Om_i\bigr)\,\vecop C\Bigr\rangle=q_\alpha(C) ,
+\end{equation}
+where $\Om_i$ acts on the site-$i$ factors of the two copies of $\Hh$. For $-1\le\alpha\le1$, $(\rho^{(d)}_\alpha)^\Gamma=(I-\alpha\Om)/d(d-\alpha)$, so the left side with $(\rho^{(d_i)}_\alpha)^\Gamma$ in place of $I-\alpha\Om_i$ equals $q_\alpha(C)/\prod_id_i(d_i-\alpha)$, and $\bigotimes_i\rho^{(d_i)}_\alpha$, in particular $\rho_\alpha^{\otimes3}$, is one-copy distillable if and only if $q_\alpha(C)<0$ for some $C$ of rank at most two.
+\end{proposition}
+\begin{proof}
+Pair the site-$i$ factor of the first copy of $\Hh$ (the row index of $C$) with the site-$i$ factor of the second copy (the column index). Contracting $\vecop C$ with $\bra\Om$ on such a pair sets the row index equal to the column index at site $i$ and sums, i.e.\ takes the partial trace over site $i$; hence $\ip{\vecop C}{\Om_S\vecop C}=\|\Tr_SC\|^2$ for $\Om_S=\prod_{i\in S}\Om_i$, and expanding the product gives \eqref{eq:qform}. The second statement is the criterion above, since the Schmidt rank of $\vecop C$ is $\rank C$.
+\end{proof}
+
+The three-copy problem is therefore a statement about $d^3\times d^3$ matrices of rank at most two. Its difficulty is visible in \eqref{eq:q}: partial traces do not preserve rank ($\Tr_1C$ can have rank $2d$), so lower-copy results cannot simply be applied to partial traces; a proof has to use that all columns of $C$ lie in one plane and all rows in one plane, at all three sites at once.
+
+\begin{lemma}[one site]\label{lem:onesite}
+If $\rank C\le2$ then $|\Tr C|\le\|C\|_1\le\sqrt2\,\|C\|$; hence $q^{(1)}_\alpha(C)\ge(1-2\alpha)\|C\|^2$ for $\alpha\ge0$, with equality for $\alpha>0$ if and only if $C$ is a complex multiple of an orthogonal projector of rank two. In particular, by the one-site case of Proposition~\ref{prop:qform}, $\rho_\alpha$ is one-copy distillable iff $\alpha>\tfrac12$.
+\end{lemma}
+\begin{proof}
+With singular values $s_1\ge s_2$, $|\Tr C|\le s_1+s_2=\|C\|_1$ and $(s_1+s_2)^2\le2(s_1^2+s_2^2)$. Equality in the second inequality means $s_1=s_2$; in the first, with the polar decomposition $C=U|C|$, it means $|\Tr(U|C|)|=\Tr|C|$, i.e.\ $U$ is a constant phase on $\ran|C|$.
+\end{proof}
+
+\begin{theorem}[two sites \cite{FuGaoPark,SongChen,FHPV,BGH}]\label{thm:twocopy}
+$Q_{L|R}(C)\ge0$ for every $C$ of rank at most two on $\Hh_L\otimes\Hh_R$, in all dimensions.
+\end{theorem}
+
+The four proofs are independent; \cite{FHPV,BGH} also give sharp forms. Appendix~\ref{app:cut} writes the inequality for rank two as a sum of squares.
+
+\begin{lemma}\label{lem:elementary}
+\textup{(a)} If $C_1$ acts on a set of sites and $C_2$ on the complementary sites, then $q^{(n)}_\alpha(C_1\otimes C_2)=q^{(n_1)}_\alpha(C_1)\,q^{(n_2)}_\alpha(C_2)$.
+\textup{(b)} If $V=\bigotimes_{i\vphantom{y}}V_i$ with isometries $V_i:\C^{k_i}\to\C^{d_i}$, then $q_\alpha(VCV^\dagger)=q_\alpha(C)$ and $\rank VCV^\dagger=\rank C$.
+\end{lemma}
+\begin{proof}
+(a) If $C_1$ acts on the sites in $S_1$, then $\Tr_S(C_1\otimes C_2)=\Tr_{S\cap S_1}C_1\otimes\Tr_{S\setminus S_1}C_2$, and Frobenius norms multiply. (b) $\Tr_S(VCV^\dagger)=V'(\Tr_SC)V'^\dagger$ with $V'$ the tensor product of the $V_i$ over the sites not in $S$, and isometries preserve Frobenius norms.
+\end{proof}
+
+By (b), nothing depends on the choice of local bases.
+
+\section{From the endpoint to the whole interval}\label{sec:interval}
+
+Let $\bar Q(C)=\tfrac13\sum_{i=1}^3Q_{i|\bar i}(C)$ be the mean of the two-site forms \eqref{eq:Q} over the three cuts $i\,|\,\bar i$ of $\Hh$, $\bar i=\{1,2,3\}\setminus\{i\}$.
+
+\begin{proposition}[continuation identity]\label{prop:cont}
+For every $C\in\End(\Hh)$ and every real $\alpha$,
+\begin{multline}\label{eq:cont}
+q_\alpha(C)=(1-2\alpha)(1-\alpha)^2\|C\|^2+\frac{4\alpha(1+\alpha)}3\,q(C)\\
++\alpha(1-2\alpha)\Bigl(\frac23-\alpha\Bigr)q^{(1)}(C)+2\alpha(1-2\alpha)\,\bar Q(C),
+\end{multline}
+where $q^{(1)}(C)=\|C\|^2-\tfrac12|\Tr C|^2$ is the one-site form of $C$ regarded as a matrix on the single site $\Hh$.
+\end{proposition}
+\begin{proof}
+Write $t_k=\sum_{|S|=k}\|\Tr_SC\|^2$. Then $q_\alpha=\sum_k(-\alpha)^kt_k$, $q=t_0-\tfrac12t_1+\tfrac14t_2-\tfrac18t_3$, $q^{(1)}=t_0-\tfrac12t_3$, and $\bar Q=t_0-\tfrac16(t_1+t_2)+\tfrac14t_3$, because each single-site and each two-site trace occurs in exactly one of the three cuts. Comparing the coefficients of $t_1,t_2,t_3$ on the two sides of \eqref{eq:cont} gives three linear equations for the three multipliers, with the displayed solution; the coefficient of $t_0$ is then $1-\tfrac43\alpha(1+\alpha)-\alpha(1-2\alpha)(\tfrac23-\alpha)-2\alpha(1-2\alpha)=(1-2\alpha)(1-\alpha)^2$.
+\end{proof}
+
+On $[0,\tfrac12]$ the three multipliers in \eqref{eq:cont} are nonnegative, and on $(0,\tfrac12)$ strictly positive. The three forms they multiply are nonnegative on matrices of rank at most two: $q$ by Theorem~\ref{thm:endpoint}, $q^{(1)}$ by Lemma~\ref{lem:onesite}, $\bar Q$ by Theorem~\ref{thm:twocopy}.
+
+\begin{proof}[Proof of Theorem~\ref{thm:curve}]
+\emph{Lower bound.} Immediate from \eqref{eq:cont} and the three nonnegativity statements.
+
+\emph{Sharpness.} The matrix $2^{-1/2}P_E\otimes\ket u\bra u\otimes\ket v\bra v$ has norm one and rank two, and by Lemma~\ref{lem:elementary}(a) and the one-site values $q^{(1)}_\alpha(2^{-1/2}P_E)=1-2\alpha$, $q^{(1)}_\alpha(\ket u\bra u)=1-\alpha$, its $q_\alpha$ equals $(1-2\alpha)(1-\alpha)^2$.
+
+\emph{Minimisers.} Let $0<\alpha<\tfrac12$ and $q_\alpha(C)=(1-2\alpha)(1-\alpha)^2$ with $\|C\|=1$. All three multipliers in \eqref{eq:cont} are positive, so $q^{(1)}(C)=0$ and $\bar Q(C)=0$. By Lemma~\ref{lem:onesite}, $C=2^{-1/2}P$ up to a phase, with $P$ an orthogonal projector of rank two. Since each $Q_{i|\bar i}(P)\ge0$, $\bar Q(P)=0$ forces $Q_{i|\bar i}(P)=0$ for $i=1,2,3$. Let $u_1,u_2$ be an orthonormal basis of $\ran P$, and on two copies of $\Hh$ let $F_i$ exchange the site-$i$ factors. The swap trick $\|\Tr_{\bar i}P\|^2=\Tr[(P\otimes P)F_i]$ and $\Tr[(P\otimes P)F_iF_{\bar i}]=\Tr P^2=2$ give
+\begin{align}
+Q_{i|\bar i}(P)&=3-\tfrac12\Tr\bigl[(P\otimes P)(F_i+F_{\bar i})\bigr]\notag\\
+&=\tfrac12\Tr\bigl[(P\otimes P)(I-F_i)(I-F_{\bar i})\bigr]\notag\\
+&=2\sum_{r,s=1}^2\|J(u_r\otimes u_s)\|^2 ,\label{eq:QP}
+\end{align}
+where $J=\tfrac14(I-F_i)(I-F_{\bar i})$ is an orthogonal projector ($F_i$ and $F_{\bar i}$ commute). Hence $J(w\otimes w)=0$ for every $w\in\ran P$. For a unit vector $w$, expanding $4J$ into its four swap words gives $\|J(w\otimes w)\|^2=\tfrac12(1-\text{purity of the site-$i$ marginal of }w)$, which vanishes iff $w$ is a product vector across the cut $i|\bar i$. So every $w\in\ran P$ is a product at every cut, i.e.\ fully product. Two independent fully product vectors whose factors differ at more than one site have a sum of Schmidt rank two across one of the cuts; hence the spanning vectors of $\ran P$ differ at only one site, $\ran P=E\otimes u\otimes v$ up to a permutation of the sites, and $C$ is of the stated form.
+
+\emph{Distillability.} For $\alpha\le0$ the state is PPT; for $0<\alpha\le\tfrac12$, $q_\alpha\ge0$ on rank two and Proposition~\ref{prop:qform} applies; for $\alpha>\tfrac12$ the state is already one-copy distillable (Lemma~\ref{lem:onesite}), and tensoring a one-site witness with $\ket0\bra1\otimes\ket0\bra1$ gives a three-site witness by Lemma~\ref{lem:elementary}(a).
+\end{proof}
+
+\begin{remark}\label{rem:interval}
+(a) The threshold alone needs no identity: $\rho_\alpha=\lambda\rho_{1/2}+(1-\lambda)I/d^2$ with $\lambda=\alpha(2d-1)/(d-\alpha)\in[0,1]$ for $0\le\alpha\le\tfrac12$. Since $I/d^2$ is a nonnegative combination of product projectors $\ket j\bra j\otimes\ket k\bra k$, expanding $(\rho_\alpha^{\otimes3})^\Gamma$ and contracting $\vecop C$ with such a projector at a site compresses $C$ by a row and a column vector there, which preserves rank at most two; what remains is an endpoint form on the other sites, nonnegative by Theorem~\ref{thm:endpoint}, Theorem~\ref{thm:twocopy} or Lemma~\ref{lem:onesite}. This gives only $q_\alpha\ge(1-2\alpha)^3\|C\|^2$; the identity \eqref{eq:cont} gives the exact constant $(1-2\alpha)(1-\alpha)^2$ and the minimisers.
+(b) The proof uses only Lemma~\ref{lem:onesite}, Theorem~\ref{thm:twocopy} and the endpoint inequality, so Theorem~\ref{thm:curve} holds in any local dimensions in which the endpoint inequality holds, provided some $d_i\ge2$ (the minimiser needs one site of dimension at least two; the lower bound itself holds in all dimensions).
+(c) At $\alpha=\tfrac12$ the minimisers remain zeros of $q$, but they are no longer the only ones: $q(2^{-1/2}P_E\otimes N)=0$ for every rank-one $N$ on the other two sites, and there are zeros with two-dimensional local support at every site (Sec.~\ref{sec:zeros}).
+\end{remark}
+
+\section{Endpoint zeros}\label{sec:zeros}
+
+Every nonzero zero of $q$ of rank at most two has rank two: for $C=xy^\dagger$, $\|\Tr_SC\|^2=\langle x\otimes y,\prod_{i\in S}F_i\,x\otimes y\rangle$ with $F_i$ as in Sec.~\ref{sec:interval}, so $q(C)=\langle x\otimes y,\prod_i(I-\tfrac12F_i)\,x\otimes y\rangle\ge\tfrac18\|x\|^2\|y\|^2$, the three commuting swaps having eigenvalues $\pm1$ \cite{CostaRico}.
+
+Let $\theta$ be the spin flip on $r$ qubits, $\theta\psi=\Xi\bar\psi$ with $\Xi=(i\sigma^y)^{\otimes r}$, an antiunitary with $\theta^2=(-1)^r$. For orthonormal $x,y\in(\C^2)^{\otimes r}$ put
+\begin{equation}\label{eq:beta}
+\beta(x,y)=\tfrac1{\sqrt2}\bigl(\ket x\bra{\theta y}-\ket y\bra{\theta x}\bigr)=\tfrac1{\sqrt2}\,(xy^{\T}-yx^{\T})\,\Xi^{\T},
+\end{equation}
+the Pl\"ucker bivector of the plane $\spn\{x,y\}$, viewed as an antisymmetric matrix, composed with the local spin flips. Replacing $(x,y)$ by another frame of the same plane multiplies $\beta$ by a nonzero scalar. A \emph{binary embedding} is $V=V_1\otimes V_2\otimes V_3$ with isometries $V_i:\C^2\to\C^{d}$.
+
+\begin{definition}[three families]\label{def:families}
+Up to a phase and a permutation of the sites:
+\begin{gather*}
+\text{I:}\ \ 2^{-1/2}P_E\otimes\ket\varphi\bra\chi,\qquad
+\text{II:}\ \ \ket u\bra v\otimes V\beta(x,y)V^\dagger,\\
+\text{III:}\ \ V\beta(x,y)V^\dagger,
+\end{gather*}
+where $E\subset\C^d$ is a two-plane, $\varphi,\chi\in\C^d\otimes\C^d$ and $u,v\in\C^d$ are unit vectors, $x,y\in(\C^2)^{\otimes2}$ in family II and $(\C^2)^{\otimes3}$ in family III, and $V=V_2\otimes V_3$ in family II.
+\end{definition}
+Up to normalisation, family I contains the non-normal equality operator $\ket0\bra1\otimes\ket0\bra1\otimes I_2$ of \cite[Prop.~8.1]{WuZou}, and family III contains the balanced anti-state mixtures $\ket x\bra x+\ket{\theta x}\bra{\theta x}$ of \cite[Prop.~8.2]{WuZou}---among them the projector onto the span of $\ket{000}$ and $\ket{111}$---since $\beta(x,\theta x)=-2^{-1/2}(\ket x\bra x+\ket{\theta x}\bra{\theta x})$ for odd $r$. The extension to arbitrary two-planes is new; it produces non-normal members such as the nilpotent $\sigma^z_2(\sigma^z_1+\sigma^z_3)+i(\sigma^x_1\sigma^x_3-\sigma^y_1\sigma^y_3)$ on three qubits.
+
+\begin{proposition}\label{prop:families}
+\textup{(a)} Every member of the families I--III is a zero of $q$ of rank two with both singular values equal to $2^{-1/2}$.
+\textup{(b)} For $d=3$, modulo the phase, families I and III have real dimension $36$ and family II has dimension $24$, and the union of the three families is path-connected (a stratified set, not a manifold).
+\end{proposition}
+\begin{proof}
+(a) Family I: by Lemma~\ref{lem:elementary}(a), $q(2^{-1/2}P_E\otimes\ket\varphi\bra\chi)$ is the product of $q^{(1)}(2^{-1/2}P_E)=1-\tfrac12\cdot2=0$ with $Q_{2|3}(\ket\varphi\bra\chi)$.
+Families II and III: on $r$ qubits the one-site endpoint operator $I-\tfrac12\Om$ on $\C^2\otimes\C^2$ is positive semidefinite with kernel $\C\ket\Om$ (its eigenvalue on $\ket\Om$ is $1-\tfrac12\cdot2=0$), so by Proposition~\ref{prop:qform} $q^{(r)}(N)=0$ iff $\vecop N\in\ker(I-\tfrac12\Om)^{\otimes r}=\sum_i\ket{\Om_i}\otimes(\text{anything})$, i.e.\ iff $N$ has no component on a Pauli word of full weight $r$. Now $xy^{\T}-yx^{\T}$ is antisymmetric, hence a combination of Pauli words containing an odd number of factors $\sigma^y$ (the only antisymmetric Pauli matrix), and right multiplication by $\Xi^{\T}=(-i\sigma^y)^{\otimes r}$ turns each $\sigma^y$ into $I$ and each other factor into a non-identity Pauli matrix. So every word of $\beta(x,y)$ contains an identity factor, and $\beta(x,y)$ is a zero of $q^{(r)}$. Moreover $\Xi^{\T}$ is unitary and $x\perp y$, so $\beta\beta^\dagger=\tfrac12(xy^{\T}-yx^{\T})(xy^{\T}-yx^{\T})^\dagger=\tfrac12(\ket x\bra x+\ket y\bra y)$: the singular values are $2^{-1/2},2^{-1/2}$. Lemma~\ref{lem:elementary} transports these zeros to $\Hh$, the one-site factor $\ket u\bra v$ of family II contributing the finite factor $q^{(1)}(\ket u\bra v)$.
+
+(b) The parameters of family I are a two-plane in $\C^3$ and two rays in $\C^9$ ($4+16+16=36$ real dimensions), of family III three local two-planes and a two-plane in $(\C^2)^{\otimes3}$ ($12+24=36$), of family II two rays in $\C^3$, two local two-planes and a two-plane in $(\C^2)^{\otimes2}$ ($8+8+8=24$); a generic member determines its parameters (the local two-planes are its local supports, and the remaining data are then determined), so these are the dimensions; non-generic members, such as the meeting points below, form lower-dimensional strata. Each parameter space is connected, family III is invariant under site permutations, and the families meet: writing $\beta_r$ for $\beta$ on $r$ qubits, $\beta_3(\ket{000},\ket{100})=2^{-1/2}I_2\otimes\ket{00}\bra{11}$ lies in family I, and $\beta_3(\ket0\otimes x',\ket0\otimes y')=-\ket0\bra1\otimes\beta_2(x',y')$ with $x',y'\in(\C^2)^{\otimes2}$ lies in family II; so every placement of I and II is connected to III.
+\end{proof}
+
+\begin{remark}[parity of the spin flip]\label{rem:parity}
+For odd $r$, $\theta^2=-1$ gives $\ip{\theta x}{x}=0$ and a short computation gives $\beta(x,y)^2=\tfrac12\bigl(\Tr\beta(x,y)\bigr)\beta(x,y)$: a family-III zero is a scaled oblique projector when $\Tr\beta\ne0$ and a square-zero nilpotent when $\Tr\beta=0$ (the example above), and it is non-normal in general. For even $r$, $\ip{\theta x}{y}=\ip{\theta y}{x}$ gives $\Tr\beta=0$, so $\beta^2$ is never a nonzero multiple of $\beta$; the simplest instance is $2^{-1/2}(\ket{00}\bra{00}-\ket{11}\bra{11})$, whose square is $\tfrac12(\ket{00}\bra{00}+\ket{11}\bra{11})$. The same construction gives rank-two zeros of the $r$-site endpoint form on $r$ qubits for every $r$, of alternating algebraic type.
+\end{remark}
+
+\begin{conjecture}\label{conj:zeros}
+For $d\in\{3,4\}$, every unit matrix of rank at most two with $q(C)=0$ belongs, up to a phase and a permutation of the sites, to one of the families \mbox{I--III}.
+\end{conjecture}
+
+\begin{remark}\label{rem:evidence}
+(a) Random-start minimisation of $q/\|C\|^2$ over $(X,Y)\in\C^{d^3\times2}\times\C^{d^3\times2}$---i.i.d.\ complex Gaussian starts, L-BFGS with the analytic gradient (gradient tolerance $10^{-12}$, at most $20\,000$ iterations), a run counted as a zero when $q/\|C\|^2<10^{-10}$---gave $74/6/420$ zeros in families I/II/III for $500$ starts at $d=3$ and $82/7/111$ for $200$ starts at $d=4$, with no unconverged run and no zero outside the families. Membership was decided by the local supports of range and corange at each site followed by a comparison with the normal forms of Definition~\ref{def:families} (relative residual below $10^{-2}$; a matrix outside the families has residual of order one; script, seeds and logs in \cite{Pkg}).
+(b) At one sampled point of each family (seeds in \cite{Pkg}) the Hessian of $q/\|C\|^2$ in the parametrisation $(X,Y)$ has nullity $46,34,46$ for I, II, III at $d=3$ and $78,46,58$ at $d=4$, with a clear spectral gap: in each case the dimension of the family ($36,24,36$ at $d=3$ by Proposition~\ref{prop:families}(b); $68,36,48$ at $d=4$ by the same count) plus the ten directions along which $q/\|C\|^2$ is constant, eight from $(X,Y)\mapsto(XR,YR^{-\dagger})$ with $R\in GL(2,\C)$ and two from the complex rescaling of $C$. This is an observation at sampled points: to second order nothing leaves the families there; it excludes neither a larger nullity at special points nor zeros elsewhere.
+(c) At a zero every term of the certificate identity \eqref{eq:identity} vanishes, so $G_t^{1/2}\Yh_t(\xi)G_t^{1/2}=0$, i.e.\ $\ran\Yh_t(\xi)\subseteq\ker G_t$ (for $d=4$, where the $G_t$ are positive definite, every $\Yh_t(\xi)$ vanishes); a classification would require the joint kernel on the physical moment set, which the certificate does not provide.
+\end{remark}
+
+\section{Consequences}\label{sec:consequences}
+
+\begin{corollary}[operational form]\label{cor:locc}
+Let $d\in\{3,4\}$ and $\alpha\le\tfrac12$, or $d$ arbitrary and $\alpha\le\alpha_0$. Every two-qubit state $\sigma$ obtained from $\rho_\alpha^{\otimes3}$ by a separable operation (in particular by LOCC) with nonzero probability is separable; in particular its singlet fraction $\max_\Phi\bra\Phi\sigma\ket\Phi$ over maximally entangled $\Phi$ is at most $\tfrac12$, the value of a product state.
+\end{corollary}
+\begin{proof}
+A separable operation has product Kraus operators $L^j_A\otimes L^j_B$, and the conditioned output is $\sigma=p^{-1}\sum_j(L^j_A\otimes L^j_B)\rho_\alpha^{\otimes3}(L^j_A\otimes L^j_B)^\dagger$ with $p>0$. Pairing $\sigma^\Gamma$ with a two-qubit vector $\psi$ gives $p^{-1}\sum_j\langle\psi_j,(\rho_\alpha^{\otimes3})^\Gamma\psi_j\rangle$ with $\psi_j=(L^{j\dagger}_A\otimes L^{j\T}_B)\psi$ of Schmidt rank at most two, which is nonnegative by Remark~\ref{rem:interval}(a) for $0\le\alpha\le\tfrac12$ (by Theorem~\ref{thm:uniformthm} for $0\le\alpha\le\alpha_0$ in general dimension) and because $\rho_\alpha$ is PPT for $\alpha\le0$. So $\sigma$ is PPT, hence separable \cite{Peres,HHH96}, and separable two-qubit states have singlet fraction at most $\tfrac12$ \cite{HHHfid}.
+\end{proof}
+
+\begin{corollary}[small local overlaps in any dimension]\label{cor:overlap}
+Let $C$ act on $\Hh_1\otimes\Hh_2\otimes\Hh_3$ of arbitrary finite dimensions with $\rank C\le2$. Let $L_i,R_i\subseteq\Hh_i$ contain the site-$i$ supports of\/ $\ran C$ and of\/ $\ran C^\dagger$, with inclusion isometries $U_i,V_i$, and let $M_i=U_i^\dagger V_i$. If $\rank M_i\le4$ for $i=1,2,3$, then $q(C)\ge0$ and $q_\alpha(C)\ge(1-2\alpha)(1-\alpha)^2\|C\|^2$ for $0\le\alpha\le\tfrac12$.
+\end{corollary}
+\begin{proof}
+Write $C=UC'V^\dagger$ with $U=\bigotimes U_i$, $V=\bigotimes V_i$ and $\rank C'=\rank C$. Since $\vecop C=(U\otimes\bar V)\vecop C'$ and $(U_i^\dagger\otimes V_i^{\T})\ket\Om=\vecop M_i$, Proposition~\ref{prop:qform} gives
+\[
+q(C)=\Bigl\langle\vecop C',\ \prod_i\bigl(I-\tfrac12\ket{\vecop M_i}\bra{\vecop M_i}\bigr)\vecop C'\Bigr\rangle .
+\]
+Let $M=\sum_{j=1}^kt_j\ket{u_j}\bra{v_j}$ be the singular value decomposition of one $M_i$ ($k\le4$, $0<t_j\le1$), and define $W_1\ket j=t_j\ket{u_j}$, $W_2\ket j=\ket{\bar v_j}$, so that $(W_1\otimes W_2)\ket{\Om_k}=\vecop M$ with $\ket{\Om_k}=\sum_{j\le k}\ket{jj}$. Expanding,
+\begin{align*}
+I-\tfrac12\ket{\vecop M}\bra{\vecop M}&=(W_1\!\otimes\! W_2)\bigl(I-\tfrac12\Om_k\bigr)(W_1\!\otimes\! W_2)^\dagger\\
+&\ \ +(I-W_1W_1^\dagger)\otimes W_2W_2^\dagger\\
+&\ \ +I\otimes(I-W_2W_2^\dagger).
+\end{align*}
+Multiply out the product over the three sites. In each of the $27$ terms, a site carrying one of the last two summands contributes a nonnegative combination of product projectors $\ket j\bra j\otimes\ket k\bra k$, and contracting $\vecop C'$ with it compresses $C'$ by a row vector and a column vector at that site, which preserves rank at most two; a site carrying the first summand compresses $C'$ to local dimension $k\le4$. What remains is the endpoint form on the ``active'' sites, with local dimensions at most four, which is nonnegative by Theorem~\ref{thm:endpoint}, Theorem~\ref{thm:twocopy} or Lemma~\ref{lem:onesite} according to the number of active sites. The bound for $q_\alpha$ then follows from \eqref{eq:cont}.
+\end{proof}
+
+Thus a negative three-copy witness at the endpoint, in any dimension, needs local overlap rank at least five at some site. \cite[Theorem~7.2]{WuZou} is the complementary statement that $q\ge0$ whenever $\Tr(P_iQ_i)=\|M_i\|^2\le2$ at a single site $i$, with $P_i,Q_i$ the projectors onto $L_i,R_i$ and no condition at the other sites; Corollary~\ref{cor:overlap} bounds instead the rank of $M_i$ at all three sites and yields the constant of Theorem~\ref{thm:curve}.
+
+\begin{corollary}[full-rank NPT states that survive three copies]\label{cor:noise}
+Let $k\ge3$, $d\ge k$, $\iota:\C^k\to\C^d$ an isometry, $\varrho=(\iota\otimes\iota)\rho^{(k)}_{\alpha_k}(\iota\otimes\iota)^\dagger$ with $\alpha_k=\tfrac12$ for $k\in\{3,4\}$ and $\alpha_k=\alpha_0$ for $k\ge5$, and $\tau_\lambda=\lambda\varrho+(1-\lambda)I/d^2$. For $c_k/(d^2+c_k)<\lambda<1$, with $c_k=k(k-\alpha_k)/(k\alpha_k-1)$ ($c_3=15$, $c_4=14$), the state $\tau_\lambda$ has full rank, is NPT, and $\tau_\lambda^{\otimes3}$ is not one-copy distillable.
+\end{corollary}
+\begin{proof}
+$(\rho^{(k)}_{\alpha_k})^\Gamma=(I-\alpha_k\Om)/k(k-\alpha_k)$ has least eigenvalue $-1/c_k$, so the least eigenvalue of $\tau_\lambda^\Gamma$ is $(1-\lambda)/d^2-\lambda/c_k$, negative exactly in the stated range. Nondistillability of $\tau_\lambda^{\otimes3}$ is the compression argument of Remark~\ref{rem:interval}(a) with $\rho_{1/2}$ replaced by $\varrho$, the endpoint input being Theorem~\ref{thm:endpoint} for $k\in\{3,4\}$ and Theorem~\ref{thm:uniformthm} for $k\ge5$.
+\end{proof}
+
+\begin{corollary}[robustness]\label{cor:robust}
+Let $2\le d_i\le4$, $0\le\alpha<\tfrac12$ and $\delta_\alpha=(1-2\alpha)(1-\alpha)^2/\prod_id_i(d_i-\alpha)>0$. If $\sigma$ is a state on $\bigotimes_i(\C^{d_i}\otimes\C^{d_i})$ with $\|\sigma^\Gamma-\bigotimes_i(\rho^{(d_i)}_\alpha)^\Gamma\|_{\mathrm{op}}<\delta_\alpha$, then $\sigma$ is not one-copy distillable; in particular a state $\sigma$ on $\C^d\otimes\C^d$ with $\|(\sigma^\Gamma)^{\otimes3}-(\rho_\alpha^\Gamma)^{\otimes3}\|_{\mathrm{op}}<\delta_\alpha$ is not three-copy distillable. For $1/d<\alpha<\tfrac12$ the state $\rho_\alpha$ is NPT and NPT is an open condition, so this neighbourhood contains an open set of NPT states. In arbitrary local dimensions the same holds for $0\le\alpha<\alpha_0$ with $\delta_\alpha$ replaced by $(1-\alpha/\alpha_0)^3/\prod_id_i(d_i-\alpha)$.
+\end{corollary}
+\begin{proof}
+By \eqref{eq:qform} and Theorem~\ref{thm:curve} (Theorem~\ref{thm:uniformthm} in general dimension), $\langle\psi,\bigotimes_i(\rho^{(d_i)}_\alpha)^\Gamma\psi\rangle\ge\delta_\alpha$ for every unit vector $\psi=\vecop C$ of Schmidt rank at most two, and the perturbation changes each such expectation by less than $\delta_\alpha$.
+\end{proof}
+
+Corollaries~\ref{cor:locc} and~\ref{cor:noise} use only the sign of $q_\alpha$, i.e.\ Theorem~\ref{thm:endpoint} with Remark~\ref{rem:interval}(a), or Theorem~\ref{thm:uniformthm}; Corollaries~\ref{cor:overlap} and~\ref{cor:robust} use the constants of Theorems~\ref{thm:curve} and~\ref{thm:uniformthm}.
+
+\begin{remark}\label{rem:qubit}
+A site of dimension two is free: for $d_i=2$ the one-site operator $I-\tfrac12\Om$ is positive semidefinite with positive semidefinite partial transpose $I-\tfrac12F$, hence a separable two-qubit operator \cite{Peres,HHH96}, i.e.\ a nonnegative combination of product projectors, so by the compression argument of Corollary~\ref{cor:overlap} the endpoint inequality with $d_1=2$ is a consequence of the two-site theorem alone.
+\end{remark}
+
+\section{The endpoint certificate}\label{sec:certificate}
+
+Every proof of the endpoint inequality that we know, including the one- and two-site theorems, has the same shape. (1)~\emph{Lift}: replace $C$ by variables on which ``rank at most two'' is a polynomial constraint and $q(C)$ a polynomial. (2)~\emph{Squares}: exhibit an identity
+\begin{equation}\label{eq:template}
+q(C)=\sum_k\ip{w_k}{G_kw_k}+\sum_j\eta_je_j
+\end{equation}
+on the constraint set, with $G_k\succeq0$, $w_k$ polynomial vectors in the lifted variables, and $e_j$ polynomials vanishing on the constraint set. (3)~Conclude $q\ge0$. For one site the certificate is a single positive block: with the lift of Lemma~\ref{lem:lift} below, $\Tr C=\ip ba$ and $\|C\|^2=\tfrac12$, so
+$q^{(1)}(C)=\tfrac12(1-|\ip ab|^2)=\ip{a\otimes b}{\tfrac12(I-F_QF_1)(a\otimes b)}$ with $F_QF_1$ the swap of the two copies of $\V$ (Lemma~\ref{lem:swap}). For two sites, Appendix~\ref{app:cut} is such an identity with a handful of squares. For three sites no closed form is known; the certificates of \cite{Zenodo,Liu} have hundreds of positive blocks, found by semidefinite programming and then made exact \cite{PeyrlParrilo}. This section derives the hand lemmas on which they rest.
+
+\emph{The lift.} Normalise $\|C\|^2=\tfrac12$ (the inequality is homogeneous).
+
+\begin{lemma}[lift]\label{lem:lift}
+Let $C\ne0$ have rank at most two and $\|C\|^2=\tfrac12$. Choose an isometry $A\in\C^{d^3\times2}$ with $\ran C\subseteq\ran A$, and put $B=2C^\dagger A$. Then
+\begin{equation}\label{eq:lift}
+A^\dagger A=I_2,\qquad C=\tfrac12AB^\dagger,\qquad \|B\|^2=2 ,
+\end{equation}
+and nothing else is imposed on $B$.
+\end{lemma}
+\begin{proof}
+$AA^\dagger$ projects onto $\ran A\supseteq\ran C$, so $\tfrac12AB^\dagger=AA^\dagger C=C$, and $\|B\|^2=4\Tr(C^\dagger AA^\dagger C)=4\|C\|^2$.
+\end{proof}
+
+Let $\V=\Hh\otimes\C^2$ (an auxiliary qubit) and
+\begin{equation}\label{eq:ab}
+a=\tfrac1{\sqrt2}\sum_{j,\mu}A_{j\mu}\ket j\ket\mu,\qquad b=\tfrac1{\sqrt2}\sum_{j,\mu}B_{j\mu}\ket j\ket\mu\qquad\in\V .
+\end{equation}
+Then $\|a\|=\|b\|=1$, $C_{jk}=\sum_\mu a_{j\mu}\bar b_{k\mu}$, and the isometry condition says that the qubit marginal of $a$ is maximally mixed, $\Tr_\Hh\ket a\bra a=\tfrac12I_2$. ``Rank at most two'' has become a \emph{linear} condition on a marginal of $a$; the constraint set is $\mathcal S=\{(a,b):\Tr_\Hh\ket a\bra a=\tfrac12I_2,\ \|b\|=1\}$.
+
+\begin{lemma}[swap form]\label{lem:swap}
+On $\V\otimes\V$ let $F_i$ swap the site-$i$ factors and $F_Q$ the qubit factors of the two copies. For every $S\subseteq\{1,2,3\}$,
+$\ip{a\otimes b}{F_Q\prod_{i\in S}F_i\,(a\otimes b)}=\|\Tr_SC\|^2$; hence
+\begin{equation}\label{eq:Z}
+q(C)=\ip{a\otimes b}{Z\,(a\otimes b)},\qquad Z=F_Q\prod_{i=1}^3\bigl(I-\tfrac12F_i\bigr).
+\end{equation}
+\end{lemma}
+\begin{proof}
+With $s,t$ running over the indices of the sites in $S$, $j,k$ over the remaining sites and $\mu,\nu$ over the qubit, $(\Tr_SC)_{jk}=\tfrac12\sum_{s,\mu}A_{sj,\mu}\bar B_{sk,\mu}$, so $\|\Tr_SC\|^2=\tfrac14\sum A_{sj,\mu}\bar B_{sk,\mu}\bar A_{tj,\nu}B_{tk,\nu}$, which is the left side: $F_Q$ exchanges the qubit indices and $F_i$ the site-$i$ indices between the two copies. Expand with \eqref{eq:q}.
+\end{proof}
+
+$Z$ is indefinite ($F_Q$ and the $F_i$ commute and have eigenvalues $\pm1$); Theorem~\ref{thm:endpoint} says that $Z$ is nonnegative on the product vectors $a\otimes b$ with $(a,b)\in\mathcal S$.
+
+\emph{Moments.} Take four replicas of $\V$, numbered $0,1,2,3$, write $P_a=\ket a\bra a$, $P_b=\ket b\bra b$, and consider
+\begin{equation}\label{eq:moments}
+Y_{31}=P_a^{\otimes3}\otimes P_b,\quad Y_{22}=P_a^{\otimes2}\otimes P_b^{\otimes2},\quad Y_{13}=P_b^{\otimes3}\otimes P_a ,
+\end{equation}
+whose entries are the monomials of bidegree $(3,1)$, $(2,2)$, $(1,3)$ in $(P_a,P_b)$; by Lemma~\ref{lem:swap}, $q(C)=\Tr[(Z_{03}\otimes I_{\{1,2\}})Y_{31}]$ with $Z$ acting on replicas $0$ and $3$. For $f\in\{31,22,13\}$ and a set $T$ of replicas, the partial transpose $Y_f^{\Gamma_T}$ of the whole factor $\V$ in the replicas of $T$ is again a product of rank-one projectors (the vector $a$ or $b$ carried by each replica in $T$ replaced by its complex conjugate), hence positive semidefinite, and $\Tr[GY_f^{\Gamma_T}]$ with $G\succeq0$ is a sum of squared moduli of polynomials in $(a,\bar a,b,\bar b)$; we call a pair $(f,T)$ a \emph{word}. The certificates use thirteen words and one \emph{coupled} block \cite{Zenodo,Liu}: with $u=a\otimes a\otimes b\otimes\bar a$ and $v=b\otimes b\otimes a\otimes\bar b$ in $\V^{\otimes4}$,
+\begin{equation}\label{eq:coupled}
+\begin{pmatrix}\ket u\bra u&\ket u\bra v\\ \ket v\bra u&\ket v\bra v\end{pmatrix}=\ket{u\oplus v}\bra{u\oplus v}\succeq0
+\end{equation}
+is a linear image of the moments: its diagonal blocks are $Y_{31}$ and $Y_{13}$ with replicas $2$ and $3$ exchanged and replica $3$ transposed, and its off-diagonal block is the entrywise rearrangement $(Y_{22})_{i_0i_1i_2j_3;\,i_3j_2j_0j_1}$ of $Y_{22}$, which equals $u_i\bar v_j$ \cite[Sec.~3.2]{Zenodo}. A square $\ip{u\oplus v}{G(u\oplus v)}$ contains cross terms between an $a$-heavy and a $b$-heavy polynomial. On $\mathcal S$ the moments satisfy linear relations: the qubit marginal of $a$ is $\tfrac12I_2$ at every replica carrying $a$, and the three moments share their common three-replica marginals.
+
+\emph{Symmetry.} $q$, $\mathcal S$ and all of the above are invariant under the group $\mathcal G=U(d)^{\times3}\times U(2)\times S_3\times\{1,\text{conj}\}$ acting on $\V$ (an element $g$ of the unitary part replaces $C$ by $gCg^\dagger$ with $g\in U(d)^{\times3}$; $S_3$ permutes the sites; conj conjugates $(a,b)$). By Schur--Weyl duality \cite[Lect.~6]{FultonHarris}, moments averaged over $\mathcal G$ lie in the span of products of permutation operators of the four replicas, one factor per site and one for the qubit, cut down by the bosonic support of the $Y_f$, by $S_3$ and by conjugation. Let $\xi$ be the coordinate vector of the averaged moments in a fixed rational basis of this span, with one \emph{sector} for each of the three moments (dimensions in Table~\ref{tab:cert}). The objective is then a rational linear functional $\xi\mapsto c^{\T}\xi$, the relations an integer matrix $K$ with $K\xi=0$, and the partially transposed averaged moments and the averaged coupled block decompose into isotypic \emph{blocks}, onto which rational linear maps $\Yh_t$ ($t=1,\dots,716$ for $d=3$, $1,\dots,1239$ for $d=4$; $64$, respectively $111$, of them from the coupled block) compress them. Concretely,
+\begin{equation}\label{eq:Yhat}
+\Yh_t(\xi)=N_t^{\T}J_t^{\T}\,\mathcal M_t(\xi)\,J_tN_t ,
+\end{equation}
+where $\mathcal M_t(\xi)$ is the partially transposed averaged moment, or the averaged coupled block, of the word of $t$; $J_t$ is a stored rational embedding of the carrier of an isotypic block into $\V^{\otimes4}$ (into $\V^{\otimes4}\oplus\V^{\otimes4}$ for the coupled block), so that $J_t^{\T}\mathcal M_tJ_t$ is that block in a rational basis; and $N_t$ is a stored rational frame selecting a subspace of it. The frames were chosen to annihilate the known zeros, which is why every $\Yh_t(\xi)$ can vanish at a zero (Remark~\ref{rem:evidence}(c)) although the moments have trace one.
+
+\begin{lemma}[averaging]\label{lem:averaging}
+Let $(a,b)\in\mathcal S$ and let $\xi$ be the coordinate vector of the moments \eqref{eq:moments} averaged over $\mathcal G$. Then $c^{\T}\xi=q(C)$, $K\xi=0$, and $\Yh_t(\xi)\succeq0$ for every $t$.
+\end{lemma}
+\begin{proof}
+$q(C)=\Tr[(Z_{03}\otimes I_{\{1,2\}})Y_{31}]$, and $Z$ commutes with $g\otimes g$ for $g\in U(d)^{\times3}\times U(2)$, is invariant under site permutations and is real, so the objective is unchanged by averaging. The relations are linear in the moments and $\mathcal G$\nobreakdash-covariant, so they hold for the average because they hold for each term. Each $Y_f^{\Gamma_T}$ and the coupled block \eqref{eq:coupled} are positive semidefinite for every $(a,b)$, and $\mathcal G$ acts on them by conjugation with $g$ on the untransposed and $\bar g$ on the transposed replicas---on both halves of \eqref{eq:coupled} by $g\otimes g\otimes g\otimes\bar g$---and antiunitarily for conj; so the averaged operators and their compressions \eqref{eq:Yhat} are positive semidefinite. By Schur--Weyl duality the averaged moments lie in the span of products of permutation operators, in which $\xi$ is the coordinate vector.
+\end{proof}
+
+\begin{theorem}[four-replica certificate; $d=3$: \cite{Zenodo}, $d=4$: \cite{Liu}]\label{thm:cert}
+For $d=3$ and for $d=4$ there are rational symmetric positive semidefinite matrices $G_t$ ($t=1,\dots,716$, respectively $1,\dots,1239$; positive definite for $d=4$) and a rational vector $\eta$ such that, identically in $\xi$,
+\begin{equation}\label{eq:identity}
+c^{\T}\xi=\sum_t\Tr\bigl[G_t\,\Yh_t(\xi)\bigr]+\eta^{\T}K_0\xi ,
+\end{equation}
+where $c$, $K$ and $\Yh_t$ are the objects of Lemma~\ref{lem:averaging} in the stored coordinate basis of $\xi$, and $K_0$ consists of $272$ rows of $K$.
+\end{theorem}
+
+\begin{proof}[Proof of Theorem~\ref{thm:endpoint}]
+Let $C\ne0$ have rank at most two; normalise, lift by Lemma~\ref{lem:lift}, and let $\xi$ be as in Lemma~\ref{lem:averaging}. Then $c^{\T}\xi=q(C)$, $K_0\xi=0$ and $\Yh_t(\xi)\succeq0$, so each term $\Tr[G_t\Yh_t(\xi)]=\Tr[G_t^{1/2}\Yh_t(\xi)G_t^{1/2}]$ in \eqref{eq:identity} is nonnegative and $q(C)\ge0$.
+\end{proof}
+
+\begin{remark}\label{rem:cert}
+The averaged moment set is an \emph{outer} relaxation of the physical one; the proof never needs that every feasible $\xi$ comes from some $(a,b)$. The $d=4$ certificate differs from the $d=3$ one only in that the four-replica antisymmetriser of $\C^4$ has rank one instead of vanishing, which enlarges the sectors (Table~\ref{tab:cert}); the same thirteen words, coupled block, relations and objective are used. Since the case $d=3$ is also a corollary of the case $d=4$ by Lemma~\ref{lem:elementary}(b), the qutrit endpoint rests on two independently computed certificates of the same construction, with different sector bases, exact positivity tests and verifier programs. Their agreement does not exclude a shared error in the reduction of this section, which is why Lemmas~\ref{lem:lift}--\ref{lem:averaging} are proved here and the control program of Sec.~\ref{sec:verification} evaluates the stored data on actual matrices.
+\end{remark}
+
+\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+ & $d=3$ \cite{Zenodo} & $d=4$ \cite{Liu}\\
+\midrule
+$\dim\V$ & 54 & 128\\
+coordinates of $\xi$ & 2374 & 2741\\
+\quad sectors $31,22,13$ & $577,1220,577$ & $667,1407,667$\\
+relations $K$: rows, rank & $2912$, $272$ & $2912$, $272$\\
+blocks $G_t$ (coupled) & 716 (64) & 1239 (111)\\
+largest block order & 46 & 43\\
+positivity test & char.\ polynomial & diag.\ dominance\\
+exact replay & $\approx4$ min & $\approx7$ min\\
+\bottomrule
+\end{tabular}
+\caption{The two four-replica certificates. ``Sectors'' are the dimensions of the three blocks of $\xi$; ``coupled'' counts the blocks from the coupled block \eqref{eq:coupled}; replay times are wall-clock times of the upstream verifiers on two cores.}\label{tab:cert}
+\end{table}
+
+\section{Every dimension up to \texorpdfstring{$\boldsymbol{\alpha_0}$}{alpha0}}\label{sec:uniform}
+
+The certificates of Sec.~\ref{sec:certificate} are tied to a dimension: the sector bases change with $d$ (Table~\ref{tab:cert}), and the Gram matrices of the permutation operators are polynomials in $d$ whose leading terms differ from block to block. To obtain a certificate that is uniform in $d$ we change the lift, so that the free variables are orthonormal frames rather than vectors with a prescribed marginal; replace the moment matrix by a $2\times2$ determinant, which is a quadratic form in four replicas of $\Hh$ itself; and work in the algebra generated by the partially transposed permutation operators at one site, whose structure constants are polynomials in $d$. Positivity for all sufficiently large $d$ is then a condition on finitely many leading coefficients, and an isometric embedding carries it to every dimension. The price is the value of the parameter: the method proves $q_{\alpha_0}\ge0$ for
+\begin{equation}\label{eq:alpha0}
+\alpha_0=\tfrac{37}{80}=0.4625,
+\end{equation}
+not for $\alpha=\tfrac12$.
+
+\emph{Singular frames and the determinant.} Let $C=s_0u_0v_0^\dagger+s_1u_1v_1^\dagger$ be a singular value decomposition, $s_j\ge0$, $(u_0,u_1)$ and $(v_0,v_1)$ orthonormal pairs in $\Hh$ (a rank-one $C$ has $s_1=0$). For real weights $w=(w_S)_{S\subseteq\{1,2,3\}}$ put $q_w(C)=\sum_Sw_S\|\Tr_SC\|^2$, $D_j=u_jv_j^\dagger$ and
+\begin{equation}\label{eq:H}
+(H_w)_{jk}=\sum_Sw_S\,\ip{\Tr_SD_j}{\Tr_SD_k},\qquad j,k\in\{0,1\}.
+\end{equation}
+Then $q_w(s_0D_0+s_1D_1)=s^\T H_ws$, and since $c_0D_0+c_1D_1$ has rank at most two for all complex $c$, $q_w\ge0$ on matrices of rank at most two if and only if $H_w\succeq0$ for every pair of frames. For $w_S=(-\alpha)^{|S|}$ the diagonal entries are $q_\alpha(u_jv_j^\dagger)=\ip{u_j\otimes v_j}{\prod_i(I-\alpha F_i)\,u_j\otimes v_j}\ge(1-\alpha)^3$ by the rank-one identity of Sec.~\ref{sec:zeros} (the three swaps commute and have eigenvalues $\pm1$), so for $0\le\alpha<1$,
+\begin{equation}\label{eq:detcrit}
+q_\alpha\ge0\text{ on rank}\le2\iff\det H_\alpha\ge0\text{ on all frames.}
+\end{equation}
+
+The determinant is a quadratic form in four replicas. Number the replicas $(u_0,v_0,u_1,v_1)=(0,1,2,3)$, let $r=u_0\otimes v_0\otimes u_1\otimes v_1\in\Hh^{\otimes4}$, and for $p\in S_4$ let $P_p$ permute the replicas at one site, $(P_p)_{y,x}=\prod_j\delta(y_{p(j)},x_j)$ (input position $j$ goes to output position $p(j)$). In $\ip r{\bigotimes_iP_{p_i}\,r}$ the site-$i$ index of replica $j$ in $r$ is contracted with that of replica $p_i(j)$ in $\bar r$; when every replica is a product vector over the sites this is $\prod_i\prod_j\ip{r^{(p_i(j))}}{r^{(j)}}_i$. With $\sigma_e=(01)^e$, $\sigma'_f=(23)^f$ for $e,f\in\{0,1\}$, Lemma~\ref{lem:swap} gives $(H_w)_{00}(H_w)_{11}=\ip r{\sum_{S,R}w_Sw_R\bigotimes_iP_{\sigma_{e_i}\sigma'_{f_i}}\,r}$ with $e_i=[i\in S]$, $f_i=[i\in R]$, and the same bookkeeping for $(H_w)_{01}(H_w)_{10}$ gives
+\begin{equation}\label{eq:K}
+\begin{aligned}
+\det H_w&=\ip r{K(w)\,r},\\
+K(w)&=\sum_{S,R}w_Sw_R\Bigl(\bigotimes_iP_{\sigma_{e_i}\sigma'_{f_i}}-\bigotimes_iP_{\kappa_{e_if_i}}\Bigr),
+\end{aligned}
+\end{equation}
+where $\kappa_{00}=(02)(13)$, $\kappa_{11}=(01)(23)$, $\kappa_{10}=(0231)$ and $\kappa_{01}=(0132)$ (cycle notation). $K(w)$ is a combination of $126$ products of permutation operators with coefficients quadratic in $w$.
+
+\emph{Squares, the ideal and the hand inputs.} Three kinds of terms have nonnegative expectation in every product vector $r$ of orthonormal frames. (i) For a set $\tau$ of replicas let $\Gamma_\tau$ transpose the replicas in $\tau$ at all three sites. If $\Gamma_\tau(Y)\succeq0$ then $\ip r{Yr}=\ip{r^{*\tau}}{\Gamma_\tau(Y)\,r^{*\tau}}\ge0$, where $r^{*\tau}$ conjugates the vectors in $\tau$; complementary sets give the same condition, so there are eight: $\tau=\emptyset$, the four singletons and $\{0,1\},\{0,2\},\{0,3\}$. (ii) In a product $\bigotimes_iP_{p_i}$ with $p_i(2)=0$ at every site, all site indices of replica $2$ are contracted with those of replica $0$, so its expectation contains the factor $\ip{u_0}{u_1}=0$; the same holds for $p_i(0)=2$, $p_i(1)=3$ and $p_i(3)=1$. These $819$ products span a subspace $\mathcal I$ of forms that vanish on orthonormal frames. (iii) If $a$ and $a'$ are weight vectors such that $q_a$ and $q_{a'}$ are nonnegative on matrices of rank at most two in all dimensions, then $H_a,H_{a'}\succeq0$ on all frames and, with $J$ the exchange of the two rows,
+\begin{equation}\label{eq:hand}
+T_\pm(a,a')=\Tr\bigl[H_a\,(JH_{a'}^\T J\circ\Sigma_\pm)\bigr]\ge0,\ \ \Sigma_\pm=\begin{pmatrix}1&\pm1\\\pm1&1\end{pmatrix},
+\end{equation}
+by the Schur product theorem; each $T_\pm(a,a')$ is again a combination of permutation products, and $T_-(a,a)=2\det H_a$. The certificate uses a single hand input of this kind: the weight vector $a_B$ of Theorem~\ref{thm:bound} ($a_\emptyset=\tfrac{17}8$, $a_S=-1,\tfrac12,-\tfrac5{16}$ for $|S|=1,2,3$), for which $q_{a_B}(C)\ge\tfrac14(s_1-s_2)^2\ge0$ in every dimension, so that
+\begin{equation}\label{eq:TB}
+T_B:=\det H_{a_B}=\ip r{K(a_B)\,r}\ge0
+\end{equation}
+on all frames. The one- and two-site theorems in the same form (Lemma~\ref{lem:onesite}, Theorem~\ref{thm:twocopy} and their versions with a spectator site) were offered to the search as well and are not needed (Remark~\ref{rem:unif}(b)).
+
+\emph{The algebra at one site.} Fix a site, its dimension $d$ and a set $\tau$ of replicas. The $24$ operators $D_p=\Gamma_\tau(P_p)$ on $(\C^d)^{\otimes4}$ are the diagrams of the walled Brauer algebra $B_{4-|\tau|,|\tau|}(d)$ \cite{Turaev,KoikeWB,BCHLLS} (positive maps built from this algebra are studied in \cite{BSH}): $D_pD_q=d^{\,\ell(p,q)}D_{p\circ_\tau q}$, where $p\circ_\tau q$ and the number $\ell(p,q)$ of closed loops are read off from the concatenated diagrams. Its irreducible modules for generic $d$ \cite{CDDM} are indexed by the number $k\le\min(|\tau|,4-|\tau|)$ of arcs and a pair of partitions $\lambda\vdash4-|\tau|-k$, $\mu\vdash|\tau|-k$, and have dimensions $\binom{4-|\tau|}k\binom{|\tau|}kk!\,f^\lambda f^\mu$: $1,3,2,3,1$ for $\tau=\emptyset$ (the irreducible representations of $S_4$), $1,2,1,3,3$ for $|\tau|=1$ and $1,1,1,1,4,2$ for $|\tau|=2$, with $\sum_r(\dim W_r)^2=24$ in each case. We realise each module $W_r$ on the span of the half-diagrams with $k$ arcs tensored with the polytabloid bases of the Specht modules of $\lambda$ and $\mu$; the action of $D_p$ and the contravariant bilinear form are defined by concatenation, with a factor $d$ per closed loop, a concatenation that creates more than $k$ arcs acting as zero, and the invariant form of the Specht modules on the polytabloid factor. This yields matrices $\rho_r(p;d)$ and symmetric $G_r(d)$ with polynomial entries of degree at most $k$, such that
+\begin{equation}\label{eq:blockrules}
+\rho_r(p)\rho_r(q)=d^{\,\ell(p,q)}\rho_r(p\circ_\tau q),\qquad \rho_r(p)^\T G_r=G_r\,\rho_r(p^*),
+\end{equation}
+where $p^*$ labels the adjoint diagram ($D_p^\dagger=D_{p^*}$).
+
+\begin{lemma}\label{lem:blocks}
+For all sufficiently large $d$: every $G_r(d)$ is positive definite, the map $\Phi:D_p\mapsto(\rho_r(p;d))_r$ is injective, and hence $\Phi$ is a $*$-isomorphism of the algebra $A_\tau(d)$ spanned by the $D_p$ onto its image in $\bigoplus_r\End(W_r)$, where $W_r$ carries the inner product $G_r$. Consequently a self-adjoint element $Y=Y^*=\sum_py_p\bigotimes_{i=1}^3D_{p_i}$ of $A_\tau(d)^{\otimes3}$ is positive semidefinite on $(\C^d)^{\otimes12}$ if and only if for every triple $r=(r_1,r_2,r_3)$ the symmetric matrix
+\begin{equation}\label{eq:Bblock}
+B_{\tau,r}(d)=\Bigl(\bigotimes_jG_{r_j}\Bigr)\sum_py_p\bigotimes_j\rho_{r_j}(p_j)
+\end{equation}
+is positive semidefinite.
+\end{lemma}
+\begin{proof}
+The leading coefficient of $G_r(d)$ is positive definite and $\Phi$ is injective at $d=5$ (both checked exactly, Sec.~\ref{sec:verification}); a nonzero $24\times24$ minor is a polynomial in $d$ with finitely many roots. By \eqref{eq:blockrules}, $\Phi$ is a $*$-homomorphism when $\End(W_r)$ carries the adjoint $M\mapsto G_r^{-1}M^\T G_r$, and $A_\tau(d)$ is a $*$-subalgebra of $\End((\C^d)^{\otimes4})$. If $Y=Y^*$ and $\Phi(Y)\succeq0$, then $\Phi(Y)^{1/2}$ is a polynomial in $\Phi(Y)$, hence equals $\Phi(V)$ for some $V=V^*$ in the algebra, and $Y=V^2$ by injectivity; so $Y\succeq0$. The converse holds because $\Phi$ is a $*$-homomorphism, and the three-site statement follows in the same way for $A_\tau(d)^{\otimes3}$, whose blocks are the tensor products of the $W_r$ with the inner products $\bigotimes G_{r_j}$. The proof of Theorem~\ref{thm:uniformthm} uses the direction ``blocks positive $\Rightarrow$ $Y$ positive''.
+\end{proof}
+
+\emph{Large $d$.} Let $k_r$ be the largest degree in $d$ of an entry of any $\rho_r(p;d)$ and $g_r$ that of $G_r(d)$. With $t=1/d$, $\bar B_{\tau,r}(t)=t^{\sum_j(k_{r_j}+g_{r_j})}B_{\tau,r}(1/t)$ is a polynomial matrix in $t$ whose value at $t=0$ is built from the leading coefficients of the $\rho_{r_j}$ and $G_{r_j}$ alone. If $\bar B_{\tau,r}(0)\succ0$ then $B_{\tau,r}(d)\succ0$ for all sufficiently large $d$, by continuity. So a finite list of strict inequalities between rational matrices implies positivity of $\Gamma_\tau(Y)$ in all sufficiently large dimensions.
+
+\emph{Descent.} By Lemma~\ref{lem:elementary}(b), a matrix of rank at most two on $\Hh_1\otimes\Hh_2\otimes\Hh_3$ of arbitrary dimensions has an isometric image on $(\C^D)^{\otimes3}$ for every $D\ge\max_id_i$, of the same rank and with the same $q_\alpha$; it therefore suffices to prove $q_{\alpha_0}\ge0$ for all sufficiently large $D$. For $0\le\alpha\le\alpha_0$ the decomposition $I-\alpha\Om=\tfrac{\alpha}{\alpha_0}(I-\alpha_0\Om)+(1-\tfrac{\alpha}{\alpha_0})I$ at each site and the compression argument of Remark~\ref{rem:interval}(a) give $q_\alpha(C)\ge(1-\alpha/\alpha_0)^3\|C\|^2$: the terms with one or two active sites are one- and two-site forms at the parameter $\alpha_0\le\tfrac12$, nonnegative by Lemma~\ref{lem:onesite} and Theorem~\ref{thm:twocopy} with the same decomposition at $\tfrac12$, and the term with three active sites is $q_{\alpha_0}\ge0$.
+
+\begin{theorem}[uniform certificate]\label{thm:unif}
+With $\alpha_0$ as in \eqref{eq:alpha0}, there are rational numbers $y_{\tau,p}$ for the eight sets $\tau$ and $p\in S_4^{\,3}$, a rational $\mu\ge0$ and a form $E\in\mathcal I$ such that
+\begin{equation}\label{eq:unifid}
+K(\alpha_0)=\sum_\tau Y_\tau+E+\mu\,T_B,\qquad Y_\tau=\sum_py_{\tau,p}\bigotimes_iP_{p_i},
+\end{equation}
+as an identity between the $13\,824$ coefficients, with $Y_\tau=Y_\tau^*$, and $\bar B_{\tau,r}(0)-\varepsilon I\succ0$ with
+\[\varepsilon=243444/653071328197\approx3.7\times10^{-7}\]
+for $\tau\in\{\emptyset,\{0\},\{0,1\},\{0,2\},\{0,3\}\}$ and every unordered triple $r$ of blocks ($238$ matrices of order at most $64$, Table~\ref{tab:unif}); $Y_{\{j\}}$ is the relabelling of $Y_{\{0\}}$ by the element of $V_4$ taking $0$ to $j$, and the $105$ leading blocks of these three sets are positive definite as well. Moreover, for each of the eight sets $\tau$, the matrices $\rho_r(p;d)$ and $G_r(d)$ satisfy \eqref{eq:blockrules}, $\sum_r(\dim W_r)^2=24$, the leading coefficient of every $G_r$ is positive definite, and $\Phi$ has rank $24$ at $d=5$.
+\end{theorem}
+
+\begin{proof}[Proof of Theorem~\ref{thm:uniformthm}]
+Let $D$ be large enough for Lem\-ma~\ref{lem:blocks} and for $B_{\tau,r}(D)\succ0$, and let $C$ on $(\C^D)^{\otimes3}$ have rank at most two, with frames $u_j,v_j$ and $r$ as above. By Theorem~\ref{thm:unif} and Lemma~\ref{lem:blocks}, $\Gamma_\tau(Y_\tau)\succeq0$, so $\ip r{Y_\tau r}\ge0$ by (i); $\ip r{Er}=0$ by (ii); $\mu\ip r{T_Br}\ge0$ by (iii). Hence $\det H_{\alpha_0}=\ip r{K(\alpha_0)r}\ge0$, and \eqref{eq:detcrit} gives \mbox{$q_{\alpha_0}(C)\ge0$}. Descent extends this to every dimension and to \mbox{$0\le\alpha\le\alpha_0$}, and Proposition~\ref{prop:qform} translates it into three-copy undistillability.
+\end{proof}
+
+\begin{remark}\label{rem:unif}
+(a) The symmetries of $K$ (site permutations, the relabellings $u_j\leftrightarrow v_j$ and $0\leftrightarrow1$ of the dyads, which form the Klein group $V_4$ acting on the replicas, the adjoint and complex conjugation) are imposed on the certificate: $Y_{\{j\}}$ is the relabelling of $Y_{\{0\}}$, the other $Y_\tau$ are invariant, and only unordered triples of blocks need to be listed, since $\Gamma_{g\tau}(gYg^{-1})=g\,\Gamma_\tau(Y)\,g^{-1}$ for a relabelling $g$ and $Y_\tau$ is invariant under site permutations. The identity \eqref{eq:unifid} then has one equation per orbit of monomials outside $\mathcal I$ ($499$ equations) and $3\,602$ unknowns.
+(b) The hand input enters with multiplier $\mu=796570481880293/2^{53}\approx0.0884$. In the floating-point search (a bisection in $\alpha$ over the leading-order blocks, with the solver reporting reduced accuracy near the boundary), the squares and the subspace $\mathcal I$ alone are feasible up to $\alpha\approx0.4603$; the one- and two-site theorems in the form \eqref{eq:hand} (the $24$ distinct symmetrised products of this kind were offered) are still infeasible at $0.4625$; with $T_B$, with or without those products, the search is feasible at $0.4625$ and infeasible at about $0.4627$. So Theorem~\ref{thm:bound} is what carries the certificate from $0.4603$ to $\alpha_0$, and we stopped at the round value $37/80$ to keep the margin $\varepsilon$ comfortable.
+(c) The leading-order condition $\bar B(0)\succ0$ is sufficient, not necessary, for positivity at all large $d$; the parameter $\alpha_0$ is what this condition yields with four replicas and the hand input $T_B$. We do not know the supremum of the parameters attainable by four-replica certificates, nor whether a dimension-uniform proof of the endpoint $\alpha=\tfrac12$ exists in this framework (Sec.~\ref{sec:discussion}).
+\end{remark}
+
+\begin{table}[t]
+\footnotesize\setlength{\tabcolsep}{6pt}
+\begin{tabular}{lcccc}
+\toprule
+$\tau$ & block orders & $k_r=g_r$ & triples & max.\ order\\
+\midrule
+$\emptyset$ & $1,3,2,3,1$ & $0$ & $35$ & $27$\\
+$\{j\}$ & $1,2,1,3,3$ & $0,0,0,1,1$ & $35$ & $27$\\
+$\{0,j\}$ & $1,1,1,1,4,2$ & $0,0,0,0,1,2$ & $56$ each & $64$\\
+\bottomrule
+\end{tabular}
+\caption{The dimension-uniform certificate: the one-site blocks for each class of transpose sets, the degrees in $d$ of their representation and Gram matrices, and the number of unordered triples of blocks tested at leading order ($238$ in all). The identity \eqref{eq:unifid} has $819$ ideal monomials in $40$ orbits.}\label{tab:unif}
+\end{table}
+
+\section{What the computer checks}\label{sec:verification}
+
+Following the convention of \cite{RSST}, we list what rests on a computation. Theorem~\ref{thm:cert}, in each of the two dimensions, is the only external computational theorem required for Theorems~\ref{thm:endpoint} and~\ref{thm:curve}; its statement includes that the stored basis, $c$, $K$ and $\Yh_t$ are the objects of Sec.~\ref{sec:certificate}. Theorem~\ref{thm:unif} is the only computational input of Theorem~\ref{thm:uniformthm}. The numerical observations of Remark~\ref{rem:evidence}(a),(b) and the control calculations below are separate and enter no proof. The verifiers of \cite{Zenodo} and \cite{Liu} establish the following finite statements in exact integer and rational arithmetic: (1)--(2) the stored bases of the three sectors are bases (their number equals the character-sum dimension and an integer minor is nonzero modulo a prime) and intertwine the $24$ replica permutations and the partial transposes; (3) the objective $c$ and the relation matrix $K$ are recomputed from the literal partial-trace definitions of Sec.~\ref{sec:certificate} and agree with the stored ones; (4) every map $\Yh_t$ is rebuilt from the stored sector bases and agrees with the stored one; (5) every $G_t$ is positive semidefinite, for $d=3$ by the sign pattern of the characteristic polynomial of a scaled integer matrix, for $d=4$ by a rational congruence to a strictly diagonally dominant matrix with margin $>9999992/10^7$ in each of its $4231$ rows; (6) the identity \eqref{eq:identity} holds on every basis vector: all $2374$, respectively $2741$, rational residuals vanish. We replayed both verifiers; both pass, and the $d=3$ verifier rejects its four supplied negative controls. Neither certificate has appeared in a refereed journal at the time of writing; the $d=3$ endpoint is therefore stated with both routes (directly, and by compression from $d=4$), and the replay receipts are in \cite{Pkg}.
+
+For Theorem~\ref{thm:unif} the data are our own and small (the $y_{\tau,p}$ on orbit representatives, $\mu$, $\alpha_0$ and $\varepsilon$: about $200$ kB of JSON), and the verifier recomputes everything else from the definitions of Sec.~\ref{sec:uniform} in exact rational arithmetic: (7) the diagram calculus agrees with the explicit operators on $(\C^d)^{\otimes4}$ for $d=2,3$ (all $105$ diagrams, all products, traces, adjoints and transposes), and for each of the eight sets $\tau$ the block matrices $\rho_r(p;d)$ and $G_r(d)$ constructed from the half-diagrams and polytabloids satisfy \eqref{eq:blockrules} as polynomial identities ($576$ products per block), have $\sum_r(\dim W_r)^2=24$, leading Gram coefficients that are positive definite, and a block map of rank $24$ at $d=5$; (8) $K(\alpha_0)$, the subspace $\mathcal I$ and $T_B=K(a_B)$ are rebuilt from \eqref{eq:K} and (ii), and the identity \eqref{eq:unifid} holds coefficient by coefficient, with $Y_\tau=Y_\tau^*$ and $\mu\ge0$; (9) every leading block of the five sets satisfies $\bar B_{\tau,r}(0)-\varepsilon I\succ0$, and the $105$ leading blocks of the three relabelled sets are positive definite, by exact $LDL^\T$ factorisations with positive pivots ($\varepsilon$ is a margin in the stored half-diagram and polytabloid bases, not an invariant of the blocks). The verifier runs in about $70$ s on one core.
+
+The verifiers check the stored data, not the correspondence between an actual matrix $C$ and its coordinates (Lemmas~\ref{lem:lift}--\ref{lem:averaging}). As an independent control, a short floating-point program builds the lift of a given $64\times64$ matrix $C$, evaluates the averaged moments from the literal permutation operators, and evaluates the stored $d=4$ data on the resulting $\xi$: for random non-normal $C$ it reproduces $c^{\T}\xi=q(C)$, $K\xi=0$, $\Yh_t(\xi)\succeq0$ and \eqref{eq:identity} to machine precision, and at the zero $2^{-1/2}P_E\otimes\ket\varphi\bra\chi$ every $\Yh_t(\xi)$ vanishes. A second script checks the hand identities of this paper, including \eqref{eq:K}, \eqref{eq:hand} and the identities of Appendix~\ref{app:bound}, symbolically or on random instances. Neither is part of the proof.
+
+The package \cite{Pkg} contains these scripts, the uniform certificate of Theorem~\ref{thm:unif} with its verifier and receipt, the census of Remark~\ref{rem:evidence}, scripts that fetch the two certificates at pinned commits and check a SHA-256 digest of every tracked file before running the upstream verifiers, the receipts of our runs, and a table identifying the objects of Sec.~\ref{sec:certificate} with the stored data (basis and scaling of $\xi$, normalisation of $c$, the literal relations and the selected rows $K_0$, the embeddings $J_t$, frames $N_t$ and the rearrangement of the coupled block for every $t$); the certificate data themselves are published \cite{Zenodo,Liu} and are not redistributed (the repository of \cite{Liu} states no licence). Not verified by any program: the hand proofs, the interpreters and the hardware. The floating-point semidefinite programs that discovered the certificates are not part of the proof and are not needed to verify it; the one that found Theorem~\ref{thm:unif} (a bisection in $\alpha$ over the leading-order blocks, 3\,602 unknowns) is included for reproducibility.
+
+Independently of the certificates above, Theorems~\ref{thm:endpoint} and~\ref{thm:curve} for $d=3$, Proposition~\ref{prop:families}(a) for $d=3$ and Corollary~\ref{cor:noise} for $k=3$ have been formalized in Lean~4 and checked by Lean's kernel, the qutrit endpoint inequality from an exact certificate of PSI's own (see the AI disclosure).
+
+\section{What remains}\label{sec:discussion}
+
+\emph{Higher local dimension.} In local dimension $d\ge5$ the inequality $q_\alpha\ge0$ on rank two is open for $\alpha_0<\alpha\le\tfrac12$: Theorem~\ref{thm:uniformthm} gives $0\le\alpha\le\alpha_0$ in every dimension, Corollary~\ref{cor:overlap} covers all matrices whose local range--corange overlaps have rank at most four at the endpoint, and the normal and several non-normal classes are covered at the endpoint in every dimension by \cite{WuZou}. The two kinds of certificate are complementary. The endpoint certificates of Sec.~\ref{sec:certificate} do not induct in $d$: the compressions $\Yh_t$ depend on $d$ through the Gram matrices of the permutation operators, and a new isotypic component (the four-replica antisymmetriser of $\C^4$) appears at $d=4$, so a certificate in one dimension is not one in a larger dimension, although a certificate in dimension $d'$ compresses to one in every $d\le d'$. The uniform certificate of Sec.~\ref{sec:uniform} treats $d$ as a parameter but tests positivity only at leading order in $1/d$, which is one reason it stops at $\alpha_0$; whether a dimension-uniform four-replica certificate can reach $\alpha=\tfrac12$, by using the lower-order terms or more hand inputs, we do not know.
+
+\emph{More copies.} Nothing inducts in the number of copies either. Whether $\rho_{1/2}$ (for some $d\ge3$) is undistillable from every finite number of copies---the NPT bound-entanglement conjecture---is untouched. Two remarks apply at every count: the convex decomposition of Remark~\ref{rem:interval}(a) applies to every number of copies, so the endpoint statement at a given count implies the sign on the whole interval; and the endpoint zero set contains, for every number $r$ of copies, the rank-two kernels $\beta(x,y)$ on $r$ qubits, of alternating algebraic type, so that any inductive argument has to be exactly tight on them.
+
+\emph{A human proof.} The certificates give the positive blocks only as tables. A proof a human can read would be the same identity \eqref{eq:template} with a short, structured choice of the blocks: squares of degree four in the lifted pair $(a,b)$, tight on the three families of Sec.~\ref{sec:zeros} (conjecturally the whole zero set, of dimension $36$ for $d=3$) and on both algebraic types of zero, with the rank-two condition entering only through the marginal constraint on $a$. The one- and two-site instances (Sec.~\ref{sec:certificate} and Appendix~\ref{app:cut}) show what such a closed form looks like one and two copies earlier.
+
+\appendix
+\renewcommand{\thetheorem}{\Alph{section}.\arabic{theorem}}
+\section{The two-site inequality as a sum of squares}\label{app:cut}
+
+We assemble Theorem~\ref{thm:twocopy} for rank two as an identity between nonnegative terms, the two-site instance of \eqref{eq:template}, from the ingredients of \cite[\S\S6--8]{FHPV}: the balanced factorisation \cite[Lemma~7.1]{FHPV}, the Parker--Fillmore lemma \cite[Lemma~6.1]{FHPV}, the rank-one identity of \cite[Prop.~1]{CostaRico} in the form \cite[Lemma~6.4]{FHPV}, and the crossed polarisation \cite[Cor.~6.7]{FHPV} of a four-state identity of \cite{ES}.
+
+Let $C=XY^\dagger$ have rank at most two on $\Hh_L\otimes\Hh_R$, with \emph{balanced} factors $X=[x_1\ x_2]$, $Y=[y_1\ y_2]$: $X^\dagger X=Y^\dagger Y=\bigl(\begin{smallmatrix}n_1&\omega\\\bar\omega&n_2\end{smallmatrix}\bigr)$ (take $X=U\Sigma^{1/2}W$, $Y=V\Sigma^{1/2}W$ from a singular value decomposition $C=U\Sigma V^\dagger$, $W\in U(2)$ free). Choose $W$ so that $y_1^\dagger x_1=y_2^\dagger x_2=:t$: conjugation by $W$ rotates the complex Pauli coefficient vector of the traceless part of $Y^\dagger X$ by a real rotation, and the real and imaginary parts of that vector span at most a plane, which can be rotated into the plane orthogonal to the third axis. On two copies of $\Hh_L\otimes\Hh_R$ let $J=\tfrac14(I-F_L)(I-F_R)$ and $\Lambda(M)=(\Tr_LM,\Tr_RM)$ with the sum inner product, and put
+$s_X=4\|J(x_1\otimes x_2)\|^2$, $s_Y=4\|J(y_1\otimes y_2)\|^2$, $s_j=4\|J(x_j\otimes y_j)\|^2$, $\Delta=x_2x_1^\dagger-y_2y_1^\dagger$.
+Expanding $4J$ into its four swap words and contracting as in Proposition~\ref{prop:qform} gives, for arbitrary vectors,
+\begin{gather}
+\|\Lambda(xy^\dagger)\|^2=\|x\|^2\|y\|^2+|\ip yx|^2-4\|J(x\otimes y)\|^2,\label{eq:A1}\\
+\ip{\Lambda(x_1y_1^\dagger)}{\Lambda(x_2y_2^\dagger)}=\ip{\Lambda(y_2y_1^\dagger)}{\Lambda(x_2x_1^\dagger)}\label{eq:A2}
+\end{gather}
+(in \eqref{eq:A2} each traced subsystem pairs with its complement, which exchanges the roles of the two frames). Under balance and equal overlaps, \eqref{eq:A1} gives $\|\Lambda(x_jy_j^\dagger)\|^2=n_j^2+|t|^2-s_j$, $\|\Lambda(x_2x_1^\dagger)\|^2=n_1n_2+|\omega|^2-s_X$ and $\|\Lambda(y_2y_1^\dagger)\|^2=n_1n_2+|\omega|^2-s_Y$. Substituting into
+$Q_{L|R}(C)=n_1^2+n_2^2+2|\omega|^2-\tfrac12\sum_j\|\Lambda(x_jy_j^\dagger)\|^2-\mathrm{Re}\ip{\Lambda(x_1y_1^\dagger)}{\Lambda(x_2y_2^\dagger)}+|t|^2$ and expanding $\|\Lambda(\Delta)\|^2$ with \eqref{eq:A2} yields
+\begin{multline}\label{eq:cutSOS}
+Q_{L|R}(C)=\frac{(n_1-n_2)^2}2+|\omega|^2\\+\frac{s_X+s_Y+s_1+s_2+\|\Lambda(\Delta)\|^2}2\ \ge0 .
+\end{multline}
+The identity holds for unequal dimensions and rank drops; equality forces $n_1=n_2$, $\omega=0$, $s_X=s_Y=s_1=s_2=0$ and $\Lambda(\Delta)=0$.
+
+
+\section{An endpoint bound in every dimension}\label{app:bound}
+
+The uniform certificate of Sec.~\ref{sec:uniform} has one hand input, the following quantitative bound on the endpoint form, valid in every dimension. We write $N=\|C\|^2$, $T=|\Tr C|^2$, $B_j=\sum_{|S|=j}\|\Tr_SC\|^2$, so that $q=N-\tfrac12B_1+\tfrac14B_2-\tfrac18T$, and $g=(s_1-s_2)^2$ for the singular values $s_1\ge s_2\ge0$ of $C$ (a rank-one $C$ has $s_2=0$).
+
+\begin{theorem}\label{thm:bound}
+For every $C$ of rank at most two on $\Hh_1\otimes\Hh_2\otimes\Hh_3$ of arbitrary finite dimensions,
+\begin{equation}\label{eq:bound}
+q(C)\ \ge\ -\tfrac1{16}N+\tfrac1{32}T+\tfrac18g ,
+\end{equation}
+i.e.\ $\tfrac{17}8N-B_1+\tfrac12B_2-\tfrac5{16}T\ge\tfrac14g\ge0$.
+\end{theorem}
+
+The proof combines four elementary bounds. Throughout, $\ip AB=\Tr A^\dagger B$ and
+\[q(A,B)=\sum_S(-\tfrac12)^{|S|}\ip{\Tr_SA}{\Tr_SB}\]
+is the polarisation of $q$.
+
+\emph{Step 1: positive matrices.} Let $P\succeq0$ have rank at most two and eigenvalues $\lambda\ge\mu\ge0$. Then
+\begin{equation}\label{eq:B1}
+q(P)\ge\tfrac18(\lambda-\mu)^2=\tfrac18\bigl(2\|P\|^2-(\Tr P)^2\bigr).
+\end{equation}
+By homogeneity take $\Tr P=1$ and write $P=W\tau W^\dagger$ with $W^\dagger W=I_2$, $\tau=\mathrm{diag}(\lambda,\mu)$. With the Pauli matrices $\varsigma_1,\varsigma_2,\varsigma_3$ put $K_\nu=\sqrt\tau\,\varsigma_\nu\sqrt\tau$ and $M_{i\nu}=\Tr_{\bar i}(WK_\nu W^\dagger)$, an operator on $\Hh_i$. In the unit vector $\psi=\sum_a\sqrt{\tau_a}\,\ket a\otimes W\ket a\in\C^2\otimes\Hh$, the Hermitian operator $L_{i\nu}=\varsigma_\nu^\T\otimes\operatorname{sgn}(M_{i\nu})$ has expectation $\Tr[\operatorname{sgn}(M_{i\nu})M_{i\nu}]=\|M_{i\nu}\|_1$. For fixed $\nu-i$ modulo $3$ the three operators $L_{i\nu}$ anticommute (the Pauli parts do, the sign parts act on different sites) and satisfy $L_{i\nu}^2\le I$, so $(\sum_it_iL_{i\nu_i})^2\le\sum_it_i^2$ for real $t$, whence $\sum_i\ip\psi{L_{i\nu_i}\psi}^2\le1$. Summing the three classes, $\sum_{i,\nu}\|M_{i\nu}\|_1^2\le3$. For Hermitian $M$, $2\|M\|^2\le\|M\|_1^2+(\Tr M)^2$, and $\Tr M_{i\nu}=\Tr K_\nu=(\lambda-\mu)\delta_{\nu3}$; hence $\sum_{i,\nu}\|M_{i\nu}\|^2\le\tfrac32\bigl(1+(\lambda-\mu)^2\bigr)=3\|P\|^2$. Finally, with $X_a=\sqrt{\tau_a}W\ket a$ and $\varsigma_0=I$, Pauli completeness $\sum_{\nu=0}^3(\varsigma_\nu)_{ab}(\varsigma_\nu)_{dc}=2\delta_{ac}\delta_{bd}$ and the swap identity of Lemma~\ref{lem:swap} give $\sum_{\nu=0}^3\|M_{i\nu}\|^2=2\sum_{a,b}\|\Tr_{\bar i}(X_aX_b^\dagger)\|^2=2\Tr[(P\otimes P)F_{\bar i}]=2\|\Tr_iP\|^2$, i.e.
+\begin{equation}\label{eq:B3}
+\textstyle\sum_{\nu=1}^3\|M_{i\nu}\|^2=2\|\Tr_iP\|^2-\|\Tr_{\bar i}P\|^2 .
+\end{equation}
+Substituting \eqref{eq:B3} into $q(P)=\|P\|^2-\tfrac12\sum_i\|\Tr_iP\|^2+\tfrac14\sum_i\|\Tr_{\bar i}P\|^2-\tfrac18$ gives $q(P)=\|P\|^2-\tfrac14\sum_{i,\nu}\|M_{i\nu}\|^2-\tfrac18\ge\tfrac18(2\|P\|^2-1)$, which is \eqref{eq:B1}.
+
+\emph{Step 2: four positive secants.} Let $C=USV^\dagger$ with $U^\dagger U=V^\dagger V=I_2$, $S=\mathrm{diag}(s_1,s_2)$, and put $P=USU^\dagger$, $Q=VSV^\dagger$, $s=s_1+s_2$, $f=\Tr(PQ)$, $G=2f-T$; note $g=2N-s^2$. For $z\in\{1,-1,i,-i\}$ the matrix $P_z=(U+zV)S(U+zV)^\dagger$ is positive of rank at most two, so $e(P_z)=q(P_z)-\tfrac18\operatorname{gap}(P_z)^2\ge0$ by \eqref{eq:B1}, where $\operatorname{gap}$ is the difference of the two eigenvalues. Let further
+\begin{align*}
+\Delta&=\sum_{i,\nu=1}^3\bigl\|\Tr_{\bar i}\bigl[U\sqrt S\varsigma_\nu\sqrt SU^\dagger-V\sqrt S\varsigma_\nu\sqrt SV^\dagger\bigr]\bigr\|^2\ge0,\\
+\mathcal S&=\Tr\bigl[\tfrac12(I+F_\ell)\,L^\dagger L\bigr]\ge0,\qquad L=\Pi\,(U\sqrt S\otimes V\sqrt S),
+\end{align*}
+where $\Pi=\prod_i\tfrac12(I-F_i)$ on $\Hh\otimes\Hh$ and $F_\ell$ exchanges the two logical qubits (the column spaces of $U\sqrt S$ and $V\sqrt S$). Then
+\begin{equation}\label{eq:B4}
+24\,q(C)-4g+G=\sum_ze(P_z)+\Delta+64\,\mathcal S ,
+\end{equation}
+so that
+\begin{equation}\label{eq:B5}
+q(C)\ge\tfrac1{24}(4g-G).
+\end{equation}
+Identity \eqref{eq:B4} is a finite expansion; we list the five relations that produce it. Write $X_a=\sqrt{s_a}\,U\ket a$ and $Y_a=\sqrt{s_a}\,V\ket a$, so that $C=\sum_aX_aY_a^\dagger$, $P=\sum_aX_aX_a^\dagger$, $Q=\sum_aY_aY_a^\dagger$, and put $E=q(P)+q(Q)$, $h=q(P,Q)$ and $c_j=\sum_{|J|=j}\Tr[(\Tr_{J^c}P)(\Tr_{J^c}Q)]$. Two contraction identities are used throughout: the polarised form $\ip{\Tr_S(xy^\dagger)}{\Tr_S(x'y'^\dagger)}=\Tr[F_S(x'x^\dagger\otimes yy'^\dagger)]$ of the rank-one identity of Sec.~\ref{sec:zeros}, and $\Tr[F_S(A\otimes B)]=\Tr[(\Tr_{S^c}A)(\Tr_{S^c}B)]$; together they give $\sum_{a,b}\ip{\Tr_S(X_aX_b^\dagger)}{\Tr_S(Y_aY_b^\dagger)}=\Tr[F_S(C^\dagger\otimes C)]=\|\Tr_{S^c}C\|^2$.
+(1) $8h=8f-4c_2+2c_1-s^2$ is the definition of $h$.
+(2) The identity $q(P)=\|P\|^2-\tfrac14\sum_{i,\nu}\|M_{i\nu}\|^2-\tfrac18(\Tr P)^2$ of Step~1 is homogeneous, so it holds for $P$ with $M^P_{i\nu}=\Tr_{\bar i}(U\sqrt S\varsigma_\nu\sqrt SU^\dagger)$ and for $Q$ with $M^Q_{i\nu}$ built from $V$; the polarisation of \eqref{eq:B3} and the contraction identity give $\sum_{\nu=1}^3\ip{M^P_{i\nu}}{M^Q_{i\nu}}=2\|\Tr_iC\|^2-\Tr[(\Tr_{\bar i}P)(\Tr_{\bar i}Q)]$. Since $\|P\|^2=\|Q\|^2=N$ and $\Delta=\sum_{i,\nu}\|M^P_{i\nu}-M^Q_{i\nu}\|^2$, this yields $4E+\Delta=8N-s^2-4B_1+2c_1$.
+(3) $\Pi=\tfrac18\sum_S(-1)^{|S|}F_S$, so $\Tr(L^\dagger L)=\Tr[\Pi(P\otimes Q)]=\tfrac18(s^2-c_1+c_2-f)$, and $\Tr(F_\ell L^\dagger L)=\sum_{a,b}\ip{X_b\otimes Y_a}{\Pi(X_a\otimes Y_b)}=\tfrac18\sum_S(-1)^{|S|}\|\Tr_SC\|^2$; hence $64\mathcal S=4(s^2+N-c_1+c_2-f-B_1+B_2-T)$.
+(4) $P_z=P+Q+zC^\dagger+\bar zC$, and averaging over the four phases kills the terms of odd degree and those in $z^2,\bar z^2$: $\sum_zq(P_z)=4q(P+Q)+4q(C)+4q(C^\dagger)=4E+8h+8q(C)$.
+(5) The nonzero eigenvalues of $P_z$ are those of $2S+zZ+\bar zZ^\dagger$ with $Z=\sqrt S\,U^\dagger V\sqrt S$, $|\Tr Z|^2=T$ and $\|Z\|^2=f$; with $\operatorname{gap}(M)^2=2\Tr M^2-(\Tr M)^2$ and the same averaging, $\sum_z\operatorname{gap}(P_z)^2=16g+8G$.
+Adding (1)--(5) gives \eqref{eq:B4}.
+
+\emph{Step 3: Hermitian parts.} Let $Y$ be Hermitian with at most two eigenvalues of each sign, $Y=A-B$ with $A,B\succeq0$ of rank at most two and $AB=0$. Positivity of $\prod_i(I-F_i)$ on $A\otimes B$ gives $\sum_E(-1)^{|E|}\Tr[(\Tr_{E^c}A)(\Tr_{E^c}B)]\ge0$, i.e.\ $b\le u+a$ with $u=\Tr A\Tr B$, $a=\sum_i\Tr[(\Tr_iA)(\Tr_iB)]$, $b=\sum_i\Tr[(\Tr_{\bar i}A)(\Tr_{\bar i}B)]$; hence $q(A,B)=-\tfrac12a+\tfrac14b-\tfrac18u\le\tfrac18u$. With \eqref{eq:B1} for $A$ and $B$,
+\begin{equation}\label{eq:B6}
+q(Y)=q(A)+q(B)-2q(A,B)\ge\tfrac18\bigl(2\|Y\|^2-\|Y\|_1^2\bigr).
+\end{equation}
+If $\rank C\le2$, the quadratic forms of $\operatorname{Re}C=\tfrac12(C+C^\dagger)$ and $\operatorname{Im}C=\tfrac1{2i}(C-C^\dagger)$ vanish on $\ker C$, a subspace of codimension at most two, so each has at most two eigenvalues of either sign; and $q(C)=q(\operatorname{Re}C)+q(\operatorname{Im}C)$ because $q(A,B)$ is real for Hermitian $A,B$. Therefore
+\begin{equation}\label{eq:B7}
+q(C)\ge\tfrac18\bigl(2N-\|\operatorname{Re}C\|_1^2-\|\operatorname{Im}C\|_1^2\bigr).
+\end{equation}
+
+\emph{Step 4: a Bessel inequality.} Let $J=\operatorname{sgn}(\operatorname{Re}C)$ (a Hermitian unitary, with any signs on $\ker\operatorname{Re}C$), $E_0,\dots,E_3$ a Hermitian orthonormal basis of $M_2(\C)$ and $Z=\sqrt S\,U^\dagger V\sqrt S$, so that $f=\|Z\|^2$. For the real inner product $\operatorname{Re}\Tr(A^\dagger B)$ the five matrices $JU/\sqrt2$, $iUE_0,\dots,iUE_3$ are orthonormal, since $U^\dagger JU$ and the $E_\mu$ are Hermitian. Bessel's inequality for $VS$ gives $\tfrac12\|\operatorname{Re}C\|_1^2+\|\operatorname{Im}(U^\dagger VS)\|^2\le N$, using $\|\operatorname{Re}C\|_1=\operatorname{Re}\Tr(JUSV^\dagger)$. Exchanging $U$ and $V$, averaging, and using the entrywise identity $\|\operatorname{Im}(MS)\|^2+\|\operatorname{Im}(SM)\|^2-2\|\operatorname{Im}(\sqrt SM\sqrt S)\|^2=\tfrac12\sum_{jk}(S_{jj}-S_{kk})^2|M_{jk}|^2\ge0$ with $M=U^\dagger V$ gives $\|\operatorname{Re}C\|_1^2\le2N-2\|\operatorname{Im}Z\|^2$. The same argument for $iC$ gives $\|\operatorname{Im}C\|_1^2\le2N-2\|\operatorname{Re}Z\|^2$, and adding,
+\begin{equation}\label{eq:B8}
+\|\operatorname{Re}C\|_1^2+\|\operatorname{Im}C\|_1^2\le4N-2f .
+\end{equation}
+
+\emph{Conclusion.} By \eqref{eq:B7} and \eqref{eq:B8}, $q(C)\ge\tfrac18(G+T-2N)$; one quarter of this bound plus three quarters of \eqref{eq:B5} is \eqref{eq:bound}. The expansions of Step~2 and every inequality above are also checked numerically on random instances in the package \cite{Pkg}.
+
+\bibliography{refs}
+\end{document}

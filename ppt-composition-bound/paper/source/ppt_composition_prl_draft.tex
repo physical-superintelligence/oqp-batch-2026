@@ -1,0 +1,411 @@
+% Entanglement Breaking after 2(d-1) PPT Maps.
+% Physical Superintelligence (PSI), draft of 20 October 2026.
+% Compile with: latexmk -pdf ppt_composition_prl_draft.tex
+% (pdflatex + bibtex; references in all.bib, formatted with REVTeX's apsrev4-2).
+
+\documentclass[aps,prl,reprint,superscriptaddress,longbibliography,raggedbottom]{revtex4-2}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{newtxtext,newtxmath}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{mathrsfs}
+\hypersetup{
+  pdftitle={Entanglement Breaking after 2(d-1) PPT Maps},
+  pdfauthor={David Turturean and Ning Bao}
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\C}{\mathbb C}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\SN}{\operatorname{SN}}
+\newcommand{\SR}{\operatorname{SR}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+
+
+\AtBeginDocument{\providecommand{\doi}{}\renewcommand{\doi}[1]{\href{https://doi.org/#1}{\nolinkurl{doi:#1}}}}
+\begin{document}
+
+\title{Entanglement Breaking after \texorpdfstring{{\boldmath$2(d-1)$}}{2(d-1)} PPT Maps}
+\author{David Turturean}\thanks{D.T. built and ran the automated research and formalization workflows at PSI and chose the composition bound as the result to write up.}
+\affiliation{Physical Superintelligence PBC, Cambridge, Massachusetts, USA}
+\author{Ning Bao}\thanks{N.B. verified the result and recommended changes to the manuscript, as a paid contractor to PSI, not under one of his grants or as an employee of Northeastern University.}
+\affiliation{Northeastern University}
+\affiliation{Brookhaven National Laboratory}
+
+\begin{abstract}
+In this note, we prove that any composition of $2(d-1)$ completely positive and completely
+copositive maps acting on a $d$-dimensional quantum system is entanglement
+breaking. The maps may differ at every step and need not be trace-preserving.
+The key step, which implements a suggestion due to Christandl, M\"uller-Hermes, and Wolf, demonstrates that every PPT map sends every
+PPT operator acting on the $d$-dimensional quantum system together with a qubit reference into an operator that is separable between the two. Using the
+Schmidt-number iteration technique of Christandl, M\"uller-Hermes, and Wolf then
+allows us to prove our main result.
+\end{abstract}
+
+\maketitle
+
+{\raggedright\setlength{\parskip}{0.4\baselineskip}
+\section*{Acknowledgements}
+
+We thank Adam Levine for reviewing an earlier draft of the proof, tracing the method back to the literature and preparing a shorter manuscript with AI agents, and Jim Halverson for coordinating the expert review. We also thank Physical Superintelligence PBC, in which some of the authors have a financial interest, for use of its resources, including its technology and frontier AI models. The authors used these models to develop, derive, and compose this manuscript and its Lean~4 supplements.
+
+Results were formalized in Lean~4 by AI agents and checked by Lean's kernel; the formalization is at \url{https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/ppt-composition-bound/lean}.
+
+David Turturean and Ning Bao reviewed and edited this paper and are responsible for its correctness. David Turturean is employed by PSI and has a financial interest in it.
+
+\par}
+\par\medskip\noindent\rule{\columnwidth}{0.4pt}\par\medskip
+
+Let $M_d$ denote the set of complex $d\times d$ matrices. A map
+$\Phi:M_{d_1} \to M_{d_2}$ is said to be completely copositive if $t\circ\Phi$ is completely
+positive, where $t$ is matrix transposition, namely $t(N) = N^{\top}$ for $N \in M_d$. For such a map, 
+$(\id_k\otimes\Phi)(X)$ is positive whenever $X\ge0$ for $X \in M_k \otimes M_d$.
+An operator is separable if it is a finite sum of a product of positive operators, and a
+completely positive map is called \emph{entanglement breaking} if its output is
+separable for every bipartite positive input and every reference
+dimension. Namely, an entanglement breaking map acting on the Hilbert space $\mathcal{H}_A$ takes an arbitrary state on $\mathcal{H}_A \otimes \mathcal{H}_R$ with $R$ an arbitrary reference to a separable state on $AR$. Quantum channels are trace-preserving completely positive maps. Completely copositive quantum channels are sometimes referred to as Positive Partial Transpose (PPT) channels~\cite{HSR03}.
+
+In this short note, we study how quantum noise can accumulate over successive applications of PPT quantum channels. PPT channels are known to produce quantum states with strictly bound entanglement~\cite{HHH98}, but it is an open research question as to whether the composition of PPT channels must eventually become entanglement breaking so that the output state contains only classical correlations. The so-called PPT-squared conjecture states that the composition of any two PPT maps is in fact entanglement breaking. As a preliminary step, one can ask about the so-called \emph{entanglement breaking index}, $n(T)$, of a quantum channel $T:M_d \to M_d$  \cite{CMHW19}, which is defined as
+\begin{align}
+n(T) = \min \lbrace m : T^m\ \text{is entanglement breaking} \rbrace.
+\end{align}
+
+In this notation, the PPT-squared conjecture states that $n(T) = 2$ for all PPT maps $T$. The PPT-squared conjecture is established for maps acting on three-dimensional systems
+\cite{CMHW19,CYT19}. Related work has studied the asymptotic limit of such compositions
+\cite{KMP17}, showing that, for every fixed PPT channel $T$, the distance from $T^n$ to the set of entanglement breaking maps tends to zero as $n\to\infty$. Furthermore, recent work due to Park~\cite{Park26} showed that $n(T) < \infty$ for arbitrary PPT channels. This result built off previous work proving finiteness of $n(T)$ for successively more general PPT maps~\cite{RJP18,HRSF20}. Recently, OpenAI~\cite{OpenAI26} in fact found a counterexample to the PPT-squared conjecture for PPT maps in dimensions $d = 10$. Nevertheless, one would like to know if any explicit but perhaps dimension-dependent bounds exist on the entanglement-breaking index in general.
+
+In this note, we prove the bound that $n(T) \leq 2(d-1)$ for a PPT map $T: M_d \to M_d$. The central
+step is to prove that every pair of PPT maps breaks entanglement with a
+qubit reference in arbitrary system dimension. This strategy for proving our dimension dependent bound on the entanglement-breaking index was suggested by Christandl, M\"uller-Hermes, and Wolf in \cite{CMHW19}. Combining this statement
+with the Schmidt-number reduction techniques developed there, gives our main result.
+
+
+
+
+\begin{theorem}\label{thm:main}
+For $d\ge2$ and any PPT maps
+$\Phi_1,\ldots,\Phi_{2(d-1)}:M_d\to M_d$, the composition
+\begin{equation}\label{eq:main}
+\Phi_{2(d-1)}\circ\cdots\circ\Phi_1
+\end{equation}
+is entanglement breaking. In particular, the entanglement breaking index of a given PPT map from a $d$-dimensional Hilbert space to a $d$-dimensional Hilbert space is bounded by $2(d-1)$. 
+\end{theorem}
+
+\emph{Proof sketch.---}The proof groups the above $2(d-1)$ maps into successive pairs. We first show that each
+pair destroys all entanglement with a qubit reference. We then explain
+why this helps for a larger reference, $R$: each pair lowers the largest
+Schmidt rank needed in a pure-state decomposition by at least one,
+until only product states remain. The initial bound on the Schmidt rank is at most $d$, so
+$d-1$ pairs suffice to break all entanglement.
+
+Throughout the proof, positive operators need not be normalized. We
+write $P_v=\ket v\bra v$, allowing unnormalized vectors so that weights
+can be absorbed into them. Thus a separable operator can be written as
+a finite sum of operators $P_a\otimes P_b$. We now turn to the main proof. 
+
+\section{Proof of Theorem 1}
+We begin with some preliminary lemmas regarding block matrices.
+
+\subsection{Block-matrix preliminaries}
+We write bipartite operators in blocks indexed by the reference basis.
+For a qubit reference, the diagonal blocks describe the two basis
+states and the off-diagonal blocks contain their coherences. The first
+lemma tells us how positivity restricts those coherences.
+
+\begin{lemma}[{Block positivity; Albert~\cite[Theorem~1]{Albert69}}]\label{lem:schur}
+Let
+\[
+H=\begin{pmatrix}A&B\\B^\dagger&C\end{pmatrix}\ge0,
+\]
+where the square, Hermitian blocks $A$ and $C$ may have different sizes. Then
+\begin{equation}\label{eq:schur}
+C\ge0,\qquad B\ker C=0,\qquad A\ge BC^+B^\dagger.
+\end{equation}
+Here $C^+$ inverts the positive eigenvalues of $C$ and leaves its zero
+eigenvalues equal to zero.
+\end{lemma}
+
+\begin{proof}
+Evaluating $H$ on $(0,y)$ gives $C\ge0$. If $Cz=0$, evaluating it
+on $(x,uz)$ gives
+\[
+x^\dagger Ax+2\operatorname{Re}(u x^\dagger Bz)\ge0.
+\]
+Since this holds for every complex $u$, we must have $Bz=0$.
+Consequently $B^\dagger x$ lies in $\Ran C$. Evaluating $H$ on
+$(x,-C^+B^\dagger x)$ now gives
+$x^\dagger(A-BC^+B^\dagger)x\ge0$, proving the last inequality.
+\end{proof}
+
+
+The second lemma is a standard separability criterion
+\cite[Proposition 1]{GB02}. We give its elementary proof for completeness.
+
+\begin{lemma}[{Gurvits--Barnum~\cite{GB02}}]\label{lem:equal}
+Every positive operator
+\begin{equation}\label{eq:equal}
+\begin{pmatrix}D&Y\\Y^\dagger&D\end{pmatrix}
+\end{equation}
+on a qubit and an arbitrary finite-dimensional system is separable.
+\end{lemma}
+
+\begin{proof}
+First suppose $D=I$. Lemma~\ref{lem:schur} gives $YY^\dagger\le I$,
+so all singular values of $Y$ are at most one. Write
+$Y=U\operatorname{diag}(s_j)V^\dagger$ and define
+\begin{equation}\label{eq:unitaries}
+W_\pm=U\operatorname{diag}\!\left(s_j\pm i\sqrt{1-s_j^2}\right)V^\dagger.
+\end{equation}
+Both matrices are unitary, since their diagonal factors have entries
+of absolute value one, and $Y=(W_++W_-)/2$. For a unitary $W$ with
+orthonormal eigenvectors $w_j$ and eigenvalues $e^{i\theta_j}$,
+\begin{equation}\label{eq:product}
+\begin{pmatrix}I&W\\W^\dagger&I\end{pmatrix}
+=\sum_j P_{\ket0+e^{-i\theta_j}\ket1}\otimes P_{w_j}.
+\end{equation}
+Averaging this product decomposition for $W = W_+$ and $W = W_-$ proves the
+claim when $D=I$.
+
+For general $D$, Lemma~\ref{lem:schur}, applied in both block orders,
+shows that $Y$ and $Y^\dagger$ vanish on $\ker D$. Restrict to
+$\Ran D$, where $D$ is invertible, and multiply on both sides by
+$I_2\otimes D^{-1/2}$. The resulting positive matrix has identity
+diagonal blocks and is therefore separable. Multiplication back by
+$I_2\otimes D^{1/2}$ preserves every product term. If $D=0$, positivity
+forces $Y=0$ and there is nothing to prove.
+\end{proof}
+
+\subsection{A pair of PPT maps destroys entanglement with a qubit}
+With these two facts in hand, we prove the main new ingredient.
+
+\begin{lemma}\label{lem:pair}
+If $\Phi,\Psi:M_d\to M_d$ are PPT maps, then
+\begin{equation}\label{eq:pair}
+(\id_2\otimes(\Psi\circ\Phi))(X)\quad\text{is separable}
+\end{equation}
+for every positive operator $X$ on $\C^2\otimes\C^d$.
+\end{lemma}
+
+\begin{proof}
+By definition, the first map produces a PPT operator
+$\rho=(\id_2\otimes\Phi)(X)$. We prove the stronger statement that
+\begin{equation}\label{eq:qubit}
+(\id_2\otimes\Psi)(\rho)\quad\text{is separable}
+\end{equation}
+for any PPT operator $\rho$ on $\C^2\otimes\C^{d_1}$ and any PPT
+map $\Psi:\nobreak M_{d_1}\to\nobreak M_{d_2}$. To demonstrate this, we will decompose $\rho$ into pieces
+whose images under $\Psi$ are separable. 
+
+\emph{Step 1: Use both positivity conditions.}
+Let $\Gamma_R$ denote partial transposition on the qubit reference. It swaps
+the block indices without transposing the blocks themselves. In other words, 
+\begin{equation}\label{eq:rho}
+\rho=\begin{pmatrix}A&B\\B^\dagger&C\end{pmatrix},\qquad
+\rho^{\Gamma_R}=\begin{pmatrix}A&B^\dagger\\B&C\end{pmatrix}
+\end{equation}
+are both positive. Applying Lemma~\ref{lem:schur} to each gives
+$A\ge BC^+B^\dagger$ and $A\ge B^\dagger C^+B$. Averaging the
+two bounds leaves the positive remainder
+\begin{equation}\label{eq:reserve}
+R:=A-\tfrac12(BC^+B^\dagger+B^\dagger C^+B)\ge0.
+\end{equation}
+The same lemma shows that $B$ and $B^\dagger$ vanish on $\ker C$,
+so $B$ acts entirely within $\Ran C$. If $C=0$, then $B=0$ and
+$\rho=P_{\ket0}\otimes A$ already has a separable image. Otherwise
+let $r=\operatorname{rank}C>0$.
+
+\emph{Step 2: Decompose the off-diagonal block.}
+Multiplying both $\rho$ and $\rho^{\Gamma_R}$ on the right and left by 
+\begin{equation}\label{eq:rho-composed}
+\begin{pmatrix}C^{+1/2}&0\\0&C^{+1/2}\end{pmatrix}, 
+\end{equation}
+where $C^{+1/2}$ is the positive square root of $C^+$,
+then the corresponding off-diagonal block has a singular-value decomposition
+\begin{equation}\label{eq:svd}
+\widetilde B=C^{+1/2}BC^{+1/2}
+=\sum_{j=1}^r s_j u_jv_j^\dagger.
+\end{equation}
+Here  both
+$(u_j)$ and $(v_j)$ are complete orthonormal bases of $\Ran C$.
+Set
+\begin{equation}\label{eq:components}
+p_j=C^{1/2}u_j,\quad q_j=C^{1/2}v_j,\quad
+D_j=\tfrac12(P_{p_j}+P_{q_j}).
+\end{equation}
+Multiplying out Eq.~\eqref{eq:svd} gives
+\begin{align}
+\sum_jD_j&=C,\qquad \sum_js_jp_jq_j^\dagger=B,\nonumber\\
+\sum_js_j^2D_j&=\tfrac12(BC^+B^\dagger+B^\dagger C^+B).
+\label{eq:identities}
+\end{align}
+The first identity uses completeness of the two bases. For the last,
+use $\widetilde B\widetilde B^\dagger=\sum_js_j^2P_{u_j}$ and
+$\widetilde B^\dagger\widetilde B=\sum_js_j^2P_{v_j}$.
+Equations~\eqref{eq:reserve} and \eqref{eq:identities} now give
+\begin{align}
+\rho&=P_{\ket0}\otimes R+\sum_j M_j,\label{eq:decomposition}\\
+M_j&=\begin{pmatrix}
+s_j^2D_j&s_jp_jq_j^\dagger\\
+s_jq_jp_j^\dagger&D_j
+\end{pmatrix}.\nonumber
+\end{align}
+
+
+\emph{Step 3: Show that the second map makes each piece separable.}
+Fix $j$ and write $p=p_j$, $q=q_j$, $s=s_j$, and $D=D_j$.
+Apply $\Psi$ to the pure operator $P_v$ with
+vector $v = \ket0\otimes p+\ket1\otimes q$. The output is
+\begin{equation}\label{eq:output}
+H=\begin{pmatrix}
+\Psi(P_p)&\Psi(pq^\dagger)\\
+\Psi(qp^\dagger)&\Psi(P_q)
+\end{pmatrix}.
+\end{equation}
+Because $\Psi$ is PPT, both $H$ and $H^\Gamma$ are positive.
+Indeed, positivity under partial transposition of the second factor
+also gives positivity under transposition of the first since the two
+partial transposes differ by a full transpose. Therefore, the average
+\begin{align}
+F&=\tfrac12\bigl[H+(S\otimes I)H^{\Gamma_R}(S\otimes I)\bigr]\nonumber\\
+&=\begin{pmatrix}
+\Psi(D)&\Psi(pq^\dagger)\\
+\Psi(qp^\dagger)&\Psi(D)
+\end{pmatrix}\ge0, 
+\label{eq:average}
+\end{align}
+where $S=\ket0\bra1+\ket1\bra0$ swaps the reference basis states.
+This operator $F$ has equal diagonal blocks, so Lemma~\ref{lem:equal} makes it separable.
+Multiplying its reference factor on both sides by
+$L=\operatorname{diag}(s,1)$ gives
+\begin{equation}\label{eq:filtered}
+(\id_2\otimes\Psi)(M_j)=(L\otimes I)F(L^\dagger\otimes I).
+\end{equation}
+Multiplying by an operator localized to the reference preserves separability of $F$.
+Noting that the remaining term in Eq.~\eqref{eq:decomposition} becomes
+the positive product $P_{\ket0}\otimes\Psi(R)$, and adding these
+separable images proves Eq.~\eqref{eq:qubit} and the lemma.
+\end{proof}
+
+The two PPT assumptions enter at different points. The first supplies
+the two bounds used to make $R$ positive. The second makes the average
+in Eq.~\eqref{eq:average} positive, after which equal diagonal blocks
+give separability.
+
+\subsection*{Why repeated PPT channels eventually destroy all entanglement}
+Following the work of Christandl, M\"uller-Hermes, and Wolf \cite{CMHW19}, we now pass from a qubit reference to a reference of arbitrary dimension. We start by considering the Schmidt number of an operator. For a vector $v=\sum_{i,j}V_{ij}\ket i\otimes\ket j$ in the Hilbert space of two systems, the so-called Schmidt rank is defined to be 
+$\SR(v)=\operatorname{rank}V$, i.e.\ the number of nonzero terms in the
+Schmidt decomposition of the vector $v$. For a nonzero positive operator $X$, the
+Schmidt number $\SN(X)$ is the smallest $k$ for which
+\begin{equation}\label{eq:sn}
+X=\sum_\alpha P_{v_\alpha},\qquad \SR(v_\alpha)\le k
+\quad\text{for every }\alpha.
+\end{equation}
+The Schmidt number can be thought of as the mixed-state version of the Schmidt rank~\cite{TH00}. Note that the
+decomposition need not be an eigenvector decomposition. Furthermore,
+$\SN(X)=1$ implies that the operator is separable, and we define $\SN(0)=0$.
+The separability criterion is used in the final step of the main proof; the
+convention at zero allows Lemma~\ref{lem:reduction} to include zero inputs
+and outputs.
+
+Three consequences of the definition will be used: 1. A sum of positive
+operators has Schmidt number at most the largest of their Schmidt
+numbers; 2. An operator on
+$\C^m\otimes\C^d$ has Schmidt number at most $\min\{m,d\}$; 
+3. Finally, applying local linear maps cannot increase Schmidt rank:
+the coefficient matrix of $(L\otimes K)v$ is $LVK^T$.
+
+The compression bound below is a special case of Chen, Yang, and
+Tang~\cite[Lemma~15(i)]{CYT17}; see also Christandl, M\"uller-Hermes,
+and Wolf~\cite[Theorem~A.2]{CMHW19}. 
+
+\begin{lemma}[{Chen--Yang--Tang~\cite{CYT17}}]\label{lem:lift}
+Let $\Sigma\ge0$ act on $\C^m\otimes\C^n$, with $m\ge2$. We will refer to $\C^m$ as the ``reference'' system.
+Project the reference onto a two-dimensional subspace. If the resulting
+operator is separable, then $\SN(\Sigma)\le m-1$.
+\end{lemma}
+
+\begin{proof}
+For $m=2$ the projection keeps the entire reference, so the assertion
+is immediate. Otherwise, assume $\Sigma$ obeys the assumption of the lemma, then we can choose our basis such that $\Sigma$ takes the form
+\begin{equation}\label{eq:liftblocks}
+\Sigma=\begin{pmatrix}D&K\\K^\dagger&T\end{pmatrix},
+\end{equation}
+where $D \in \C^{2n \times 2n}$, $K \in \C^{2n \times (m-2)n}$ and $T \in \C^{(m-2)n \times (m-2)n}$. Separability of the projection, $D$, of $\Sigma$ onto the two-dimensional subspace implies 
+\begin{equation}
+D=\sum_\alpha P_{f_\alpha},\quad f_\alpha=a_\alpha\otimes b_\alpha, 
+\end{equation}
+where $a_{\alpha} \in \C^2$ lives in the two-dimensional, projected subspace. 
+Lemma~\ref{lem:schur}, with the block order reversed, gives
+$DD^+K=K$ and $T-K^\dagger D^+K\ge0$. Append to each $f_\alpha$
+the vector $g_\alpha=K^\dagger D^+f_\alpha$ which lives in $\C^{m-2} \otimes \C^n$. Then
+\begin{equation}\label{eq:lift}
+\Sigma=\sum_\alpha P_{f_\alpha\oplus g_\alpha}
++\begin{pmatrix}0&0\\0&T-K^\dagger D^+K\end{pmatrix}.
+\end{equation}
+The symbol $f\oplus g$ places the entries of $g$ below those of $f$.
+To check the identity, the upper block of the sum is $D$, and
+\begin{align*}
+\sum_\alpha f_\alpha g_\alpha^\dagger&=DD^+K=K,\\
+\sum_\alpha g_\alpha g_\alpha^\dagger&=K^\dagger D^+K.
+\end{align*}
+Because $f_\alpha$ is a product vector, its Schmidt rank is less than or equal to one. Appending $g_\alpha$
+gives $\SR(f_\alpha\oplus g_\alpha)\le1+(m-2)=m-1$, where we used that since $g_{\alpha}$ uses only $m-2$ reference dimensions
+its Schmidt number is at most $m-2$. By using the spectral decomposition of $T- K^{\dagger} D^+ K$, we can make \eqref{eq:lift} take the form of \eqref{eq:sn} where every summand in \eqref{eq:lift} therefore has
+Schmidt number at most $m-1$. \end{proof}
+
+\begin{lemma}[{From Lemma~\ref{lem:pair} and~\cite{CMHW19}}]\label{lem:reduction}
+Let $\Theta=\Psi\circ\Phi$ be the composition of a pair of PPT maps, $\Psi$ and $\Phi$, on $M_d$.
+For every positive operator $X$ on a reference system and $\C^d$,
+\begin{equation}\label{eq:reduction}
+\SN\bigl((\id\otimes\Theta)(X)\bigr)
+\le\max\{\SN(X)-1,1\}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+We apply the Schmidt-number argument of Christandl, M\"uller-Hermes,
+and Wolf~\cite[Lemma~II.1 and proof of Theorem~II.1]{CMHW19}
+using Lemma~\ref{lem:pair}.
+Decompose $X$ as in Eq.~\eqref{eq:sn}, using vectors of Schmidt rank
+at most $\SN(X)$. Consider one nonzero vector $v$ of Schmidt rank $r$.
+If $r=1$, it is a product vector and its image under a local completely
+positive map is separable.
+
+If $r\ge2$, the Schmidt decomposition of $v$ uses only $r$ orthonormal
+reference vectors. Work inside their span, so that
+$\Sigma=(\id_r\otimes\Theta)(P_v)\ge0$ acts on
+$\C^r\otimes\C^d$. Projecting its reference onto a two-dimensional
+subspace commutes with applying $\Theta$ to the system. The projected
+output is therefore the image of a positive input with a qubit
+reference, and is separable by Lemma~\ref{lem:pair}.
+Lemma~\ref{lem:lift} gives $\SN(\Sigma)\le r-1$.
+Putting the reference back into its original space is a local isometry
+and cannot increase this bound. Adding the outputs of all pure-state
+terms in $X$ proves Eq.~\eqref{eq:reduction}. The case $X=0$ is immediate.
+\end{proof}
+
+\begin{proof}[Proof of the main theorem]
+Take any reference dimension $k$ and positive input $X_0$ on
+$\C^k\otimes\C^d$. Its Schmidt number is at most $d$.
+Group the maps into pairs and define
+\begin{equation}\label{eq:iteration}
+\Theta_j=\Phi_{2j}\circ\Phi_{2j-1},\qquad
+X_j=(\id_k\otimes\Theta_j)(X_{j-1}).
+\end{equation}
+Lemma~\ref{lem:reduction} lowers the bound by one per pair:
+\begin{equation}\label{eq:bound}
+\SN(X_j)\le\max\{d-j,1\}.
+\end{equation}
+After $d-1$ pairs the output is separable. This holds for every input
+and every reference dimension, so the composition of at most $2(d-1)$ maps
+in Eq.~\eqref{eq:main} is entanglement breaking.
+\end{proof}
+
+\section{Discussion}
+This note proves a weaker result than the full PPT-squared conjecture, which states that the composition of any two PPT maps is entanglement breaking. While this manuscript was in preparation, OpenAI~\cite{OpenAI26} released a counterexample to the PPT-squared conjecture that holds in dimension $d=10$. Their result combined with the result presented here raises the interesting next question of whether our bound is in fact optimal in certain regimes. The PPT-squared statement is known to hold in dimension $d=3$~\cite{CMHW19,CYT19}, while for dimension $3$ our bound only proves that the composition of any four PPT maps will be entanglement breaking. Therefore, our bound is suboptimal for some dimensions. One could wonder whether it is optimal asymptotically in large $d$, however. We hope to explore these questions in the future. 
+\bibliography{all}
+\end{document}

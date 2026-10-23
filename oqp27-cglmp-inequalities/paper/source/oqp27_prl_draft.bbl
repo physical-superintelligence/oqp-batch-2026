@@ -1,0 +1,463 @@
+%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (0) allowed
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{35}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Bell}(1964)}]{Bell}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~S.}\ \bibnamefont
+  {Bell}},\ }\bibfield  {title} {\bibinfo {title} {On the {Einstein} {Podolsky}
+  {Rosen} paradox},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Physics Physique Fizika}\ }\textbf {\bibinfo {volume} {1}},\ \bibinfo
+  {pages} {195} (\bibinfo {year} {1964})},\ \bibinfo {note}
+  {\doi{10.1103/PhysicsPhysiqueFizika.1.195}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Clauser}\ \emph {et~al.}(1969)\citenamefont
+  {Clauser}, \citenamefont {Horne}, \citenamefont {Shimony},\ and\
+  \citenamefont {Holt}}]{CHSH}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~F.}\ \bibnamefont
+  {Clauser}}, \bibinfo {author} {\bibfnamefont {M.~A.}\ \bibnamefont {Horne}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Shimony}},\ and\ \bibinfo
+  {author} {\bibfnamefont {R.~A.}\ \bibnamefont {Holt}},\ }\bibfield  {title}
+  {\bibinfo {title} {Proposed experiment to test local hidden-variable
+  theories},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Phys.
+  Rev. Lett.}\ }\textbf {\bibinfo {volume} {23}},\ \bibinfo {pages} {880}
+  (\bibinfo {year} {1969})},\ \bibinfo {note}
+  {\doi{10.1103/PhysRevLett.23.880}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Brunner}\ \emph {et~al.}(2014)\citenamefont
+  {Brunner}, \citenamefont {Cavalcanti}, \citenamefont {Pironio}, \citenamefont
+  {Scarani},\ and\ \citenamefont {Wehner}}]{Brunner}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Brunner}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Cavalcanti}},
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Pironio}}, \bibinfo
+  {author} {\bibfnamefont {V.}~\bibnamefont {Scarani}},\ and\ \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Wehner}},\ }\bibfield  {title} {\bibinfo
+  {title} {Bell nonlocality},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Rev. Mod. Phys.}\ }\textbf {\bibinfo {volume} {86}},\ \bibinfo
+  {pages} {419} (\bibinfo {year} {2014})},\ \bibinfo {note}
+  {\doi{10.1103/RevModPhys.86.419}; \arxiv{1303.2849}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Collins}\ \emph {et~al.}(2002)\citenamefont
+  {Collins}, \citenamefont {Gisin}, \citenamefont {Linden}, \citenamefont
+  {Massar},\ and\ \citenamefont {Popescu}}]{CGLMP}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Collins}}, \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Gisin}},
+  \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Linden}}, \bibinfo
+  {author} {\bibfnamefont {S.}~\bibnamefont {Massar}},\ and\ \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Popescu}},\ }\bibfield  {title} {\bibinfo
+  {title} {Bell inequalities for arbitrarily high-dimensional systems},\
+  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\
+  }\textbf {\bibinfo {volume} {88}},\ \bibinfo {pages} {040404} (\bibinfo
+  {year} {2002})},\ \bibinfo {note} {\doi{10.1103/PhysRevLett.88.040404};
+  \arxiv{quant-ph/0106024}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kaszlikowski}\ \emph {et~al.}(2000)\citenamefont
+  {Kaszlikowski}, \citenamefont {Gnaci{\'n}ski}, \citenamefont {{\.Z}ukowski},
+  \citenamefont {Miklaszewski},\ and\ \citenamefont {Zeilinger}}]{KGZMZ}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Kaszlikowski}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Gnaci{\'n}ski}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {{\.Z}ukowski}}, \bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Miklaszewski}},\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Zeilinger}},\ }\bibfield  {title} {\bibinfo {title} {Violations of local
+  realism by two entangled {$N$}-dimensional systems are stronger than for two
+  qubits},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Phys.
+  Rev. Lett.}\ }\textbf {\bibinfo {volume} {85}},\ \bibinfo {pages} {4418}
+  (\bibinfo {year} {2000})},\ \bibinfo {note}
+  {\doi{10.1103/PhysRevLett.85.4418}; \arxiv{quant-ph/0005028}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Durt}\ \emph {et~al.}(2001)\citenamefont {Durt},
+  \citenamefont {Kaszlikowski},\ and\ \citenamefont {{\.Z}ukowski}}]{DKZ}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Durt}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Kaszlikowski}},\
+  and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {{\.Z}ukowski}},\
+  }\bibfield  {title} {\bibinfo {title} {Violations of local realism with
+  quantum systems described by {$N$}-dimensional {Hilbert} spaces up to
+  {$N=16$}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Phys.
+  Rev. A}\ }\textbf {\bibinfo {volume} {64}},\ \bibinfo {pages} {024101}
+  (\bibinfo {year} {2001})},\ \bibinfo {note}
+  {\doi{10.1103/PhysRevA.64.024101}; \arxiv{quant-ph/0101084}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Gill}(2005)}]{GillProblem}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.~D.}\ \bibnamefont
+  {Gill}},\ }\href@noop {} {\bibinfo {title} {The power of {CGLMP}
+  inequalities}},\ \bibinfo {howpublished} {Problem 27 of R.~F. Werner's list
+  \emph{Open problems in quantum information theory}, TU Braunschweig, posted
+  15 April 2005; now maintained by IQOQI Vienna,
+  \url{https://oqp.iqoqi.oeaw.ac.at/the-power-of-cglmp-inequalities}} (\bibinfo
+  {year} {2005})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Krueger}\ and\ \citenamefont
+  {Werner}(2005)}]{KruegerWerner}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {O.}~\bibnamefont
+  {Krueger}}\ and\ \bibinfo {author} {\bibfnamefont {R.~F.}\ \bibnamefont
+  {Werner}},\ }\href@noop {} {\bibinfo {title} {Some open problems in quantum
+  information theory}},\ \bibinfo {howpublished} {arXiv preprint} (\bibinfo
+  {year} {2005}),\ \bibinfo {note} {\arxiv{quant-ph/0504166}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Ac{\'i}n}\ \emph {et~al.}(2005)\citenamefont
+  {Ac{\'i}n}, \citenamefont {Gill},\ and\ \citenamefont {Gisin}}]{AGG}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Ac{\'i}n}}, \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Gill}},\
+  and\ \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Gisin}},\ }\bibfield
+   {title} {\bibinfo {title} {Optimal {Bell} tests do not require maximally
+  entangled states},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {95}},\ \bibinfo {pages}
+  {210402} (\bibinfo {year} {2005})},\ \bibinfo {note}
+  {\doi{10.1103/PhysRevLett.95.210402}; \arxiv{quant-ph/0506225}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Masanes}(2003)}]{Masanes}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {{\relax Ll}.}~\bibnamefont
+  {Masanes}},\ }\bibfield  {title} {\bibinfo {title} {Tight {Bell} inequality
+  for {$d$}-outcome measurements correlations},\ }\href@noop {} {\bibfield
+  {journal} {\bibinfo  {journal} {Quantum Inf. Comput.}\ }\textbf {\bibinfo
+  {volume} {3}},\ \bibinfo {pages} {345} (\bibinfo {year} {2003})},\ \bibinfo
+  {note} {\doi{10.26421/QIC3.4-4}; \arxiv{quant-ph/0210073}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Cirel'son}(1980)}]{Tsirelson}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.~S.}\ \bibnamefont
+  {Cirel'son}},\ }\bibfield  {title} {\bibinfo {title} {Quantum generalizations
+  of {Bell}'s inequality},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Lett. Math. Phys.}\ }\textbf {\bibinfo {volume} {4}},\ \bibinfo
+  {pages} {93} (\bibinfo {year} {1980})},\ \bibinfo {note}
+  {\doi{10.1007/BF00417500}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{F. W. J. Olver and others (eds.)}}(2026)}]{DLMF}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{F. W. J. Olver and
+  others (eds.)}}},\ }\href@noop {} {\bibinfo {title} {{NIST Digital Library
+  of Mathematical Functions}, {\S25.11}}},\ \bibinfo {howpublished}
+  {\url{https://dlmf.nist.gov/25.11}, release 1.2.8 of 15 September 2026}
+  (\bibinfo {year} {2026})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Zohren}\ and\ \citenamefont {Gill}(2008)}]{ZG}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Zohren}}\ and\ \bibinfo {author} {\bibfnamefont {R.~D.}\ \bibnamefont
+  {Gill}},\ }\bibfield  {title} {\bibinfo {title} {Maximal violation of the
+  {Collins--Gisin--Linden--Massar--Popescu} inequality for infinite dimensional
+  states},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Phys.
+  Rev. Lett.}\ }\textbf {\bibinfo {volume} {100}},\ \bibinfo {pages} {120406}
+  (\bibinfo {year} {2008})},\ \bibinfo {note}
+  {\doi{10.1103/PhysRevLett.100.120406}; \arxiv{quant-ph/0612020}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Lang}\ \emph {et~al.}(2014)\citenamefont {Lang},
+  \citenamefont {V{\'e}rtesi},\ and\ \citenamefont {Navascu{\'e}s}}]{LVN}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
+  {Lang}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {V{\'e}rtesi}},\
+  and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Navascu{\'e}s}},\
+  }\bibfield  {title} {\bibinfo {title} {Closed sets of correlations: answers
+  from the zoo},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {J.
+  Phys. A: Math. Theor.}\ }\textbf {\bibinfo {volume} {47}},\ \bibinfo {pages}
+  {424029} (\bibinfo {year} {2014})},\ \bibinfo {note}
+  {\doi{10.1088/1751-8113/47/42/424029}; \arxiv{1402.2850}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Ac{\'i}n}\ \emph {et~al.}(2002)\citenamefont
+  {Ac{\'i}n}, \citenamefont {Durt}, \citenamefont {Gisin},\ and\ \citenamefont
+  {Latorre}}]{ADGL}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Ac{\'i}n}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Durt}},
+  \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Gisin}},\ and\ \bibinfo
+  {author} {\bibfnamefont {J.~I.}\ \bibnamefont {Latorre}},\ }\bibfield
+  {title} {\bibinfo {title} {Quantum nonlocality in two three-level systems},\
+  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. A}\
+  }\textbf {\bibinfo {volume} {65}},\ \bibinfo {pages} {052325} (\bibinfo
+  {year} {2002})},\ \bibinfo {note} {\doi{10.1103/PhysRevA.65.052325};
+  \arxiv{quant-ph/0111143}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Navascu{\'e}s}\ \emph {et~al.}(2007)\citenamefont
+  {Navascu{\'e}s}, \citenamefont {Pironio},\ and\ \citenamefont
+  {Ac{\'i}n}}]{NPA}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Navascu{\'e}s}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Pironio}},\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Ac{\'i}n}},\ }\bibfield  {title} {\bibinfo {title} {Bounding the set of
+  quantum correlations},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {98}},\ \bibinfo
+  {pages} {010401} (\bibinfo {year} {2007})},\ \bibinfo {note}
+  {\doi{10.1103/PhysRevLett.98.010401}; \arxiv{quant-ph/0607119}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Ioannou}\ and\ \citenamefont {Rosset}(2021)}]{IR}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Ioannou}}\ and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Rosset}},\ }\href@noop {} {\bibinfo {title} {Noncommutative polynomial
+  optimization under symmetry}},\ \bibinfo {howpublished} {arXiv preprint}
+  (\bibinfo {year} {2021}),\ \bibinfo {note} {\arxiv{2112.10803}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Yang}\ \emph {et~al.}(2014)\citenamefont {Yang},
+  \citenamefont {V{\'e}rtesi}, \citenamefont {Bancal}, \citenamefont
+  {Scarani},\ and\ \citenamefont {Navascu{\'e}s}}]{Yang}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~H.}\ \bibnamefont
+  {Yang}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {V{\'e}rtesi}},
+  \bibinfo {author} {\bibfnamefont {J.-D.}\ \bibnamefont {Bancal}}, \bibinfo
+  {author} {\bibfnamefont {V.}~\bibnamefont {Scarani}},\ and\ \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Navascu{\'e}s}},\ }\bibfield  {title}
+  {\bibinfo {title} {Robust and versatile black-box certification of quantum
+  devices},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Phys.
+  Rev. Lett.}\ }\textbf {\bibinfo {volume} {113}},\ \bibinfo {pages} {040401}
+  (\bibinfo {year} {2014})},\ \bibinfo {note}
+  {\doi{10.1103/PhysRevLett.113.040401}; \arxiv{1406.7127}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Zohren}\ \emph {et~al.}(2010)\citenamefont {Zohren},
+  \citenamefont {Reska}, \citenamefont {Gill},\ and\ \citenamefont
+  {Westra}}]{ZRGW}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Zohren}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Reska}},
+  \bibinfo {author} {\bibfnamefont {R.~D.}\ \bibnamefont {Gill}},\ and\
+  \bibinfo {author} {\bibfnamefont {W.}~\bibnamefont {Westra}},\ }\bibfield
+  {title} {\bibinfo {title} {A tight {Tsirelson} inequality for infinitely many
+  outcomes},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {EPL
+  (Europhys. Lett.)}\ }\textbf {\bibinfo {volume} {90}},\ \bibinfo {pages}
+  {10002} (\bibinfo {year} {2010})},\ \bibinfo {note}
+  {\doi{10.1209/0295-5075/90/10002}; \arxiv{1003.0616}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Salavrakos}\ \emph {et~al.}(2017)\citenamefont
+  {Salavrakos}, \citenamefont {Augusiak}, \citenamefont {Tura}, \citenamefont
+  {Wittek}, \citenamefont {Ac{\'i}n},\ and\ \citenamefont {Pironio}}]{SATWAP}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Salavrakos}}, \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Augusiak}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Tura}},
+  \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Wittek}}, \bibinfo
+  {author} {\bibfnamefont {A.}~\bibnamefont {Ac{\'i}n}},\ and\ \bibinfo
+  {author} {\bibfnamefont {S.}~\bibnamefont {Pironio}},\ }\bibfield  {title}
+  {\bibinfo {title} {Bell inequalities tailored to maximally entangled
+  states},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Phys.
+  Rev. Lett.}\ }\textbf {\bibinfo {volume} {119}},\ \bibinfo {pages} {040402}
+  (\bibinfo {year} {2017})},\ \bibinfo {note}
+  {\doi{10.1103/PhysRevLett.119.040402}; \arxiv{1607.04578}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Sarkar}\ \emph {et~al.}(2021)\citenamefont {Sarkar},
+  \citenamefont {Saha}, \citenamefont {Kaniewski},\ and\ \citenamefont
+  {Augusiak}}]{Sarkar}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Sarkar}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Saha}},
+  \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Kaniewski}},\ and\
+  \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Augusiak}},\ }\bibfield
+  {title} {\bibinfo {title} {Self-testing quantum systems of arbitrary local
+  dimension with minimal number of measurements},\ }\href@noop {} {\bibfield
+  {journal} {\bibinfo  {journal} {npj Quantum Inf.}\ }\textbf {\bibinfo
+  {volume} {7}},\ \bibinfo {pages} {151} (\bibinfo {year} {2021})},\ \bibinfo
+  {note} {\doi{10.1038/s41534-021-00490-3}; \arxiv{1909.12722}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Kaniewski}\ \emph {et~al.}(2019)\citenamefont
+  {Kaniewski}, \citenamefont {{\v{S}}upi{\'c}}, \citenamefont {Tura},
+  \citenamefont {Baccari}, \citenamefont {Salavrakos},\ and\ \citenamefont
+  {Augusiak}}]{Kaniewski}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Kaniewski}}, \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {{\v{S}}upi{\'c}}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Tura}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Baccari}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Salavrakos}},\ and\
+  \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Augusiak}},\ }\bibfield
+  {title} {\bibinfo {title} {Maximal nonlocality from maximal entanglement and
+  mutually unbiased bases, and self-testing of two-qutrit quantum systems},\
+  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Quantum}\ }\textbf
+  {\bibinfo {volume} {3}},\ \bibinfo {pages} {198} (\bibinfo {year} {2019})},\
+  \bibinfo {note} {\doi{10.22331/q-2019-10-24-198};
+  \arxiv{1807.03332}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Tavakoli}\ \emph {et~al.}(2021)\citenamefont
+  {Tavakoli}, \citenamefont {Farkas}, \citenamefont {Rosset}, \citenamefont
+  {Bancal},\ and\ \citenamefont {Kaniewski}}]{Tavakoli21}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Tavakoli}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Farkas}},
+  \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Rosset}}, \bibinfo
+  {author} {\bibfnamefont {J.-D.}\ \bibnamefont {Bancal}},\ and\ \bibinfo
+  {author} {\bibfnamefont {J.}~\bibnamefont {Kaniewski}},\ }\bibfield  {title}
+  {\bibinfo {title} {Mutually unbiased bases and symmetric informationally
+  complete measurements in {Bell} experiments},\ }\href@noop {} {\bibfield
+  {journal} {\bibinfo  {journal} {Sci. Adv.}\ }\textbf {\bibinfo {volume}
+  {7}},\ \bibinfo {pages} {eabc3847} (\bibinfo {year} {2021})},\ \bibinfo
+  {note} {\doi{10.1126/sciadv.abc3847}; \arxiv{1912.03225}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {{\v{S}}upi{\'c}}\ and\ \citenamefont
+  {Bowles}(2020)}]{SupicBowles}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {{\v{S}}upi{\'c}}}\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Bowles}},\ }\bibfield  {title} {\bibinfo {title} {Self-testing of quantum
+  systems: a review},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Quantum}\ }\textbf {\bibinfo {volume} {4}},\ \bibinfo {pages}
+  {337} (\bibinfo {year} {2020})},\ \bibinfo {note}
+  {\doi{10.22331/q-2020-09-30-337}; \arxiv{1904.10042}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Vaziri}\ \emph {et~al.}(2002)\citenamefont {Vaziri},
+  \citenamefont {Weihs},\ and\ \citenamefont {Zeilinger}}]{Vaziri}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Vaziri}}, \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Weihs}},\ and\
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Zeilinger}},\ }\bibfield
+  {title} {\bibinfo {title} {Experimental two-photon, three-dimensional
+  entanglement for quantum communication},\ }\href@noop {} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
+  {volume} {89}},\ \bibinfo {pages} {240401} (\bibinfo {year} {2002})},\
+  \bibinfo {note} {\doi{10.1103/PhysRevLett.89.240401}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Dada}\ \emph {et~al.}(2011)\citenamefont {Dada},
+  \citenamefont {Leach}, \citenamefont {Buller}, \citenamefont {Padgett},\ and\
+  \citenamefont {Andersson}}]{Dada}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~C.}\ \bibnamefont
+  {Dada}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Leach}},
+  \bibinfo {author} {\bibfnamefont {G.~S.}\ \bibnamefont {Buller}}, \bibinfo
+  {author} {\bibfnamefont {M.~J.}\ \bibnamefont {Padgett}},\ and\ \bibinfo
+  {author} {\bibfnamefont {E.}~\bibnamefont {Andersson}},\ }\bibfield  {title}
+  {\bibinfo {title} {Experimental high-dimensional two-photon entanglement and
+  violations of generalized {Bell} inequalities},\ }\href@noop {} {\bibfield
+  {journal} {\bibinfo  {journal} {Nature Phys.}\ }\textbf {\bibinfo {volume}
+  {7}},\ \bibinfo {pages} {677} (\bibinfo {year} {2011})},\ \bibinfo {note}
+  {\doi{10.1038/nphys1996}; \arxiv{1104.5087}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Miao}\ \emph {et~al.}(2026)\citenamefont
+  {Miao}, \citenamefont {Svegborn}, \citenamefont {Chen}, \citenamefont
+  {Guo}, \citenamefont {Hu}, \citenamefont {Huang}, \citenamefont {Li},
+  \citenamefont {Guo}, \citenamefont {Tavakoli},\ and\ \citenamefont
+  {Liu}}]{Miao26}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.-L.}\ \bibnamefont
+  {Miao}}, \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Svegborn}},
+  \bibinfo {author} {\bibfnamefont {Z.}~\bibnamefont {Chen}}, \bibinfo {author}
+  {\bibfnamefont {Y.}~\bibnamefont {Guo}}, \bibinfo {author} {\bibfnamefont
+  {X.-M.}\ \bibnamefont {Hu}}, \bibinfo {author} {\bibfnamefont {Y.-F.}\
+  \bibnamefont {Huang}}, \bibinfo {author} {\bibfnamefont {C.-F.}\ \bibnamefont
+  {Li}}, \bibinfo {author} {\bibfnamefont {G.-C.}\ \bibnamefont {Guo}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Tavakoli}},\ and\
+  \bibinfo {author} {\bibfnamefont {B.-H.}\ \bibnamefont {Liu}},\ }\bibfield
+  {title} {\bibinfo {title} {Binarization-loophole-free observation of
+  high-dimensional quantum nonlocality},\ }\href@noop {} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {136}},\
+  \bibinfo {pages} {240201} (\bibinfo {year} {2026})},\ \bibinfo {note}
+  {\doi{10.1103/ydch-vgmy}; \arxiv{2601.02350}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Mishra}\ and\ \citenamefont
+  {Senthilkumar}(2026)}]{Mishra26b}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Mishra}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Senthilkumar}},\ }\href@noop {} {\bibinfo {title} {Optimal {CGLMP}
+  measurements in every dimension and the clauses of {IQOQI} \mbox{Vienna} {Open}
+  {Quantum} {Problem} {27B}}},\ \bibinfo {howpublished} {Preprint, code and
+  certificates; version 1.0 released 2 October 2026. Comparison uses
+  \href{https://github.com/anshM123/IQOQI-OQP-27/tree/d5213b7b1c9975b8cc0f16d55e3baa9c4ba451a0}{commit
+  \texttt{d5213b7}}, 20 October 2026,
+  \url{https://github.com/anshM123/IQOQI-OQP-27}} (\bibinfo {year}
+  {2026})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Hein{\"a}vaara}(2026)}]{Heinavaara26}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {O.}~\bibnamefont
+  {Hein{\"a}vaara}},\ }\href@noop {} {\bibinfo {title} {Convolution comparison
+  measures}},\ \bibinfo {howpublished} {arXiv preprint} (\bibinfo {year}
+  {2026}),\ \bibinfo {note} {\arxiv{2602.10373}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bernstein}(1912)}]{Bernstein}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~N.}\ \bibnamefont
+  {Bernstein}},\ }\bibfield  {title} {\bibinfo {title} {D{\'e}monstration du
+  th{\'e}or{\`e}me de {Weierstrass} fond{\'e}e sur le calcul des
+  probabilit{\'e}s},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Comm. Soc. Math. Kharkov (2)}\ }\textbf {\bibinfo {volume} {13}},\ \bibinfo
+  {pages} {1} (\bibinfo {year} {1912})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {van Dam}\ \emph {et~al.}(2005)\citenamefont {van
+  Dam}, \citenamefont {Gill},\ and\ \citenamefont {Gr{\"u}nwald}}]{VDGG}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont {van
+  Dam}}, \bibinfo {author} {\bibfnamefont {R.~D.}\ \bibnamefont {Gill}},\ and\
+  \bibinfo {author} {\bibfnamefont {P.~D.}\ \bibnamefont {Gr{\"u}nwald}},\
+  }\bibfield  {title} {\bibinfo {title} {The statistical strength of
+  nonlocality proofs},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {IEEE Trans. Inform. Theory}\ }\textbf {\bibinfo {volume} {51}},\
+  \bibinfo {pages} {2812} (\bibinfo {year} {2005})},\ \bibinfo {note}
+  {\doi{10.1109/TIT.2005.851738}; \arxiv{quant-ph/0307125}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Katznelson}(2004)}]{Katznelson}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Katznelson}},\ }\href@noop {} {\emph {\bibinfo {title} {An Introduction to
+  Harmonic Analysis}}},\ \bibinfo {edition} {3rd}\ ed.\ (\bibinfo  {publisher}
+  {Cambridge University Press},\ \bibinfo {address} {Cambridge},\ \bibinfo
+  {year} {2004})\ \bibinfo {note} {\doi{10.1017/CBO9781139165372}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Goldstein}\ and\ \citenamefont
+  {Reinert}(2013)}]{GoldsteinReinert}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Goldstein}}\ and\ \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Reinert}},\ }\bibfield  {title} {\bibinfo {title} {Stein's method for the
+  {Beta} distribution and the {P{\'o}lya--Eggenberger} urn},\ }\href@noop {}
+  {\bibfield  {journal} {\bibinfo  {journal} {J. Appl. Probab.}\ }\textbf
+  {\bibinfo {volume} {50}},\ \bibinfo {pages} {1187} (\bibinfo {year}
+  {2013})},\ \bibinfo {note} {\doi{10.1239/jap/1389370107};
+  \arxiv{1207.1460}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {D{\"o}bler}(2015)}]{Dobler}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {D{\"o}bler}},\ }\bibfield  {title} {\bibinfo {title} {Stein's method of
+  exchangeable pairs for the {Beta} distribution and generalizations},\
+  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Electron. J.
+  Probab.}\ }\textbf {\bibinfo {volume} {20}},\ \bibinfo {pages} {1} (\bibinfo
+  {year} {2015})},\ \bibinfo {note} {\doi{10.1214/EJP.v20-3933};
+  \arxiv{1411.4477}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Moore}\ \emph {et~al.}(2009)\citenamefont {Moore},
+  \citenamefont {Kearfott},\ and\ \citenamefont {Cloud}}]{Moore}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.~E.}\ \bibnamefont
+  {Moore}}, \bibinfo {author} {\bibfnamefont {R.~B.}\ \bibnamefont
+  {Kearfott}},\ and\ \bibinfo {author} {\bibfnamefont {M.~J.}\ \bibnamefont
+  {Cloud}},\ }\href@noop {} {\emph {\bibinfo {title} {Introduction to Interval
+  Analysis}}}\ (\bibinfo  {publisher} {SIAM},\ \bibinfo {address}
+  {Philadelphia},\ \bibinfo {year} {2009})\ \bibinfo {note}
+  {\doi{10.1137/1.9780898717716}}\BibitemShut {NoStop}%
+\end{thebibliography}%

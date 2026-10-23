@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite it as below, and cite the paper it formalizes."
+title: "The power of CGLMP inequalities (Open Quantum Problems, Problem 27): Lean 4 formalization"
+type: software
+authors:
+  - given-names: "David"
+    family-names: "Turturean"
+license: Apache-2.0
+keywords:
+  - "Lean 4"
+  - "formalization"
+  - "quantum information"
+  - "Bell inequalities"
+  - "CGLMP inequality"
+  - "Open Quantum Problems"
+references:
+  - type: article
+    title: "CGLMP optimality and the strength of Bell tests"
+    authors:
+      - name: "Physical Superintelligence (PSI)"
+    status: in-preparation
+  - type: webpage
+    title: "The power of CGLMP inequalities (Open Quantum Problems, Problem 27)"
+    authors:
+      - name: "IQOQI Vienna"
+    url: "https://oqp.iqoqi.oeaw.ac.at/the-power-of-cglmp-inequalities/"

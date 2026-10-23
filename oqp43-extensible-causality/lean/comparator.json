@@ -1,0 +1,23 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CausalNonpurifiability.OQP43.not_all_extensiblyCausal_purifiable",
+    "CausalNonpurifiability.OQP43.theorem_1_1",
+    "CausalNonpurifiability.OQP43.wq_pauli_form",
+    "CausalNonpurifiability.OQP43.purifiable_iff_transpose_formula",
+    "CausalNonpurifiability.OQP43.valid_iff_channels_normalized",
+    "CausalNonpurifiability.OQP43.white_process_purifiable",
+    "CausalNonpurifiability.OQP43.swap_table_not_causal",
+    "CausalNonpurifiability.OQP43.ocb_process_not_extensiblyCausal",
+    "CausalNonpurifiability.OQP43.dimension_dichotomy",
+    "CausalNonpurifiability.OQP43.purifiable_causallySeparable",
+    "CausalNonpurifiability.OQP43.ordered_processes_purifiable"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

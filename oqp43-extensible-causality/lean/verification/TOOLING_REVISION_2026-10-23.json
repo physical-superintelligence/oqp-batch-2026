@@ -1,0 +1,298 @@
+{
+  "format": "tooling-revision-v1",
+  "date": "2026-10-23",
+  "scope": "Static tooling revision; existing proof verification records retain their original scope.",
+  "baseline_batch_commit": "2505acc6028e9b331e3581c6ace8df1b2ff69fa1",
+  "baseline_project_path": "oqp43-extensible-causality/lean",
+  "revision_files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "baseline_sha256": "64a6cd6174f271e4169004889bfb82dad53ff360095c8068079c2b9d82ea0046",
+      "revision_sha256": "ede7ddc4d06e2c8b8faf53a64db921c72e115a039e4b7bebd1497949117f2ab2",
+      "baseline_git_blob": "13f73aa25a1fbcd3bc5f304d157ae9168037bc48",
+      "revision_git_blob": "8733135bd4204d3a35e87841072c3567f72b1cc0",
+      "historical_entries": [
+        {
+          "record_path": "verification/RECEIPTS.md",
+          "line": 109,
+          "recorded_sha256": "64a6cd6174f271e4169004889bfb82dad53ff360095c8068079c2b9d82ea0046",
+          "record_file_sha256": "b6e6c6142bafdb61ee33fefcbc88119a8d0a90347ccdefd4350169abebb0a0a5",
+          "matches_baseline": true
+        }
+      ]
+    },
+    {
+      "path": "scripts/check-lean-sources.py",
+      "mode": "100644",
+      "baseline_sha256": "6919911f9905fcc9f01cac96e8c98a348a192a5550a10d127b0b3ced2d74bc5a",
+      "revision_sha256": "d5f8c62f1b7eb7af2010291d5cd5594a0360330976be5d7d6c0762a55b0605eb",
+      "baseline_git_blob": "5265fd6eca81be3c2ead4388ebe637440cbe1399",
+      "revision_git_blob": "fd8a68624903d62cc3e5e52b1f0f08357cde80fc",
+      "historical_entries": [
+        {
+          "record_path": "verification/RECEIPTS.md",
+          "line": 205,
+          "recorded_sha256": "6919911f9905fcc9f01cac96e8c98a348a192a5550a10d127b0b3ced2d74bc5a",
+          "record_file_sha256": "b6e6c6142bafdb61ee33fefcbc88119a8d0a90347ccdefd4350169abebb0a0a5",
+          "matches_baseline": true
+        }
+      ]
+    },
+    {
+      "path": "scripts/verify-comparator.sh",
+      "mode": "100755",
+      "baseline_sha256": "4fefa0e6c779448143b3164f56e96c3b6f719de67da335fa445127ab55f9b1e2",
+      "revision_sha256": "d76056c61272f72224f21d5f1a4193fc5cfe2690364a6e07f875d11da3b9d7b9",
+      "baseline_git_blob": "2175ef098878f9d01749f2f8a82e6179c1af8426",
+      "revision_git_blob": "e20d21c6e629d67a99e20cfd6393cbfcee03b824",
+      "historical_entries": [
+        {
+          "record_path": "verification/RECEIPTS.md",
+          "line": 207,
+          "recorded_sha256": "4fefa0e6c779448143b3164f56e96c3b6f719de67da335fa445127ab55f9b1e2",
+          "record_file_sha256": "b6e6c6142bafdb61ee33fefcbc88119a8d0a90347ccdefd4350169abebb0a0a5",
+          "matches_baseline": true
+        }
+      ]
+    },
+    {
+      "path": "test/validate_formalization_test.rb",
+      "mode": "100644",
+      "baseline_sha256": "18801495c735d5ef93848b7ca045d44e71f11081e14a6ebed21159154d9177f8",
+      "revision_sha256": "50ac011fa35816e50c7141daf0ad959a862dd773508fd26857688a53049c2eb5",
+      "baseline_git_blob": "ae93237be184807569ee699f2f14cf3d14192797",
+      "revision_git_blob": "eb2ba01aca13d716708b26ba59428914f53d82f7",
+      "historical_entries": [
+        {
+          "record_path": "verification/RECEIPTS.md",
+          "line": 208,
+          "recorded_sha256": "18801495c735d5ef93848b7ca045d44e71f11081e14a6ebed21159154d9177f8",
+          "record_file_sha256": "b6e6c6142bafdb61ee33fefcbc88119a8d0a90347ccdefd4350169abebb0a0a5",
+          "matches_baseline": true
+        }
+      ]
+    }
+  ],
+  "historical_record_files": {
+    "verification/RECEIPTS.md": {
+      "sha256": "b6e6c6142bafdb61ee33fefcbc88119a8d0a90347ccdefd4350169abebb0a0a5",
+      "git_blob": "b29aa97ef2cf412190810463cc81eb2b57f300dd"
+    }
+  },
+  "historical_records_modified": false,
+  "proof_verification_performed_for_revision": false,
+  "historical_verification_reissued_for_revision": false,
+  "proof_source_binding": {
+    "comparison": "Current baseline source bytes are unchanged by the tooling revision.",
+    "inventory_format": "UTF-8; entries sorted by relative path; SHA-256, two spaces, path, LF.",
+    "file_count": 80,
+    "inventory_sha256": "06e3496ab333f197cefd0f48505386401c2a6053a7486959a2a6bf9dd60a694d",
+    "entries": [
+      "3780985a9688a0309b6813da1969b1e54901436e4fd7f0ec84d9d3d8778c4cf3  CausalNonpurifiability.lean",
+      "66339671ee7145359353f11cbe8f2da4d753a0f47647714da1e6301ab31903ee  CausalNonpurifiability/Audit/FinalCheck.lean",
+      "04a51af6bf6c7a5f08db33f5743d488fe41d0df2253182886dbb93ce2c919d70  CausalNonpurifiability/BellCHSH.lean",
+      "e2b1931b891997ea5556b779fffec032a52a700755450c16554b1c5937997616  CausalNonpurifiability/Bias.lean",
+      "56e42f6ec429c51c6623cd659bc83179aa772c425685ebe756cf28138e9c5ee0  CausalNonpurifiability/Boundary/Dilation.lean",
+      "a0c4cb3352b7f904e96f6c99dc2aac09c3e86350822dc12def86b742cf2fbd17  CausalNonpurifiability/Boundary/Order.lean",
+      "b86567f28ad42bb77afae5b373d02639ebf192fe6c4f48924721f754ab29bc5b  CausalNonpurifiability/Boundary/Swap.lean",
+      "37e1aaaa8fed180cba26ab22e8b85bc8d4acc3e83d2e186e011c85a50f3707ed  CausalNonpurifiability/Boundary/Transpose.lean",
+      "0662e355d0f4bf41d92044dff660f8790b92fde4dd943eb8a911a81e02f8e42b  CausalNonpurifiability/Certificates/Qubit.lean",
+      "0cea61e4c664071b00eb2bd25e2e8b3eb0b5d76fdc5a057c7d00fa7da04e20e3  CausalNonpurifiability/Certificates/QubitCore.lean",
+      "4a43e2f40ab160d93dc9c568bdc5395fd2a070f5932f3ed9d82ce4ec83bdb249  CausalNonpurifiability/Certificates/Soundness.lean",
+      "83bb2b0dc0aabae62bdaea1f0b31912662fb64948ce06ee96e7163bf5fbb9c25  CausalNonpurifiability/Certificates/Witness.lean",
+      "a6cf95369cbd39f17562674bb65908376c69ca0e71835eccc84a6e4eecb22bc8  CausalNonpurifiability/Classes.lean",
+      "b5fe1c8fc234ac3619e5e145aa70dd002d9b2c5588bbf67837d20a07099f72bf  CausalNonpurifiability/Classical/Transport.lean",
+      "8eef1bef01dcc889c059ce4126fd4feaa2743090b25fb97c616a2d4c14c78eb9  CausalNonpurifiability/Data/Local.lean",
+      "1ab8fe4ab6e6ad6f0bbde2f8a2698e637591515994998dceda351cf1f0a05bb9  CausalNonpurifiability/Data/Qubit.lean",
+      "ccfa8dc37029bfdcff10bd1f39a89c8d0b6bff7fe4181493a0e36b4e851c3e39  CausalNonpurifiability/Data/QubitCore.lean",
+      "6187bc741005878b15775a0d069a0106598614b841776db8baa05b3e5f7619d6  CausalNonpurifiability/Definitions/BallCore.lean",
+      "76bef1af5d68d03ffc81a1994679c5e74cdcefb740702c6996c445f9ae16897c  CausalNonpurifiability/Definitions/Bias.lean",
+      "25eadc6f4874a8f77270f1467d57a5c32bb5c3ab42839253c3f521a4dfc90f3b  CausalNonpurifiability/Definitions/CausalProcess.lean",
+      "39c2d29a014b0495ee78e64d3d70a5558bde592281fd1c88a935ffa47700fe96  CausalNonpurifiability/Definitions/CausalProcessCore.lean",
+      "39f7141a1fed7854e84009cabb87fa42845f45c77acbc2dd060c024b26d3d278  CausalNonpurifiability/Definitions/Causality.lean",
+      "ee4dda6705f02c29b712fc8ea2840c25f864a9eadcbcd045f16a96ad09379c2d  CausalNonpurifiability/Definitions/Channels.lean",
+      "63347c15f10bc3dad8d308414725b71c5414f6d26bc1d6881335890f518692c3  CausalNonpurifiability/Definitions/ConvexForm.lean",
+      "caf72e7a105b6034b3c59f7ae7d3f0ca0c6f44a4bbbb930490a9cdfcf53ccea3  CausalNonpurifiability/Definitions/ConvexFormCore.lean",
+      "ecef1342e9bbfbcfc3777e8a5bc4308ec14763217693677d721990c59b7a3587  CausalNonpurifiability/Definitions/EffectCore.lean",
+      "cad4b5b6c56fc41e946c1a65b8a66df8d0ddbafe97bfaed0965379730cc393d7  CausalNonpurifiability/Definitions/ExtensibleGeneral.lean",
+      "a80d6bf8895055274a8d8f9953cea600c15200f90f145d2f9e141809f6bd3cef  CausalNonpurifiability/Definitions/HeisenbergCore.lean",
+      "a7ca94049f03f91abb6b48933d85e75da22437f591d16502a0dc36d2b24a700f  CausalNonpurifiability/Definitions/Hypotheses.lean",
+      "c556f06b56053d86cdae11e805708e58a73dfc38d9f09f6bc68d8d596e170539  CausalNonpurifiability/Definitions/Instruments.lean",
+      "3ff3c17e8bf93e231c91479c613b42ec5bf85299b6da8237621eb070884c4608  CausalNonpurifiability/Definitions/InstrumentsCore.lean",
+      "3a32acfc029cb86ac880771f6f831434e5296c9515a08a5f27f874f10193d280  CausalNonpurifiability/Definitions/LVEquations.lean",
+      "07728409ba662cdd6dfeecbb7397b9f6c14e90262b0f98dba984808f64a77f92  CausalNonpurifiability/Definitions/LinkAlgebra.lean",
+      "2c7259de0ca135e896998419a7792f296d5da185c1a1d3a577f1631889f52df3  CausalNonpurifiability/Definitions/OCB.lean",
+      "f79c1257b19b0b730edefc2a13e903459043878bf1dcc89889a245a1d3ce5577  CausalNonpurifiability/Definitions/OCBGame.lean",
+      "67b6a9bccc2a570509b1490d7f4ea98bfc31935be73e0809d60381e69207ef50  CausalNonpurifiability/Definitions/OrderedMarginal.lean",
+      "d178f19b76853aa6a45039e23c8e425027e7d7a60d2f1ab45bdf854aac61c603  CausalNonpurifiability/Definitions/OrderedMarginalCore.lean",
+      "a54aeda9b27083cb33b02cb6d2c0483eb87e468493dbf1234bc7e0af09c7a61e  CausalNonpurifiability/Definitions/PortsSwapCore.lean",
+      "d5d518f5b0f37a515f857f5dcde80bff4099cb50a45b0e15c47a8b17d9dbf354  CausalNonpurifiability/Definitions/Process.lean",
+      "1a5badc3562d63fdb445b65835634c7f77d7d36a379f689e200ee1ff5cf2c27f  CausalNonpurifiability/Definitions/ProcessCore.lean",
+      "a9345f35e39d2f8ae84d1e4ec150a4de980317039a50c0ec54ebe45e075f79af  CausalNonpurifiability/Definitions/ProcessFamily.lean",
+      "a4b8d3cc9d8376a4aa61cc742cfdf474d1817dd744a14b13e4a7c12f000d0908  CausalNonpurifiability/Definitions/ProcessSwapCore.lean",
+      "c1af43fc5ffc1c9f543c8cd09196988030ef845a0312b3267390edf7edd0ba2d  CausalNonpurifiability/Definitions/Purity.lean",
+      "9df53e74712d26919c4a74baae5667f9dcef2192bfd515d49fe0425c64426539  CausalNonpurifiability/Definitions/Separability.lean",
+      "d81b023252f8318d96c9f898eea55269d752627256a523478095b8969ab0cfa4  CausalNonpurifiability/Definitions/SeparationCore.lean",
+      "51f4c7f9bb27330f4b867c35cb855852dad13f7f8f92aa2d31c8d62cb1548d09  CausalNonpurifiability/Definitions/SharedInputMarginalsCore.lean",
+      "fa5a147e04238eab86f95c65616974c26a5a3b9fe80d8317a5d4589cfb521161  CausalNonpurifiability/Dichotomy.lean",
+      "29b932ef1973ab0bb912b93ba51c8ce630d82851c73232546e0d89f1b3b2ef87  CausalNonpurifiability/EC/Bridge.lean",
+      "7a2d57d7e9572da732eff3b4df82a3ba9425abfb4f24ee0b2635bb4fdecfe8b5  CausalNonpurifiability/EC/Components.lean",
+      "3c37dc7ab2068d50fe1f2a0b0c2ea8d3d0f92001f2f53181b5c0c47797af93d6  CausalNonpurifiability/EC/Compression.lean",
+      "c905c7c37bcec7c5cafd823eef2494f459db1bc2f977b0a3e41b41b5ea3f3e54  CausalNonpurifiability/EC/Rectangles.lean",
+      "67abdf8bf921905ceb8cb40d3e97c65c1926fc9dba573584669b50f0ad04ed35  CausalNonpurifiability/EC/SOS.lean",
+      "e9cfd33cbda4fe94d06ae6c4cf4e5d783336e43e9374e8505e955710804de465  CausalNonpurifiability/Full.lean",
+      "c10088abcd02913c00031c97081300399c6993d6f735b61d5e4e4cb58fc00aee  CausalNonpurifiability/Linear/Indices.lean",
+      "8e6d9146b903e577c3e45f59ce322b2933acbb82948fcfd4c293eb3b26e5c554  CausalNonpurifiability/Linear/OpNorm.lean",
+      "c529ac9e87ae0ac5d80ced00a78081b0cb38fe7ee1a9e10f9c591c95acd75638  CausalNonpurifiability/Linear/OpNormDefinition.lean",
+      "70c61f428a5a52fcb7da228fac1a3409704612f31afc08a16bc4a57c1a9b5b33  CausalNonpurifiability/Linear/PartialTrace.lean",
+      "d0e6a489d3eb9a353705fe1da968e00652fdcd2d1e4b36001e671920c5638114  CausalNonpurifiability/Linear/Positive.lean",
+      "c2b2a6d422ef8a2c4e06d8874d58a9804b447ad4fc4281cc6e815a932e033dba  CausalNonpurifiability/Linear/Replacement.lean",
+      "7caee09874cd07b61eed0029f4ccf1b2c5a5b13cb48bea7f94333d58ed5e59a5  CausalNonpurifiability/Linear/Spectral.lean",
+      "c670a37aae40da9ad207bb436a30a2bb32ab00b86d087febb18139f39170a4f5  CausalNonpurifiability/Linear/Unitary.lean",
+      "5b181988dcdb5d8134ddbf0adc75fd4103ff0cef85110873bf27626f1a10eba3  CausalNonpurifiability/Main.lean",
+      "70594e038c0f403658913c55b9e66cef5740e68559aa38888741af3b82a276a2  CausalNonpurifiability/MainTheorem.lean",
+      "cc6bbcdd42188e43d399f9901249b1a1641f4da65d5000c9a9a227a88d75767a  CausalNonpurifiability/OCB.lean",
+      "949b925930f178565d418d0ddb955eaf78a14125a981a630017ff48c5e86c9fc  CausalNonpurifiability/OCBGame.lean",
+      "75a178eaec306dab7c95fce0c86e7f68ecc2b189c39abc70c91da58ee9b184dd  CausalNonpurifiability/Propositions.lean",
+      "445d9ede0ee7b9c2526ee5ae13b93d07d6a7727334413102a2ced452c3641306  CausalNonpurifiability/Purification/Family.lean",
+      "f01617b6a7d0782b28c3e5eca657403f5ba3437e36dd78c7eece108c8952883a  CausalNonpurifiability/Purification/Heisenberg.lean",
+      "88f57dfad072ec4d82b78f2f77497863897fbe76f0a2eb994577802f5858da03  CausalNonpurifiability/Purification/Necessity.lean",
+      "85fc3448d3710c6329772c2995df47d771fc80efe92b3af0ff9981e2e38a738e  CausalNonpurifiability/Purification/Sector.lean",
+      "d0a321578302d59aca1c473e84d225933a53f4e42b7e2032432ff768fc6d0e81  CausalNonpurifiability/Purification/Separation.lean",
+      "00ccacff6f704529b8295d89ce8c0b9c27ff5206c971e31de79a7f5e62e176ce  CausalNonpurifiability/Purification/Unitary.lean",
+      "cdf8e8180128de62353e3ae4126940905f02a9332e1e3d6e13cc5fb177c6a30a  CausalNonpurifiability/Robustness.lean",
+      "4448f5086866ce655235cf0218cda6aa64045d404212b8c28b45212e1a2a0430  CausalNonpurifiability/RobustnessEC.lean",
+      "6c30daf40c912aa23007a27a65e9732e6218b367a81b67dfa69ddde5d50614cb  CausalNonpurifiability/Statement.lean",
+      "6ef006f8f343eceaabcf9175e3c3a028e128323489380095af9c4a2c7a27aae9  CausalNonpurifiability/StatementCore.lean",
+      "53272faa9d58bf0391a18f448dd231bd0e6356d91ef265bd05ce523c426cba4e  CausalNonpurifiability/Unconditional.lean",
+      "db9737c6f91eb92794defcb613ec07f64558126e03d7f8f1b292cb8a3c8f39d0  CausalNonpurifiability/Uniform.lean",
+      "2a95299010d6e7a32b45919cdce92e6518fea8a994d00639d0d10e8a0ec20783  Challenge.lean",
+      "9fc3167593a06fc91d89ab7301cb0ce6bd3322d5a01eaccbbe50706fac303921  Solution.lean"
+    ],
+    "configuration": [
+      {
+        "path": "lean-toolchain",
+        "sha256": "8f89aa44fccdb1a0b6cc768c7c9f54b94cd40e47a08d582f82d1235f13075cf7"
+      },
+      {
+        "path": "lakefile.toml",
+        "sha256": "42ac2ad8594c695eb3384c11765be6c4ff8c10cb04e15cc7f29a22c9f8a0d102"
+      },
+      {
+        "path": "lake-manifest.json",
+        "sha256": "1335f65b84e10aa7e66f07d6d313d3567ab677f436b361ac5684c6e8337a2f9d"
+      },
+      {
+        "path": "comparator.json",
+        "sha256": "211df3def90439664bce2fb05641a9c3191ed3a267d9882e809b28a474ab281d"
+      }
+    ]
+  },
+  "semantics_comparison": {
+    "workflow": {
+      "yaml_parses": true,
+      "only_template_branch_removed_and_derived_step_unconditional": true,
+      "triggers_permissions_concurrency_all_other_steps_and_commands_byte_identical_except_change_notice": true,
+      "all_other_yaml_fields_identical": true,
+      "template_validator_cli_preserved": true
+    },
+    "python": {
+      "ast_excluding_only_module_docstring_identical": true,
+      "executable_ast_sha256": "bd91e261473ff4daeb137a97dd72b72200bf8c7f77bed01517b380d36d97547a",
+      "bytes_after_module_docstring_identical_except_change_notice": true,
+      "body_sha256": "be2d952adb8542134d3e3896087d578f18ad208babe8e93c3ca8932848e3fc86",
+      "inherited_attribution_line_4_preserved_verbatim": true
+    },
+    "shell": {
+      "noncomment_bytes_identical_after_three_exact_normalizations": true,
+      "normalizations": [
+        "toolchain_error_message",
+        "temporary_filename_prefix",
+        "config_error_message"
+      ],
+      "normalized_noncomment_sha256": "866ba7396e8818521316a4d390199bf5d958be8d9c4b39e9d241418d64709dc7",
+      "embedded_python_ast_identical_after_error_message_normalization": true,
+      "proof_commands_arguments_and_config_logic_identical": true
+    },
+    "cli_tests_unchanged": true
+  },
+  "file_local_change_notices": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "line": 1,
+      "notice": "# Modified 2026-10-23: validate project metadata unconditionally."
+    },
+    {
+      "path": "test/validate_formalization_test.rb",
+      "line": 2,
+      "notice": "# Modified 2026-10-23: test unconditional project metadata validation."
+    },
+    {
+      "path": "scripts/check-lean-sources.py",
+      "line": 6,
+      "notice": "# Modified 2026-10-23: clarify the source checking description."
+    },
+    {
+      "path": "scripts/verify-comparator.sh",
+      "line": 2,
+      "notice": "# Modified 2026-10-23: revise descriptions, error messages and temporary-file prefix."
+    }
+  ],
+  "local_validation": {
+    "runtime_versions": {
+      "ruby": "ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin26]",
+      "python": "Python 3.14.6",
+      "bash": "GNU bash, version 3.2.57(1)-release (arm64-apple-darwin26)"
+    },
+    "ruby_command": "ruby test/validate_formalization_test.rb",
+    "ruby": {
+      "runs": 16,
+      "assertions": 83,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    "ruby_syntax": "pass",
+    "bash_command": "bash -n scripts/verify-comparator.sh",
+    "bash_syntax": "pass",
+    "metadata": {
+      "command": "ruby scripts/validate-formalization.rb",
+      "validator_sha256": "47eeb73febf48a2e23036e67f3223ea0562604139a7e97723c70cc4d5c269782",
+      "baseline_metadata_sha256": "2df068877b280c5da826c8f6c277a0049bdfb0067a250c88df587790a1f13196",
+      "baseline_result": "pass",
+      "contract": "The existing CLI contract and template-mode fixtures are unchanged.",
+      "integrated_metadata_snapshot_sha256": "b4ce9b97dfbefe687fa72541a8b1feb72ef699a604a91fae7c3d13d7f79dddee",
+      "integrated_metadata_snapshot_result": "pass",
+      "subsequent_integrated_metadata_snapshot": {
+        "checked_at": "2026-10-23T10:36:41.482381-04:00",
+        "integration_diff_sha256": "cf8b1dad872b283ea3a5b8fc3828dd551e5b8c519aa0d8c6982766c156906ba4",
+        "metadata_sha256": "b4ce9b97dfbefe687fa72541a8b1feb72ef699a604a91fae7c3d13d7f79dddee",
+        "result": "pass"
+      }
+    },
+    "actionlint": {
+      "version": "v1.7.12",
+      "checked_at": "2026-10-23T10:36:08.368610-04:00",
+      "archive_sha256": "aba9ced2dee8d27fecca3dc7feb1a7f9a52caefa1eb46f3271ea66b6e0e6953f",
+      "archive_matches_official_checksum": true,
+      "flags": [
+        "-no-color",
+        "-oneline"
+      ],
+      "workflow_path": ".github/workflows/ci.yml",
+      "workflow_sha256": "ede7ddc4d06e2c8b8faf53a64db921c72e115a039e4b7bebd1497949117f2ab2",
+      "checked_in_six_file_invocation": true,
+      "returncode": 0,
+      "result": "pass",
+      "optional_shellcheck_available": false,
+      "optional_pyflakes_available": false
+    },
+    "ci_dispatch": false
+  },
+  "source_attribution": {
+    "path": "scripts/check-lean-sources.py",
+    "line": 4,
+    "inherited_line_preserved_verbatim": true
+  }
+}

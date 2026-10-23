@@ -1,0 +1,357 @@
+ThreeCopyQutritWerner.Endpoints.appendixC_input1 (C : Matrix (Fin 3 × Fin 3 × Fin 3) (Fin 3 × Fin 3 × Fin 3) ℂ)
+  (κ : ℂ) :
+  C.rank = 2 →
+    C * C = κ • C →
+      (ThreeCopyQutritWerner.frobSq C -
+              2 * √((ThreeCopyQutritWerner.frobSq C ^ 2 - ThreeCopyQutritWerner.frobSq (C.conjTranspose * C)) / 2)) /
+            6 ≤
+          ThreeCopyQutritWerner.endpointEnergy C ∧
+        (ThreeCopyQutritWerner.endpointEnergy C = 0 →
+          (ThreeCopyQutritWerner.ptrace₂₃ (C * C.conjTranspose)).rank ≤ 2 ∧
+              (ThreeCopyQutritWerner.ptrace₂₃ (C.conjTranspose * C)).rank ≤ 2 ∨
+            (ThreeCopyQutritWerner.ptrace₁₃ (C * C.conjTranspose)).rank ≤ 2 ∧
+                (ThreeCopyQutritWerner.ptrace₁₃ (C.conjTranspose * C)).rank ≤ 2 ∨
+              (ThreeCopyQutritWerner.ptrace₁₂ (C * C.conjTranspose)).rank ≤ 2 ∧
+                (ThreeCopyQutritWerner.ptrace₁₂ (C.conjTranspose * C)).rank ≤ 2)
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.appendixC_input1"}
+ThreeCopyQutritWerner.Endpoints.appendixC_input2 (C : Matrix (Fin 3 × Fin 3 × Fin 3) (Fin 3 × Fin 3 × Fin 3) ℂ) :
+  C.rank = 2 →
+    ThreeCopyQutritWerner.endpointEnergy C = 0 →
+      (∃ x, C.mulVec x ≠ 0 ∧ ∃ u v w, ∀ (p : Fin 3 × Fin 3 × Fin 3), C.mulVec x p = u p.1 * v p.2.1 * w p.2.2) →
+        (ThreeCopyQutritWerner.ptrace₂₃ (C * C.conjTranspose)).rank ≤ 2 ∧
+          (ThreeCopyQutritWerner.ptrace₁₃ (C * C.conjTranspose)).rank ≤ 2 ∧
+            (ThreeCopyQutritWerner.ptrace₁₂ (C * C.conjTranspose)).rank ≤ 2
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.appendixC_input2"}
+ThreeCopyQutritWerner.Endpoints.appendixC_input3 (C : Matrix (Fin 3 × Fin 3 × Fin 3) (Fin 3 × Fin 3 × Fin 3) ℂ) :
+  C.rank ≤ 2 →
+    ThreeCopyQutritWerner.invN C = 1 →
+      ThreeCopyQutritWerner.endpointEnergy C = 0 →
+        (ThreeCopyQutritWerner.ptrace₂₃ (C * C.conjTranspose)).rank ≤ 2 ∨
+            (ThreeCopyQutritWerner.ptrace₁₃ (C * C.conjTranspose)).rank ≤ 2 ∨
+              (ThreeCopyQutritWerner.ptrace₁₂ (C * C.conjTranspose)).rank ≤ 2 →
+          ThreeCopyQutritWerner.IsQutritZeroFamilyMember C
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.appendixC_input3"}
+ThreeCopyQutritWerner.Endpoints.continuation_identity.{u_1, u_2, u_3} {a : Type u_1} {b : Type u_2} {c : Type u_3}
+  [Fintype a] [Fintype b] [Fintype c] (C : Matrix (a × b × c) (a × b × c) ℂ) (α : ℝ) :
+  ThreeCopyQutritWerner.energy α C - ThreeCopyQutritWerner.sharpCurve α * ThreeCopyQutritWerner.invN C =
+    4 * α * (1 + α) / 3 * ThreeCopyQutritWerner.endpointEnergy C +
+        α * (1 - 2 * α) * (2 / 3 - α) * ThreeCopyQutritWerner.formR C +
+      2 * α * (1 - 2 * α) * ThreeCopyQutritWerner.formS C
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.continuation_identity"}
+ThreeCopyQutritWerner.Endpoints.cutForm_two_plane_projector.{u_1, u_2} {L : Type u_1} {R : Type u_2} [Fintype L]
+  [Fintype R] (u₁ u₂ : L × R → ℂ) (h1 : ThreeCopyQutritWerner.vecNormSq u₁ = 1)
+  (h2 : ThreeCopyQutritWerner.vecNormSq u₂ = 1) (h12 : ThreeCopyQutritWerner.braket u₁ u₂ = 0) :
+  2 * ThreeCopyQutritWerner.cutForm (ThreeCopyQutritWerner.ketBra u₁ u₁ + ThreeCopyQutritWerner.ketBra u₂ u₂) =
+    6 -
+        ThreeCopyQutritWerner.frobSq
+          (ThreeCopyQutritWerner.ptraceL (ThreeCopyQutritWerner.ketBra u₁ u₁ + ThreeCopyQutritWerner.ketBra u₂ u₂)) -
+      ThreeCopyQutritWerner.frobSq
+        (ThreeCopyQutritWerner.ptraceR (ThreeCopyQutritWerner.ketBra u₁ u₁ + ThreeCopyQutritWerner.ketBra u₂ u₂))
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.cutForm_two_plane_projector"}
+ThreeCopyQutritWerner.Endpoints.cutForms_nonneg_rank_two.{u_1, u_2, u_3} {a : Type u_1} {b : Type u_2} {c : Type u_3}
+  [Fintype a] [Fintype b] [Fintype c] [DecidableEq a] [DecidableEq b] [DecidableEq c]
+  (C : Matrix (a × b × c) (a × b × c) ℂ) (h : C.rank ≤ 2) :
+  0 ≤ ThreeCopyQutritWerner.cutForm₁ C ∧
+    0 ≤ ThreeCopyQutritWerner.cutForm₂ C ∧ 0 ≤ ThreeCopyQutritWerner.cutForm₃ C ∧ 0 ≤ ThreeCopyQutritWerner.formS C
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.cutForms_nonneg_rank_two"}
+ThreeCopyQutritWerner.Endpoints.endpoint_zero_rank_two.{u_1, u_2, u_3} {a : Type u_1} {b : Type u_2} {c : Type u_3}
+  [Fintype a] [Fintype b] [Fintype c] [DecidableEq a] [DecidableEq b] [DecidableEq c]
+  (C : Matrix (a × b × c) (a × b × c) ℂ) (h : C.rank ≤ 2) (h0 : ThreeCopyQutritWerner.endpointEnergy C = 0)
+  (hC : C ≠ 0) : C.rank = 2
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.endpoint_zero_rank_two"}
+ThreeCopyQutritWerner.Endpoints.familyI_endpoint_zero_any_plane.{u_1, u_2, u_3} {a : Type u_1} {b : Type u_2}
+  {c : Type u_3} [Fintype a] [Fintype b] [Fintype c] (f₁ f₂ : a → ℂ) (h1 : ThreeCopyQutritWerner.vecNormSq f₁ = 1)
+  (h2 : ThreeCopyQutritWerner.vecNormSq f₂ = 1) (h12 : ThreeCopyQutritWerner.braket f₁ f₂ = 0) (χ η : b × c → ℂ)
+  (hχ : ThreeCopyQutritWerner.vecNormSq χ = 1) (hη : ThreeCopyQutritWerner.vecNormSq η = 1) :
+  (ThreeCopyQutritWerner.tensor₂ (↑(√2)⁻¹ • (ThreeCopyQutritWerner.ketBra f₁ f₁ + ThreeCopyQutritWerner.ketBra f₂ f₂))
+          (ThreeCopyQutritWerner.ketBra χ η)).rank ≤
+      2 ∧
+    ThreeCopyQutritWerner.invN
+          (ThreeCopyQutritWerner.tensor₂
+            (↑(√2)⁻¹ • (ThreeCopyQutritWerner.ketBra f₁ f₁ + ThreeCopyQutritWerner.ketBra f₂ f₂))
+            (ThreeCopyQutritWerner.ketBra χ η)) =
+        1 ∧
+      ThreeCopyQutritWerner.endpointEnergy
+          (ThreeCopyQutritWerner.tensor₂
+            (↑(√2)⁻¹ • (ThreeCopyQutritWerner.ketBra f₁ f₁ + ThreeCopyQutritWerner.ketBra f₂ f₂))
+            (ThreeCopyQutritWerner.ketBra χ η)) =
+        0
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.familyI_endpoint_zero_any_plane"}
+ThreeCopyQutritWerner.Endpoints.filter_iff_rank_two_detectable.{u_1, u_2} {m : Type u_1} {n : Type u_2} [Fintype m]
+  [Fintype n] [DecidableEq m] [DecidableEq n] (ρ : Matrix (m × n) (m × n) ℂ) (hρ : ρ.IsHermitian) :
+  (ThreeCopyQutritWerner.IsOneCopyFilterDistillable ρ ↔ ThreeCopyQutritWerner.IsOneCopyRankTwoDetectable ρ) ∧
+    (ThreeCopyQutritWerner.IsThreeCopyFilterDistillable ρ ↔ ThreeCopyQutritWerner.IsThreeCopyRankTwoDetectable ρ)
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.filter_iff_rank_two_detectable"}
+ThreeCopyQutritWerner.Endpoints.formR_eq_proj.{u_1, u_2, u_3} {a : Type u_1} {b : Type u_2} {c : Type u_3} [Fintype a]
+  [Fintype b] [Fintype c] (C P : Matrix (a × b × c) (a × b × c) ℂ) (hP : P.IsHermitian) (hPP : P * P = P)
+  (htr : P.trace = 2) (hPC : P * C = C) :
+  ThreeCopyQutritWerner.formR C = ThreeCopyQutritWerner.frobSq (C - (C.trace / 2) • P)
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.formR_eq_proj"}
+ThreeCopyQutritWerner.Endpoints.formR_nonneg_rank_two.{u_1, u_2, u_3} {a : Type u_1} {b : Type u_2} {c : Type u_3}
+  [Fintype a] [Fintype b] [Fintype c] [DecidableEq a] [DecidableEq b] [DecidableEq c]
+  (C : Matrix (a × b × c) (a × b × c) ℂ) (h : C.rank ≤ 2) : 0 ≤ ThreeCopyQutritWerner.formR C
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.formR_nonneg_rank_two"}
+ThreeCopyQutritWerner.Endpoints.interior_minimizers {α : ℝ} (h0 : 0 < α) (h1 : α < 1 / 2)
+  (C : Matrix (Fin 3 × Fin 3 × Fin 3) (Fin 3 × Fin 3 × Fin 3) ℂ) (hC : C.rank ≤ 2)
+  (hN : ThreeCopyQutritWerner.invN C = 1)
+  (hmin :
+    ∀ (D : Matrix (Fin 3 × Fin 3 × Fin 3) (Fin 3 × Fin 3 × Fin 3) ℂ),
+      D.rank ≤ 2 →
+        ThreeCopyQutritWerner.invN D = 1 → ThreeCopyQutritWerner.energy α C ≤ ThreeCopyQutritWerner.energy α D) :
+  ThreeCopyQutritWerner.IsInteriorMinimizerShape C
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.interior_minimizers"}
+ThreeCopyQutritWerner.Endpoints.interior_minimizers_of_endpoint :
+  ThreeCopyQutritWerner.QutritEndpointInequality →
+    ∀ {α : ℝ},
+      0 < α →
+        α < 1 / 2 →
+          ∀ (C : Matrix (Fin 3 × Fin 3 × Fin 3) (Fin 3 × Fin 3 × Fin 3) ℂ),
+            C.rank ≤ 2 →
+              ThreeCopyQutritWerner.invN C = 1 →
+                (∀ (D : Matrix (Fin 3 × Fin 3 × Fin 3) (Fin 3 × Fin 3 × Fin 3) ℂ),
+                    D.rank ≤ 2 →
+                      ThreeCopyQutritWerner.invN D = 1 →
+                        ThreeCopyQutritWerner.energy α C ≤ ThreeCopyQutritWerner.energy α D) →
+                  ThreeCopyQutritWerner.IsInteriorMinimizerShape C
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.interior_minimizers_of_endpoint"}
+ThreeCopyQutritWerner.Endpoints.interior_shape_attains.{u_1, u_2, u_3} {a : Type u_1} {b : Type u_2} {c : Type u_3}
+  [Fintype a] [Fintype b] [Fintype c] (C : Matrix (a × b × c) (a × b × c) ℂ)
+  (h : ThreeCopyQutritWerner.IsInteriorMinimizerShape C) :
+  C.rank ≤ 2 ∧
+    ThreeCopyQutritWerner.invN C = 1 ∧ ∀ (α : ℝ), ThreeCopyQutritWerner.energy α C = ThreeCopyQutritWerner.sharpCurve α
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.interior_shape_attains"}
+ThreeCopyQutritWerner.Endpoints.minimum_formula_of_card_of_endpoint.{u_1, u_2, u_3} {a : Type u_1} {b : Type u_2}
+  {c : Type u_3} [Fintype a] [Fintype b] [Fintype c] [DecidableEq a] [DecidableEq b] [DecidableEq c]
+  (ha2 : 2 ≤ Fintype.card a) (ha : Fintype.card a ≤ 3) (hb2 : 2 ≤ Fintype.card b) (hb : Fintype.card b ≤ 3)
+  (hc2 : 2 ≤ Fintype.card c) (hc : Fintype.card c ≤ 3) :
+  ThreeCopyQutritWerner.QutritEndpointInequality →
+    ∀ {α : ℝ},
+      0 ≤ α →
+        α ≤ 1 / 2 →
+          (∀ (C : Matrix (a × b × c) (a × b × c) ℂ),
+              C.rank ≤ 2 →
+                ThreeCopyQutritWerner.sharpCurve α * ThreeCopyQutritWerner.invN C ≤ ThreeCopyQutritWerner.energy α C) ∧
+            ∃ C,
+              C.rank ≤ 2 ∧
+                ThreeCopyQutritWerner.invN C = 1 ∧ ThreeCopyQutritWerner.energy α C = ThreeCopyQutritWerner.sharpCurve α
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.minimum_formula_of_card_of_endpoint"}
+ThreeCopyQutritWerner.Endpoints.minimum_formula_unequal_dims.{u_1, u_2, u_3} {a : Type u_1} {b : Type u_2}
+  {c : Type u_3} [Fintype a] [Fintype b] [Fintype c] [DecidableEq a] [DecidableEq b] [DecidableEq c]
+  (ha2 : 2 ≤ Fintype.card a) (ha : Fintype.card a ≤ 3) (hb2 : 2 ≤ Fintype.card b) (hb : Fintype.card b ≤ 3)
+  (hc2 : 2 ≤ Fintype.card c) (hc : Fintype.card c ≤ 3) {α : ℝ} :
+  0 ≤ α →
+    α ≤ 1 / 2 →
+      (∀ (C : Matrix (a × b × c) (a × b × c) ℂ),
+          C.rank ≤ 2 →
+            ThreeCopyQutritWerner.sharpCurve α * ThreeCopyQutritWerner.invN C ≤ ThreeCopyQutritWerner.energy α C) ∧
+        ∃ C,
+          C.rank ≤ 2 ∧
+            ThreeCopyQutritWerner.invN C = 1 ∧ ThreeCopyQutritWerner.energy α C = ThreeCopyQutritWerner.sharpCurve α
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.minimum_formula_unequal_dims"}
+ThreeCopyQutritWerner.Endpoints.noisy_family_npt {d : ℕ} (J : Matrix (Fin d) (Fin 3) ℂ) (hJ : J.conjTranspose * J = 1)
+  (hd : 0 < d) {p : ℝ} (hp : 15 / (↑d ^ 2 + 15) < p) (hp1 : p ≤ 1) :
+  ThreeCopyQutritWerner.IsNPT (ThreeCopyQutritWerner.noisyFamily J p)
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.noisy_family_npt"}
+ThreeCopyQutritWerner.Endpoints.noisy_family_posDef {d : ℕ} (J : Matrix (Fin d) (Fin 3) ℂ) (hd : 0 < d) {p : ℝ}
+  (hp0 : 0 ≤ p) (hp1 : p < 1) : (ThreeCopyQutritWerner.noisyFamily J p).PosDef
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.noisy_family_posDef"}
+ThreeCopyQutritWerner.Endpoints.noisy_family_three_copy_of_endpoint :
+  ThreeCopyQutritWerner.QutritEndpointInequality →
+    ∀ (d : ℕ) (J : Matrix (Fin d) (Fin 3) ℂ),
+      J.conjTranspose * J = 1 →
+        ∀ (p : ℝ),
+          15 / (↑d ^ 2 + 15) < p →
+            p < 1 → ¬ThreeCopyQutritWerner.IsThreeCopyFilterDistillable (ThreeCopyQutritWerner.noisyFamily J p)
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.noisy_family_three_copy_of_endpoint"}
+ThreeCopyQutritWerner.Endpoints.overlap_le_half {α : ℝ} (h0 : 0 ≤ α) (h1 : α ≤ 1 / 2) {K : ℕ}
+  (A B : Fin K → Matrix (Fin 2) (Fin 3 × Fin 3 × Fin 3) ℂ)
+  (htp :
+    ∀ (u v : (Fin 3 × Fin 3 × Fin 3) × Fin 3 × Fin 3 × Fin 3),
+      ∑ k, (∑ i, star (A k i v.1) * A k i u.1) * ∑ j, star (B k j v.2) * B k j u.2 = if u = v then 1 else 0) :
+  ThreeCopyQutritWerner.maxEntOverlap (ThreeCopyQutritWerner.sepOutput A B (ThreeCopyQutritWerner.werner 3 α)) ≤ 1 / 2
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.overlap_le_half"}
+ThreeCopyQutritWerner.Endpoints.overlap_le_half_of_endpoint :
+  ThreeCopyQutritWerner.QutritEndpointInequality →
+    ∀ {α : ℝ},
+      0 ≤ α →
+        α ≤ 1 / 2 →
+          ∀ {K : ℕ} (A B : Fin K → Matrix (Fin 2) (Fin 3 × Fin 3 × Fin 3) ℂ),
+            (∀ (u v : (Fin 3 × Fin 3 × Fin 3) × Fin 3 × Fin 3 × Fin 3),
+                ∑ k, (∑ i, star (A k i v.1) * A k i u.1) * ∑ j, star (B k j v.2) * B k j u.2 = if u = v then 1 else 0) →
+              ThreeCopyQutritWerner.maxEntOverlap
+                  (ThreeCopyQutritWerner.sepOutput A B (ThreeCopyQutritWerner.werner 3 α)) ≤
+                1 / 2
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.overlap_le_half_of_endpoint"}
+ThreeCopyQutritWerner.Endpoints.overlap_le_half_of_le_third {α : ℝ} (h : α ≤ 1 / 3) {K : ℕ}
+  (A B : Fin K → Matrix (Fin 2) (Fin 3 × Fin 3 × Fin 3) ℂ)
+  (htp :
+    ∀ (u v : (Fin 3 × Fin 3 × Fin 3) × Fin 3 × Fin 3 × Fin 3),
+      ∑ k, (∑ i, star (A k i v.1) * A k i u.1) * ∑ j, star (B k j v.2) * B k j u.2 = if u = v then 1 else 0) :
+  ThreeCopyQutritWerner.maxEntOverlap (ThreeCopyQutritWerner.sepOutput A B (ThreeCopyQutritWerner.werner 3 α)) ≤ 1 / 2
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.overlap_le_half_of_le_third"}
+ThreeCopyQutritWerner.Endpoints.overlap_le_half_of_nonpos {α : ℝ} (h0 : α ≤ 0) {K : ℕ}
+  (A B : Fin K → Matrix (Fin 2) (Fin 3 × Fin 3 × Fin 3) ℂ)
+  (htp :
+    ∀ (u v : (Fin 3 × Fin 3 × Fin 3) × Fin 3 × Fin 3 × Fin 3),
+      ∑ k, (∑ i, star (A k i v.1) * A k i u.1) * ∑ j, star (B k j v.2) * B k j u.2 = if u = v then 1 else 0) :
+  ThreeCopyQutritWerner.maxEntOverlap (ThreeCopyQutritWerner.sepOutput A B (ThreeCopyQutritWerner.werner 3 α)) ≤ 1 / 2
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.overlap_le_half_of_nonpos"}
+ThreeCopyQutritWerner.Endpoints.projector_cut_identity.{u_1, u_2} {L : Type u_1} {R : Type u_2} [Fintype L] [Fintype R]
+  (u₁ u₂ : L × R → ℂ) (h1 : ThreeCopyQutritWerner.vecNormSq u₁ = 1) (h2 : ThreeCopyQutritWerner.vecNormSq u₂ = 1)
+  (h12 : ThreeCopyQutritWerner.braket u₁ u₂ = 0) :
+  ThreeCopyQutritWerner.biDefect u₁ u₁ + ThreeCopyQutritWerner.biDefect u₁ u₂ + ThreeCopyQutritWerner.biDefect u₂ u₁ +
+      ThreeCopyQutritWerner.biDefect u₂ u₂ =
+    2 * ThreeCopyQutritWerner.cutForm (ThreeCopyQutritWerner.ketBra u₁ u₁ + ThreeCopyQutritWerner.ketBra u₂ u₂)
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.projector_cut_identity"}
+ThreeCopyQutritWerner.Endpoints.qutritEndpointInequality : ThreeCopyQutritWerner.QutritEndpointInequality
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.qutritEndpointInequality"}
+ThreeCopyQutritWerner.Endpoints.qutrit_endpoint_of_certificate
+  (Ph Gh Gm Ga : Matrix ThreeCopyQutritWerner.SixRegisters ThreeCopyQutritWerner.SixRegisters ℂ)
+  (hPh : Ph.conjTranspose = Ph)
+  (hcarrier :
+    ∀ (X : Matrix (Fin 3 × Fin 3 × Fin 3) (Fin 2) ℂ) (B : Matrix (Fin 2) (Fin 3 × Fin 3 × Fin 3) ℂ),
+      Ph.mulVec (ThreeCopyQutritWerner.featureH (X * B) (ThreeCopyQutritWerner.bivecMat X)) =
+        ThreeCopyQutritWerner.featureH (X * B) (ThreeCopyQutritWerner.bivecMat X))
+  (hgram :
+    Ph * ThreeCopyQutritWerner.sixRegisterOperator * Ph =
+      Gh + Ph * ThreeCopyQutritWerner.partialTranspose Gm * Ph + Ph * ThreeCopyQutritWerner.minorTranspose Ga * Ph)
+  (hpsd : Gh.PosSemidef ∧ Gm.PosSemidef ∧ Ga.PosSemidef) : ThreeCopyQutritWerner.QutritEndpointInequality
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.qutrit_endpoint_of_certificate"}
+ThreeCopyQutritWerner.Endpoints.rank_raise_ptrace : ∃ C, C.rank ≤ 2 ∧ (ThreeCopyQutritWerner.ptrace₁ C).rank = 3
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.rank_raise_ptrace"}
+ThreeCopyQutritWerner.Endpoints.schmidtRank_vec.{u_1, u_2} {A : Type u_1} {B : Type u_2} [Fintype A] [Fintype B]
+  (C : Matrix A B ℂ) (r : ℕ) : ThreeCopyQutritWerner.SchmidtRankLE r (ThreeCopyQutritWerner.vec C) ↔ C.rank ≤ r
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.schmidtRank_vec"}
+ThreeCopyQutritWerner.Endpoints.sharp_curve_attained (α : ℝ) :
+  ∃ C,
+    C.rank ≤ 2 ∧
+      ThreeCopyQutritWerner.invN C = 1 ∧ ThreeCopyQutritWerner.energy α C = ThreeCopyQutritWerner.sharpCurve α
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.sharp_curve_attained"}
+ThreeCopyQutritWerner.Endpoints.sharp_minimum {α : ℝ} (h0 : 0 ≤ α) (h1 : α ≤ 1 / 2) :
+  (∀ (C : Matrix (Fin 3 × Fin 3 × Fin 3) (Fin 3 × Fin 3 × Fin 3) ℂ),
+      C.rank ≤ 2 →
+        ThreeCopyQutritWerner.sharpCurve α * ThreeCopyQutritWerner.invN C ≤ ThreeCopyQutritWerner.energy α C) ∧
+    ∃ C,
+      C.rank ≤ 2 ∧
+        ThreeCopyQutritWerner.invN C = 1 ∧ ThreeCopyQutritWerner.energy α C = ThreeCopyQutritWerner.sharpCurve α
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.sharp_minimum"}
+ThreeCopyQutritWerner.Endpoints.sharp_minimum_isLeast_of_endpoint :
+  ThreeCopyQutritWerner.QutritEndpointInequality →
+    ∀ {α : ℝ},
+      0 ≤ α →
+        α ≤ 1 / 2 →
+          IsLeast {x | ∃ C, C.rank ≤ 2 ∧ ThreeCopyQutritWerner.invN C = 1 ∧ ThreeCopyQutritWerner.energy α C = x}
+            (ThreeCopyQutritWerner.sharpCurve α)
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.sharp_minimum_isLeast_of_endpoint"}
+ThreeCopyQutritWerner.Endpoints.sharp_minimum_of_endpoint :
+  ThreeCopyQutritWerner.QutritEndpointInequality →
+    ∀ {α : ℝ},
+      0 ≤ α →
+        α ≤ 1 / 2 →
+          (∀ (C : Matrix (Fin 3 × Fin 3 × Fin 3) (Fin 3 × Fin 3 × Fin 3) ℂ),
+              C.rank ≤ 2 →
+                ThreeCopyQutritWerner.sharpCurve α * ThreeCopyQutritWerner.invN C ≤ ThreeCopyQutritWerner.energy α C) ∧
+            ∃ C,
+              C.rank ≤ 2 ∧
+                ThreeCopyQutritWerner.invN C = 1 ∧ ThreeCopyQutritWerner.energy α C = ThreeCopyQutritWerner.sharpCurve α
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.sharp_minimum_of_endpoint"}
+ThreeCopyQutritWerner.Endpoints.three_copy_expectation (d : ℕ) (α : ℝ)
+  (C : Matrix (Fin d × Fin d × Fin d) (Fin d × Fin d × Fin d) ℂ) :
+  ThreeCopyQutritWerner.expectation
+      (ThreeCopyQutritWerner.partialTranspose (ThreeCopyQutritWerner.tripleCopy (ThreeCopyQutritWerner.werner d α)))
+      (ThreeCopyQutritWerner.vec C) =
+    (↑d * (↑d - ↑α))⁻¹ ^ 3 * ↑(ThreeCopyQutritWerner.energy α C)
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.three_copy_expectation"}
+ThreeCopyQutritWerner.Endpoints.three_copy_ppt_of_le_third {α : ℝ} (h : α ≤ 1 / 3) :
+  (ThreeCopyQutritWerner.partialTranspose
+      (ThreeCopyQutritWerner.tripleCopy (ThreeCopyQutritWerner.werner 3 α))).PosSemidef
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.three_copy_ppt_of_le_third"}
+ThreeCopyQutritWerner.Endpoints.twoQubit_separable_iff_ppt (ρ : Matrix (Fin 2 × Fin 2) (Fin 2 × Fin 2) ℂ) :
+  ThreeCopyQutritWerner.IsBipartiteSeparable ρ ↔ ρ.PosSemidef ∧ (ThreeCopyQutritWerner.partialTranspose ρ).PosSemidef
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.twoQubit_separable_iff_ppt"}
+ThreeCopyQutritWerner.Endpoints.two_plane_product.{u_1, u_2, u_3} {a : Type u_1} {b : Type u_2} {c : Type u_3}
+  [Fintype a] [Fintype b] [Fintype c] (a₁ b₁ : a → ℂ) (a₂ b₂ : b → ℂ) (a₃ b₃ : c → ℂ) (e₁ e₂ : a × b × c → ℂ)
+  (he₁ : ∀ (i : a) (j : b) (k : c), e₁ (i, j, k) = a₁ i * a₂ j * a₃ k)
+  (he₂ : ∀ (i : a) (j : b) (k : c), e₂ (i, j, k) = b₁ i * b₂ j * b₃ k) (hn₁ : ThreeCopyQutritWerner.vecNormSq e₁ = 1)
+  (hn₂ : ThreeCopyQutritWerner.vecNormSq e₂ = 1) (ho : ThreeCopyQutritWerner.braket e₁ e₂ = 0)
+  (hcut₁ : ∃ α β, ∀ (i : a) (j : b) (k : c), e₁ (i, j, k) + e₂ (i, j, k) = α i * β (j, k))
+  (hcut₂ : ∃ α β, ∀ (i : a) (j : b) (k : c), e₁ (i, j, k) + e₂ (i, j, k) = α j * β (i, k)) :
+  (∃ f₁ f₂ u v,
+      ThreeCopyQutritWerner.vecNormSq f₁ = 1 ∧
+        ThreeCopyQutritWerner.vecNormSq f₂ = 1 ∧
+          ThreeCopyQutritWerner.braket f₁ f₂ = 0 ∧
+            ThreeCopyQutritWerner.vecNormSq u = 1 ∧
+              ThreeCopyQutritWerner.vecNormSq v = 1 ∧
+                ThreeCopyQutritWerner.ketBra e₁ e₁ + ThreeCopyQutritWerner.ketBra e₂ e₂ =
+                  ThreeCopyQutritWerner.tensor₃
+                    (ThreeCopyQutritWerner.ketBra f₁ f₁ + ThreeCopyQutritWerner.ketBra f₂ f₂)
+                    (ThreeCopyQutritWerner.ketBra u u) (ThreeCopyQutritWerner.ketBra v v)) ∨
+    (∃ u f₁ f₂ v,
+        ThreeCopyQutritWerner.vecNormSq f₁ = 1 ∧
+          ThreeCopyQutritWerner.vecNormSq f₂ = 1 ∧
+            ThreeCopyQutritWerner.braket f₁ f₂ = 0 ∧
+              ThreeCopyQutritWerner.vecNormSq u = 1 ∧
+                ThreeCopyQutritWerner.vecNormSq v = 1 ∧
+                  ThreeCopyQutritWerner.ketBra e₁ e₁ + ThreeCopyQutritWerner.ketBra e₂ e₂ =
+                    ThreeCopyQutritWerner.tensor₃ (ThreeCopyQutritWerner.ketBra u u)
+                      (ThreeCopyQutritWerner.ketBra f₁ f₁ + ThreeCopyQutritWerner.ketBra f₂ f₂)
+                      (ThreeCopyQutritWerner.ketBra v v)) ∨
+      ∃ u v f₁ f₂,
+        ThreeCopyQutritWerner.vecNormSq f₁ = 1 ∧
+          ThreeCopyQutritWerner.vecNormSq f₂ = 1 ∧
+            ThreeCopyQutritWerner.braket f₁ f₂ = 0 ∧
+              ThreeCopyQutritWerner.vecNormSq u = 1 ∧
+                ThreeCopyQutritWerner.vecNormSq v = 1 ∧
+                  ThreeCopyQutritWerner.ketBra e₁ e₁ + ThreeCopyQutritWerner.ketBra e₂ e₂ =
+                    ThreeCopyQutritWerner.tensor₃ (ThreeCopyQutritWerner.ketBra u u) (ThreeCopyQutritWerner.ketBra v v)
+                      (ThreeCopyQutritWerner.ketBra f₁ f₁ + ThreeCopyQutritWerner.ketBra f₂ f₂)
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.two_plane_product"}
+ThreeCopyQutritWerner.Endpoints.werner_npt_iff (d : ℕ) (hd : 2 ≤ d) (α : ℝ) (h1 : α ≤ 1) :
+  ThreeCopyQutritWerner.IsNPT (ThreeCopyQutritWerner.werner d α) ↔ 1 / ↑d < α
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.werner_npt_iff"}
+ThreeCopyQutritWerner.Endpoints.werner_state (d : ℕ) (hd : 2 ≤ d) (α : ℝ) (hm : -1 ≤ α) (h1 : α ≤ 1) :
+  (ThreeCopyQutritWerner.werner d α).PosSemidef ∧ (ThreeCopyQutritWerner.werner d α).trace = 1
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.werner_state"}
+ThreeCopyQutritWerner.Endpoints.werner_three_not_three_copy_of_le_third {α : ℝ} (h : α ≤ 1 / 3) :
+  ¬ThreeCopyQutritWerner.IsThreeCopyFilterDistillable (ThreeCopyQutritWerner.werner 3 α)
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.werner_three_not_three_copy_of_le_third"}
+ThreeCopyQutritWerner.Endpoints.werner_three_not_three_copy_of_nonpos {α : ℝ} (h0 : α ≤ 0) :
+  ¬ThreeCopyQutritWerner.IsThreeCopyFilterDistillable (ThreeCopyQutritWerner.werner 3 α)
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.werner_three_not_three_copy_of_nonpos"}
+ThreeCopyQutritWerner.Endpoints.werner_three_npt_not_three_copy {α : ℝ} (h0 : 1 / 3 < α) (h1 : α ≤ 1 / 2) :
+  ThreeCopyQutritWerner.IsNPT (ThreeCopyQutritWerner.werner 3 α) ∧
+    ¬ThreeCopyQutritWerner.IsThreeCopyFilterDistillable (ThreeCopyQutritWerner.werner 3 α)
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.werner_three_npt_not_three_copy"}
+ThreeCopyQutritWerner.Endpoints.werner_three_npt_not_three_copy_of_endpoint :
+  ThreeCopyQutritWerner.QutritEndpointInequality →
+    ∀ {α : ℝ},
+      1 / 3 < α →
+        α ≤ 1 / 2 →
+          ThreeCopyQutritWerner.IsNPT (ThreeCopyQutritWerner.werner 3 α) ∧
+            ¬ThreeCopyQutritWerner.IsThreeCopyFilterDistillable (ThreeCopyQutritWerner.werner 3 α)
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.werner_three_npt_not_three_copy_of_endpoint"}
+ThreeCopyQutritWerner.Endpoints.werner_three_one_copy_iff {α : ℝ} (hm : -1 ≤ α) (h1 : α ≤ 1) :
+  ThreeCopyQutritWerner.IsOneCopyFilterDistillable (ThreeCopyQutritWerner.werner 3 α) ↔ 1 / 2 < α
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.werner_three_one_copy_iff"}
+ThreeCopyQutritWerner.Endpoints.werner_three_three_copy_iff {α : ℝ} (h1 : α ≤ 1) :
+  ThreeCopyQutritWerner.IsThreeCopyFilterDistillable (ThreeCopyQutritWerner.werner 3 α) ↔ 1 / 2 < α
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.werner_three_three_copy_iff"}
+ThreeCopyQutritWerner.Endpoints.werner_three_three_copy_iff_of_endpoint :
+  ThreeCopyQutritWerner.QutritEndpointInequality →
+    ∀ {α : ℝ},
+      α ≤ 1 → (ThreeCopyQutritWerner.IsThreeCopyFilterDistillable (ThreeCopyQutritWerner.werner 3 α) ↔ 1 / 2 < α)
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.werner_three_three_copy_iff_of_endpoint"}
+ThreeCopyQutritWerner.Endpoints.werner_three_three_copy_of_gt {α : ℝ} (h : 1 / 2 < α) (h1 : α ≤ 1) :
+  ThreeCopyQutritWerner.IsThreeCopyFilterDistillable (ThreeCopyQutritWerner.werner 3 α)
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.werner_three_three_copy_of_gt"}
+ThreeCopyQutritWerner.Endpoints.werner_two_half_separable :
+  ThreeCopyQutritWerner.IsBipartiteSeparable (ThreeCopyQutritWerner.werner 2 (1 / 2))
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.werner_two_half_separable"}
+ThreeCopyQutritWerner.Endpoints.zero_families_are_half_singular_zeros
+  (C : Matrix (Fin 3 × Fin 3 × Fin 3) (Fin 3 × Fin 3 × Fin 3) ℂ)
+  (hC : ThreeCopyQutritWerner.IsQutritZeroFamilyMember C) :
+  C.rank ≤ 2 ∧
+    ThreeCopyQutritWerner.invN C = 1 ∧
+      ThreeCopyQutritWerner.endpointEnergy C = 0 ∧
+        C.conjTranspose * C * (C.conjTranspose * C) = (1 / 2) • (C.conjTranspose * C)
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"ThreeCopyQutritWerner.Endpoints.zero_families_are_half_singular_zeros"}

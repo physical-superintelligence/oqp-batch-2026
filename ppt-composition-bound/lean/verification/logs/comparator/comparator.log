@@ -1,0 +1,335 @@
+Resolving dependencies
+Building Challenge
+⚠ [9026/9027] Built Challenge (5.2s)
+warning: Challenge.lean:150:8: declaration uses `sorry`
+warning: Challenge.lean:158:8: declaration uses `sorry`
+warning: Challenge.lean:165:8: declaration uses `sorry`
+warning: Challenge.lean:177:8: declaration uses `sorry`
+warning: Challenge.lean:193:8: declaration uses `sorry`
+warning: Challenge.lean:200:8: declaration uses `sorry`
+warning: Challenge.lean:206:8: declaration uses `sorry`
+warning: Challenge.lean:215:8: declaration uses `sorry`
+warning: Challenge.lean:226:8: declaration uses `sorry`
+warning: Challenge.lean:235:8: declaration uses `sorry`
+warning: Challenge.lean:241:8: declaration uses `sorry`
+warning: Challenge.lean:247:8: declaration uses `sorry`
+warning: Challenge.lean:254:8: declaration uses `sorry`
+Build completed successfully (9027 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, PPTCompositionBound.compose_ppt_maps_entanglementBreaking, PPTCompositionBound.ebIndex_le_of_isPPTMap, PPTCompositionBound.compose_at_least_ppt_maps_entanglementBreaking, PPTCompositionBound.compose_ppt_map_interleaved_entanglementBreaking, PPTCompositionBound.exists_posSemidef_not_isSeparable, PPTCompositionBound.id_not_entanglementBreaking, PPTCompositionBound.choi_isCompletelyPositive_iff, PPTCompositionBound.choi_isPPTMap_iff, PPTCompositionBound.choi_isEntanglementBreaking_iff, PPTCompositionBound.transposeMap_isCompletelyCopositive_not_isCompletelyPositive, PPTCompositionBound.compList_pair, PPTCompositionBound.zero_map_isPPTMap_and_ebIndex_eq_one, PPTCompositionBound.ebIndex_id_eq_top, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+✔ [9026/9067] Built PPTCompositionBound.Defs (4.3s)
+✔ [9027/9067] Built PPTCompositionBound.ForMathlib.RankFactorization (4.5s)
+✔ [9028/9067] Built PPTCompositionBound.ForMathlib.PseudoInverse (5.8s)
+⚠ [9029/9067] Built PPTCompositionBound.ForMathlib.PositiveRankOneSubtraction (4.3s)
+warning: PPTCompositionBound/ForMathlib/PositiveRankOneSubtraction.lean:81:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.rangeSubtraction_mulVec_self`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: PPTCompositionBound/ForMathlib/PositiveRankOneSubtraction.lean:95:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ker_le_ker_rangeSubtraction`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9030/9067] Built PPTCompositionBound.Separable (4.6s)
+⚠ [9031/9067] Built PPTCompositionBound.ForMathlib.ThinSingularValueDecomposition (4.9s)
+warning: PPTCompositionBound/ForMathlib/ThinSingularValueDecomposition.lean:68:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: PPTCompositionBound/ForMathlib/ThinSingularValueDecomposition.lean:68:29: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: PPTCompositionBound/ForMathlib/ThinSingularValueDecomposition.lean:65:27: This simp argument is unused:
+  Complex.real_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ite_true, Complex.ofReal_inv, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: PPTCompositionBound/ForMathlib/ThinSingularValueDecomposition.lean:65:46: This simp argument is unused:
+  Complex.ofReal_inv
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ite_true, Complex.real_smul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: PPTCompositionBound/ForMathlib/ThinSingularValueDecomposition.lean:68:52: This simp argument is unused:
+  smul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg hij, if_neg hval, mul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: PPTCompositionBound/ForMathlib/ThinSingularValueDecomposition.lean:66:27: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: PPTCompositionBound/ForMathlib/ThinSingularValueDecomposition.lean:66:27: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: PPTCompositionBound/ForMathlib/ThinSingularValueDecomposition.lean:83:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ManuscriptSVD.rectangular_singular_family_expansion`:
+  [FiniteDimensional ℂ E]
+  [FiniteDimensional ℂ F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ E] [FiniteDimensional ℂ F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: PPTCompositionBound/ForMathlib/ThinSingularValueDecomposition.lean:128:27: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵S̲e̲t̲.̲m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [9032/9067] Built PPTCompositionBound.ForMathlib.SingularValueDecomposition (4.9s)
+warning: PPTCompositionBound/ForMathlib/SingularValueDecomposition.lean:51:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: PPTCompositionBound/ForMathlib/SingularValueDecomposition.lean:51:29: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: PPTCompositionBound/ForMathlib/SingularValueDecomposition.lean:48:27: This simp argument is unused:
+  Complex.real_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ite_true, Complex.ofReal_inv, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: PPTCompositionBound/ForMathlib/SingularValueDecomposition.lean:48:46: This simp argument is unused:
+  Complex.ofReal_inv
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ite_true, Complex.real_smul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: PPTCompositionBound/ForMathlib/SingularValueDecomposition.lean:51:52: This simp argument is unused:
+  smul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg hij, if_neg hval, mul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: PPTCompositionBound/ForMathlib/SingularValueDecomposition.lean:49:27: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: PPTCompositionBound/ForMathlib/SingularValueDecomposition.lean:49:27: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: PPTCompositionBound/ForMathlib/SingularValueDecomposition.lean:94:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ManuscriptSVD.exists_orthonormal_singular_bases_indexed`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: PPTCompositionBound/ForMathlib/SingularValueDecomposition.lean:107:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ManuscriptSVD.singular_bases_expansion`:
+  [FiniteDimensional ℂ E]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ E] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9033/9067] Built PPTCompositionBound.ForMathlib.UnitaryResolution (5.8s)
+⚠ [9034/9067] Built PPTCompositionBound.ForMathlib.PositiveRankOneCoefficient (4.0s)
+warning: PPTCompositionBound/ForMathlib/PositiveRankOneCoefficient.lean:29:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ofReal_rangeThreshold`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: PPTCompositionBound/ForMathlib/PositiveRankOneCoefficient.lean:35:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.rangeThreshold_pos`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: PPTCompositionBound/ForMathlib/PositiveRankOneCoefficient.lean:43:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ker_le_ker_sub_range_projector`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9035/9067] Built PPTCompositionBound.Counterexample (3.0s)
+✔ [9036/9067] Built PPTCompositionBound.Maps (4.0s)
+✔ [9037/9067] Built PPTCompositionBound.SchmidtNumber (4.2s)
+✔ [9038/9067] Built PPTCompositionBound.QubitBlocks (4.5s)
+✔ [9039/9067] Built PPTCompositionBound.ForMathlib.TwoUnitaryFormula (4.7s)
+✔ [9040/9067] Built PPTCompositionBound.NonTrivial (3.9s)
+✔ [9041/9067] Built PPTCompositionBound.SchmidtFacts (3.8s)
+✔ [9042/9067] Built PPTCompositionBound.PairLemma (4.9s)
+✔ [9043/9067] Built PPTCompositionBound.GurvitsBarnumCore (5.0s)
+⚠ [9044/9067] Built PPTCompositionBound.ForMathlib.SchmidtBridges (5.8s)
+warning: PPTCompositionBound/ForMathlib/SchmidtBridges.lean:21:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ManuscriptSchmidt.orthonormal_columns_iff`:
+  [Fintype r]
+  [DecidableEq m]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype r] [DecidableEq m] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: PPTCompositionBound/ForMathlib/SchmidtBridges.lean:32:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ManuscriptSchmidt.rank_left_isometry`:
+  [DecidableEq m]
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq m] [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: PPTCompositionBound/ForMathlib/SchmidtBridges.lean:40:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ManuscriptSchmidt.rank_right_coisometry`:
+  [Fintype m]
+  [DecidableEq m]
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype m] [DecidableEq m] [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: PPTCompositionBound/ForMathlib/SchmidtBridges.lean:104:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ManuscriptSchmidt.exists_isometry_rank_factorization`:
+  [DecidableEq m]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq m] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9045/9067] Built PPTCompositionBound.Iteration (4.0s)
+✔ [9046/9067] Built PPTCompositionBound.SeparablePure (4.1s)
+✔ [9047/9067] Built PPTCompositionBound.Lift (5.5s)
+⚠ [9048/9067] Built PPTCompositionBound.SchmidtDecomposition (4.5s)
+warning: PPTCompositionBound/SchmidtDecomposition.lean:24:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ManuscriptSchmidt.orthonormal_conjugate_coordinates`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9049/9067] Built PPTCompositionBound.ForMathlib.SupportedSVD (4.7s)
+warning: PPTCompositionBound/ForMathlib/SupportedSVD.lean:23:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ManuscriptSVD.isometry_range_projector`:
+  [DecidableEq r]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq r] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: PPTCompositionBound/ForMathlib/SupportedSVD.lean:77:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ManuscriptSVD.reconstruct_support_compression`:
+  [DecidableEq n]
+  [DecidableEq r]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] [DecidableEq r] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9050/9067] Built PPTCompositionBound.PPTSubtraction (3.9s)
+warning: PPTCompositionBound/PPTSubtraction.lean:35:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.prodVec_star_left_ne_zero`:
+  [Fintype κ]
+  [DecidableEq κ]
+  [Fintype n]
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype κ] [DecidableEq κ] [Fintype n] [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: PPTCompositionBound/PPTSubtraction.lean:47:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.partialTransposeRef_pureState_prodVec`:
+  [Fintype κ]
+  [DecidableEq κ]
+  [Fintype n]
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype κ] [DecidableEq κ] [Fintype n] [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: PPTCompositionBound/PPTSubtraction.lean:64:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.isSeparable_smul_pureState_prodVec`:
+  [DecidableEq κ]
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq κ] [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9051/9067] Built PPTCompositionBound.ForMathlib.UnitaryEigenbasis (8.2s)
+warning: PPTCompositionBound/ForMathlib/UnitaryEigenbasis.lean:87:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9052/9067] Built PPTCompositionBound.Reduction (4.4s)
+warning: PPTCompositionBound/Reduction.lean:173:8: Unused tactic linter: `change schmidtRank v - 1 ≤ s - 1` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9053/9067] Built PPTCompositionBound.ForMathlib.SVDComponents (4.9s)
+warning: PPTCompositionBound/ForMathlib/SVDComponents.lean:19:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ManuscriptSVD.sum_weighted_column_outer`:
+  [Fintype n]
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype n] [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: PPTCompositionBound/ForMathlib/SVDComponents.lean:40:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.ManuscriptSVD.svd_mul_conjTranspose`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9054/9067] Built PPTCompositionBound.ChoiBridge (3.8s)
+✔ [9055/9067] Built PPTCompositionBound.TensorMaps (4.8s)
+✔ [9056/9067] Built PPTCompositionBound.PPTDecompositionSVD (4.8s)
+⚠ [9057/9067] Built PPTCompositionBound.CompatibleRangeTransport (4.1s)
+warning: PPTCompositionBound/CompatibleRangeTransport.lean:27:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.partialTransposeRef_refMap_comm`:
+  [Fintype κ]
+  [DecidableEq κ]
+  [Fintype n]
+  [DecidableEq n]
+  [Fintype p]
+  [DecidableEq p]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype κ] [DecidableEq κ] [Fintype n] [DecidableEq n] [Fintype p] [DecidableEq p] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: PPTCompositionBound/CompatibleRangeTransport.lean:44:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.one_kronecker_mulVec_prodVec`:
+  [DecidableEq n]
+  [Fintype p]
+  [DecidableEq p]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] [Fintype p] [DecidableEq p] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: PPTCompositionBound/CompatibleRangeTransport.lean:49:4: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, dotProduct, prodVec, Matrix.kroneckerMap_apply, Fintype.sum_prod_type, Matrix.one_apply,
+    Finset.mul_sum, mul_left_comm, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [9058/9067] Built PPTCompositionBound.PPTDecomposition (5.5s)
+⚠ [9059/9067] Built PPTCompositionBound.QubitNormalization (4.1s)
+warning: PPTCompositionBound/QubitNormalization.lean:27:0: automatically included section variable(s) unused in theorem `PPTCompositionBound.qubitBlocks_sysConj`:
+  [DecidableEq n]
+  [Fintype p]
+  [DecidableEq p]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] [Fintype p] [DecidableEq p] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9060/9067] Built PPTCompositionBound.GurvitsBarnumSVD (3.0s)
+✔ [9061/9067] Built PPTCompositionBound.GurvitsBarnum (3.6s)
+✔ [9062/9067] Built PPTCompositionBound.Pair (3.6s)
+✔ [9063/9067] Built PPTCompositionBound.Main (3.6s)
+✔ [9064/9067] Built PPTCompositionBound.AtLeast (3.7s)
+✔ [9065/9067] Built PPTCompositionBound (3.6s)
+✔ [9066/9067] Built Solution (3.9s)
+Build completed successfully (9067 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, PPTCompositionBound.compose_ppt_maps_entanglementBreaking, PPTCompositionBound.ebIndex_le_of_isPPTMap, PPTCompositionBound.compose_at_least_ppt_maps_entanglementBreaking, PPTCompositionBound.compose_ppt_map_interleaved_entanglementBreaking, PPTCompositionBound.exists_posSemidef_not_isSeparable, PPTCompositionBound.id_not_entanglementBreaking, PPTCompositionBound.choi_isCompletelyPositive_iff, PPTCompositionBound.choi_isPPTMap_iff, PPTCompositionBound.choi_isEntanglementBreaking_iff, PPTCompositionBound.transposeMap_isCompletelyCopositive_not_isCompletelyPositive, PPTCompositionBound.compList_pair, PPTCompositionBound.zero_map_isPPTMap_and_ebIndex_eq_one, PPTCompositionBound.ebIndex_id_eq_top, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running Lean paranoid kernel on solution
+Lean paranoid kernel accepts the solution
+Running lean4lean kernel on solution
+[anonymous]:thmDecl KaehlerDifferential.mvPolynomialEquiv._proof_1: lean4lean took 1196
+[anonymous]:thmDecl KaehlerDifferential.mvPolynomialEquiv._proof_2: lean4lean took 1319
+checked 64622 declarations
+lean4lean kernel accepts the solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running con-leche kernel on solution
+con-leche: accepted 64625 declarations (--verified)
+con-leche kernel accepts the solution
+Running con-ron kernel on solution
+con-ron: accepted 64625 declarations (--verified)
+con-ron kernel accepts the solution
+Running Lean default kernel on solution
+Lean default kernel accepts the solution
+Your solution is okay!

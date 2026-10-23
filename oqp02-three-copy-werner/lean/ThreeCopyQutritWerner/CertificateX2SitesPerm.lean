@@ -1,0 +1,69 @@
+module
+
+public import Mathlib.Data.Fintype.Card
+public import Mathlib.Data.Fintype.Pi
+public import Mathlib.Logic.Equiv.Fintype
+public import Mathlib.Algebra.FiniteSupport.Basic
+public import Mathlib.Algebra.GroupWithZero.Action.Regular
+public import Mathlib.Algebra.GroupWithZero.Indicator
+public import Mathlib.Algebra.Module.Submodule.EqLocus
+public import Mathlib.Algebra.Module.Torsion.Field
+public import Mathlib.Algebra.Order.BigOperators.Ring.Finset
+public import Mathlib.Algebra.Polynomial.Basic
+public import Mathlib.Data.List.Enum
+public import Mathlib.LinearAlgebra.Span.Basic
+public import Mathlib.Tactic.Basify.Attr
+
+@[expose] public section
+
+
+/-!
+# The 720 register permutations and the 513 pivot diagrams
+
+`x2SitesPerm d` is the `d`-th tuple of `itertools.permutations(range(6))` (lexicographic order,
+the archive's and the bridge's diagram order): `⇑(x2SitesPerm d) k = x2SitesTup d k` definitionally.
+`x2SitesPiv p` is the certificate's `permutation_basis_indices[p]` (the bridge's `piv`, the same for every
+sector). Tables: `permTab` (slot `d`, 16 bits: `∑_k σ_k 6^k`), `pivTab` (slot `p`, 10 bits).
+-/
+
+namespace ThreeCopyQutritWerner
+namespace X2Sites
+
+/-- Packed tuples of the 720 permutations. -/
+def permTab : ℕ := 0x74920990b813e212909425907fd214d106d5c5d2df560950ce93f8911215d114c3165812b2544752f5d61fd4ce56635076720b70b9f3e3f2927427708cf221f15777ab732ff7eef0dbb405b162b7b6b513b83db2bf745473467805751ef848f0839218910a95c992e3160d108ed223d15957ad5331d7f0d12c55eb516fd7c3d6f9588e5310163a135398129704989990d433fe3117b5d6b4c8b65db0df7409716677ba75177841712e35ed3171b7c5b6fb389034f5b68ab53938633711b8a6b2b9d44ed2fd562754d5d66ad2c5145a134c180b1524984e9313d63dd35758165708589d54f7968c953b1865171398a89074e209e0b863e26290e425e0802215210725c622dfa609a0cee3f8e11265d164c3665862b2a447a2f6262024cea663a078a20da0bc23e62294a429a09a622f61a869916380e9d4e0e9241321b3a99ca564aa23a2cce461e39769eb656fea2ee085c21ac10cc5cbc2e5460f409c423141aa49934382c9d6c139c5f8c1c0c9a9c74a4a74431d864783a489f887558a7f80d664006119e5d8e4cae65fe0ece416e1b769a065686a27613ba5faa1c2a9aba74c2a7625032698258a2a492762aa8ca2bc045102ff862984d8066d02d28467839d09f105758a348321464b43a849fc47594a834505069a058c0a4b07648a8e8077120c10ba93e492931428108d9222915817ac133097ef90dc5406516357b75514583e52c0145513471806151f98499078f20df0bc73e67294f429f09ab22fb1a8b991b38139d530e9741371b3f99cf564fa23f2cd34623397b9ebb5703a2f30933228315db7b1b33637f5309e723371ac79957384f9d8f18ab7deb1ce39b739303ac5336e782d73b1fa05f93b7ad070e3d40dd16ad7bed51bd845d0ef141911b999a2956a9a29918c97e091d019b919321ac71554187e15979a5699489add92c9745e7350780f7528f852f2d4b469b39f39f33577ba36b372383133b5ba09b93f3ad43555f87ff5997a58794a7adf70848219810b85ca82e4060e008fc224c15a47ae4332c7f1c12d45ec4170c7c4c6fa488f4311063b035488138705889a8086621b610d65cc62e5e60fe09ce231e1aae993e38369d7613a65f961c169aa674aea74e31e264823a529f927562a8020938228815e07b2033687f5809ec233c1acc995c38549d9418b07df01ce89b789308ac5836ec82dc3b24a06493bcad0c134c5f3c17847cc4701c896c14005ff01c709b007508a7a818ec7e2c1d249bb49344ac9473a08cf077d8aa789560aeb031a6644635de81ce70ee8a3e325a64fa3acaa00a75daa87a374683363b7ea0be9416ad6673be8d0e77f6aa96957eaece0d573ff7118f5d7f4c9f65ef0e0b40ab167b7bbb518b842b12f75ee7172f7c6f6fc789174f6f68bf53a78647712f8a7f0d75401511ad5d9d4cbd660d0edd417d1b859a155695a28513c95fb91c399ac974d1a7715041699158b1a4a17639a8d90e4740e716b77bf751c784670efb419b1ba39a3356b3a2a318d37e131d0b9b9b932bac7b554b87eb5983a5739493ade313515f4117897cc97021897114055ff51c759b05750da7ad18f17e311d299bb99349ac9973a58cf577ddaa7d9565aeb550056955543d86dd71c58b1550b96a095929a51976b1a95155a5884559dda5cd94edae3d73e18d317819aab995a1aef12bb645062fee628e4d7666c62c6a45ba34da80ca52628502315663f6358e817e709e89ee4f9268e253ca866a71528aa22bd44524300c62ac4d9466e42d3c468c39e49f24576ca35c322864c83a989fd875a8a848506469b458d4a4c4765ca8fc2ca645f635168106529e853e2d5a46aa3a029f42578aa37a373283223b6aa0aa9402ad52556e880e59a6a59694b6ae0631b0645035e881d870f88a48326465043ad4a01475e4a884375083403b88a0c89420ad7073c88d187800aaa09588aed8500a695a544286e271ca8b1a50be6a0e592ea51e76b6a95655aa884a59e2a5d294f2ae4273e68d36781eaabe95a6aef6
+
+/-- Packed pivot diagram indices. -/
+def pivTab : ℕ := 0x2b8acaa4a86a0a6a98a5694a328ba2a89a2282a027d9f27a9e6789de769d2739ca719c26a9a265992629866097e5e9725b96a59962529424d9324a9264891e469124390a419023a8b2298a22688e228821d872158521384a118420e8360c82e0a822058120380a01801ff7f9fd7f1fb7e9f97e1f67d5f47cdf27c1ed7b1eb7a9e97a1e7799e5791e3789e1781da761d5751d2745d073dce731cb729c9721c6715c470dc2701bd6f1bb6e9b96e1b76d9b56d1b36c9b16c1ae6adaa6a1a56919d6719b66999661966559464d926459063d8e6358c62d8a6258861d866158460d82605805f97d5f17b5e9795e1775d9755d1735c9715c16f5b96d5b16b5a9695a1625815d5715a5655855d5655153549515414e5354c52d4a5214551143509415013f4f93d4f13b4e9394e1364d5344cd324c5304bd2e4b52c4ad2a4a52849d264952448d22485204791d4711b46919461174591545113449114410f4390d4310b42909421064150440d02405003fcfe3f4fc3ecfa3e4f83dcf63d4f43ccf23c4f03a8e8394e4388e1380df378dc36cda364d8358d5350d3348d0334cc32cca324c831cc6314c430cc2304c02f8bd2f0bb2e8b92e0b72d8b52d0b32c8b12c0af2b8ad2b0ab2a8a92a0a6294a428ca2284a027c9e2749c26c9a2649825c962549424c92244902388d2308b22889220872188521083208812007f1f87d1f07b1e8791e0721c06d1b06a1a46819c6619063188611805e1745c16c5a1605515053148511404f1384d1304b12849120461144410c42104400fc3e0f43c0ec3a0e4380dc360d4340cc320c4300b82d0b02b0a8290a0270982509023088210801f0781d0701b06819060160541404c120441003c0e0340c02c0a0240801c060140400c0200400
+
+/-- Entry `k` of tuple `d`. -/
+def tupN (d k : ℕ) : ℕ :=
+  Nat.mod (Nat.div (Nat.land (Nat.shiftRight permTab (Nat.mul 16 d)) 65535) (Nat.pow 6 k)) 6
+
+/-- The tuple of permutation `d` as a function. -/
+def x2SitesTup (d : Fin 720) (k : Fin 6) : Fin 6 := ⟨tupN d k % 6, Nat.mod_lt _ (by decide)⟩
+
+theorem x2SitesTup_injective : ∀ d : Fin 720, Function.Injective (x2SitesTup d) := by
+  decide +kernel
+
+/-- The `d`-th register permutation (itertools order). -/
+noncomputable def x2SitesPerm (d : Fin 720) : Equiv.Perm (Fin 6) :=
+  Equiv.ofBijective (x2SitesTup d) (Finite.injective_iff_bijective.mp (x2SitesTup_injective d))
+
+theorem x2SitesPerm_apply (d : Fin 720) (k : Fin 6) : x2SitesPerm d k = x2SitesTup d k := rfl
+
+/-- Pivot index `p` as a natural number. -/
+def pivN (p : ℕ) : ℕ := Nat.land (Nat.shiftRight pivTab (Nat.mul 10 p)) 1023
+
+/-- The `p`-th pivot diagram. -/
+def x2SitesPiv (p : Fin 513) : Fin 720 := ⟨pivN p % 720, Nat.mod_lt _ (by decide)⟩
+
+/-- Spot checks: the identity is diagram 0 = pivot 0; diagram 633 is the transposition `(0 5)`. -/
+theorem x2SitesPerm_zero : ∀ k : Fin 6, x2SitesPerm 0 k = k := by decide +kernel
+
+theorem x2SitesPerm_633 : ∀ k : Fin 6, x2SitesPerm 633 k = Equiv.swap (0 : Fin 6) 5 k := by
+  decide +kernel
+
+theorem x2SitesPiv_zero : x2SitesPiv 0 = 0 := by decide +kernel
+
+end X2Sites
+end ThreeCopyQutritWerner

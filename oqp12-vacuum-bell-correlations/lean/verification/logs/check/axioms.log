@@ -1,0 +1,113 @@
+VacuumBellSeparation.OQP12.corollary_1_2 (m : ℝ) :
+  0 < m →
+    ∀ (O₁ O₂ : Set VacuumBellSeparation.Spacetime),
+      Bornology.IsBounded O₁ →
+        Bornology.IsBounded O₂ →
+          ∀ (a : VacuumBellSeparation.Spacetime),
+            a.1 ^ 2 < ‖a.2‖ ^ 2 →
+              ∃ T₀,
+                ∀ (t : ℝ),
+                  T₀ ≤ t →
+                    ∀ (H : Type) [inst : NormedAddCommGroup H] [inst_1 : InnerProductSpace ℂ H]
+                      [inst_2 : CompleteSpace H] (V : VacuumBellSeparation.FreeFieldVacuum m H),
+                      sSup
+                          {v |
+                            ∃ A₀ A₁ B₀ B₁,
+                              A₀ ∈ VacuumBellSeparation.localAlgebra V O₁ ∧
+                                A₁ ∈ VacuumBellSeparation.localAlgebra V O₁ ∧
+                                  B₀ ∈ VacuumBellSeparation.localAlgebra V ((fun x => x + t • a) '' O₂) ∧
+                                    B₁ ∈ VacuumBellSeparation.localAlgebra V ((fun x => x + t • a) '' O₂) ∧
+                                      IsSelfAdjoint A₀ ∧
+                                        IsSelfAdjoint A₁ ∧
+                                          IsSelfAdjoint B₀ ∧
+                                            IsSelfAdjoint B₁ ∧
+                                              ‖A₀‖ ≤ 1 ∧
+                                                ‖A₁‖ ≤ 1 ∧
+                                                  ‖B₀‖ ≤ 1 ∧
+                                                    ‖B₁‖ ≤ 1 ∧
+                                                      v =
+                                                        1 / 2 *
+                                                          ‖inner ℂ V.vacuum
+                                                              ((A₀ * (B₀ + B₁) + A₁ * (B₀ - B₁)) V.vacuum)‖} =
+                        1
+VacuumBellSeparation.OQP12.freeFieldVacuum_exists (m : ℝ) :
+  0 < m → ∃ H x x_1, ∃ (x_2 : CompleteSpace H), Nonempty (VacuumBellSeparation.FreeFieldVacuum m H)
+VacuumBellSeparation.OQP12.localAlgebra_open_nonabelian (m : ℝ) (hm : 0 < m) (H : Type) [NormedAddCommGroup H]
+  [InnerProductSpace ℂ H] [CompleteSpace H] (V : VacuumBellSeparation.FreeFieldVacuum m H)
+  (O : Set VacuumBellSeparation.Spacetime) (hO : IsOpen O) (hne : O.Nonempty) :
+  ∃ A ∈ VacuumBellSeparation.localAlgebra V O, ∃ B ∈ VacuumBellSeparation.localAlgebra V O, A * B ≠ B * A
+VacuumBellSeparation.OQP12.no_chsh_violation_far_apart (m : ℝ) (hm : 0 < m) (O₁ O₂ : Set VacuumBellSeparation.Spacetime)
+  (hO₁ : Bornology.IsBounded O₁) (hO₂ : Bornology.IsBounded O₂) (a : VacuumBellSeparation.Spacetime)
+  (ha : a.1 ^ 2 < ‖a.2‖ ^ 2) :
+  ∃ T₀,
+    ∀ (t : ℝ),
+      T₀ ≤ t →
+        ∀ (H : Type) [inst : NormedAddCommGroup H] [inst_1 : InnerProductSpace ℂ H] [inst_2 : CompleteSpace H]
+          (V : VacuumBellSeparation.FreeFieldVacuum m H) (A₀ A₁ B₀ B₁ : H →L[ℂ] H),
+          A₀ ∈ VacuumBellSeparation.localAlgebra V O₁ →
+            A₁ ∈ VacuumBellSeparation.localAlgebra V O₁ →
+              B₀ ∈ VacuumBellSeparation.localAlgebra V ((fun x => x + t • a) '' O₂) →
+                B₁ ∈ VacuumBellSeparation.localAlgebra V ((fun x => x + t • a) '' O₂) →
+                  IsSelfAdjoint A₀ →
+                    IsSelfAdjoint A₁ →
+                      IsSelfAdjoint B₀ →
+                        IsSelfAdjoint B₁ →
+                          ‖A₀‖ ≤ 1 →
+                            ‖A₁‖ ≤ 1 →
+                              ‖B₀‖ ≤ 1 → ‖B₁‖ ≤ 1 → ‖inner ℂ V.vacuum ((A₀ * (B₀ + B₁) + A₁ * (B₀ - B₁)) V.vacuum)‖ ≤ 2
+VacuumBellSeparation.OQP12.no_chsh_violation_far_apart_uniform (m : ℝ) (hm : 0 < m)
+  (O₁ O₂ : Set VacuumBellSeparation.Spacetime) (hO₁ : Bornology.IsBounded O₁) (hO₂ : Bornology.IsBounded O₂) :
+  ∃ D,
+    ∀ (x : EuclideanSpace ℝ (Fin 3)),
+      D ≤ ‖x‖ →
+        ∀ (H : Type) [inst : NormedAddCommGroup H] [inst_1 : InnerProductSpace ℂ H] [inst_2 : CompleteSpace H]
+          (V : VacuumBellSeparation.FreeFieldVacuum m H) (A₀ A₁ B₀ B₁ : H →L[ℂ] H),
+          A₀ ∈ VacuumBellSeparation.localAlgebra V O₁ →
+            A₁ ∈ VacuumBellSeparation.localAlgebra V O₁ →
+              B₀ ∈ VacuumBellSeparation.localAlgebra V ((fun y => y + (0, x)) '' O₂) →
+                B₁ ∈ VacuumBellSeparation.localAlgebra V ((fun y => y + (0, x)) '' O₂) →
+                  IsSelfAdjoint A₀ →
+                    IsSelfAdjoint A₁ →
+                      IsSelfAdjoint B₀ →
+                        IsSelfAdjoint B₁ →
+                          ‖A₀‖ ≤ 1 →
+                            ‖A₁‖ ≤ 1 →
+                              ‖B₀‖ ≤ 1 → ‖B₁‖ ≤ 1 → ‖inner ℂ V.vacuum ((A₀ * (B₀ + B₁) + A₁ * (B₀ - B₁)) V.vacuum)‖ ≤ 2
+VacuumBellSeparation.OQP12.theorem_1_1 :
+  ∃ Cstar,
+    2 < Cstar ∧
+      ∀ (m R L : ℝ),
+        0 < m →
+          0 < R →
+            Cstar * R ≤ L →
+              ∀ (H : Type) [inst : NormedAddCommGroup H] [inst_1 : InnerProductSpace ℂ H] [inst_2 : CompleteSpace H]
+                (V : VacuumBellSeparation.FreeFieldVacuum m H),
+                sSup
+                    {v |
+                      ∃ A₀ A₁ B₀ B₁,
+                        A₀ ∈ VacuumBellSeparation.localAlgebra V (VacuumBellSeparation.doubleCone 0 R) ∧
+                          A₁ ∈ VacuumBellSeparation.localAlgebra V (VacuumBellSeparation.doubleCone 0 R) ∧
+                            B₀ ∈
+                                VacuumBellSeparation.localAlgebra V
+                                  (VacuumBellSeparation.doubleCone (0, L • VacuumBellSeparation.e₁) R) ∧
+                              B₁ ∈
+                                  VacuumBellSeparation.localAlgebra V
+                                    (VacuumBellSeparation.doubleCone (0, L • VacuumBellSeparation.e₁) R) ∧
+                                IsSelfAdjoint A₀ ∧
+                                  IsSelfAdjoint A₁ ∧
+                                    IsSelfAdjoint B₀ ∧
+                                      IsSelfAdjoint B₁ ∧
+                                        ‖A₀‖ ≤ 1 ∧
+                                          ‖A₁‖ ≤ 1 ∧
+                                            ‖B₀‖ ≤ 1 ∧
+                                              ‖B₁‖ ≤ 1 ∧
+                                                v =
+                                                  1 / 2 *
+                                                    ‖inner ℂ V.vacuum ((A₀ * (B₀ + B₁) + A₁ * (B₀ - B₁)) V.vacuum)‖} =
+                  1
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"VacuumBellSeparation.OQP12.corollary_1_2"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"VacuumBellSeparation.OQP12.freeFieldVacuum_exists"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"VacuumBellSeparation.OQP12.localAlgebra_open_nonabelian"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"VacuumBellSeparation.OQP12.no_chsh_violation_far_apart"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"VacuumBellSeparation.OQP12.no_chsh_violation_far_apart_uniform"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"VacuumBellSeparation.OQP12.theorem_1_1"}

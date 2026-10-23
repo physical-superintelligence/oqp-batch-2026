@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "For an individual result, cite its paper and the CITATION.cff in that result's lean/ folder."
+title: "Open Quantum Problems: a PSI batch, October 2026"
+type: dataset
+authors:
+  - name: "Physical Superintelligence PBC"
+repository-code: "https://github.com/physical-superintelligence/oqp-batch-2026"
+url: "https://github.com/physical-superintelligence/oqp-batch-2026"
+keywords:
+  - "Open Quantum Problems"
+  - "quantum information"
+  - "Lean 4"
+  - "formalization"

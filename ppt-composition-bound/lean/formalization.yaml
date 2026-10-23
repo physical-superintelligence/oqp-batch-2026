@@ -1,0 +1,280 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4.
+version: "v0.4"
+
+project:
+  name: "PPT composition bound: 2(d-1) PPT maps compose to an entanglement-breaking map"
+  description: >-
+    Lean 4 formalization of Theorem 1 of "Entanglement Breaking after 2(d-1) PPT Maps": for
+    d >= 2, the composition of any 2(d-1) PPT maps on d x d complex matrices is entanglement
+    breaking. PPT means completely positive and completely copositive. The maps may differ,
+    and trace preservation is optional. The entanglement-breaking index of each PPT map is at
+    most 2(d-1). The development also proves the bound for compositions of any N >= 2(d-1)
+    PPT maps and for 2(d-1) copies of a PPT map interleaved with completely positive maps,
+    together with the Choi criteria and the stated conventions for composition and index.
+  authors:
+    - "David Turturean"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "David Turturean"
+
+classification:
+  arxiv: ["quant-ph", "math.OA"]
+  msc2020: ["81P40", "81P47", "15B48", "68V20"]
+
+sources:
+  - title: "Entanglement Breaking after 2(d-1) PPT Maps"
+    authors:
+      - "Physical Superintelligence (PSI)"
+    type: "paper"
+    location: "October 2026 draft, Theorem 1; see paper/README.md"
+    relationship: "formalizes"
+    note: >-
+      Theorem 1 is represented by compose_ppt_maps_entanglementBreaking and
+      ebIndex_le_of_isPPTMap for d >= 2 and arbitrary PPT maps. See docs/FIDELITY.md.
+    license: "unknown"
+    author_endorsement: "other"
+  - title: "The PPT-squared conjecture (Open Quantum Problems, Problem 38)"
+    contributors:
+      - name: "Matthias Christandl"
+        role: "problem-proposer"
+    id: "https://oqp.iqoqi.oeaw.ac.at/the-ppt-squared-conjecture"
+    type: "web discussion"
+    location: "Open Quantum Problems, IQOQI Vienna; text quoted from a snapshot of 2026-07-31 in docs/OQP_STATEMENT.md"
+    relationship: "background"
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "When Do Composed Maps Become Entanglement Breaking?"
+    authors:
+      - "Matthias Christandl"
+      - "Alexander Müller-Hermes"
+      - "Michael M. Wolf"
+    id: "arXiv:1807.01266"
+    type: "paper"
+    location: "Annales Henri Poincaré 20 (2019)"
+    relationship: "background"
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Entanglement with zero distillable secret key in local dimension ten"
+    authors:
+      - "OpenAI"
+    id: "https://github.com/openai/math"
+    type: "paper"
+    location: "github.com/openai/math, item 272 (preprint dated 27 September 2026)"
+    relationship: "background"
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Compositions of PPT maps"
+    authors:
+      - "Matthew Kennedy"
+      - "Nicholas A. Manor"
+      - "Vern I. Paulsen"
+    id: "arXiv:1710.08475"
+    type: "paper"
+    relationship: "background"
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "On the PPT square conjecture for n = 3"
+    authors:
+      - "Lin Chen"
+      - "Yu Yang"
+      - "Wai-Shing Tang"
+    id: "https://doi.org/10.1103/PhysRevA.99.012337"
+    type: "paper"
+    location: "Physical Review A 99, 012337 (2019)"
+    relationship: "background"
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Every PPT channel has finite entanglement-breaking index"
+    authors:
+      - "Sang-Jun Park"
+    id: "arXiv:2608.13551"
+    type: "paper"
+    relationship: "background"
+    note: "Preprint."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Conditions for Positive and Nonnegative Definiteness in Terms of Pseudoinverses"
+    authors:
+      - "Arthur Albert"
+    id: "https://doi.org/10.1137/0117041"
+    type: "paper"
+    location: "SIAM Journal on Applied Mathematics 17 (1969)"
+    relationship: "background"
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Largest separable balls around the maximally mixed bipartite quantum state"
+    authors:
+      - "Leonid Gurvits"
+      - "Howard Barnum"
+    id: "https://doi.org/10.1103/PhysRevA.66.062311"
+    type: "paper"
+    location: "Physical Review A 66, 062311 (2002)"
+    relationship: "background"
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Schmidt number of bipartite and multipartite states under local projections"
+    authors:
+      - "Lin Chen"
+      - "Yu Yang"
+      - "Wai-Shing Tang"
+    id: "https://doi.org/10.1007/s11128-016-1501-y"
+    type: "paper"
+    location: "Quantum Information Processing 16 (2017)"
+    relationship: "background"
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Entanglement breaking channels"
+    authors:
+      - "Michał Horodecki"
+      - "Peter W. Shor"
+      - "Mary Beth Ruskai"
+    id: "https://doi.org/10.1142/S0129055X03001709"
+    type: "paper"
+    location: "Reviews in Mathematical Physics 15 (2003)"
+    relationship: "background"
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "A Schmidt number for density matrices"
+    authors:
+      - "Barbara M. Terhal"
+      - "Paweł Horodecki"
+    id: "https://doi.org/10.1103/PhysRevA.61.040301"
+    type: "paper"
+    location: "Physical Review A 61, 040301 (2000)"
+    relationship: "background"
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Entanglement-breaking indices"
+    authors:
+      - "Ludovico Lami"
+      - "Vittorio Giovannetti"
+    type: "paper"
+    location: "Journal of Mathematical Physics 56, 092201 (2015)"
+    relationship: "background"
+    license: "unknown"
+    author_endorsement: "not-contacted"
+
+status:
+  scope: >-
+    Formalized: Theorem 1 of the paper (both sentences) for every d >= 2 and arbitrary, possibly
+    different PPT maps on d x d complex matrices, trace preserving or not; compositions of any
+    N >= 2(d-1) PPT maps; 2(d-1) copies of one PPT map interleaved with completely positive maps;
+    properties of the definitions (Choi criteria for complete positivity, PPT and entanglement
+    breaking; an entangled positive operator on C^2 (x) C^d; the identity map is not entanglement
+    breaking; transposition on M_2 is completely copositive but not completely positive; the order
+    convention of the ordered composition; the index of the zero map is 1 and that of the identity
+    is top). Operators are unnormalized, and maps are arbitrary linear maps.
+  # Excludes the thirteen deliberate statement placeholders in Challenge.lean.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Anthropic's Claude Opus 5.5"]
+      framework: "Claude Code"
+      tool_setup: >-
+        Autonomous agents writing Lean, with remote-only builds and checks on Linux cloud machines,
+        directed by PSI. The release snapshot (module-system port, Challenge.lean, documentation) was
+        also prepared in Claude Code.
+      cost:
+        wall_time: "formalization 2026-10-08 to 2026-10-11; release packaging 2026-10-14"
+        spend_usd: "not tracked"
+        hardware: "API-only agents; remote Linux build machines"
+      prompting_notes: "Agents worked from the manuscript, one task file and persistent checkpoints."
+    - method: "agent"
+      models: ["OpenAI's GPT-6-Astra"]
+      framework: "Codex"
+      tool_setup: "Codex agents continued the formalization from 2026-10-09 and completed the verification of the full manuscript in PSI's development repository; this release holds the import cone of Theorem 1."
+      cost:
+        wall_time: "2026-10-09 to 2026-10-11"
+        spend_usd: "subscription-based"
+        hardware: "API-only agents; remote Linux build machines"
+      prompting_notes: "n/a"
+  spend_usd: "not tracked"
+  notes: >-
+    Provenance and use of AI. This result was released by Physical Superintelligence (PSI). The
+    mathematics was developed by PSI researchers working with AI models (OpenAI's GPT-5.6-Sol,
+    GPT-5.6 Pro and GPT-6-Astra and Anthropic's Claude Opus 5) in automated research workflows
+    at PSI. The Lean formalization was written by AI agents (Anthropic's Claude Opus 5.5 in Claude Code, and OpenAI's GPT-6-Astra
+    in Codex) under PSI's direction. David Turturean and Ning Bao are responsible for the
+    correctness of the paper. The paper's AI disclosure has the details; this file records which
+    agent did which part. Comparator checks that the theorems proved in Solution.lean are
+    exactly the statements in Challenge.lean, using only the three standard axioms, and the
+    proofs are replayed by Lean's kernel and by independent kernels.
+
+review:
+  status: "statements checked"
+  reviewers:
+    - "Physical Superintelligence (PSI)"
+
+alignment:
+  namespace: "PPTCompositionBound"
+  statements:
+    - source: "Theorem 1, first sentence"
+      lean: "PPTCompositionBound.compose_ppt_maps_entanglementBreaking"
+      module: "Solution"
+      status: "proved"
+      note: "Headline. Stated in Challenge.lean; d >= 2, arbitrary PPT maps on M_d, possibly different, trace preserving or not."
+    - source: "Theorem 1, second sentence"
+      lean: "PPTCompositionBound.ebIndex_le_of_isPPTMap"
+      module: "Solution"
+      status: "proved"
+      note: "Index = least m >= 1 with T^m entanglement breaking (top if none)."
+    - source: "Extension of Theorem 1"
+      lean: "PPTCompositionBound.compose_at_least_ppt_maps_entanglementBreaking"
+      module: "Solution"
+      status: "proved"
+      note: "Any N >= 2(d-1) PPT maps."
+    - source: "Interleaved index"
+      lean: "PPTCompositionBound.compose_ppt_map_interleaved_entanglementBreaking"
+      module: "Solution"
+      status: "proved"
+      note: "2(d-1) copies of one PPT map with arbitrary completely positive maps in between."
+    - source: "Properties of the definitions"
+      lean: "PPTCompositionBound.exists_posSemidef_not_isSeparable"
+      module: "Solution"
+      status: "proved"
+      note: "Some positive operator on C^2 (x) C^d, d >= 2, is not separable."
+    - source: "Properties of the definitions"
+      lean: "PPTCompositionBound.id_not_entanglementBreaking"
+      module: "Solution"
+      status: "proved"
+      note: "The identity map on M_d, d >= 2, is not entanglement breaking."
+    - source: "Choi's theorem"
+      lean: "PPTCompositionBound.choi_isCompletelyPositive_iff"
+      module: "Solution"
+      status: "proved"
+      note: "Complete positivity iff the Choi matrix is positive."
+    - source: "Choi criterion for PPT maps"
+      lean: "PPTCompositionBound.choi_isPPTMap_iff"
+      module: "Solution"
+      status: "proved"
+      note: "PPT iff the Choi matrix is positive with positive partial transpose."
+    - source: "Choi criterion for entanglement breaking"
+      lean: "PPTCompositionBound.choi_isEntanglementBreaking_iff"
+      module: "Solution"
+      status: "proved"
+      note: "Entanglement breaking iff the Choi matrix is separable."
+    - source: "Definition of PPT maps"
+      lean: "PPTCompositionBound.transposeMap_isCompletelyCopositive_not_isCompletelyPositive"
+      module: "Solution"
+      status: "proved"
+      note: "Transposition on M_2 is completely copositive but not completely positive, so a PPT map must be required to be both."
+    - source: "Order convention of compositions"
+      lean: "PPTCompositionBound.compList_pair"
+      module: "Solution"
+      status: "proved"
+      note: "compList [a, b] = b after a: the head of the list acts first."
+    - source: "Index convention"
+      lean: "PPTCompositionBound.zero_map_isPPTMap_and_ebIndex_eq_one"
+      module: "Solution"
+      status: "proved"
+      note: "The zero map is PPT with index 1; powers start at m = 1."
+    - source: "Index convention"
+      lean: "PPTCompositionBound.ebIndex_id_eq_top"
+      module: "Solution"
+      status: "proved"
+      note: "For d >= 2 the identity map on M_d has index top: no power of it is entanglement breaking."

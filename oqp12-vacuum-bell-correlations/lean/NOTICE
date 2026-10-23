@@ -1,0 +1,34 @@
+Bell inequalities for long range vacuum correlations (Open Quantum Problem 12): Lean 4 formalization
+Copyright 2026 Physical Superintelligence PBC
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This repository is a release snapshot of a Lean 4 formalization of Theorem 1.1 and Corollary 1.2 of
+the PSI paper "The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation", with the CHSH inequality for two bounded regions moved apart along
+a fixed spacelike direction or by spatial translations (Problem 12 of the IQOQI Vienna Open Quantum
+Problems). The Lean files under VacuumBellSeparation/ are taken from PSI's development repository,
+with the Lean module-system header added, declarations made public and Mathlib imports added as
+the module system requires, and comment edits, among them corrections of comments that cite the
+paper of record; the modules VacuumBellSeparation/FreeField/OQP12.lean
+and VacuumBellSeparation/Audit/FinalCheck.lean and the files Challenge.lean, Solution.lean and
+VacuumBellSeparation.lean are new.
+
+Comparator checks that the theorems proved in
+Solution.lean are exactly the statements in Challenge.lean, using only the three standard axioms,
+and the proofs are replayed by Lean's kernel and by independent kernels.
+
+Provenance and use of AI. This result was released by Physical Superintelligence (PSI). The
+mathematics was developed by PSI researchers working with AI models (OpenAI's GPT-6-Astra and
+GPT-5.6 Pro and Anthropic's Claude Fable 5.1) in automated research workflows at PSI. The Lean
+formalization was written by AI agents (Anthropic's Claude Opus 5.5 in Claude Code, and OpenAI's GPT-6-Astra in Codex) under PSI's direction. David
+Turturean is responsible for the correctness of the paper. The paper's AI disclosure has the
+details; formalization.yaml records which agent did which part.
+
+Third-party material:
+- The files scripts/check-lean-sources.py, scripts/validate-formalization.rb,
+  scripts/verify-comparator.sh, test/validate_formalization_test.rb, .github/workflows/ci.yml,
+  Gemfile and Gemfile.lock are adapted from the Palomar template
+  (https://github.com/PalomarRegistry/PalomarTemplate).
+- Mathlib (https://github.com/leanprover-community/mathlib4, Apache License 2.0) is a dependency
+  fetched at build time; it is not redistributed here.
+- Cited papers keep their own licences; none is redistributed here.

@@ -1,0 +1,14 @@
+Three copies of the Werner state: the sharp curve in dimensions three and four and a bound in every dimension
+Copyright (c) 2026 Physical Superintelligence PBC
+
+This result was released by Physical Superintelligence (PSI).
+Ian MacCormack and Ning Bao are responsible for the correctness of the paper.
+
+Third-party material: the d = 3 endpoint certificate (Zenodo record 10.5281/zenodo.23134454, CC0-1.0 data and
+MIT code; fetched from https://github.com/ipitchford/three-copy-werner-undistillability) and the d = 4 endpoint
+certificate (https://github.com/GLiuax/d4-three-copy-werner, no licence stated) are fetched and replayed by the
+scripts in verification/ and are not redistributed here. paper/source/revtex/ contains the REVTeX 4.2 class files of
+the American Physical Society, distributed under the LaTeX Project Public License.
+
+lean/ is a copy of PSI's development repository for the formalization at commit aa198e6, released under
+the Apache License 2.0 (see lean/LICENSE and lean/NOTICE).

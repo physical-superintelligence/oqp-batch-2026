@@ -1,0 +1,18 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "VacuumBellSeparation.OQP12.no_chsh_violation_far_apart",
+    "VacuumBellSeparation.OQP12.theorem_1_1",
+    "VacuumBellSeparation.OQP12.corollary_1_2",
+    "VacuumBellSeparation.OQP12.freeFieldVacuum_exists",
+    "VacuumBellSeparation.OQP12.no_chsh_violation_far_apart_uniform",
+    "VacuumBellSeparation.OQP12.localAlgebra_open_nonabelian"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

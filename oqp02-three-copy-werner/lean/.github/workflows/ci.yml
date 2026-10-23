@@ -1,0 +1,73 @@
+# Modified 2026-10-23: validate project metadata unconditionally.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+# Building the whole library took about 58 hours of Lake's per-module time on machines with 336 GiB of
+# memory, which is beyond GitHub-hosted runners. These jobs check the metadata, the licence, the Lean
+# source rules and the statement of record (Challenge.lean, which imports only Mathlib). The full build,
+# the axiom audit, the kernel replay and the statement check are recorded in verification/RECEIPTS.md.
+
+jobs:
+  license:
+    name: Check metadata and Apache licence default
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b
+        with:
+          ruby-version: "3.3.12"
+          bundler-cache: true
+      - name: Test the metadata validator
+        run: ruby test/validate_formalization_test.rb
+      - name: Validate formalization metadata
+        run: ruby scripts/validate-formalization.rb
+      - name: Detect the repository licence
+        run: |
+          bundle exec licensee detect LICENSE --json --no-packages --no-readme > "$RUNNER_TEMP/license.json"
+          ruby -rjson -e '
+            report = JSON.parse(File.read(ARGV.fetch(0)))
+            identifiers = report.fetch("licenses").map { |item| item.fetch("spdx_id") }
+            abort "LICENSE is not detected exactly as Apache-2.0" unless identifiers == ["Apache-2.0"]
+          ' "$RUNNER_TEMP/license.json"
+
+  statement:
+    name: Check the Lean sources and the Challenge definitions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Check Lean source requirements
+        run: python3 scripts/check-lean-sources.py
+      - name: Check that Challenge.lean copies the library definitions verbatim
+        run: python3 scripts/check-challenge-definitions.py
+
+  challenge:
+    name: Build the statement of record
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          build: false
+      - name: Download compiled Mathlib
+        run: lake exe cache get
+      - name: Build Challenge.lean (imports only Mathlib)
+        run: lake build Challenge

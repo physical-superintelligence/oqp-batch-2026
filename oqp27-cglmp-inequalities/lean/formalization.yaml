@@ -1,0 +1,341 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4.
+version: "v0.4"
+
+project:
+  name: "The power of CGLMP inequalities (Open Quantum Problems, Problem 27)"
+  description: >-
+    Lean 4 formalization of statements for Open Quantum Problem 27 in the Bell scenario
+    with two parties, two settings and d outcomes. For d >= 2 and projective measurements
+    on maximally entangled states of local dimension n >= 1, the CGLMP value is at most
+    the Fourier-phase value. Equality holds exactly for n = d k and Fourier-phase
+    projectors tensored with the identity, up to one common unitary. Further statements
+    compare tensor-CHSH and Fourier-phase behaviours at d = 2^m: smaller critical
+    visibility under uniform behaviour noise for m >= 955, and larger uniform-input
+    statistical strength than the Fourier-phase behaviour optimized over input laws for
+    m >= 41. The development also gives the fixed CGLMP-witness threshold and properties
+    of a four-outcome facet for Part A. The manuscript map in paper/README.md identifies
+    the current paper's projective value and equality theorems and the earlier source
+    labels used by the formalization.
+  authors:
+    - "David Turturean"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "David Turturean"
+
+classification:
+  arxiv: ["quant-ph", "math-ph"]
+  msc2020: ["81P15", "81P40", "52B12", "94A17", "68V20"]
+
+sources:
+  - title: "CGLMP optimality and the strength of Bell tests"
+    authors:
+      - "Physical Superintelligence (PSI)"
+    type: "paper"
+    location: "October 2026 Letter with supplementary material; source-label map in paper/README.md"
+    relationship: "formalizes"
+    note: >-
+      The formalization uses this manuscript's labels: Theorem A.1 (projective bound and
+      equality case) and its attainment, (A.5), (A.6), (F.16), (B.1), (B.2), Appendix B,
+      Appendix F.2 and Proposition G.1. The projective bound and equality statement also
+      corresponds to Theorems 1 and 3 of "The optimal CGLMP measurements on maximally
+      entangled states"; paper/README.md records the two manuscript identities.
+    license: "unknown"
+    author_endorsement: "other"
+  - title: "The power of CGLMP inequalities (Open Quantum Problems, Problem 27)"
+    contributors:
+      - name: "R. Gill"
+        role: "problem-proposer"
+    id: "https://oqp.iqoqi.oeaw.ac.at/the-power-of-cglmp-inequalities/"
+    type: "web discussion"
+    location: "Open Quantum Problems, IQOQI Vienna; text as transcribed on 2026-09-08, quoted in docs/OQP_STATEMENT.md"
+    relationship: "other"
+    note: >-
+      The problem answered. Part B, first claim: true for projective measurements (all d). Second
+      claim: false for global white-noise resistance at d = 2^m, m >= 955; true for the CGLMP-witness
+      threshold. Third claim: false at d = 2^m, m >= 41. Part A: false (Bancal, Gisin and Pironio).
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Looking for symmetric Bell inequalities"
+    authors:
+      - "Jean-Daniel Bancal"
+      - "Nicolas Gisin"
+      - "Stefano Pironio"
+    id: "arXiv:1004.4146"
+    type: "paper"
+    location: "J. Phys. A: Math. Theor. 43, 385303 (2010)"
+    relationship: "independently-proves"
+    note: >-
+      The bgp_* theorems describe this four-outcome facet: its dimension, a relative-interior
+      point of the no-signalling polytope, a no-signalling violation, inequivalence to CGLMP_4
+      under relabelling, and the absence of an outcome-fusion representation.
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Bell inequalities for arbitrarily high-dimensional systems"
+    authors:
+      - "Daniel Collins"
+      - "Nicolas Gisin"
+      - "Noah Linden"
+      - "Serge Massar"
+      - "Sandu Popescu"
+    id: "arXiv:quant-ph/0106024"
+    type: "paper"
+    location: "Phys. Rev. Lett. 88, 040404 (2002)"
+    relationship: "background"
+    note: "The CGLMP inequality and the Fourier-phase measurements. The normalization used here is the residual form of the formalization source; docs/FIDELITY.md gives the dictionary to the original expression."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Violations of local realism with quantum systems described by N-dimensional Hilbert spaces up to N=16"
+    authors:
+      - "Thomas Durt"
+      - "Dagomir Kaszlikowski"
+      - "Marek Żukowski"
+    id: "arXiv:quant-ph/0101084"
+    type: "paper"
+    location: "Phys. Rev. A 64, 024101 (2001)"
+    relationship: "background"
+    note: "The numerical observation on the form of the maximally violating measurements cited by Problem 27.B."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "The statistical strength of nonlocality proofs"
+    authors:
+      - "Wim van Dam"
+      - "Richard D. Gill"
+      - "Peter D. Grünwald"
+    id: "arXiv:quant-ph/0307125"
+    type: "paper"
+    location: "IEEE Trans. Inform. Theory 51, 2812-2835 (2005)"
+    relationship: "background"
+    note: "Statistical strength (Kullback-Leibler divergence from the local polytope), formalized as statStrength."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Quantum nonlocality in two three-level systems"
+    authors:
+      - "Antonio Acín"
+      - "Thomas Durt"
+      - "Nicolas Gisin"
+      - "José I. Latorre"
+    id: "arXiv:quant-ph/0111143"
+    type: "paper"
+    location: "Phys. Rev. A 65, 052325 (2002)"
+    relationship: "background"
+    note: "Non-maximally entangled states give larger CGLMP violations."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Bell inequalities tailored to maximally entangled states"
+    authors:
+      - "Alexia Salavrakos"
+      - "Remigiusz Augusiak"
+      - "Jordi Tura"
+      - "Peter Wittek"
+      - "Antonio Acín"
+      - "Stefano Pironio"
+    id: "arXiv:1607.04578"
+    type: "paper"
+    location: "Phys. Rev. Lett. 119, 040402 (2017)"
+    relationship: "background"
+    note: "The same Fourier-phase measurements are optimal (and self-tested) for a different Bell functional."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Self-testing quantum systems of arbitrary local dimension with minimal number of measurements"
+    authors:
+      - "Shubhayan Sarkar"
+      - "Debashis Saha"
+      - "Jędrzej Kaniewski"
+      - "Remigiusz Augusiak"
+    id: "arXiv:1909.12722"
+    type: "paper"
+    location: "npj Quantum Inf. 7, 151 (2021)"
+    relationship: "background"
+    note: "Self-testing with the same measurements for a different Bell functional."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Quantifying contextuality"
+    authors:
+      - "Andrzej Grudka"
+      - "Karol Horodecki"
+      - "Michał Horodecki"
+      - "Paweł Horodecki"
+      - "Ryszard Horodecki"
+      - "Pankaj Joshi"
+      - "Wiesław Kłobus"
+      - "Antoni Wójcik"
+    id: "arXiv:1209.3745"
+    type: "paper"
+    location: "Phys. Rev. Lett. 112, 120401 (2014)"
+    relationship: "background"
+    note: "The value log2(4/3) for the Popescu-Rohrlich box, the uniform-input ceiling used in (F.16)."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Device-independent certification of tensor products of quantum states using single-copy self-testing protocols"
+    authors:
+      - "Ivan Šupić"
+      - "Daniel Cavalcanti"
+      - "Joseph Bowles"
+    id: "arXiv:1909.12759"
+    type: "paper"
+    location: "Quantum 5, 418 (2021)"
+    relationship: "background"
+    note: "The same-input tensor construction behind the tensor-CHSH strategy T_m."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Maximal violation of the CGLMP inequality for infinite dimensional states"
+    authors:
+      - "Stefan Zohren"
+      - "Richard D. Gill"
+    id: "arXiv:quant-ph/0612020"
+    type: "paper"
+    location: "Phys. Rev. Lett. 100, 120406 (2008)"
+    relationship: "background"
+    note: "Background on maximal CGLMP violation."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+
+status:
+  scope: >-
+    Formalized: the CGLMP inequality (local bound 2, attained); Problem 27.B for projective
+    measurements on maximally entangled states Phi_n of every dimension n (the value is at most the
+    Fourier-phase value, with equality exactly when d divides n and the measurements are the
+    Fourier-phase measurements tensored with an identity, up to a common unitary); failure of the
+    highest global white-noise resistance for d = 2^m, m >= 955, and optimality for the CGLMP-witness
+    threshold; failure of the best Kullback-Leibler discrimination for d = 2^m, m >= 41; the link
+    between the tracial form and the state-and-tensor-product model; the comparison strategy's
+    measurements are complete rank-one projective measurements; Problem 27.A via the
+    Bancal-Gisin-Pironio facet (docs/FIDELITY.md).
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Anthropic's Claude Opus 5.5"]
+      framework: "Claude Code"
+      tool_setup: >-
+        Autonomous agents writing Lean, with remote-only builds and checks on Linux cloud machines,
+        directed by PSI.
+      cost:
+        wall_time: "2026-10-08 to 2026-10-13"
+        spend_usd: "not tracked"
+        hardware: "API-only agents; remote Linux build machines"
+      prompting_notes: "Agents worked from the paper, a task file and persistent checkpoints."
+    - method: "agent"
+      models: ["OpenAI's GPT-6-Astra"]
+      framework: "Codex"
+      tool_setup: "Codex multi-agent sessions continued the proof development."
+      cost:
+        wall_time: "2026-10-09 to 2026-10-13"
+        spend_usd: "subscription-based"
+        hardware: "API-only agents; remote Linux build machines"
+      prompting_notes: "n/a"
+    - method: "agent"
+      models: ["Anthropic's Claude Opus 5.5"]
+      framework: "Claude Code"
+      tool_setup: >-
+        Release packaging: extraction of the import cone, module-system port, Challenge.lean and
+        Solution.lean, documentation, and the final checks.
+      cost:
+        wall_time: "2026-10-14"
+        spend_usd: "not tracked"
+        hardware: "API-only agent; remote Linux build machines"
+      prompting_notes: "Worked from a release plan and a per-repository inventory."
+  spend_usd: "not tracked"
+  notes: >-
+    Provenance and use of AI. This result was released by Physical Superintelligence (PSI). The
+    mathematics was developed by PSI researchers working with AI models (OpenAI's GPT-6-Astra
+    and Anthropic's Claude Fable 5.1) in automated research workflows at PSI. The Lean
+    formalization was written by AI agents (Anthropic's Claude Opus 5.5 in Claude Code, and OpenAI's GPT-6-Astra in Codex) under PSI's
+    direction. David Turturean and Ning Bao are responsible for the correctness of the paper.
+    The paper's AI disclosure has the details; this file records which agent did which part.
+    Comparator checks that the theorems proved in Solution.lean are exactly the statements in
+    Challenge.lean, using only the three standard axioms, and the proofs are replayed by Lean's
+    kernel and by independent kernels.
+
+review:
+  status: "statements checked"
+  reviewers:
+    - "Physical Superintelligence (PSI)"
+
+alignment:
+  namespace: "OQP27"
+  statements:
+    - source: "Problem 27.B, first claim; Theorem A.1 (bound and equality case)"
+      lean: "OQP27.partB_maximizers_are_fourier_phase"
+      module: "Solution"
+      status: "proved"
+      note: "Projective measurements, any dimension n; equality iff n = dk and unitary conjugacy to the Fourier-phase measurements tensored with the identity."
+    - source: "Problem 27.B, second claim (refuted); equation (A.6)"
+      lean: "OQP27.partB_noise_resistance_not_optimal"
+      module: "Solution"
+      status: "proved"
+      note: "critVisibility(T_m) < critVisibility(Q_{2^m}) for m >= 955."
+    - source: "Problem 27.B, third claim (refuted); equation (F.16)"
+      lean: "OQP27.partB_kl_discrimination_not_optimal"
+      module: "Solution"
+      status: "proved"
+      note: "sup over input laws of statStrength(Q_{2^m}) < statStrength(uniform, T_m) for m >= 41."
+    - source: "The CGLMP inequality (local bound of (B.1))"
+      lean: "OQP27.cglmp_local_bound"
+      module: "Solution"
+      status: "proved"
+      note: "I_d <= 2 on the local polytope, with equality for some local behaviour."
+    - source: "Theorem A.1 (attainment) and (A.5)"
+      lean: "OQP27.fourier_attains_cglmp_value"
+      module: "Solution"
+      status: "proved"
+      note: "Q_d attains I_d^F > 2; noise threshold 2/I_d^F."
+    - source: "(B.2)"
+      lean: "OQP27.fourier_projectors_pvm"
+      module: "Solution"
+      status: "proved"
+      note: "The Fourier-phase projectors form projective measurements."
+    - source: "Appendix B (tracial form)"
+      lean: "OQP27.tracial_table_physical"
+      module: "Solution"
+      status: "proved"
+      note: "Link between tracialTable and the behaviour of |Phi_n><Phi_n| with Alice's transposed measurements."
+    - source: "Appendix F.2 (tensor-CHSH measurements)"
+      lean: "OQP27.tensor_chsh_rank_one_pvm"
+      module: "Solution"
+      status: "proved"
+      note: "T_m's settings are complete rank-one projective measurements on C^(2^m)."
+    - source: "(A.5) (CGLMP-witness threshold)"
+      lean: "OQP27.cglmp_witness_tolerance"
+      module: "Solution"
+      status: "proved"
+      note: "The Fourier family minimizes the CGLMP-witness noise threshold, with equality exactly in the case of Theorem A.1."
+    - source: "Equation (A.6)"
+      lean: "OQP27.noise_separation_955"
+      module: "Solution"
+      status: "proved"
+      note: "critVisibility(T_m) < 3049/5000 < critVisibility(Q_{2^m}) for m >= 955."
+    - source: "Equation (F.16)"
+      lean: "OQP27.statistical_separation"
+      module: "Solution"
+      status: "proved"
+      note: "Explicit constants (9/14) log2(4/3) and (16/25) log2(4/3)."
+    - source: "Problem 27.A; Proposition G.1 (facet)"
+      lean: "OQP27.bgp_facet"
+      module: "Solution"
+      status: "proved"
+      note: "The Bancal-Gisin-Pironio facet of C_4."
+    - source: "Problem 27.A; Proposition G.1 (relative interior)"
+      lean: "OQP27.bgp_relative_interior_point"
+      module: "Solution"
+      status: "proved"
+      note: "The facet meets the relative interior of the no-signalling polytope."
+    - source: "Problem 27.A; Proposition G.1 (no-signalling violation)"
+      lean: "OQP27.bgp_no_signalling_violation"
+      module: "Solution"
+      status: "proved"
+      note: "A rational no-signalling behaviour with F = 1/144."
+    - source: "Problem 27.A; Proposition G.1 (not CGLMP_4)"
+      lean: "OQP27.bgp_not_cglmp_four"
+      module: "Solution"
+      status: "proved"
+      note: "No bijection of deterministic strategies matches the saturating sets."
+    - source: "Problem 27.A; Proposition G.1 (no fusion lifting)"
+      lean: "OQP27.bgp_no_fusion"
+      module: "Solution"
+      status: "proved"
+      note: "F does not factor through any non-injective outcome maps on deterministic strategies."

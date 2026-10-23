@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite it as below, and cite the full manuscript of 21 October 2026."
+title: "Bell inequalities for long range vacuum correlations (Open Quantum Problem 12): Lean 4 formalization"
+type: software
+authors:
+  - given-names: "David"
+    family-names: "Turturean"
+license: Apache-2.0
+keywords:
+  - "Lean 4"
+  - "formalization"
+  - "quantum field theory"
+  - "Bell inequalities"
+  - "CHSH"
+  - "free scalar field"
+  - "Open Quantum Problems"
+references:
+  - type: article
+    title: "The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation"
+    authors:
+      - given-names: "David"
+        family-names: "Turturean"
+    status: in-preparation

@@ -1,0 +1,21 @@
+module
+
+public import ThreeCopyQutritWerner.CertificateX2CoreA2gF0_0
+public import ThreeCopyQutritWerner.CertificateX2CoreA2gF0_1
+public import ThreeCopyQutritWerner.CertificateX2CoreA2gF0_2
+
+@[expose] public section
+
+
+/-! Batched core A2g: input table. -/
+
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+set_option exponentiation.threshold 1000000
+
+namespace ThreeCopyQutritWerner.X2.CoreA2g
+open ThreeCopyQutritWerner ThreeCopyQutritWerner.X2
+
+x2_core_table f0 3
+
+end ThreeCopyQutritWerner.X2.CoreA2g

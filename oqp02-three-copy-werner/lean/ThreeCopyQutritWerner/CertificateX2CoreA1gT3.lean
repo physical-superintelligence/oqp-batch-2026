@@ -1,0 +1,30 @@
+module
+
+public import ThreeCopyQutritWerner.CertificateX2CoreA1gT3_0
+public import ThreeCopyQutritWerner.CertificateX2CoreA1gT3_1
+public import ThreeCopyQutritWerner.CertificateX2CoreA1gT3_2
+public import ThreeCopyQutritWerner.CertificateX2CoreA1gT3_3
+public import ThreeCopyQutritWerner.CertificateX2CoreA1gT3_4
+public import ThreeCopyQutritWerner.CertificateX2CoreA1gT3_5
+public import ThreeCopyQutritWerner.CertificateX2CoreA1gT3_6
+public import ThreeCopyQutritWerner.CertificateX2CoreA1gT3_7
+public import ThreeCopyQutritWerner.CertificateX2CoreA1gT3_8
+public import ThreeCopyQutritWerner.CertificateX2CoreA1gT3_9
+public import ThreeCopyQutritWerner.CertificateX2CoreA1gT3_10
+public import ThreeCopyQutritWerner.CertificateX2CoreA1gT3_11
+
+@[expose] public section
+
+
+/-! Batched core A1g: axis-0 stage table. -/
+
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+set_option exponentiation.threshold 1000000
+
+namespace ThreeCopyQutritWerner.X2.CoreA1g
+open ThreeCopyQutritWerner ThreeCopyQutritWerner.X2
+
+x2_core_table t3 231
+
+end ThreeCopyQutritWerner.X2.CoreA1g

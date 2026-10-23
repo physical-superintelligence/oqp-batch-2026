@@ -1,0 +1,7 @@
+-- kform self-test
+det form validated; 126 monomials in K(1/2)
+-- handcone self-test
+hand cone tensors validated: 10 inequalities
+-- Appendix B (Theorem B.1) identities
+all identities and inequalities of the all-dimension bound verified on random instances
+ALL HAND CHECKS PASSED

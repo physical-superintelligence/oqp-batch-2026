@@ -1,0 +1,12 @@
+alpha0 = 37/80 = 0.4625 ; epsilon = 243444/653071328197 ; hand multipliers: {'det lemma2': '796570481880293/9007199254740992'}
+(1) coefficient identity holds; ideal term supported on 819 monomials; Y_tau = Y_tau^*   [3 s]
+(2) diagram calculus agrees with the explicit operators on (C^d)^{x4} for d = 2, 3: all 105 diagrams, all 11025 products, traces, adjoints, transposes   [4 s]
+(2)(3) tau = ()     : algebra checks pass, block map injective at d=5, 35 leading blocks > eps I   [11 s]
+(2)(3) tau = (0,)   : algebra checks pass, block map injective at d=5, 35 leading blocks > eps I   [16 s]
+(2)(3) tau = (1,)   : algebra checks pass, block map injective at d=5, 35 leading blocks > 0 (relabelled set, strict positivity)   [22 s]
+(2)(3) tau = (2,)   : algebra checks pass, block map injective at d=5, 35 leading blocks > 0 (relabelled set, strict positivity)   [29 s]
+(2)(3) tau = (3,)   : algebra checks pass, block map injective at d=5, 35 leading blocks > 0 (relabelled set, strict positivity)   [35 s]
+(2)(3) tau = (0, 1) : algebra checks pass, block map injective at d=5, 56 leading blocks > eps I   [48 s]
+(2)(3) tau = (0, 2) : algebra checks pass, block map injective at d=5, 56 leading blocks > eps I   [60 s]
+(2)(3) tau = (0, 3) : algebra checks pass, block map injective at d=5, 56 leading blocks > eps I   [71 s]
+ALL CHECKS PASSED: 343 blocks; Q_alpha0(X) >= 0 for every rank-<=2 X in every dimension, alpha0 = 37/80

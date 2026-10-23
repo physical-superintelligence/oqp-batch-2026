@@ -1,0 +1,31 @@
+module
+
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck0_0
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck0_1
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck0_2
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck0_3
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck0_4
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck0_5
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck0_6
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck1_0
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck1_1
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck1_2
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck1_3
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck1_4
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck1_5
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck1_6
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck1_7
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck2_0
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck2_1
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck2_2
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck2_3
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck2_4
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck2_5
+public import ThreeCopyQutritWerner.CertificateLocalFramesCheck2_6
+
+@[expose] public section
+
+
+/-! Exact original physical Gram identities, split by local type to bound remote
+compiler work. All 22 public statements and original data are retained.
+-/

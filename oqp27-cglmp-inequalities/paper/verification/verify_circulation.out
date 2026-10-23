@@ -1,0 +1,47 @@
+Command: python3 -I verification/verify_circulation.py (run from the paper/ folder)
+Run on 23 October 2026 at 13:17 EDT, macOS 27.0.1, Python 3.14.6, standard library only.
+
+verify_circulation.py: exact check of eq:Cexpansion and of both signs of eq:circulationSOS,
+appendix "The circulation sum of squares" of D. Turturean and N. Bao, "The optimal CGLMP
+measurements on maximally entangled states".
+Script SHA-256: e1962032b7817db5fc55ea803e78ac239095262a6ec16d1c17f397a351084f5c
+Python 3.14.6; arithmetic: exact Gaussian rationals (pairs of fractions.Fraction); standard library only
+
+Setting: the twelve spectral projections E_{s,l}, s in {i, j, k}, l in Z_4, with the
+relations E^dag = E, E_{s,l} E_{s,m} = delta_lm E_{s,l}, sum_l E_{s,l} = I at each site and
+no relation between sites; tr is linear and cyclic, tr(X^dag) = conj tr(X), tr(I) = 1.
+Normal form: E_{s,3} = I - E_{s,0} - E_{s,1} - E_{s,2} expanded at each site, adjacent
+same-site products reduced, every trace written in cyclic words (lexicographically least
+rotation), every real part split into the half-sum of a word and the word's adjoint.
+
+Normal forms: C_ijk = Im z_ij + Im z_jk - Im z_ik has 18 cyclic words (length 2); P has 25, O has 24
+
+Checks (symbolic, for every r and all V_i, V_j, V_k with V^4 = I)
+  ok      eq:Cexpansion: C_ijk = -2 sum_l ||z_l||^2 + 2 Re sum_l [<u_l,z_l> + <v_l^dag,z_l^dag>] + 2 Re sum_{l,nu} eps_nu <X_{l,nu},Y_{l,nu}>, with the six rows of Table tab:circulation; the 36 separate terms of the right side contain 50 distinct cyclic words of length 3, all of which cancel, and both sides reduce to the same 18 cyclic words of length 2
+  ok      eq:circulationSOS, sigma = +1: 2P + 5O - C_ijk = sum of squared norms; both sides reduce to the same 34 cyclic words (length <= 2)
+  ok      eq:circulationSOS, sigma = +1: weights 1 (24 terms ||Y_{l,nu} - sigma eps_nu X_{l,nu}||^2), 3 (4 terms ||u_l - (sigma/3) z_l||^2), 3 (4 terms ||v_l^dag - (sigma/3) z_l^dag||^2), 13/3 (4 terms ||z_l||^2); all positive, so 2P + 5O - C_ijk >= 0
+  ok      eq:circulationSOS, sigma = -1: 2P + 5O + C_ijk = sum of squared norms; both sides reduce to the same 34 cyclic words (length <= 2)
+  ok      eq:circulationSOS, sigma = -1: weights 1 (24 terms ||Y_{l,nu} - sigma eps_nu X_{l,nu}||^2), 3 (4 terms ||u_l - (sigma/3) z_l||^2), 3 (4 terms ||v_l^dag - (sigma/3) z_l^dag||^2), 1/3 (4 terms ||z_l||^2); all positive, so 2P + 5O + C_ijk >= 0
+  ok      eq:forbiddenspectral for the three edges: (1 - Re z_st + Im z_st)/2 = sum_l sum_{u=1,2} tr(E_{s,l} E_{t,l+u}) for st = ij, jk, ik
+  ok      P + O = p_ij + p_jk + p_ik, with p_st = (1 - Re z_st + Im z_st)/2 from eq:forbidden
+  Consequence: |C_ijk| <= 2P + 5O <= 5(P + O) = 5(p_ij + p_jk + p_ik), which is eq:circulation.
+
+Controls (each corrupted identity must fail)
+  ok      eps_1 of Table tab:circulation, row (z_l, a_l), sign flipped: eq:Cexpansion fails (23 cyclic words differ)
+  ok      eps_2 of Table tab:circulation, row (z_l^dag, b_{l+1}^dag), sign flipped: eq:Cexpansion fails (23 cyclic words differ)
+  ok      eps_3 of Table tab:circulation, row (v_{l+1}, a_l^dag), sign flipped: eq:Cexpansion fails (23 cyclic words differ)
+  ok      eps_4 of Table tab:circulation, row (u_l, c_l), sign flipped: eq:Cexpansion fails (23 cyclic words differ)
+  ok      eps_5 of Table tab:circulation, row (u_l^dag, b_{l+2}), sign flipped: eq:Cexpansion fails (23 cyclic words differ)
+  ok      eps_6 of Table tab:circulation, row (v_{l+3}^dag, c_l^dag), sign flipped: eq:Cexpansion fails (23 cyclic words differ)
+  ok      weight 7/3 replaced by 2: eq:circulationSOS, sigma = +1, fails (9 cyclic words differ)
+  ok      weight 7/3 replaced by 2: eq:circulationSOS, sigma = -1, fails (9 cyclic words differ)
+
+Self-test of the word arithmetic against exact matrices (not part of the proof)
+  ok      self-test example: three 4-outcome projection-valued measures on C^5 (E^dag = E, E_l E_m = delta_lm E_l, sum_l E_l = I, ranks 2,1,1,1; 1,1,0,3; 1,2,1,1), pairwise noncommuting
+  ok      self-test: the cyclic-word normal forms of C_ijk, P, O, p_ij, p_jk, p_ik and of the right sides of eq:Cexpansion and eq:circulationSOS (both signs) evaluate on the example to the values computed from the definitions with exact 5 x 5 matrices (9 quantities, 34 distinct cyclic words evaluated)
+  ok      self-test example is not degenerate: C_ijk = -0.112246, P = 0.905502, O = 0.645409 (rounded to six decimals); C_ijk != 0 and |C_ijk| <= 2P + 5O
+
+Run time: 0.31 s
+All checks hold: eq:Cexpansion is an identity, and eq:circulationSOS holds with positive weights for sigma = +1 and sigma = -1.
+
+Exit status: 0

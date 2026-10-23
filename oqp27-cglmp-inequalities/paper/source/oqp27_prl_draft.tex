@@ -1,0 +1,2020 @@
+% The optimal CGLMP measurements on maximally entangled states.
+% Physical Superintelligence (PSI), draft of 21 October 2026.
+% Compile with: latexmk -pdf oqp27_prl_draft.tex
+% (pdflatex + bibtex; the bibliography is embedded in the filecontents block).
+
+\documentclass[aps,prl,reprint,superscriptaddress,longbibliography,floatfix,raggedbottom]{revtex4-2}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{newtxtext,newtxmath}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{filecontents}
+\hypersetup{
+  pdftitle={The optimal CGLMP measurements on maximally entangled states},
+  pdfauthor={David Turturean and Ning Bao}
+}
+\allowdisplaybreaks[1]
+\setcounter{secnumdepth}{3}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\T}{\mathbb T}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\spec}{spec}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Ran}{Ran}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\Beta}{Beta}
+\DeclareMathOperator*{\Res}{Res}
+\DeclareMathOperator{\Ex}{\mathbb E}
+\DeclareMathOperator{\Prob}{Pr}
+\newcommand{\tr}{\tau}
+\newcommand{\IF}{I_{\mathrm F}}
+\newcommand{\Gcat}{G}
+\newcommand{\cstar}{c_*}
+\newcommand{\Fd}{\mathfrak F_d}
+\newcommand{\Gd}{\mathcal G_d}
+\newcommand{\Hilb}{\mathsf H}
+\newcommand{\Zisom}{\mathcal Z}
+\newcommand{\Comp}[1]{\mathsf C^{(#1)}}
+\newcommand{\RootP}{\mathcal M}
+\providecommand{\doi}[1]{\href{https://doi.org/#1}{\nolinkurl{doi:#1}}}
+\providecommand{\arxiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{arXiv:#1}}}
+\makeatletter
+\protected\def\bibfnamefont#1{\in@{-}{#1}\ifin@\mbox{#1}\else#1\fi}
+\makeatother
+
+\begin{filecontents*}[overwrite]{oqp27-note-references.bib}
+@article{CGLMP,
+ author = {D. Collins and N. Gisin and N. Linden and S. Massar and S. Popescu},
+ title = {Bell inequalities for arbitrarily high-dimensional systems},
+ journal = {Phys. Rev. Lett.}, volume = {88}, pages = {040404}, year = {2002},
+ note = {\doi{10.1103/PhysRevLett.88.040404}; \arxiv{quant-ph/0106024}}}
+@article{KGZMZ,
+ author = {D. Kaszlikowski and P. Gnaci{\'n}ski and M. {\.Z}ukowski and W. Miklaszewski and A. Zeilinger},
+ title = {Violations of local realism by two entangled {$N$}-dimensional systems are stronger than for two qubits},
+ journal = {Phys. Rev. Lett.}, volume = {85}, pages = {4418--4421}, year = {2000},
+ note = {\doi{10.1103/PhysRevLett.85.4418}; \arxiv{quant-ph/0005028}}}
+@article{DKZ,
+ author = {T. Durt and D. Kaszlikowski and M. {\.Z}ukowski},
+ title = {Violations of local realism with quantum systems described by {$N$}-dimensional {Hilbert} spaces up to {$N=16$}},
+ journal = {Phys. Rev. A}, volume = {64}, pages = {024101}, year = {2001},
+ note = {\doi{10.1103/PhysRevA.64.024101}; \arxiv{quant-ph/0101084}}}
+@misc{GillProblem,
+ author = {R. D. Gill},
+ title = {The power of {CGLMP} inequalities},
+ howpublished = {Problem 27 of R.~F. Werner's list \emph{Open problems in quantum information theory}, TU Braunschweig, posted 15 April 2005; now maintained by IQOQI Vienna, \url{https://oqp.iqoqi.oeaw.ac.at/the-power-of-cglmp-inequalities}},
+ year = {2005}}
+@misc{KruegerWerner,
+ author = {O. Krueger and R. F. Werner},
+ title = {Some open problems in quantum information theory},
+ howpublished = {arXiv preprint}, year = {2005},
+ note = {\arxiv{quant-ph/0504166}}}
+@article{BGP,
+ author = {J.-D. Bancal and N. Gisin and S. Pironio},
+ title = {Looking for symmetric {Bell} inequalities},
+ journal = {J. Phys. A: Math. Theor.}, volume = {43}, pages = {385303}, year = {2010},
+ note = {\doi{10.1088/1751-8113/43/38/385303}; \arxiv{1004.4146}}}
+@article{Fine,
+ author = {A. Fine},
+ title = {Hidden variables, joint probability, and the {Bell} inequalities},
+ journal = {Phys. Rev. Lett.}, volume = {48}, pages = {291--295}, year = {1982},
+ note = {\doi{10.1103/PhysRevLett.48.291}}}
+@article{VDGG,
+ author = {W. van Dam and R. D. Gill and P. D. Gr{\"u}nwald},
+ title = {The statistical strength of nonlocality proofs},
+ journal = {IEEE Trans. Inform. Theory}, volume = {51}, pages = {2812--2835}, year = {2005},
+ note = {\doi{10.1109/TIT.2005.851738}; \arxiv{quant-ph/0307125}}}
+@article{AGG,
+ author = {A. Ac{\'i}n and R. Gill and N. Gisin},
+ title = {Optimal {Bell} tests do not require maximally entangled states},
+ journal = {Phys. Rev. Lett.}, volume = {95}, pages = {210402}, year = {2005},
+ note = {\doi{10.1103/PhysRevLett.95.210402}; \arxiv{quant-ph/0506225}}}
+@misc{Mishra26a,
+ author = {A. Mishra and A. Senthilkumar},
+ title = {{CGLMP} on maximally entangled states: exact optimality, rigidity and {Tsirelson} bounds},
+ howpublished = {Code, certificates and manuscript, version 1.0, 30 September 2026, \url{https://github.com/anshM123/CGLMP}},
+ year = {2026}}
+@misc{Mishra26b,
+ author = {A. Mishra and A. Senthilkumar},
+ title = {Optimal {CGLMP} measurements in every dimension and the clauses of {IQOQI} \mbox{Vienna} {Open} {Quantum} {Problem} {27B}},
+ howpublished = {Preprint, code and certificates; version 1.0 released 2 October 2026. Comparison uses \href{https://github.com/anshM123/IQOQI-OQP-27/tree/d5213b7b1c9975b8cc0f16d55e3baa9c4ba451a0}{commit \texttt{d5213b7}}, 20 October 2026, \url{https://github.com/anshM123/IQOQI-OQP-27}},
+ year = {2026}}
+@misc{Zhang26,
+ author = {Y. Zhang},
+ title = {{CGLMP} measurements need not maximize statistical strength},
+ howpublished = {Manuscript no.~15 in \emph{Agentic proofs for QIQC: collected manuscripts}, version 1.1, Zenodo, 28 September 2026},
+ year = {2026},
+ note = {\doi{10.5281/zenodo.23022433}}}
+@article{Masanes,
+ author = {{\relax Ll}. Masanes},
+ title = {Tight {Bell} inequality for {$d$}-outcome measurements correlations},
+ journal = {Quantum Inf. Comput.}, volume = {3}, pages = {345--358}, year = {2003},
+ note = {\doi{10.26421/QIC3.4-4}; \arxiv{quant-ph/0210073}}}
+@article{ADGL,
+ author = {A. Ac{\'i}n and T. Durt and N. Gisin and J. I. Latorre},
+ title = {Quantum nonlocality in two three-level systems},
+ journal = {Phys. Rev. A}, volume = {65}, pages = {052325}, year = {2002},
+ note = {\doi{10.1103/PhysRevA.65.052325}; \arxiv{quant-ph/0111143}}}
+@article{ZG,
+ author = {S. Zohren and R. D. Gill},
+ title = {Maximal violation of the {Collins--Gisin--Linden--Massar--Popescu} inequality for infinite dimensional states},
+ journal = {Phys. Rev. Lett.}, volume = {100}, pages = {120406}, year = {2008},
+ note = {\doi{10.1103/PhysRevLett.100.120406}; \arxiv{quant-ph/0612020}}}
+@article{ZRGW,
+ author = {S. Zohren and P. Reska and R. D. Gill and W. Westra},
+ title = {A tight {Tsirelson} inequality for infinitely many outcomes},
+ journal = {EPL (Europhys. Lett.)}, volume = {90}, pages = {10002}, year = {2010},
+ note = {\doi{10.1209/0295-5075/90/10002}; \arxiv{1003.0616}}}
+@article{LVN,
+ author = {B. Lang and T. V{\'e}rtesi and M. Navascu{\'e}s},
+ title = {Closed sets of correlations: answers from the zoo},
+ journal = {J. Phys. A: Math. Theor.}, volume = {47}, pages = {424029}, year = {2014},
+ note = {\doi{10.1088/1751-8113/47/42/424029}; \arxiv{1402.2850}}}
+@article{NPA,
+ author = {M. Navascu{\'e}s and S. Pironio and A. Ac{\'i}n},
+ title = {Bounding the set of quantum correlations},
+ journal = {Phys. Rev. Lett.}, volume = {98}, pages = {010401}, year = {2007},
+ note = {\doi{10.1103/PhysRevLett.98.010401}; \arxiv{quant-ph/0607119}}}
+@misc{IR,
+ author = {M. Ioannou and D. Rosset},
+ title = {Noncommutative polynomial optimization under symmetry},
+ howpublished = {arXiv preprint}, year = {2021},
+ note = {\arxiv{2112.10803}}}
+@article{Yang,
+ author = {T. H. Yang and T. V{\'e}rtesi and J.-D. Bancal and V. Scarani and M. Navascu{\'e}s},
+ title = {Robust and versatile black-box certification of quantum devices},
+ journal = {Phys. Rev. Lett.}, volume = {113}, pages = {040401}, year = {2014},
+ note = {\doi{10.1103/PhysRevLett.113.040401}; \arxiv{1406.7127}}}
+@article{SATWAP,
+ author = {A. Salavrakos and R. Augusiak and J. Tura and P. Wittek and A. Ac{\'i}n and S. Pironio},
+ title = {Bell inequalities tailored to maximally entangled states},
+ journal = {Phys. Rev. Lett.}, volume = {119}, pages = {040402}, year = {2017},
+ note = {\doi{10.1103/PhysRevLett.119.040402}; \arxiv{1607.04578}}}
+@article{Sarkar,
+ author = {S. Sarkar and D. Saha and J. Kaniewski and R. Augusiak},
+ title = {Self-testing quantum systems of arbitrary local dimension with minimal number of measurements},
+ journal = {npj Quantum Inf.}, volume = {7}, pages = {151}, year = {2021},
+ note = {\doi{10.1038/s41534-021-00490-3}; \arxiv{1909.12722}}}
+@article{Kaniewski,
+ author = {J. Kaniewski and I. {\v{S}}upi{\'c} and J. Tura and F. Baccari and A. Salavrakos and R. Augusiak},
+ title = {Maximal nonlocality from maximal entanglement and mutually unbiased bases, and self-testing of two-qutrit quantum systems},
+ journal = {Quantum}, volume = {3}, pages = {198}, year = {2019},
+ note = {\doi{10.22331/q-2019-10-24-198}; \arxiv{1807.03332}}}
+@article{Tavakoli21,
+ author = {A. Tavakoli and M. Farkas and D. Rosset and J.-D. Bancal and J. Kaniewski},
+ title = {Mutually unbiased bases and symmetric informationally complete measurements in {Bell} experiments},
+ journal = {Sci. Adv.}, volume = {7}, pages = {eabc3847}, year = {2021},
+ note = {\doi{10.1126/sciadv.abc3847}; \arxiv{1912.03225}}}
+@article{SupicBowles,
+ author = {I. {\v{S}}upi{\'c} and J. Bowles},
+ title = {Self-testing of quantum systems: a review},
+ journal = {Quantum}, volume = {4}, pages = {337}, year = {2020},
+ note = {\doi{10.22331/q-2020-09-30-337}; \arxiv{1904.10042}}}
+@article{Brunner,
+ author = {N. Brunner and D. Cavalcanti and S. Pironio and V. Scarani and S. Wehner},
+ title = {Bell nonlocality},
+ journal = {Rev. Mod. Phys.}, volume = {86}, pages = {419--478}, year = {2014},
+ note = {\doi{10.1103/RevModPhys.86.419}; \arxiv{1303.2849}}}
+@article{Bell,
+ author = {J. S. Bell},
+ title = {On the {Einstein} {Podolsky} {Rosen} paradox},
+ journal = {Physics Physique Fizika}, volume = {1}, pages = {195--200}, year = {1964},
+ note = {\doi{10.1103/PhysicsPhysiqueFizika.1.195}}}
+@article{CHSH,
+ author = {J. F. Clauser and M. A. Horne and A. Shimony and R. A. Holt},
+ title = {Proposed experiment to test local hidden-variable theories},
+ journal = {Phys. Rev. Lett.}, volume = {23}, pages = {880--884}, year = {1969},
+ note = {\doi{10.1103/PhysRevLett.23.880}}}
+@article{Tsirelson,
+ author = {B. S. Cirel'son},
+ title = {Quantum generalizations of {Bell}'s inequality},
+ journal = {Lett. Math. Phys.}, volume = {4}, pages = {93--100}, year = {1980},
+ note = {\doi{10.1007/BF00417500}}}
+@article{Vaziri,
+ author = {A. Vaziri and G. Weihs and A. Zeilinger},
+ title = {Experimental two-photon, three-dimensional entanglement for quantum communication},
+ journal = {Phys. Rev. Lett.}, volume = {89}, pages = {240401}, year = {2002},
+ note = {\doi{10.1103/PhysRevLett.89.240401}}}
+@article{Dada,
+ author = {A. C. Dada and J. Leach and G. S. Buller and M. J. Padgett and E. Andersson},
+ title = {Experimental high-dimensional two-photon entanglement and violations of generalized {Bell} inequalities},
+ journal = {Nature Phys.}, volume = {7}, pages = {677--680}, year = {2011},
+ note = {\doi{10.1038/nphys1996}; \arxiv{1104.5087}}}
+@article{Miao26,
+ author = {J.-L. Miao and E. Svegborn and Z. Chen and Y. Guo and X.-M. Hu and Y.-F. Huang and C.-F. Li and G.-C. Guo and A. Tavakoli and B.-H. Liu},
+ title = {Binarization-loophole-free observation of high-dimensional quantum nonlocality},
+ journal = {Phys. Rev. Lett.}, volume = {136}, pages = {240201}, year = {2026},
+ note = {\doi{10.1103/ydch-vgmy}; \arxiv{2601.02350}}}
+@book{Katznelson,
+ author = {Y. Katznelson},
+ title = {An Introduction to Harmonic Analysis},
+ edition = {3rd}, publisher = {Cambridge University Press}, address = {Cambridge}, year = {2004},
+ note = {\doi{10.1017/CBO9781139165372}}}
+@misc{Heinavaara26,
+ author = {O. Hein{\"a}vaara},
+ title = {Convolution comparison measures},
+ howpublished = {arXiv preprint}, year = {2026},
+ note = {\arxiv{2602.10373}}}
+@misc{DLMF,
+ author = {{F. W. J. Olver and others (eds.)}},
+ title = {{NIST Digital Library of Mathematical Functions}, {\S25.11}},
+ howpublished = {\url{https://dlmf.nist.gov/25.11}, release 1.2.8 of 15 September 2026},
+ year = {2026}}
+@article{Bernstein,
+ author = {S. N. Bernstein},
+ title = {D{\'e}monstration du th{\'e}or{\`e}me de {Weierstrass} fond{\'e}e sur le calcul des probabilit{\'e}s},
+ journal = {Comm. Soc. Math. Kharkov (2)}, volume = {13}, pages = {1--2}, year = {1912}}
+@article{GoldsteinReinert,
+ author = {L. Goldstein and G. Reinert},
+ title = {Stein's method for the {Beta} distribution and the {P{\'o}lya--Eggenberger} urn},
+ journal = {J. Appl. Probab.}, volume = {50}, pages = {1187--1205}, year = {2013},
+ note = {\doi{10.1239/jap/1389370107}; \arxiv{1207.1460}}}
+@article{Dobler,
+ author = {C. D{\"o}bler},
+ title = {Stein's method of exchangeable pairs for the {Beta} distribution and generalizations},
+ journal = {Electron. J. Probab.}, volume = {20}, number = {109}, pages = {1--34}, year = {2015},
+ note = {\doi{10.1214/EJP.v20-3933}; \arxiv{1411.4477}}}
+@book{Moore,
+ author = {R. E. Moore and R. B. Kearfott and M. J. Cloud},
+ title = {Introduction to Interval Analysis},
+ publisher = {SIAM}, address = {Philadelphia}, year = {2009},
+ note = {\doi{10.1137/1.9780898717716}}}
+\end{filecontents*}
+
+\AtBeginDocument{\providecommand{\doi}{}\renewcommand{\doi}[1]{\href{https://doi.org/#1}{\nolinkurl{doi:#1}}}}
+\begin{document}
+
+\title{The optimal CGLMP measurements on maximally entangled states}
+\author{David Turturean}\thanks{D.T. built and ran the automated research and formalization workflows at PSI and steered the writing and revision of the paper.}
+\affiliation{Physical Superintelligence PBC, Cambridge, Massachusetts, USA}
+\author{Ning Bao}\thanks{N.B. commented on the manuscript, as a paid contractor to PSI, not under one of his grants or as an employee of Northeastern University.}
+\affiliation{Northeastern University}
+\affiliation{Brookhaven National Laboratory}
+
+\begin{abstract}
+For projective measurements on a prescribed maximally entangled state,
+we prove the optimal CGLMP value and classify every maximizer. Equality
+requires the local dimension to be a multiple of the number of measurement outcomes, and
+the measurements are Fourier-phase bases.
+A positive pinching identity and a tilted random partition give a deficit
+certificate.
+This resolves the first assertion of Problem 27.B in the projective class.
+\end{abstract}
+
+\maketitle
+
+{\raggedright\setlength{\parskip}{0.4\baselineskip}
+\section*{Acknowledgements}
+
+We thank Adam Levine for revising the manuscript, Ian MacCormack for reviewing earlier drafts and circulating a concise version of the manuscript, and Jim Halverson for coordinating the review of the manuscript. We also thank Physical Superintelligence PBC, in which some of the authors have a financial interest, for use of its resources, including its technology and frontier AI models. The authors used these models to develop, derive, and compose this manuscript and its Lean~4 supplements.
+
+Results were formalized in Lean~4 by AI agents and checked by Lean's kernel; the formalization is at \url{https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp27-cglmp-inequalities/lean}.
+
+David Turturean and Ning Bao reviewed and edited this paper and are responsible for its correctness. David Turturean is employed by PSI and has a financial interest in it.
+
+\par}
+\par\medskip\noindent\rule{\columnwidth}{0.4pt}\par\medskip
+
+
+Bell inequalities distinguish quantum correlations from those produced
+by local hidden variables \cite{Bell,CHSH,Brunner}. The CGLMP family
+\cite{CGLMP} uses two measurement settings per party and $d$ outcomes.
+For the prescribed maximally entangled state, which projective
+measurements give the largest violation? Numerical searches
+\cite{KGZMZ,DKZ} found Fourier-phase measurements in every dimension
+tested. We prove their optimality and classify all maximizers, allowing
+arbitrary projection ranks and arbitrary local dimension. This resolves
+the first assertion of Problem~27.B for projective measurements on
+maximally entangled states \cite{GillProblem,KruegerWerner}.
+Section~\ref{sec:statement} states the result;
+Sections~\ref{sec:reduction}--\ref{sec:equality} prove it.
+
+\section{\texorpdfstring{The CGLMP expression and the theorem}{The CGLMP expression and the theorem}}\label{sec:statement}
+
+\emph{Bell scenarios and the local bound.---}Alice and Bob choose
+settings $x,y\in\{0,1\}$ and obtain outcomes $a,b\in\Z_d$. Their
+behaviour is the conditional distribution $q(a,b\,|\,x,y)$. Local
+behaviours are convex combinations of deterministic assignments
+$(a_0,a_1,b_0,b_1)\in\Z_d^4$; these form the local polytope.
+For $d=2$, recording outcomes as signs gives the CHSH inequality~\cite{CHSH},
+\begin{equation}\label{eq:chsh}
+\langle A_0B_0\rangle+\langle A_1B_0\rangle
++\langle A_1B_1\rangle-\langle A_0B_1\rangle\le2.
+\end{equation}
+Its $d$-outcome generalization uses the elementary identity
+\begin{equation}\label{eq:parity}
+(a_0-b_0)+(b_0-a_1)+(a_1-b_1)+(b_1-a_0-1)=-1.
+\end{equation}
+
+\emph{The CGLMP inequality.---}For outcomes in $\Z_d$ define the residuals
+\[
+\begin{gathered}
+r_{00}=[a-b]_d,\qquad r_{10}=[b-a]_d,\\
+r_{11}=[a-b]_d,\qquad r_{01}=[b-a-1]_d,
+\end{gathered}
+\]
+where $[u]_d\in\{0,\dots,d-1\}$ is $u$ mod $d$,
+and put
+\begin{equation}\label{eq:Id}
+S_d(q)=\sum_{x,y\in\{0,1\}}\Ex_q\bigl(r_{xy}\bigr),\qquad
+I_d(q)=4-\frac{2S_d(q)}{d-1}.
+\end{equation}
+For a deterministic assignment the sum of the four residuals is congruent,
+by \eqref{eq:parity}, to $-1$ modulo $d$, so this sum---a sum of four
+representatives in $\{0,\dots,d-1\}$---is at least $d-1$. Hence
+$S_d\ge d-1$, that is $I_d\le2$, for every local behaviour. This is
+the CGLMP inequality \cite{CGLMP}, in the normalization of \cite{AGG},
+chosen so that the local bound is $2$ in every dimension; at $d=2$,
+unwinding the residuals shows that $I_2$ is exactly the left side of
+\eqref{eq:chsh}. The CGLMP inequality is a facet of the local polytope for every $d$
+\cite{Masanes}. Its value alone does not determine statistical strength
+or resistance to an unspecified noise model; we distinguish those
+quantities in the Discussion.
+
+\emph{Quantum strategies.---}A \emph{strategy} is any physical
+arrangement that produces a behaviour; the strategies we study are
+quantum. Alice and Bob share the maximally entangled state
+\[
+\Phi_n=\frac1{\sqrt n}\sum_{j=0}^{n-1}\ket{jj}
+\]
+of two $n$-level systems, and each measurement is projective: it is
+described by a \emph{projection-valued measure} (PVM), a family of $d$
+orthogonal projections on $\C^n$ summing to the identity, one per
+outcome, the probability of outcome $a$ being the expectation of the
+$a$th projection. Some projections may be zero, and their ranks may
+differ. A \emph{projective strategy} on $\Phi_n$ is a choice of four
+such PVMs, two for Alice and two for Bob. Writing $A^x_a$
+for the projection of Alice's measurement $x$ onto outcome $a$, and
+$B^y_b$ likewise for Bob, the behaviour is
+\[
+q(a,b\,|\,x,y)=\bra{\Phi_n}A^x_a\otimes B^y_b\ket{\Phi_n}
+=\tr_n\bigl((A^x_a)^{T}B^y_b\bigr),
+\]
+where $\tr_n=\Tr/n$ is the normalized trace on $n\times n$ matrices
+and the transpose is taken in the basis $\{\ket j\}$: on the maximally
+entangled state, probabilities are normalized traces of products of
+measurement operators. It is convenient to arrange the four PVMs in
+the cyclic order
+\begin{equation}\label{eq:tracial}
+(P^0,P^1,P^2,P^3)=(A_0^{T},B_0,A_1^{T},B_1),
+\end{equation}
+and to write $P^t_a$ for the projection of the PVM $P^t$ onto outcome
+$a\in\Z_d$, so that $q(a,b\,|\,x,y)=\tr_n(P^{2x}_aP^{1+2y}_b)$, with
+the four measurement contexts corresponding to cyclically adjacent
+pairs. Outcome labels are read modulo $d$ throughout. We call
+$P^0,\dots,P^3$ the \emph{tracial PVMs} of the strategy.
+Conjugating all four by one unitary $U$ on $\C^n$ corresponds to the
+local unitary $\overline U\otimes U$, which leaves $\Phi_n$ unchanged;
+strategies related in this way are physically equivalent.
+
+\emph{The Fourier-phase measurements.---}For $t\in\{0,1,2,3\}$ and
+$a\in\Z_d$ put
+\begin{equation}\label{eq:standard}
+\psi_{t,a}=\frac1{\sqrt d}\sum_{j=0}^{d-1}
+e^{-2\pi\ii j(a-t/4)/d}\ket j,\quad
+\Pi^t_a=\ket{\psi_{t,a}}\bra{\psi_{t,a}}.
+\end{equation}
+For each $t$ the vectors $\psi_{t,0},\dots,\psi_{t,d-1}$ form an
+orthonormal basis of $\C^d$: the computational basis transformed by the
+discrete Fourier transform and then by the diagonal unitary
+$\diag(e^{\pi\ii jt/(2d)})_j$. Hence $\Pi^t=(\Pi^t_a)_{a\in\Z_d}$ is a
+PVM for each $t$, and these four PVMs are the \emph{Fourier-phase
+measurements}. The strategy with tracial PVMs
+$P^t_a=\Pi^t_a$ on $\Phi_d$, so that Alice's two physical bases are the
+complex conjugates of $\psi_{0,\cdot}$ and $\psi_{2,\cdot}$ and Bob's are
+$\psi_{1,\cdot}$ and $\psi_{3,\cdot}$, has the CGLMP value
+\begin{equation}\label{eq:IF}
+I_d(q_{\mathrm F})  = \frac4{d(d-1)}\sum_{k=1}^{d-1}(d-k)\sec\frac{\pi k}{2d} \equiv \IF(d),
+\end{equation}
+where $q_{\mathrm F}$ is the behaviour of the Fourier-phase measurements on
+$\Phi_d$.
+The formula in \eqref{eq:IF} is Lemma~\ref{lem:companion} below with $V_j=I$. Thus
+$\IF(2)=2\sqrt2$, the bound of Tsirelson \cite{Tsirelson},
+$\IF(3)=2.8729\ldots$, and $\IF(d)\to32\Gcat/\pi^2=2.9698\ldots$ as
+$d\to\infty$, where $\Gcat=\sum_{k\ge0}(-1)^k(2k+1)^{-2}=0.9159\ldots$ is
+Catalan's constant \cite{DLMF,ZG}. These measurements were found
+numerically by Kaszlikowski et al.\ \cite{KGZMZ} and by Durt,
+Kaszlikowski and \.Zukowski \cite{DKZ}; the value \eqref{eq:IF} is
+computed in \cite{CGLMP}. Our result is that no other choice of projective
+measurements on a maximally entangled state gives a larger CGLMP
+value, and that any choice attaining the same value is the
+Fourier-phase measurements up to a local change of basis. Stated precisely we have the main theorem:
+
+\begin{theorem}[Value and rigidity]\label{thm:main}
+Let $d\ge2$. Every projective strategy on $\Phi_d$ satisfies
+$I_d\le\IF(d)$. Equality holds if and only if there is a unitary $U$
+on $\C^d$ such that the tracial PVMs are
+\[
+P^t_a=U\,\Pi^t_a\,U^\dagger\qquad\text{for all }t,a.
+\]
+\end{theorem}
+
+In words: the maximizers are exactly the Fourier-phase measurements,
+up to the local unitary $\overline U\otimes U$ acting on the maximally entangled state. In particular every
+maximizing measurement is a measurement in a rank-one basis, although
+nothing of the kind was assumed. Theorem~\ref{thm:general} in
+Appendix~\ref{app:general} extends this to a maximally entangled state
+of any local dimension $n$ but where the measurement outcomes still take one of $d$ values. Saturation of the inequality then requires $d$ to divide $n$ and
+the maximizers are Fourier-phase measurements on a $d$-level subsystem
+tensored with the identity of an inert $(n/d)$-level system. Furthermore, for
+$d\nmid n$ the value $\IF(d)$ is not attained by any projective
+strategy.
+
+\emph{Previous work.---}The value \eqref{eq:IF} was conjectured to be
+optimal on maximally entangled states since \cite{DKZ}. Lang, V\'ertesi
+and Navascu\'es \cite{LVN} proved it numerically for $d=3$ to within
+$10^{-10}$ with a semidefinite relaxation of the tracial problem
+\eqref{eq:tracial}. Optimization over all states is a different problem:
+partially entangled states violate the inequality more \cite{ADGL}, the
+hierarchy of \cite{NPA} and the symmetry-adapted certificates of
+\cite{IR} give the exact all-state value for $d=3,4$, Yang et al.\
+\cite{Yang} certified the qutrit optimum in a black-box way, and
+\cite{ZG,ZRGW} treated the limit $d\to\infty$. Device-independent
+rigidity of the same measurements is known for Bell expressions tailored
+to maximally entangled states: they are self-tested in every dimension
+with two settings in \cite{SATWAP,Sarkar}, and mutually unbiased bases
+are self-tested in \cite{Kaniewski,Tavakoli21}; see the reviews
+\cite{Brunner,SupicBowles}. The Fourier-phase measurements are also the
+ones used in high-dimensional Bell experiments \cite{Vaziri,Dada,Miao26}.
+Mishra and Senthilkumar \cite{Mishra26b} prove the same projective value,
+rigidity, and divisibility statements. The comparison here uses their
+20 October 2026 commit, identified in the reference. Their clock
+reduction uses a cyclic twirl and a finite Stone--von Neumann theorem;
+Lemma~\ref{lem:companion} gives explicit transition matrices and the
+reducing isometry. Both approaches use a positive matrix measure and a
+strip inequality. Here Lemma~\ref{lem:pinching} gives a pinching identity
+and its holomorphic continuation, using the trace-density moments of
+Hein\"avaara \cite[Eq.~(16), proof of Lemma~2.5]{Heinavaara26}.
+Random cells also occur in their argument; our partition law is the
+explicit density \eqref{eq:partitiondensity}, bounded below by $c_*$.
+Their cone certificate uses interval computations for $d\le200$,
+$201\le d\le2000$, and a uniform computer-assisted estimate beyond
+that range. Our beta--Stein estimate treats every $d\ge66$
+analytically, leaving 2,080 scalar comparisons for $2\le d\le65$.
+The contribution developed here is this explicit deficit certificate
+and its direct forbidden-overlap route to equality classification.
+
+\emph{Proof sketch.---}Section~\ref{sec:reduction} encodes every
+strategy into $d$ unitary matrices $V_0,\dots,V_{d-1}$ with $V_j^4=I$,
+in such a way that the deficit $\IF(d)-I_d$ becomes an explicit linear
+expression in their pairwise overlaps $\tr(V_j^\dagger V_k)$. The task
+is then to show that this expression is nonnegative for every such
+family of matrices, and zero for essentially one. In
+Section~\ref{sec:partition}, we use Fourier analysis to derive a
+family of constraints on these overlaps, and combine them to show
+that the deficit is bounded below by a
+positive multiple of a manifestly nonnegative quantity, which measures
+how far the eigenspaces of the different $V_j$ are from being aligned.
+This proves the bound. In Section~\ref{sec:equality}, we
+show that when the deficit vanishes, the $V_j$ must commute and take a single form that corresponds exactly to the
+Fourier-phase measurements.
+
+\emph{Conventions.---}$\tr=\tr_r=\Tr/r$ denotes the normalized trace on
+$r\times r$ matrices; the size $r$ will be clear from context. For
+matrices, $\ip XY=\tr(X^\dagger Y)$ and $\norm X_2^2=\tr(X^\dagger X)$;
+$\norm X$ is the operator norm. A unitary $V$ with $V^4=I$ has the
+spectral decomposition $V=\sum_{\ell\in\Z_4}\ii^{\ell}E_\ell$ with
+orthogonal projections $E_0,\dots,E_3$ summing to $I$ (some possibly
+zero); we call them the spectral projections of $V$ and read their index
+modulo four.
+
+\section{Encoding quantum strategies into unitaries}
+\label{sec:reduction}
+
+A projective strategy is specified by its four tracial PVMs
+$P^0,P^1,P^2,P^3$ of \eqref{eq:tracial}, and only cyclically adjacent
+pairs enter the CGLMP expression: the four contexts $(x,y)$ are the
+pairs $(P^0,P^1)$, $(P^1,P^2)$, $(P^2,P^3)$ and $(P^3,P^0)$. It helps
+to picture the four PVMs as the vertices of a square and the four
+contexts as its edges. Lemma~\ref{lem:companion} below trades the four
+PVMs for a single unitary of order four on an enlarged space---a
+``clock'' that steps around the square---and then block-diagonalizes
+that unitary into $d$ unitaries $V_0,\dots,V_{d-1}$ of order four, one
+for each Fourier mode $j$ of the outcome label. All information about
+$I_d$ survives in the normalized overlaps
+\[
+z_{jk}=\tr_r(V_j^\dagger V_k),\qquad 0\le j<k<d .
+\]
+For a coefficient sequence $c=(c_k)_{k=1}^{d-1}$ define the quadratic
+form
+\begin{equation}\label{eq:Lc}
+L_c(V)=\sum_{j<k}
+\bigl[c_{k-j}(1-\operatorname{Re}z_{jk})+c_{d-k+j}
+\operatorname{Im}z_{jk}\bigr],
+\end{equation}
+and let
+\begin{equation}\label{eq:Gdef}
+\Gd(V)=L_\beta(V),\qquad \beta_k=\frac1{2d^2}\sec\frac{\pi k}{2d},
+\end{equation}
+so that explicitly
+\[
+\Gd=\frac1{2d^2}\sum_{j<k}\Bigl[\sec\tfrac{\pi(k-j)}{2d}
+(1-\operatorname{Re}z_{jk})
++\csc\tfrac{\pi(k-j)}{2d}\operatorname{Im}z_{jk}\Bigr].
+\]
+The \emph{forbidden overlap} of the tuple is
+\begin{equation}\label{eq:forbidden}
+\Fd(V)=\sum_{j<k}p_{jk},\qquad
+p_{jk}=\frac{1-\operatorname{Re}z_{jk}+\operatorname{Im}z_{jk}}2 .
+\end{equation}
+In terms of the spectral projections $V_j=\sum_\ell\ii^\ell E_{j\ell}$,
+a short computation with
+$z_{jk}=\sum_{\ell,m}\ii^{m-\ell}\tr(E_{j\ell}E_{km})$ gives
+\begin{equation}\label{eq:forbiddenspectral}
+p_{jk}=\sum_{\ell=0}^3\sum_{u=1}^2\tr(E_{j\ell}E_{k,\ell+u})\ge0,
+\end{equation}
+with spectral indices read modulo four: $p_{jk}$ collects the overlaps
+in which the spectral label jumps by one or two units in the wrong
+direction. Each term is nonnegative because
+$\tr(EF)=\tr\bigl((EF)(EF)^\dagger\bigr)\ge0$ for projections $E,F$.
+Thus $\Fd\ge0$, and $\Fd=0$ forces every forbidden product
+$E_{j\ell}E_{k,\ell+1}$ and $E_{j\ell}E_{k,\ell+2}$ to vanish, which will be used to prove uniqueness in Section~\ref{sec:equality}.
+
+The following construction retains the original PVMs on an explicit
+reducing subspace, which is essential for the equality classification.
+
+\begin{lemma}[Companion representation]\label{lem:companion}
+Every projective strategy on $\Phi_n$, $n\ge1$, has a companion
+tuple $V_0,\dots,V_{d-1}\in U(4n)$ with $V_j^4=I$ satisfying
+\begin{equation}\label{eq:normalization}
+\IF(d)-I_d=\frac{8d}{d-1}\,\Gd(V).
+\end{equation}
+Moreover, the tuple determines four PVMs
+$\RootP^0(V),\dots,\RootP^3(V)$ on $\C^d\otimes\C^{4n}$, the
+\emph{companion PVMs} \eqref{eq:rootmeasurements}, and an isometry
+$\Zisom:\C^n\to\C^d\otimes\C^{4n}$ such that
+\begin{equation}\label{eq:intertwine}
+\RootP^t_a(V)\,\Zisom=\Zisom\,P^t_a\qquad\text{for all }t,a. 
+\end{equation}
+In other words, on the range of $\Zisom$, the companion PVMs act exactly as the
+original ones.
+\end{lemma}
+
+\begin{proof}
+\emph{Step 1: a random shift of the outcomes.}
+Let $J\ket a=\ket{a-1}$ be the cyclic shift on $\C^d$, and define on
+$\C^d\otimes\C^n$ the operators
+\[
+Z_t=\sum_{c=0}^{d-1}J^c\otimes P^t_c\quad(0\le t<4),
+\qquad Z_4=Z_0(J\otimes I_n),
+\]
+where, as above, $P^t_c$ is the projection of $P^t$ onto outcome $c$.
+Each $Z_t$ is unitary, because the $P^t_c$ are orthogonal projections
+summing to $I_n$, and commutes with $J\otimes I_n$. Let
+$\Comp n_a=\ket a\bra a\otimes I_n$ be the computational-basis PVM on
+$\C^d\otimes\C^n$. Conjugating it by $Z_t$ gives
+\[
+Z_t\,\Comp n_a\,Z_t^\dagger
+=\sum_{k=0}^{d-1}\ket k\bra k\otimes P^t_{a-k},
+\]
+with $a-k$ read modulo $d$. The four PVMs
+$(Z_t\Comp n_aZ_t^\dagger)_{a\in\Z_d}$, $t=0,\dots,3$, form a
+projective strategy on $\Phi_{dn}$ whose outcomes are those of the
+original strategy shifted by a common, uniformly random $k\in\Z_d$:
+for $t\le2$,
+\[
+\tr_{dn}\bigl(Z_t\Comp n_aZ_t^\dagger\,Z_{t+1}\Comp n_bZ_{t+1}^\dagger\bigr)
+=\frac1d\sum_{k\in\Z_d}\tr_n\bigl(P^t_{a-k}P^{t+1}_{b-k}\bigr),
+\]
+and similarly on the last edge, where the extra shift in $Z_4$
+accounts for the $-1$ in the residual $r_{01}$. The common shift
+cancels from every residual $r_{xy}$, so $I_d$ is unchanged, and the
+original strategy sits in the $k=0$ block.
+
+\emph{Step 2: the clock.}
+Put $\mathsf U_t=Z_t^\dagger Z_{t+1}$, the transition unitary along edge
+$t$ of the square, from $P^t$ to $P^{t+1}$; the shift in $Z_4$
+implements the $-1$ in the residual $r_{01}$. On a four-dimensional clock register define
+\[
+\mathcal R=\sum_{t=0}^3\ket t\bra{t+1\bmod4}\otimes\mathsf U_t .
+\]
+Every cyclic product $\mathsf U_t\mathsf U_{t+1}\mathsf U_{t+2}
+\mathsf U_{t+3}$ telescopes to $Z_t^\dagger Z_t(J\otimes I_n)$, so
+$\mathcal R^4=I_4\otimes J\otimes I_n$. Diagonalize $J$ by the discrete
+Fourier transform $\mathsf F_{aj}=d^{-1/2}e^{2\pi\ii aj/d}$ and pick the
+fourth roots $\lambda_j=e^{\pi\ii j/(2d)}$ of its eigenvalues. Since
+$\mathcal R$ commutes with $I_4\otimes J\otimes I_n$, reordering the
+tensor factors as $\C^d\otimes(\C^4\otimes\C^n)$ and Fourier
+transforming the outcome coordinate gives
+\begin{equation}\label{eq:blockdiag}
+\mathcal R=(\mathsf F\otimes I_{4n})\,
+\diag(\lambda_jV_j)_{j=0}^{d-1}\,
+(\mathsf F^\dagger\otimes I_{4n})
+\end{equation}
+with $V_j\in U(4n)$; taking fourth powers shows $V_j^4=I$. In these
+coordinates define the companion PVMs on $\C^d\otimes\C^{4n}$,
+\begin{equation}\label{eq:rootmeasurements}
+\RootP^t_a(V)=\mathcal R^t\,\Comp{4n}_a\,\mathcal R^{-t},
+\qquad 0\le t<4 .
+\end{equation}
+Their value of $I_d$ on $\Phi_{4dn}$ equals the original: the edge
+distribution
+$\tr(\RootP^t_a\RootP^{t+1}_b)=\tr(\Comp{4n}_a\mathcal R\,
+\Comp{4n}_b\mathcal R^\dagger)$ is independent of $t$, and tracing out
+the clock averages the four transition unitaries $\mathsf U_t$, so each
+companion edge carries one quarter of the four original edge costs.
+
+The original strategy survives inside: in clock position zero,
+$\mathsf U_0\cdots\mathsf U_{t-1}=Z_0^\dagger Z_t$, so the isometry
+\begin{equation}\label{eq:reducingisometry}
+\Zisom\xi=\sum_a\ket a\otimes\ket0\otimes P^0_a\xi
+\end{equation}
+satisfies $\Zisom^\dagger\Zisom=I_n$ and
+$\RootP^t_a(V)\Zisom=\Zisom P^t_a$, which is \eqref{eq:intertwine}.
+Since the $\RootP^t_a$ are self-adjoint, both the range of $\Zisom$ and
+its orthogonal complement are invariant under every $\RootP^t_a$, and
+on the range the companion PVMs are a copy of the original ones.
+
+\emph{Step 3: the cost in terms of overlaps.}
+Write $\omega=e^{2\pi\ii/d}$. By \eqref{eq:blockdiag}, the block of
+$\mathcal R$ between computational levels $a$ and $b$ of the outcome
+coordinate is $R_{ab}=d^{-1}\sum_j\omega^{j(a-b)}\lambda_jV_j$, which
+depends only on $a-b$. The probability that the outcomes of one edge
+differ by $c$ is therefore
+\[
+\Prob(c)=\frac1{d^2}\sum_{j,k=0}^{d-1}\omega^{c(j-k)}
+\lambda_j\bar\lambda_k\,\tr_{4n}(V_k^\dagger V_j).
+\]
+Summing $\sum_c c\,\omega^{c(j-k)}=-d/(1-\omega^{j-k})$ for
+$j\not\equiv k\pmod d$ and $\sum_c c=d(d-1)/2$ for $j=k$, and using,
+for $x=\mbox{$(j-k)/d\in(0,1)$}$,
+\begin{equation*}
+\begin{split}
+\frac{\lambda_j\bar\lambda_k}{1-\omega^{\,j-k}}
+&=\frac{e^{\pi\ii x/2}}2\,(1+\ii\cot\pi x)\\
+&=\frac14\Bigl(\sec\frac{\pi x}2+\ii\csc\frac{\pi x}2\Bigr),
+\end{split}
+\end{equation*}
+the expected residual of one edge becomes
+\begin{equation}\label{eq:edgecost}
+\begin{split}
+\frac{d-1}2-\frac1{2d}\sum_{j<k}\Bigl[
+&\sec\tfrac{\pi(k-j)}{2d}\operatorname{Re}z_{jk}\\
+&-\csc\tfrac{\pi(k-j)}{2d}\operatorname{Im}z_{jk}\Bigr].
+\end{split}
+\end{equation}
+Subtracting the value of \eqref{eq:edgecost} at $V_j=I$ gives exactly
+$d\,\Gd(V)$. Summing the four edges, $S_d$ exceeds its value at $V_j=I$
+by $4d\,\Gd$, and \eqref{eq:Id} turns this into \eqref{eq:normalization},
+provided the strategy at $V_j=I$ has value $\IF(d)$.
+Indeed, put $R_0=\mathsf F\diag(\lambda_j)\mathsf F^\dagger$ and
+$C_a=\ket a\bra a$. At $V_j=I$, the companion unitary is
+$\mathcal R_0=R_0\otimes I_{4n}$. Since
+$\mathsf F^\dagger\ket a=\psi_{0,a}$ and
+$\diag(\lambda_j^t)\psi_{0,a}=\psi_{t,a}$, one has
+\begin{equation}\label{eq:fourierconjugation}
+R_0^t C_a R_0^{-t}=\mathsf F\Pi^t_a\mathsf F^\dagger.
+\end{equation}
+Thus the companion PVMs are a common Fourier conjugate of the standard
+amplification. Their probabilities agree, and evaluating
+\eqref{eq:edgecost} at $z_{jk}=1$ and inserting into \eqref{eq:Id}
+yields \eqref{eq:IF}.
+\end{proof}
+
+\section{Bounding \texorpdfstring{$\boldsymbol{\Gd(V)}$}{G\_d(V)}}
+\label{sec:partition}
+
+Section~\ref{sec:reduction} reduced Theorem~\ref{thm:main} to a
+statement about $d$ unitaries $V_0,\dots,V_{d-1}$ of order four: the
+quantity $\Gd(V)$, a combination of their overlaps $z_{jk}$ with secant
+and cosecant coefficients, must be nonnegative. We obtain inequalities
+between the overlaps from the following construction. Cut the unit
+circle, parametrized by $t\in[0,1)$, into $d$ consecutive arcs, put
+$V(t)=V_j$ on the $j$th arc, and form the matrix-valued function
+\[
+U(e^{2\pi\ii t})=e^{-\pi\ii t/2}\,V(t)^\dagger .
+\]
+Because $V_j^4=I$, this function satisfies $U(z)^4=z^{-1}I$ at every
+point $z=e^{2\pi\ii t}$ of the circle. (The phase $e^{-\pi\ii t/2}$ is
+the continuous version of the fourth roots $\lambda_j=e^{\pi\ii j/(2d)}$
+in \eqref{eq:blockdiag}: at $t=j/d$, $U$ equals $(\lambda_jV_j)^\dagger$.)
+We study $U$ through its Fourier series.
+
+Write $U(z)=\sum_{k\in\Z}c_kz^k$ in $L^2$, with
+\[
+c_k=\int_0^1U(e^{2\pi\ii t})e^{-2\pi\ii kt}\dd t .
+\]
+For the negative-frequency projection $P_-U=\sum_{k<0}c_kz^k$,
+Parseval's identity gives
+\[
+\norm{P_-U}_2^2=\sum_{k<0}\tr_r(c_k^\dagger c_k).
+\]
+A unitary-valued $U$ has $\norm U_2^2=1$.
+
+We are interested in unitary-valued $U$ with $U(z)^4=z^{-1}I$, which we
+call \emph{fourth roots of $z^{-1}$}. Discontinuous ones are allowed
+and necessary, since the functions built above from the $V_j$ have jumps at the partition
+boundaries. The basic example has $r=1$:
+$U_0(e^{2\pi\ii t})=e^{-\pi\ii t/2}$ for $0\le t<1$, which jumps by a
+factor $-\ii$ when $t$ passes $1$. Its coefficients satisfy
+$\abs{c_k}^2=8/[\pi^2(4k+1)^2]$. Using
+$\sum_{n\ge0}(4n+3)^{-2}=\pi^2/16-\Gcat/2$, where
+$\Gcat=\sum_{k\ge0}(-1)^k(2k+1)^{-2}=0.9159\ldots$ is Catalan's
+constant from \eqref{eq:IF}, we find
+\begin{equation}\label{eq:nu4}
+\norm{P_-U_0}_2^2
+=\frac8{\pi^2}\sum_{n\ge0}\frac1{(4n+3)^2}
+=\frac12-\frac{4\Gcat}{\pi^2}=:\nu_4 .
+\end{equation}
+The next lemma says that no fourth root of $z^{-1}$, of any matrix
+size, has a smaller value of $\norm{P_-U}_2^2$.
+
+\begin{lemma}[Negative frequencies of fourth roots]\label{lem:hardy}
+Let $U$ be a measurable function from the unit circle to the
+$r\times r$ unitary matrices with $U(z)^4=z^{-1}I$ for almost every
+$z$. Then
+\begin{equation}\label{eq:Hardy}
+\norm{P_-U}_2^2\ge\nu_4 .
+\end{equation}
+\end{lemma}
+
+
+The proof is given in Appendix~\ref{app:hardy}, together with an
+explanation of the idea. In brief, $1-2\norm{P_-U}_2^2$ is rewritten
+as the average over the circle of $\tr_r(A\,\Hilb B)$, where $A$ and
+$B$ are commuting Hermitian matrices with eigenvalues $\pm1$ built
+from $U$, and $\Hilb B$ is obtained from $B$ by multiplying its $k$th
+Fourier coefficient by $-\ii\operatorname{sgn}k$. The average is then
+bounded using an analytic function $h$ on the strip
+$\abs{\operatorname{Re}z}<1$ whose real part equals $\abs y$ on the
+two boundary lines; the constant $8\Gcat/\pi^2=1-2\nu_4$ is the value
+of $h$ at the centre of the strip, and the average of an analytic
+function over the circle is its value at the centre. When $B$ and
+$\Hilb B$ commute this is the whole argument. In general they do not,
+and the new ingredient is a comparison identity for noncommuting
+matrices.
+
+We now apply Lemma~\ref{lem:hardy} to the function
+\[
+U(e^{2\pi\ii t})=e^{-\pi\ii t/2}V(t)^\dagger
+\]
+built from $V$ and a
+partition of the circle. The result is a quadratic form of the type
+$L_c$ in \eqref{eq:Lc}, and to write down its coefficients we need two
+pieces of notation. First, let
+\[
+\sigma(x)=\sec\frac{\pi x}2\qquad(0\le x<1),
+\]
+so that $\sigma(1-x)=\csc(\pi x/2)$ and the coefficients of $\Gd$ in
+\eqref{eq:Gdef} are $\beta_k=\sigma(k/d)/(2d^2)$, $1\le k<d$.
+Second, for a function $g$ on $[0,1]$ and an
+integer $0\le k\le d$, let
+\[
+\begin{gathered}
+P_{d,k}(x)=\binom{d}{k}x^k(1-x)^{d-k},\\
+(B_dg)(k)=d\int_0^1P_{d,k}(x)\,g(x)\dd x .
+\end{gathered}
+\]
+The weight $P_{d,k}(x)$ is the probability that a binomial variable
+with parameters $(d,x)$ equals $k$; as a function of $x$ it is
+concentrated near $x=k/d$ and has integral $1/(d+1)$. Thus
+$(B_dg)(k)$ is a weighted average of $g$ over a neighbourhood of the
+point $k/d$, normalized up to the factor $d/(d+1)$. We call these Bernstein averages, since the weights are Bernstein
+basis polynomials \cite{Bernstein}; $B_d$ is not the classical
+Bernstein approximation operator. Finally,
+let
+\begin{equation}\label{eq:Ddef}
+q_k=\frac{(B_d\sigma)(k)}{2d^2},\qquad 1\le k<d,
+\end{equation}
+which is the coefficient $\beta_k$ of $\Gd$ with the point value
+$\sigma(k/d)$ replaced by its Bernstein average, and let $L_q$ be the
+form \eqref{eq:Lc} with the coefficients $c_k=q_k$.
+
+\begin{lemma}[Partition forms]\label{lem:partitions}
+Let $\ell=(I_0,\dots,I_{d-1})$ be a partition of $[0,1]$ into
+consecutive intervals, and let $V(t)=V_j$ for $t\in I_j$. Then
+\begin{equation}\label{eq:partitionform}
+\begin{split}
+\mathcal K_\ell(V)
+&:=\norm{P_-[e^{-\pi\ii t/2}V(t)^\dagger]}_2^2-\nu_4\\
+&=\frac12\sum_{j<k}\int_{I_j}\!\int_{I_k}
+\bigl[\sigma(t-s)(1-\operatorname{Re}z_{jk})\\
+&\hspace{4em}+\sigma(1-t+s)\operatorname{Im}z_{jk}\bigr]\dd t\dd s
+\;\ge\;0 .
+\end{split}
+\end{equation}
+Extend $V_{j+d}=-\ii V_j$. For a circular partition with $d$ boundary
+points, averaging $\mathcal K$ over the $d$ cyclic assignments of
+$V_0,\dots,V_{d-1}$ to the arcs gives $L_c$ in \eqref{eq:Lc} with
+\begin{equation}\label{eq:arccount}
+c_k=\frac1{2d}\int_0^1\sigma(x)\Prob(N_x=k)\dd x,\qquad 1\le k<d,
+\end{equation}
+where $N_x$ counts boundary points in an arc of length $x$ from a
+uniformly random origin. In particular, taking the $d$ boundary points
+independent and uniform gives $\Prob(N_x=k)=P_{d,k}(x)$ and hence
+$L_q(V)\ge0$.
+\end{lemma}
+
+\begin{proof}
+The function $U(e^{2\pi\ii t})=e^{-\pi\ii t/2}V(t)^\dagger$ satisfies
+$U(z)^4=z^{-1}I$, so Lemma~\ref{lem:hardy} gives
+$\mathcal K_\ell\ge0$. For the formula, expand
+$\norm{P_-U}_2^2=\langle U,P_-U\rangle$ with the Abel-regularized
+kernel of $P_-$, whose limit at argument $x=t-s$ is
+$-\tfrac12(1+\ii\cot\pi x)$, and subtract the same expansion at
+$V_j=I$, which equals $\nu_4$ by \eqref{eq:nu4}. The diagonal blocks
+$I_j\times I_j$ cancel in the difference. A cross block contributes the
+kernel times $\tr(V(t)^\dagger V(s))e^{\pi\ii(t-s)/2}-e^{\pi\ii(t-s)/2}$;
+combining the block $I_j\times I_k$ with its transpose and using, for
+$0<x<1$,
+\[
+e^{\pi\ii x/2}(1+\ii\cot\pi x)=\frac{\sigma(x)+\ii\,\sigma(1-x)}2,
+\]
+the two half-squares assemble into the real integrand of
+\eqref{eq:partitionform}. The integrals are finite. Near $t-s=1$, the cross-sectional
+measure is at most $1-(t-s)$, which cancels the pole of $\sigma(t-s)$.
+For adjacent intervals, the region $0<t-s\le x$ is contained in a
+triangle of area $x^2/2$; for separated intervals it is empty for small
+$x$. Thus its area is $O(x^2)$, and the kernel
+$\sigma(1-t+s)=O((t-s)^{-1})$ is integrable. These bounds also justify
+the Abel-regularization limit.
+
+For the circular average, first note that in one dimension a single
+drop of the phase label by one power of $\ii$ costs nothing: for
+$a\in\Z_4$ and a drop at $T$,
+\begin{equation}\label{eq:rotatedbranch}
+e^{-\pi\ii t/2}\,\ii^{-a+\ind_{\{t>T\}}}
+=\ii^{1-a}e^{-\pi\ii T/2}\,U_0([t-T]_1)
+\end{equation}
+almost everywhere; translation and a constant phase preserve the
+moduli of the Fourier coefficients, so the negative-frequency part of
+this function has squared norm exactly $\nu_4$.
+Consequently $\mathcal K=0$ whenever all $V_j$ are equal multiples of
+the identity in the extended sequence, and the circular form, with the value at $V_j=I$
+subtracted, is again a combination of the quantities
+$1-\operatorname{Re}z_{jk}$ and $\operatorname{Im}z_{jk}$. For a pair
+of arcs with labels $j<k$ separated by $k-j$ boundary points along the
+direct route, the kernel computation above assigns the coefficient
+$\sigma(x)$ to the direct arc and $\sigma(1-x)$ to the complementary
+arc. If the
+pair straddles the parameter origin, the extension $V_{j+d}=-\ii V_j$
+replaces $z_{jk}$ by $-\ii\bar z_{jk}$, which interchanges the two
+coefficients---precisely as the direct route then runs through the
+complementary arc. Averaging the starting label over the $d$ cyclic
+assignments and integrating over a uniform origin yields $L_c$ with
+\eqref{eq:arccount}.
+Explicitly, put $m=k-j$ and $P_m(x)=\Prob(N_x=m)$. Before simplification,
+the coefficient of $1-\operatorname{Re}z_{jk}$ is
+\[
+\frac1{2d}\int_0^1(1-x)
+\bigl[\sigma(x)P_m(x)+\sigma(1-x)P_{d-m}(x)\bigr]\dd x.
+\]
+Complementary arcs obey $P_{d-m}(x)=P_m(1-x)$. Substituting $x\mapsto1-x$
+in the second term combines the weights $1-x$ and $x$, giving
+$c_m=(2d)^{-1}\int_0^1\sigma(x)P_m(x)\dd x$.
+ For independent uniform boundary points, $N_x$ is
+binomial with parameters $(d,x)$, so $\Prob(N_x=k)=P_{d,k}(x)$ and
+$c_k=q_k$; nonnegativity of each $\mathcal K$ gives $L_q\ge0$.
+\end{proof}
+
+The uniform average $L_q$ does not match $\Gd$: Bernstein averaging
+flattens the secant. The next lemma corrects this by giving the
+boundary points a non-uniform probability law. Define
+\begin{equation}\label{eq:vkernel}
+v(x)=-\frac{x(1-x)}2
++\frac{2x-1}{\pi\bigl[\sec\frac{\pi x}2-\csc\frac{\pi x}2\bigr]},
+\end{equation}
+with removable singularities filled continuously, and
+\[
+\begin{gathered}
+b(x)=-\frac12\Bigl[x(1-x)\sigma(x)-\frac{2x}\pi\Bigr]'',\\
+S(x)=\frac{1-z\cot z}{\sin^2z},\qquad
+z=\frac\pi2\Bigl(x-\frac12\Bigr),\qquad S(1/2)=\frac13 .
+\end{gathered}
+\]
+The factor $1-x$ cancels the pole of $\sigma(x)$ at $x=1$.
+Subtracting $2x/\pi$ removes the regularized endpoint value, leaving a
+smooth function that vanishes at both endpoints; in particular $b$ is
+bounded on $[0,1]$. Finally put
+\begin{equation}\label{eq:es}
+\begin{gathered}
+e_{d,k}=\sigma(k/d)-(B_d\sigma)(k)-\frac1d(B_db)(k),\\
+s_{d,k}=\frac1d(B_dS)(k).
+\end{gathered}
+\end{equation}
+
+\begin{lemma}[A non-uniform random partition]\label{lem:tilted}
+There is a probability density on circular partitions whose average
+$\mathcal K_d^v$ of the partition forms $\mathcal K$ is the form
+\eqref{eq:Lc} with coefficients
+\begin{equation}\label{eq:Kv}
+c_k=\frac1{2d^2}\Bigl[(B_d\sigma)(k)
++\frac1d\bigl(B_d(v\sigma)''\bigr)(k)\Bigr],
+\end{equation}
+and satisfies $\mathcal K_d^v\ge\cstar L_q$ with
+$\cstar=\frac32-\frac\pi4$. Moreover,
+\begin{equation}\label{eq:matching}
+\Gd=\mathcal K_d^v+\frac1{2d^2}L_{e+s},
+\qquad s_{d,k}=s_{d,d-k}\ge\frac1{3(d+1)} ,
+\end{equation}
+where $L_{e+s}$ is the form \eqref{eq:Lc} with coefficients
+$c_k=e_{d,k}+s_{d,k}$.
+\end{lemma}
+
+\begin{proof}
+The function $v$ is symmetric about $1/2$, has zero value and first
+derivative at both endpoints, and $v''(0)=v''(1)=(\pi-2)/2$. It has the
+expansion
+\begin{equation}\label{eq:vFourier}
+v(x)=\sum_{n\ge1}a_n\frac{\sin^2(\pi nx)}{\pi^2n^2},
+\quad a_n>0,\quad
+\sum_{n\ge1}a_n=\frac\pi4-\frac12 .
+\end{equation}
+To prove this, write $u=x-\tfrac12$, so that
+\[
+v(x)=\frac{u^2-\tfrac14}2
++\frac u{\sqrt2\,\pi}
+\bigl[\csc(\pi u/2)-2\sin(\pi u/2)\bigr].
+\]
+The nonconstant even Taylor coefficients of $u\csc(\pi u/2)$ are
+positive, and for $a=\pi/2$ and $\abs{au}\le\pi/4$,
+\[
+-[u\sin(au)]^{(4)}=a^3[4\cos(au)-au\sin(au)]>0 ,
+\]
+so $v^{(4)}>0$ on $(0,1)$. Four integrations by parts then give
+\[
+a_n=\frac1{4\pi^2n^2}\int_0^1v^{(4)}(x)[1-\cos(2\pi nx)]\dd x>0,
+\]
+with $a_n=O(n^{-2})$; Fourier inversion and the value $v''(0)$ fix the
+sum in \eqref{eq:vFourier}.
+
+Replace the uniform law of the independent boundary points
+$T_1,\dots,T_d$ by the law with density, relative to the uniform one,
+\begin{equation}\label{eq:partitiondensity}
+\begin{split}
+\varpi_d&=1+\frac1d\sum_{a<b}v''(T_a-T_b)\\
+&=\cstar+\frac1d\sum_{n\ge1}a_n
+\Bigl|\sum_{j=1}^de^{2\pi\ii nT_j}\Bigr|^2,
+\end{split}
+\end{equation}
+using the periodic extension of $v$ in the differences; the second form
+follows from $v''(x)=2\sum_na_n\cos(2\pi nx)$ and
+\eqref{eq:vFourier}. Its expectation is one, and
+$\varpi_d\ge\cstar>0$ pointwise. For a single Fourier mode
+$v_n=\sin^2(\pi nx)/(\pi^2n^2)$, conditioning on two boundary points
+shows that the generating function of the arc count under this law is
+\[
+(1-x+xz)^d+(d-1)\,v_n(x)\,(z-1)^2(1-x+xz)^{d-2},
+\]
+and $(z-1)^2(1-x+xz)^{d-2}$ generates exactly
+$P_{d,k}''(x)/[d(d-1)]$. Summing the modes with \eqref{eq:vFourier}
+gives
+\begin{equation}\label{eq:tiltedcount}
+\Prob_{\varpi_d}(N_x=k)=P_{d,k}(x)+\frac{v(x)}dP_{d,k}''(x).
+\end{equation}
+Insert \eqref{eq:tiltedcount} into \eqref{eq:arccount} and integrate by
+parts twice: the endpoint terms vanish because $v\sigma$ vanishes at both
+endpoints, $(v\sigma)'$ has finite one-sided limits, and $P_{d,k}$
+vanishes
+there. This gives \eqref{eq:Kv}. The
+inequality $\mathcal K_d^v\ge\cstar L_q$ holds because the average under $\varpi_d$
+of the pointwise-nonnegative forms $\mathcal K$ is bounded below by $\cstar$
+times the uniform average, which is $L_q$.
+
+Finally, differentiating \eqref{eq:vkernel} gives $(v\sigma)''=b-S$,
+so the
+coefficient of the difference $\Gd-\mathcal K_d^v$ at separation $k$ is
+$[e_{d,k}+s_{d,k}]/(2d^2)$, which is \eqref{eq:matching}. The symmetry
+$S(x)=S(1-x)$ and $P_{d,k}(x)=P_{d,d-k}(1-x)$ give
+$s_{d,k}=s_{d,d-k}$, and the bounds $\sin^2z\le z^2$ and
+$1-z\cot z\ge z^2/3$ (a positive Taylor series) give $S\ge1/3$, hence
+$s_{d,k}\ge\tfrac13\cdot\tfrac1{d}(B_d1)(k)=\tfrac1{3(d+1)}$, using
+$\int_0^1P_{d,k}=1/(d+1)$.
+\end{proof}
+
+By \eqref{eq:matching}, the deficit form $\Gd$ dominates
+$\cstar L_q$ up to the error term $L_{e+s}/(2d^2)$. The error
+coefficients $e_{d,k}$ are small but not symmetric in
+$k\leftrightarrow d-k$, so $L_{e}$ is not simply a combination of the
+nonnegative quantities $p_{jk}$: by \eqref{eq:Lc},
+\[
+L_{e}=2\sum_{j<k}e_{d,k-j}\,p_{jk}
++\sum_{j<k}t_{k-j}\operatorname{Im}z_{jk},
+\]
+where $t_k=e_{d,d-k}-e_{d,k}$, and the skew part multiplies bare
+imaginary parts. The next lemma
+controls those through triangle ``circulations'', which are themselves
+dominated by the forbidden overlaps.
+
+\begin{lemma}[Circulation bound]\label{lem:circulation}
+For $i<j<k$, let
+$C_{ijk}=\operatorname{Im}z_{ij}+\operatorname{Im}z_{jk}
+-\operatorname{Im}z_{ik}$. Then
+\begin{equation}\label{eq:circulation}
+\abs{C_{ijk}}\le5\,(p_{ij}+p_{jk}+p_{ik}).
+\end{equation}
+Moreover, with $\omega_{ijk}=t_{j-i}+t_{k-j}-t_{k-i}$,
+\begin{equation}\label{eq:Hodge}
+L_e=2\sum_{j<k}e_{d,k-j}\,p_{jk}
++\frac1d\sum_{i<j<k}\omega_{ijk}\,C_{ijk}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The sum-of-squares identity \eqref{eq:circulationSOS} in
+Appendix~\ref{app:circulation} proves \eqref{eq:circulation}. For
+\eqref{eq:Hodge}, compare the coefficients of
+$\operatorname{Im}z_{ab}$, $k=b-a$, on both sides. The triangles
+containing the edge $(a,b)$ are $(a,b,c)$ with $c>b$, $(c,a,b)$ with
+$c<a$, and $(a,c,b)$ with $a<c<b$; they contribute
+$\omega_{abc}+\omega_{cab}-\omega_{acb}$ to the coefficient. Each
+contains the term $+t_k$, in total $(d-2)t_k$. The remaining terms are
+partial sums $\mathsf S(N)=\sum_{m=1}^Nt_m$: they add up to
+\[
+2t_k+[\mathsf S(d{-}1{-}b)-\mathsf S(d{-}1{-}a)]
++[\mathsf S(a)-\mathsf S(b)],
+\]
+and the skew symmetry $t_{d-m}=-t_m$ gives
+$\mathsf S(d{-}1{-}a)-\mathsf S(d{-}1{-}b)
+=\sum_{m=d-b}^{d-1-a}t_m=-\sum_{m=a+1}^bt_m=\mathsf S(a)-\mathsf S(b)$,
+so the two brackets cancel. The total coefficient is $d\,t_k$, matching
+the left side.
+\end{proof}
+
+Two consequences. First, a coarse bound: each edge lies in $d-2$
+triangles, so with $b_d=\max_k\abs{e_{d,k}}$ and
+$\abs{\omega_{ijk}}\le6b_d$,
+\begin{equation}\label{eq:coarseerror}
+L_e\ge-2b_d\Fd-\frac{6b_d}d\cdot5\,(d-2)\Fd\ge-32\,b_d\Fd .
+\end{equation}
+Second, a sharper per-edge bound: define the absolute triangle load at
+separation $k$,
+\begin{equation}\label{eq:load}
+\ell_{d,k}=\sum_{j=1}^{k-1}\abs{t_j+t_{k-j}-t_k}
++\sum_{j=k+1}^{d-1}\abs{t_k+t_{j-k}-t_j},
+\end{equation}
+which collects $\abs{\omega}$ over the triangles containing one edge of
+separation $k$. Then \eqref{eq:circulation} and \eqref{eq:Hodge} give
+\begin{equation}\label{eq:fineerror}
+L_e\ge2\sum_{j<k}
+\Bigl[e_{d,k-j}-\frac5{2d}\,\ell_{d,k-j}\Bigr]p_{jk}.
+\end{equation}
+
+It remains to know that the error coefficients $e_{d,k}$---explicit
+numbers depending only on $d$ and $k$---are small enough. That is the
+content of the following lemma, whose proof---a Stein-type estimate
+for the Bernstein averages at large $d$, and an exact interval
+computation at small $d$---is given in Appendix~\ref{app:scalar}.
+
+\begin{lemma}[Bounds on the error coefficients]\label{lem:scalar}
+(i) For every $d\ge66$,
+\begin{equation}\label{eq:largeM}
+b_d=\max_{1\le k<d}\abs{e_{d,k}}
+\le\frac{45}{32(d+1)(d+2)} .
+\end{equation}
+(ii) For every $2\le d\le65$ and every $1\le k<d$,
+\begin{equation}\label{eq:finitecondition}
+\frac1{3(d+1)}+e_{d,k}-\frac5{2d}\,\ell_{d,k}
+\ge\frac1{6(d+1)} .
+\end{equation}
+\end{lemma}
+
+\begin{theorem}[Deficit certificate]\label{thm:certificate}
+Let $d\ge2$, $r\ge1$, and let $V_0,\dots,V_{d-1}\in U(r)$ satisfy
+$V_j^4=I$. Then $L_q(V)\ge0$ and
+\begin{equation}\label{eq:certificate}
+\Gd(V)\ge\cstar L_q(V)+\eta_d\Fd(V),
+\end{equation}
+where
+\[
+\eta_d=
+\begin{cases}
+[6d^2(d+1)]^{-1},&2\le d\le65,\\
+(2d-131)\,[6d^2(d+1)(d+2)]^{-1},&d\ge66,
+\end{cases}
+\]
+is positive in every dimension.
+\end{theorem}
+
+\begin{proof}
+Lemma~\ref{lem:partitions} gives $L_q\ge0$. By
+Lemma~\ref{lem:tilted},
+$\Gd\ge\cstar L_q+L_{e+s}/(2d^2)$, so it suffices to bound
+$L_{e+s}\ge2d^2\eta_d\Fd$. The symmetric part is immediate: since
+$s_{d,k}=s_{d,d-k}$, definition \eqref{eq:Lc} gives
+$L_s=2\sum_{j<k}s_{d,k-j}\,p_{jk}\ge\tfrac2{3(d+1)}\Fd$ by
+\eqref{eq:matching}. For $2\le d\le65$, combine this with
+\eqref{eq:fineerror} and Lemma~\ref{lem:scalar}(ii):
+\[
+L_{e+s}\ge2\min_k\Bigl[\frac1{3(d+1)}+e_{d,k}
+-\frac5{2d}\ell_{d,k}\Bigr]\Fd
+\ge\frac{\Fd}{3(d+1)} .
+\]
+For $d\ge66$, use instead \eqref{eq:coarseerror} and
+Lemma~\ref{lem:scalar}(i):
+\[
+\begin{split}
+L_{e+s}&\ge\Bigl[\frac2{3(d+1)}-\frac{45}{(d+1)(d+2)}\Bigr]\Fd\\
+&=\frac{2d-131}{3(d+1)(d+2)}\,\Fd>0 .
+\end{split}
+\]
+Dividing by $2d^2$ gives \eqref{eq:certificate}.
+\end{proof}
+
+Combining Lemma~\ref{lem:companion} with
+Theorem~\ref{thm:certificate} and the fact that $\Fd \geq 0$ proves the inequality of
+Theorem~\ref{thm:main}, and in fact for every local dimension: every
+projective strategy on $\Phi_n$, in particular on $\Phi_d$, has
+$\IF(d)-I_d=\tfrac{8d}{d-1}\Gd(V)\ge0$.
+
+\section{Proof that the Fourier-phase measurements uniquely saturate the bound}
+\label{sec:equality}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The fact that any strategy obeys $I_d \leq \IF(d)$ was proved in the previous section and is the first part of Theorem~\ref{thm:main}. What remains is to show that if $I_d = \IF(d)$ for a given strategy, then the projectors of that strategy are the Fourier-phase measurements given in \eqref{eq:standard} up to local unitary rotations.
+
+To that end, suppose that $I_d=\IF(d)$. We
+keep the local dimension $n$ general through Steps~1--3, which make no
+use of $n=d$ and are reused in Appendix~\ref{app:general}; only
+Step~4 specializes. Under equality,
+$\Gd(V)=0$ by \eqref{eq:normalization}, so $\Fd(V)=0$ by
+Theorem~\ref{thm:certificate}, and by \eqref{eq:forbiddenspectral}
+every forbidden product vanishes:
+\begin{equation}\label{eq:vanishing}
+E_{j\ell}E_{k,\ell+u}=0\qquad(j<k,\ \ell\in\Z_4,\ u\in\{1,2\}),
+\end{equation}
+since a projection product with $\tr(EF)=\tr[(EF)(EF)^\dagger]=0$ is
+itself zero.
+
+\emph{Step 1: the tuple commutes.}
+Fix $j<k$. By \eqref{eq:vanishing}, $E_{j\ell}E_{km}\ne0$ requires
+$m\in\{\ell,\ell-1\}$, and taking adjoints, $E_{km}E_{j\ell'}\ne0$
+requires $m\in\{\ell',\ell'-1\}$. For $\ell\ne\ell'$ the two sets
+$\{\ell,\ell-1\}$ and $\{\ell',\ell'-1\}$ have at most one element in
+common, so at most one value of $m$ can make
+$E_{j\ell}E_{km}E_{j\ell'}$ nonzero. Inserting $\sum_mE_{km}=I$,
+\[
+0=E_{j\ell}E_{j\ell'}=\sum_{m\in\Z_4}E_{j\ell}E_{km}E_{j\ell'}
+\qquad(\ell\ne\ell'),
+\]
+and a sum with at most one nonzero term that equals zero has none.
+Hence $E_{j\ell}E_{km}E_{j\ell'}=0$ for all $m$ whenever
+$\ell\ne\ell'$. Inserting $\sum_\ell E_{j\ell}=I$ on both sides of
+$E_{km}$ therefore gives
+\[
+E_{km}=\sum_{\ell,\ell'}E_{j\ell}E_{km}E_{j\ell'}
+=\sum_\ell E_{j\ell}E_{km}E_{j\ell},
+\]
+which commutes with every $E_{j\ell}$. Applying this to every pair
+$j<k$ makes all the spectral projections $E_{j\ell}$, and hence all
+$V_j$, simultaneously diagonalizable.
+
+\emph{Step 2: the tuple is a direct sum of cuts.}
+Decompose $\C^{4n}$ into joint eigenspaces, on each of which every
+$V_j$ acts as a single phase $\ii^{\ell_j}$. By \eqref{eq:vanishing}, for $j<k$ the
+labels satisfy $\ell_k\in\{\ell_j,\ell_j-1\}$: along $j=0,\dots,d-1$
+the label is constant except for at most one decrease by one. On each
+joint eigenspace, therefore,
+\begin{equation}\label{eq:cuts}
+V_j=\ii^{\,a-\ind_{\{j>j_0\}}},
+\qquad a\in\Z_4,\qquad 0\le j_0<d,
+\end{equation}
+a configuration we call a \emph{cut}.
+
+\emph{Step 3: every cut gives the standard measurements.}
+For $s=d-1-j_0$, the phases $\lambda_j=e^{\pi\ii j/(2d)}$ satisfy
+\[
+\lambda_j\,\ii^{-\ind_{\{j>j_0\}}}
+=\lambda_s^{-1}\lambda_{[j+s]_d},
+\]
+as one checks separately for $j\le j_0$ and $j>j_0$. Thus the diagonal
+$\diag(\lambda_jV_j)$ of a cut equals the standard diagonal
+$\diag(\lambda_j)$ with its frequencies shifted by $s$, times the
+global phase $\ii^a\lambda_s^{-1}$.
+With $D_s=\diag(\omega^{bs})_{b\in\Z_d}$, the shift has the orientation
+\begin{equation}\label{eq:cutconjugation}
+\mathsf F\diag(\lambda_{[j+s]_d})\mathsf F^\dagger
+=D_s^\dagger R_0D_s.
+\end{equation}
+Each $D_s$ commutes with every $C_b$, and the global phase
+$\ii^a\lambda_s^{-1}$ cancels from \eqref{eq:rootmeasurements}.
+Consequently, on a joint eigenspace belonging to this cut, the common
+intertwiner with the standard PVMs is
+$W_s=D_s^\dagger\mathsf F$, by \eqref{eq:fourierconjugation}.
+Taking these intertwiners on the joint eigenspaces gives a unitary $W$
+on $\C^d\otimes\C^{4n}$ such that
+\[
+\RootP^t_b(V)=W(\Pi^t_b\otimes I_{4n})W^\dagger
+\qquad\text{for all }t,b.
+\]
+
+\emph{Step 4: descent to the original space.}
+To see that the projectors $\Pi^t_a$ generate $M_d(\C)$, first
+conjugate all four PVMs by $\mathsf F$. By
+\eqref{eq:fourierconjugation}, their first basis is computational and
+their second consists of the columns of
+$U_{\rm F}=R_0=\mathsf F\diag(\lambda_j)\mathsf F^\dagger$. An operator
+commuting with the first PVM is diagonal, and $U_{\rm F}$ has entries
+\[
+(U_{\rm F})_{ab}
+=\frac{1-\ii}{d\,[1-e^{2\pi\ii(a-b+1/4)/d}]},
+\]
+all nonzero, so a diagonal operator commuting with the rank-one
+projectors onto its columns has all diagonal entries equal. The
+commutant of the amplification $\{\Pi^t_a\otimes I_{4n}\}$ is therefore
+$I_d\otimes M_{4n}(\C)$: every projection commuting with all four PVMs
+is $I_d\otimes p$, its rank is divisible by $d$, and the restriction of
+the PVMs to its range is again a standard amplification.
+
+Apply this to the range projection $\Lambda=\Zisom\Zisom^\dagger$ of
+the isometry \eqref{eq:reducingisometry}, which commutes with
+every $\RootP^t_a(V)$ by \eqref{eq:intertwine}: thus $W^\dagger\Lambda W=I_d\otimes p$ for a
+projection $p$ on $\C^{4n}$. Now set $n=d$. Comparing ranks,
+$d=\rank\Lambda=d\rank p$ forces $p=vv^\dagger$ for a unit vector
+$v\in\C^{4d}$, and $T=(I_d\otimes v^\dagger)W^\dagger\Zisom$ is a
+unitary on $\C^d$ with
+\[
+TP^t_aT^\dagger
+=(I_d\otimes v^\dagger)(\Pi^t_a\otimes vv^\dagger)(I_d\otimes v)
+=\Pi^t_a ,
+\]
+which is the classification claimed in Theorem~\ref{thm:main} with
+$U=T^\dagger$.
+
+Conversely, if $P^t_a=U\Pi^t_aU^\dagger$, the behaviour coincides with
+that of the standard strategy, since
+$\tr_d(U\Pi U^\dagger\,U\Pi'U^\dagger)=\tr_d(\Pi\Pi')$, and the
+standard strategy attains $\IF(d)$ by Lemma~\ref{lem:companion} at
+$V_j=I$.
+\end{proof}
+
+\section{Discussion}
+
+For projective measurements on a prescribed maximally entangled state,
+maximal CGLMP violation determines the Fourier-phase measurements and
+their multiplicity. This settles the first assertion of Problem~27.B
+in the projective class. Extending the argument to arbitrary
+$d$-outcome POVMs remains a separate problem in general $d$.
+Optimization over states is also different: partially entangled states
+can give a larger value~\cite{ADGL}.
+
+The certificate proves the quantitative estimate
+\begin{equation}\label{eq:overlapstability}
+\Fd(V)\le\frac{d-1}{8d\,\eta_d}\bigl(\IF(d)-I_d\bigr).
+\end{equation}
+This controls forbidden overlaps in the companion representation.
+A bound on the distance between measurement families would additionally
+require an approximate commuting-cut decomposition, descent through the
+reducing isometry, and control of constants as $n$ varies. Neither such
+a measurement-distance bound nor a lower bound matching the $O(s/n)$
+construction in Appendix~\ref{app:general} is proved here.
+
+Noise resistance must specify both the noise and the witness. For
+uniform behaviour noise $q_v=vq+(1-v)q_{\rm unif}$, with
+$q_{\rm unif}(a,b\,|\,x,y)=d^{-2}$, one has
+\[
+I_d(q_{\rm unif})=0,\qquad I_d(q_v)=vI_d(q).
+\]
+For $I_d(q)>2$, the threshold for violation of this fixed CGLMP
+inequality is therefore $v_{\rm CGLMP}=2/I_d(q)$. The maximizing
+strategies minimize this threshold. For rank-one PVMs on $\Phi_d$,
+white noise on the state induces exactly $q_{\rm unif}$; for unequal
+projection ranks the induced noise need not be uniform.
+By contrast, the threshold against the entire local polytope
+$\mathcal L_d$ is
+\[
+v_{\mathcal L}(q)=\max\{v\in[0,1]:vq+(1-v)q_{\rm unif}\in\mathcal L_d\}.
+\]
+Mishra and Senthilkumar \cite[\texttt{clauses/noise-literal},
+Theorem~1]{Mishra26b} give better values of $v_{\mathcal L}$ for
+$d\ge4$ using projective measurements with unused outcomes. This does
+not contradict optimality for the fixed CGLMP witness or establish a
+counterexample for rank-one PVMs on $\Phi_d$. Kullback--Leibler
+statistical strength, defined by relative entropy to local behaviours
+for a specified setting distribution \cite{VDGG}, is another objective;
+its maximization does not follow from a CGLMP value bound.
+
+\appendix
+
+\section{Proof of the negative-frequency bound}\label{app:hardy}
+
+This appendix proves Lemma~\ref{lem:hardy}. The scalar function used in
+the proof is defined holomorphically on $\abs{\operatorname{Re}z}<1$ by
+\[
+h(0)=\frac{8G}{\pi^2},\qquad h'(0)=0,\qquad
+h''(z)=-\sec\frac{\pi z}{2}.
+\]
+On the real interval $-1\le x\le1$ it has the absolutely and uniformly
+convergent representation
+\begin{equation}\label{eq:hseries}
+h(x)=\frac8{\pi^2}\sum_{m\ge0}\frac{(-1)^m}{(2m+1)^2}
+\cos\frac{(2m+1)\pi x}{2}.
+\end{equation}
+For real $|x|<1$, the corresponding secant expansion is understood as
+the Abel limit
+\[
+\sec(\pi x/2)=\lim_{r\uparrow1}2\sum_{m\ge0}(-1)^mr^{2m+1}
+\cos((2m+1)\pi x/2).
+\]
+Integrating twice gives
+\eqref{eq:hseries}, with $h(\pm1)=0$ and \mbox{$h'(0)=0$}.
+Equation~\eqref{eq:hseries} is not a complex-domain series: at any
+nonreal $z$ its summands fail to tend to zero. The differential equation
+defines the holomorphic extension used below.
+For matrices whose spectra lie in the open strip, $h(X)$ is defined by
+holomorphic functional calculus, not substitution into a Taylor series
+about zero. In particular,
+$\tr_r h(X)=r^{-1}\sum_{\lambda\in\spec X}h(\lambda)$, with algebraic
+multiplicities; boundary values below are limits of the real part of
+this trace.
+
+The mechanism is as follows. Lifting $U$ to
+$\mathcal W(s)=sU(s^4)$ produces two commuting Hermitian involutions
+$A=\operatorname{Re}\mathcal W+\operatorname{Im}\mathcal W$ and
+$B=\operatorname{Re}\mathcal W-\operatorname{Im}\mathcal W$.
+Parseval's identity expresses $1-2\norm{P_-U}_2^2$ as
+$\int\tr_r(A\Hilb B)$, where $\Hilb$ is the circular Hilbert transform.
+Pinching $\Hilb B$ along $B$ preserves this trace pairing. The positive
+pinching identity below compares the resulting commuting matrices with
+$B+\ii\Hilb B$, whose holomorphic trace can be averaged using its
+analytic extension to the disk. The boundary data
+$\operatorname{Re}h(\pm1+\ii y)=|y|$ and the mean-value property then
+give the bound $h(0)=8G/\pi^2$. The detailed proof includes both the
+strip-boundary and disk-boundary limiting arguments.
+
+\emph{Details.---}Throughout, $B$ is a Hermitian matrix with $B^2=I$
+and $Y$ is Hermitian. The \emph{pinching} of $Y$ along $B$,
+\[
+\Pi_B(Y)=\frac{Y+BYB}2,
+\]
+keeps only the part of $Y$ commuting with $B$; the matrix $C$ above is
+$\Pi_B(\Hilb B)$. The proof compares the
+matrix $B+\ii Y$ to $B+\ii\,\Pi_B(Y)$ through a nonnegative measure
+built from spectra of a non-Hermitian matrix pencil. The first lemma
+supplies the moments of that measure; it is
+Hein\"avaara's identity \cite[Eq.~(16), proof of Lemma~2.5]{Heinavaara26},
+with $A-aI=H^{-1}$, his second matrix equal to $Y$, and the trace divided
+by $r$. The holomorphic pinching application is developed below. We write $X_+$ for the
+positive part of a Hermitian matrix $X$.
+
+\begin{lemma}[Trace-density moments]\label{lem:density}
+Let $H=H^\dagger$ be invertible and $Y=Y^\dagger$ in $M_r(\C)$.
+Counting algebraic multiplicities, define
+\[
+w_{H,Y}(y)=\frac1{2\pi r}
+\sum_{\lambda\in\spec(H^{-1}(Y-yI))}\abs{\operatorname{Im}\lambda}.
+\]
+This function is continuous, nonnegative, and supported on the spectral
+interval of $Y$. For every integer $m\ge0$,
+\begin{equation}\label{eq:densitymoments}
+\begin{split}
+\int y^m w_{H,Y}(y)\dd y
+&=\frac1{(m+1)(m+2)!}\\
+&\quad\times\left.\frac{\mathrm d^{m+2}}{\mathrm dt^{m+2}}
+\tr_r(H+tY)_+^{m+1}\right|_{t=0}.
+\end{split}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For $\operatorname{Im}z>0$, an eigenvector $v$ of $L(z)=H^{-1}(Y-zI)$
+with eigenvalue $\lambda$ satisfies $(Y-zI)v=\lambda Hv$; taking
+imaginary parts of $v^\dagger(Y-zI)v=\lambda\,v^\dagger Hv$ gives
+\[
+-\operatorname{Im}z\,\norm v^2
+=\operatorname{Im}\lambda\;v^\dagger Hv .
+\]
+Since $H$ is invertible, the spectrum of $L(z)$ therefore avoids the
+real axis, and it splits into an upper and a lower cluster. The sum
+\[
+g(z)=r^{-1}\sum_{\operatorname{Im}\lambda(L(z))>0}\lambda(L(z))
+\]
+is holomorphic in the upper half-plane, being the trace of $L(z)$ times
+its upper-cluster Riesz projection, with algebraic multiplicities also
+at repeated or defective eigenvalues.
+
+The sum extends continuously to the real axis. Choose disjoint small
+disks around the limiting eigenvalues. In a connected upper
+half-neighbourhood, the number of selected roots in each disk is
+constant. A real limiting cluster contributes an integer multiple of
+its real eigenvalue. At real $y$, the characteristic polynomial
+$\det(Y-yI-\lambda H)/\det H$ has real coefficients, so nonreal roots
+occur in conjugate pairs; half of each pair is selected, whence
+\[
+\operatorname{Im}g(y+\ii0)=\pi\,w_{H,Y}(y).
+\]
+In particular $w_{H,Y}$ is continuous and nonnegative. Outside the
+spectral interval of $Y$, the matrix $Y-yI$ is definite, so the pencil
+is similar, up to sign, to the Hermitian matrix
+$(\pm(Y-yI))^{1/2}H^{-1}(\pm(Y-yI))^{1/2}$, and the density vanishes.
+
+Near $w=0$, put
+\[
+K(w)=H^{-1}(I-wY),\qquad q(w)=\tr_r\bigl(K(w)\Pi_-(w)\bigr),
+\]
+where $\Pi_-(w)$ continues the negative spectral cluster of $H^{-1}$.
+For small real $w$, similarity to $(I-wY)^{1/2}H^{-1}(I-wY)^{1/2}$
+shows that $q$ has real Taylor coefficients. In the upper exterior
+domain, $L(z)=-zK(1/z)$, and the selected upper cluster corresponds to
+the continued negative cluster, so $g(z)=-zq(1/z)$. Writing
+$q(w)=\sum_jq_jw^j$, Schwarz reflection and Cauchy's formula around the
+spectral slit give
+\begin{align}\label{eq:Cauchydensity}
+&g(z)=-q_0z-q_1+\int\frac{w_{H,Y}(y)}{y-z}\dd y, \nonumber \\
+& \int y^mw_{H,Y}(y)\dd y=[w^{m+2}]\,q(w).
+\end{align}
+The endpoint arcs vanish because pencil eigenvalues remain bounded near
+finite points; continuity controls the two banks of the slit.
+
+It remains to identify the Taylor coefficients of $q$ with the
+derivatives in \eqref{eq:densitymoments}. Let $k=m+2$ and
+$\mathsf R_H(\lambda)=(\lambda I-H)^{-1}$. Contours enclose the
+indicated positive or negative spectra and exclude zero. Expanding the
+logarithmic determinant ratio that generates the spectral cluster of
+$K(w)$ gives
+\begin{align*}
+[w^k]\,q(w)
+&=\frac{(-1)^k}{kr\,2\pi\ii}
+\oint_{\Gamma_{H^{-1},-}}
+\Tr[((\zeta H-I)^{-1}Y)^k]\dd\zeta\\
+&=-\frac1{kr\,2\pi\ii}
+\oint_{\Gamma_{H,-}}
+\lambda^{k-2}\Tr[(\mathsf R_H(\lambda)Y)^k]\dd\lambda\\
+&=\frac1{kr\,2\pi\ii}
+\oint_{\Gamma_{H,+}}
+\lambda^{k-2}\Tr[(\mathsf R_H(\lambda)Y)^k]\dd\lambda .
+\end{align*}
+The second line substitutes $\lambda=1/\zeta$; the third uses the decay
+$O(\lambda^{-2})$ of the integrand at infinity to trade the negative
+contour for the positive one. Positive-cluster functional calculus and
+integration by parts, with
+\[
+\frac{\mathrm d}{\mathrm d\lambda}\Tr[(\mathsf R_H(\lambda)Y)^k]
+=-k\Tr[(\mathsf R_H(\lambda)Y)^k\mathsf R_H(\lambda)],
+\]
+give $[t^k]\,\tr_r(H+tY)_+^{k-1}=(k-1)\,[w^k]\,q(w)$. Together with
+\eqref{eq:Cauchydensity}, this proves \eqref{eq:densitymoments}.
+\end{proof}
+
+\begin{lemma}[Positive pinching identity]\label{lem:pinching}
+Let $B=B^\dagger$ with $B^2=I$, let $Y=Y^\dagger$, and put
+$C=\Pi_B(Y)$, $D=Y-C$. There is a nonnegative finite measure $\nu$,
+supported on $[-1,1]$ times the spectral interval of $Y$, such that
+\begin{equation}\label{eq:pinching}
+\begin{split}
+\tr_rf(sB+tY)&-\tr_rf(sB+tC)\\
+&=t^2\!\int f''(-sx+ty)\dd\nu(x,y)
+\end{split}
+\end{equation}
+for all polynomials $f$. Its density on $\abs x<1$ is
+\begin{equation}\label{eq:nudensity}
+\frac{\omega(x,y)}{1-x^2},\quad
+\omega(x,y)=\frac1{2\pi r}
+\sum_{\lambda\in\spec((B-xI)(Y-yI))}\abs{\operatorname{Im}\lambda},
+\end{equation}
+and
+\begin{equation}\label{eq:numajorant}
+0\le\frac{\omega(x,y)}{1-x^2}
+\le\frac{\norm D}{2\pi\sqrt{1-x^2}},\qquad
+\nu(\R^2)=\frac12\tr_r(D^2).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Apply Lemma~\ref{lem:density} with $H=(B-xI)^{-1}$, which is Hermitian
+and invertible for $\abs x<1$, with the two eigenvalues
+$a=(1-x)^{-1}>0$ and $b=-(1+x)^{-1}<0$; note
+$H^{-1}(Y-yI)=(B-xI)(Y-yI)$, the pencil in \eqref{eq:nudensity}. Work
+in a basis diagonalizing $B$. For an index cycle
+$\mathbf i=(i_1,\dots,i_m)$, let $p$ of its entries lie in the $+1$
+eigenspace of $B$ and $q=m-p$ in the $-1$ eigenspace, and put
+$Y_{\mathbf i}=Y_{i_1i_2}\cdots Y_{i_mi_1}$. The contour form of
+\eqref{eq:densitymoments} evaluates by residues at $\lambda=a$:
+\begin{equation}\label{eq:twonoderesidue}
+\Res_{\lambda=a}
+\frac{\lambda^{m-2}}{(\lambda-a)^p(\lambda-b)^q}
+=\binom{m-2}{p-1}
+\frac{a^{q-1}(-b)^{p-1}}{(a-b)^{m-1}}
+\end{equation}
+for $p,q\ge1$, $p+q=m$. Substituting the values of $a$ and $b$ gives
+the moments of the slice density:
+\begin{equation}\label{eq:twonodemoments}
+\begin{split}
+\int y^{m-2}&\frac{\omega(x,y)}{1-x^2}\dd y\\
+&=\frac1{rm\,2^{m-1}}
+\sum_{\mathbf i:\,1\le p<m}
+\binom{m-2}{p-1}\\
+&\quad\times(1-x)^{p-1}(1+x)^{q-1}Y_{\mathbf i}.
+\end{split}
+\end{equation}
+Only mixed cycles, $1\le p<m$, contribute, because pure cycles have
+$p=0$ or $q=0$ and no residue at the opposite node.
+
+Now expand the left side of \eqref{eq:pinching} for $f=\exp$. The
+coefficient of $t^m$ in the mixed-cycle part of $\tr_re^{sB+tY}$ is, by
+the Duhamel expansion,
+\[
+\frac1{rm}\sum_{\mathbf i:\,1\le p<m}Y_{\mathbf i}
+\int_{\substack{u_j\ge0\\\sum_ju_j=1}}
+e^{s\sum_jb_{i_j}u_j}\dd u,
+\]
+where $b_{i}=\pm1$ is the $B$-eigenvalue at index $i$. Pinching by $B$
+removes exactly the mixed cycles, so the left side of
+\eqref{eq:pinching} is the sum of these terms. Grouping the
+positive-$B$ coordinates, whose total weight we call $v$, turns the
+simplex integral into a beta integral with density
+$v^{p-1}(1-v)^{q-1}/((p-1)!\,(q-1)!)$ against $e^{sv-s(1-v)}$. The
+substitution $x=1-2v$, followed by \eqref{eq:twonodemoments}, gives the
+coefficient of $t^m$ on the right of \eqref{eq:pinching}, including the
+sign in $-sx$. Comparing coefficients of $s$ and $t$ proves the
+identity for $f=\exp$ and hence for all polynomials.
+
+For the majorant in \eqref{eq:numajorant}, conjugate the pencil
+$(B-xI)(Y-yI)$ by the block-diagonal matrix
+\[
+\diag(((1+x)/(1-x))^{1/4}I,((1-x)/(1+x))^{1/4}I)
+\]
+in the eigenbasis of
+$B$. The result has Hermitian diagonal blocks and off-diagonal blocks
+$\sqrt{1-x^2}\,D_{+-}$ and $-\sqrt{1-x^2}\,D_{+-}^\dagger$, so its
+anti-Hermitian part has norm at most $\sqrt{1-x^2}\,\norm D$. By
+Bendixson's theorem the same bounds the imaginary part of each
+eigenvalue, proving the majorant. Integrating the $m=2$ case of
+\eqref{eq:twonodemoments} over $x\in[-1,1]$ gives the total mass
+$\tr_r(D^2)/2$.
+\end{proof}
+
+\begin{corollary}[Holomorphic pinching on a strip]\label{cor:holomorphic}
+Under the hypotheses of Lemma~\ref{lem:pinching}, identity
+\eqref{eq:pinching} holds with $s=\rho\in[0,1)$ and $t=\ii$ for every
+$f$ holomorphic on $\abs{\operatorname{Re}z}<1$.
+\end{corollary}
+
+\begin{proof}
+Choose $\rho<\rho'<1$ and $L>\norm Y$. The rectangle
+$\{z:\abs{\operatorname{Re}z}\le\rho',\ \abs{\operatorname{Im}z}\le L\}$
+contains the spectra of $\rho B+\ii Y$ and $\rho B+\ii C$ and all
+points $-\rho x+\ii y$ with $(x,y)$ in the support of $\nu$. Sum the
+polynomial identity for a large-parameter resolvent, continue in the
+connected exterior of this rectangle, and apply Cauchy's formula on its
+boundary.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:hardy}]
+\emph{Step 1: a function on the strip.}
+On \mbox{$\abs{\operatorname{Re}z}<1$}, define $h$ by
+\[
+h(0)=\frac{8\Gcat}{\pi^2},\qquad h'(0)=0,\qquad
+h''(z)=-\sec\frac{\pi z}2 ;
+\]
+explicitly $h'(z)=-\frac2\pi\log(\sec\frac{\pi z}2+\tan\frac{\pi z}2)$,
+where the logarithm is the unique holomorphic branch on the strip
+whose value at $z=0$ is zero.
+Its real part $u(x,y)=\operatorname{Re}h(x+\ii y)$ extends continuously
+to the closed strip and satisfies
+\begin{equation}\label{eq:stripscalar}
+u(\pm1,y)=\abs y,\qquad
+0\le u(x,y)\le\frac{8\Gcat}{\pi^2}+\abs y .
+\end{equation}
+Indeed, on the boundary line $x=1$ one computes
+\[
+-\operatorname{Im}h'(1+\ii y)=\operatorname{sgn}y,
+\]
+so
+$u(1,\cdot)$ has the slopes of $\abs y$, and Taylor's formula with the
+classical integral $\int_0^1(1-x)\sec(\pi x/2)\dd x=8\Gcat/\pi^2$ gives
+$u(1,0)=0$. Since $h$ is even, $u$ is even in $x$, and
+$u_{xx}=-\operatorname{Re}\sec(\pi(x+\ii y)/2)\le0$: $u$ is concave in
+$x$, hence at least its boundary values $\abs y\ge0$. On the centre
+line, $u(0,y)=8\Gcat/\pi^2+\int_0^y(y-s)\sech(\pi s/2)\dd s
+\le8\Gcat/\pi^2+\abs y$ because $\int_0^\infty\sech(\pi s/2)\dd s=1$;
+concavity extends the upper bound to the strip.
+
+For a matrix $X$ with spectrum in the closed strip, put
+\[
+\mathscr U(X)=r^{-1}\sum_{\lambda\in\spec X}\operatorname{Re}h(\lambda).
+\]
+Apply Corollary~\ref{cor:holomorphic} with $f=h$, take real parts, and
+let $\rho\uparrow1$. Since $C=\Pi_B(Y)$ commutes with $B$, the matrix
+$B+\ii C$ is normal with eigenvalues $\pm1+\ii c$, where $c$ runs over
+the spectrum of $C$ on the two eigenspaces; by the boundary values in
+\eqref{eq:stripscalar}, $\mathscr U(B+\ii C)=\tr_r\abs{\Pi_B(Y)}$. The
+limit therefore reads
+\begin{equation}\label{eq:stripmatrix}
+\begin{split}
+\mathscr U(B+\ii Y)&-\tr_r\abs{\Pi_B(Y)}\\
+&=\int\operatorname{Re}\sec\frac{\pi(x+\ii y)}2\dd\nu(x,y)\ge0,
+\end{split}
+\end{equation}
+the integrand being nonnegative on the strip because $\cos(\pi z/2)$
+maps it to the right half-plane. The passage $\rho\uparrow1$ is
+dominated: each $x$-slice of the integral is bounded through
+\eqref{eq:numajorant} by
+$\norm D/(\pi\sqrt{1-x^2})$, using
+$\int_\R\operatorname{Re}\sec(\pi(\rho x+\ii y)/2)\dd y=2$; on the left
+side, restriction to smaller strips followed by passage to the
+endpoints proves convergence for the possibly nonnormal matrix
+$B+\ii Y$.
+
+\emph{Step 2: two commuting involutions.}
+Set $\mathcal W(s)=sU(s^4)$ on the circle, so $\mathcal W$ is unitary
+with $\mathcal W^4=I$, and
+\[
+A=\operatorname{Re}\mathcal W+\operatorname{Im}\mathcal W,\qquad
+B=\operatorname{Re}\mathcal W-\operatorname{Im}\mathcal W .
+\]
+Because the spectrum of $\mathcal W$ lies in $\{\pm1,\pm\ii\}$, the
+commuting Hermitian matrices $\operatorname{Re}\mathcal W$ and
+$\operatorname{Im}\mathcal W$ satisfy
+\[
+(\operatorname{Re}\mathcal W)(\operatorname{Im}\mathcal W)=0
+\quad\text{and}\quad
+(\operatorname{Re}\mathcal W)^2+(\operatorname{Im}\mathcal W)^2=I,
+\]
+so
+$A$ and $B$ are commuting Hermitian involutions at every point of the
+circle. The identity $\mathcal W(\ii s)=\ii\,\mathcal W(s)$ shows that
+$A$ and $B$ have mean zero. If $U=\sum_kc_kz^k$, then
+$\mathcal W=\sum_kc_ks^{4k+1}$: the frequencies of $\mathcal W$ are
+$4k+1$, with the same positive/negative split as those of $U$, and
+$\norm{P_-\mathcal W}_2=\norm{P_-U}_2$.
+
+\emph{Step 3: Parseval and the conclusion.}
+Let $\Hilb$ be the circular Hilbert transform, with multiplier
+$-\ii\operatorname{sgn}(k)$ \cite{Katznelson}. Expanding
+$\mathcal W=\tfrac12[(1+\ii)A+(1-\ii)B]$ in Fourier coefficients and
+using the frequency split above, Parseval's identity gives
+\begin{equation}\label{eq:HardyParseval}
+\begin{split}
+1-2\norm{P_-U}_2^2
+&=\int_{\T}\tr_r(A\,\Hilb B)\dd m\\
+&\le\int_{\T}\tr_r\abs{\Pi_B(\Hilb B)}\dd m .
+\end{split}
+\end{equation}
+The inequality holds pointwise: pinching is self-adjoint for the trace
+pairing and fixes $A$, since $BAB=AB^2=A$; hence
+$\tr(A\,\Hilb B)=\tr\bigl(A\,\Pi_B(\Hilb B)\bigr)
+\le\tr\abs{\Pi_B(\Hilb B)}$, because $\norm A\le1$.
+
+The analytic matrix function with boundary values $B+\ii\Hilb B$
+vanishes at the disk centre, since $B$ has mean zero. The real part of the holomorphic trace of $h$
+of this analytic matrix family is harmonic, so the mean-value property
+gives
+\[
+\int_\T\mathscr U(B+\ii\Hilb B)\dd m=\mathscr U(0)=\frac{8\Gcat}{\pi^2}.
+\]
+For the boundary passage, use radial limits together with the bound
+$0\le\mathscr U(X)\le8\Gcat/\pi^2+\tr_r\abs{\operatorname{Im}X}$, which
+follows from \eqref{eq:stripscalar}, Schur triangularization, and
+convexity of the absolute value on the diagonal; the radial Hilbert
+transforms are uniformly $L^2$-bounded, hence the displayed quantities
+are uniformly integrable. Applying \eqref{eq:stripmatrix} pointwise in
+\eqref{eq:HardyParseval} now gives
+$1-2\norm{P_-U}_2^2\le8\Gcat/\pi^2$, which is \eqref{eq:Hardy}.
+\end{proof}
+
+\section{The circulation sum of squares}\label{app:circulation}
+
+This appendix proves \eqref{eq:circulation}. Fix $i<j<k$, and write
+\[
+\begin{array}{lll}
+u_\ell=E_{i\ell}E_{j,\ell+2},&
+v_\ell=E_{j\ell}E_{k,\ell+2},&
+z_\ell=E_{i\ell}E_{k,\ell+2},\\[2pt]
+a_\ell=E_{i\ell}E_{j,\ell+1},&
+b_\ell=E_{j\ell}E_{k,\ell+1},&
+c_\ell=E_{i\ell}E_{k,\ell+1},
+\end{array}
+\]
+the forbidden products on the three edges of the triangle. Let $P$ be
+the sum of the squared norms $\norm\cdot_2^2$ of all $a_\ell,b_\ell,
+c_\ell$, and $O$ the corresponding sum for $u_\ell,v_\ell,z_\ell$, so
+that $P+O=p_{ij}+p_{jk}+p_{ik}$ by \eqref{eq:forbiddenspectral}.
+
+\begin{table}[!htbp]
+\centering
+\caption{Terms in the circulation identity. Spectral indices are read
+modulo four.}
+\label{tab:circulation}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$X_{\ell\nu}$ & $Y_{\ell\nu}$ & $\epsilon_\nu$\\
+\midrule
+$z_\ell$ & $a_\ell$ & $1$\\
+$z_\ell^\dagger$ & $b_{\ell+1}^\dagger$ & $1$\\
+$v_{\ell+1}$ & $a_\ell^\dagger$ & $1$\\
+$u_\ell$ & $c_\ell$ & $-1$\\
+$u_\ell^\dagger$ & $b_{\ell+2}$ & $1$\\
+$v_{\ell+3}^\dagger$ & $c_\ell^\dagger$ & $-1$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Projection completeness ($\sum_mE_{jm}=I$, inserted between the two
+factors of $z_\ell$ and $c_\ell$) gives
+\begin{equation}\label{eq:Cexpansion}
+\begin{split}
+C_{ijk}={}&{-2}\sum_\ell\norm{z_\ell}_2^2
++2\operatorname{Re}\sum_\ell
+\bigl[\ip{u_\ell}{z_\ell}
++\ip{v_\ell^\dagger}{z_\ell^\dagger}\bigr]\\
+&+2\operatorname{Re}\sum_{\ell,\nu}
+\epsilon_\nu\ip{X_{\ell\nu}}{Y_{\ell\nu}},
+\end{split}
+\end{equation}
+with the six triples $(X_{\ell\nu},Y_{\ell\nu},\epsilon_\nu)$ of
+Table~\ref{tab:circulation}. For $\sigma=\pm1$, completing squares
+yields the identity
+\begin{equation}\label{eq:circulationSOS}
+\begin{split}
+2P+5O-\sigma C_{ijk}
+={}&\sum_{\ell,\nu}
+\norm{Y_{\ell\nu}-\sigma\epsilon_\nu X_{\ell\nu}}_2^2\\
+&+3\sum_\ell\norm{u_\ell-\tfrac\sigma3z_\ell}_2^2\\
+&+3\sum_\ell\norm{v_\ell^\dagger-\tfrac\sigma3z_\ell^\dagger}_2^2\\
+&+\Bigl(\frac73+2\sigma\Bigr)
+\sum_\ell\norm{z_\ell}_2^2\;\ge\;0,
+\end{split}
+\end{equation}
+whence $\abs{C_{ijk}}\le2P+5O\le5(P+O)$, which is
+\eqref{eq:circulation}. Both \eqref{eq:Cexpansion} and
+\eqref{eq:circulationSOS} are finite identities in the twelve
+projections: they are verified by expanding
+$E_{j3}=I-E_{j0}-E_{j1}-E_{j2}$ at each site, reducing adjacent
+same-site products by orthogonality, and comparing coefficients of
+cyclic words---choosing the lexicographically least cyclic rotation of
+each word and splitting each real part into the half-sum of a word and
+its adjoint.
+
+
+
+\section{Bounds on the error coefficients}\label{app:scalar}
+
+This appendix proves Lemma~\ref{lem:scalar}. Throughout, $y=1-k/d$,
+and
+\[
+r_{\rm reg}(y)=\csc\frac{\pi y}2-\frac2{\pi y},\qquad
+\varphi(y)=y(1-y)\,r_{\rm reg}(y).
+\]
+The cosecant expansion gives
+\begin{equation}\label{eq:rn}
+\begin{gathered}
+r_{\rm reg}(y)=\sum_{n\ge1}r_ny^{2n-1},\\
+r_n=\frac{2(2^{2n-1}-1)\abs{B_{2n}}}{(2n)!}
+\Bigl(\frac\pi2\Bigr)^{2n-1},
+\end{gathered}
+\end{equation}
+with Bernoulli numbers $B_{2n}$ and $0<r_n<3\cdot4^{-n}$. Since
+$\sigma(x)=\csc(\pi y/2)$ and $1-y=x$, one checks
+$x(1-x)\sigma(x)-2x/\pi=\varphi(y)$, so the kernel $b$ of
+\eqref{eq:es} is
+$b=-\varphi''(y)/2$. Here $x(1-x)$ already cancels the secant pole;
+subtracting $2x/\pi$ leaves the contribution of the regular part
+$r_{\rm reg}$, with zero endpoint values. The
+Bernstein averages themselves are beta expectations: with
+$X\sim\Beta(k+1,d-k+1)$ and $Y=1-X$,
+$(B_dg)(k)=\tfrac d{d+1}\Ex[g(X)]$, the moments are
+\[
+\frac d{d+1}\Ex[Y^j]=m_j:=\frac d{d+1}
+\frac{(d-k+1)_j}{(d+2)_j},
+\]
+and $\Ex[Y^{-1}]=(d+1)/(d-k)$, which cancels the pole of
+$\sigma(k/d)$ in
+\eqref{eq:es}. Substituting \eqref{eq:rn} term by term gives the
+absolutely convergent series
+\begin{equation}\label{eq:finiteeseries}
+\begin{split}
+e_{d,k}=\sum_{n\ge1}r_n
+\Bigl[&y^j-\Bigl(1+\frac{(j+1)(j+2)}{2d}\Bigr)m_j\\
+&+\frac{j(j+1)}{2d}m_{j-1}\Bigr],
+\end{split}
+\end{equation}
+with $j=2n-1$. Each bracket is bounded in absolute value by
+$2+4n^2/(d+1)$, since $y^j,m_j\in[0,1]$ and $m_j\le d/(d+1)$.
+
+\subsection{The beta--Stein estimate: proof of (i)}
+
+Let $Z\sim\Beta(dy,d(1-y))=\Beta(d-k,k)$, so $\Ex Z=y$. Multiplying the
+$\Beta(d-k,k)$ density by $z(1-z)$ reproduces the $\Beta(d-k+1,k+1)$
+kernel, which turns the Bernstein average into a size-biased
+expectation,
+$(B_dg)(k)=\mbox{$\Ex[Z(1-Z)g(1-Z)]/[y(1-y)]$}$, and integration by parts against
+the beta density gives the Stein identity
+\cite{GoldsteinReinert,Dobler}
+\[
+\Ex[(Z-y)g(Z)]=\frac1d\,\Ex[Z(1-Z)g'(Z)].
+\]
+Combining the two with \eqref{eq:es} yields the exact representation
+\begin{equation}\label{eq:betaerror}
+e_{d,k}=\frac{\varphi(y)-\Ex\varphi(Z)
++\tfrac12\Ex[(Z-y)\varphi'(Z)]}{y(1-y)} .
+\end{equation}
+The numerator is a trapezoidal remainder: since
+\[
+\Ex[(Z-y)\varphi'(y)]=0
+\]
+may be added freely, with $\xi=Z-y$,
+\[
+\varphi(y)-\varphi(y+\xi)
++\frac\xi2[\varphi'(y+\xi)+\varphi'(y)]
+=\frac{\xi^3}{12}\varphi'''(y)+\epsilon_\xi,
+\]
+where
+$\abs{\epsilon_\xi}\le\norm{\varphi^{(4)}}_\infty\abs\xi^4/24$.
+The derivatives of $\varphi$ are controlled by the positive series
+\eqref{eq:rn}: for $j=2n-1$, the third and fourth derivatives of
+$y^{j+1}-y^{j+2}$ are bounded on $[0,1]$ by $3j(j+1)$ and
+$4j(j-1)(j+1)$, and the sums
+\[
+r_{\rm reg}''(1)+2r_{\rm reg}'(1)=\frac{\pi^2}4,\qquad
+r_{\rm reg}'''(1)+3r_{\rm reg}''(1)=\frac{3\pi^2}4
+\]
+give $\norm{\varphi'''}_\infty\le3\pi^2/4$ and
+$\norm{\varphi^{(4)}}_\infty\le3\pi^2$. The central beta moments are
+\[
+\Ex\xi^3=\frac{2y(1-y)(1-2y)}{(d+1)(d+2)},
+\]
+\[
+\Ex\xi^4=\frac{3y(1-y)[2(1-2y)^2+y(1-y)(d+2)]}{(d+1)(d+2)(d+3)}.
+\]
+Inserting these into \eqref{eq:betaerror}, with $q=\abs{1-2y}$,
+\[
+\abs{e_{d,k}}\le\frac{\pi^2}{8(d+1)(d+2)}
+\Bigl[q+\frac{3(d+2)}{4(d+3)}
+-\frac{3(d-6)}{4(d+3)}q^2\Bigr].
+\]
+For $d\ge66$, maximizing the bracket over $q\in[0,1]$ gives at most
+\[
+\frac{3(d+2)}{4(d+3)}+\frac{d+3}{3(d-6)}<\frac98,
+\]
+the difference from $9/8$ being
+\[
+(d^2-57d-342)/[24(d-6)(d+3)]>0.
+\]
+Using $\pi^2<10$ gives
+\eqref{eq:largeM}.
+
+\subsection{The interval computation: proof of (ii)}
+
+For $2\le d\le65$, the inequality \eqref{eq:finitecondition} is a
+finite set of rational comparisons, verified in exact interval
+arithmetic \cite{Moore} as follows. Truncating
+\eqref{eq:finiteeseries} after $32$ terms has error at most
+\begin{equation}\label{eq:finitetail}
+T_d=3\sum_{n=33}^\infty4^{-n}\Bigl(2+\frac{4n^2}{d+1}\Bigr),
+\end{equation}
+evaluated exactly with
+\[
+\begin{gathered}
+\sum_{n\ge J}q^n=\frac{q^J}{1-q},\\
+\sum_{n\ge J}n^2q^n
+=q^J\Bigl[\frac{J^2}{1-q}+\frac{2Jq}{(1-q)^2}
++\frac{q(1+q)}{(1-q)^3}\Bigr]
+\end{gathered}
+\]
+at $q=1/4$. For the coefficients, put
+\[
+A(a,N)=\sum_{i=0}^{N-1}(-1)^i/[(2i+1)a^{2i+1}];
+\]
+Machin's identity
+gives the rational enclosure
+\[
+\begin{split}
+\pi\in{}&16[A(5,128),A(5,129)]\\
+&-4[A(239,128),A(239,129)].
+\end{split}
+\]
+Generate the Bernoulli numbers by $B_0=1$ and
+$B_m=-(m+1)^{-1}\sum_{i=0}^{m-1}\binom{m+1}iB_i$ through $m=64$, and
+substitute the enclosure of $\pi$ into \eqref{eq:rn}. The moments
+follow the recursion $m_0=d/(d+1)$,
+$m_j=m_{j-1}(d-k+j)/(d+j+1)$. Endpoint inclusion in these rational
+operations, followed by adding $[-T_d,T_d]$, encloses each $e_{d,k}$;
+the skew coefficients $t_k=e_{d,d-k}-e_{d,k}$ and the loads
+$\ell_{d,k}$ of \eqref{eq:load} are enclosed likewise, bounding each
+absolute value $\abs{[l,u]}$ by $\max(\abs l,\abs u)$. The parameters
+are collected in Table~\ref{tab:intervals}: over all $2\le d\le65$ and
+$1\le k<d$, the normalized margin satisfies
+\[
+(d+1)\Bigl[\frac1{3(d+1)}+\min_k e_{d,k}
+-\frac5{2d}\max_k\ell_{d,k}\Bigr]
+\ge\frac{1935}{10^4}>\frac16,
+\]
+which is \eqref{eq:finitecondition}.
+The accompanying \path{verification/verify_coefficients.py} checks all
+2,080 pairs using Python~3 and only its standard library. Run
+\texttt{python3} \path{verification/verify_coefficients.py} from the manuscript
+directory. The worst dimension is $d=7$, and the certified minimum
+normalized margin exceeds $0.19354436777798498$. The Machin enclosure is
+rounded outward to 80 decimal places and the $r_n$ enclosures to 60;
+all rounding, propagation, and comparisons use exact rational numbers.
+The companion script \path{verification/verify_circulation.py}
+checks \eqref{eq:Cexpansion} and both signs of
+\eqref{eq:circulationSOS} by exact cyclic-word arithmetic.
+Commands, provenance, expected output, and recorded outputs accompany
+the scripts in \texttt{verification/}. These computations certify the
+stated finite inequalities and identities, not the full analytic proof.
+
+\begin{table}[!htbp]
+\centering
+\caption{Data for the finite interval computation. The margin uses
+lower endpoints for $e_{d,k}$ and upper bounds for $\ell_{d,k}$.}
+\label{tab:intervals}
+\begin{tabular}{@{}l@{\hspace{1em}}l@{}}
+\toprule
+Quantity & Data\\
+\midrule
+Outcome counts & $2\le d\le65$\\
+Separations & $1\le k<d$\\
+Cosecant terms & $1\le n\le32$\\
+Moment indices & $0\le j\le63$\\
+Bernoulli indices & $0\le m\le64$\\
+Arctangent partial sums & $128,\ 129$ terms\\
+Outward rounding ($\pi$, $r_n$) & 80, 60 decimal places\\
+Worst dimension & $d=7$\\
+Tail start in \eqref{eq:finitetail} & $J=33$\\
+Lower bound for the normalized margin & $1935/10000>1/6$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Arbitrary local dimension}\label{app:general}
+
+Problem~27.B concerns the maximally entangled state of two $d$-level
+systems, which is Theorem~\ref{thm:main}. The proof, however, works on
+$\Phi_n$ for every $n$ until its very last step, and yields the
+following extension.
+
+\begin{theorem}[General local dimension]\label{thm:general}
+Let $d\ge2$ and $n\ge1$. Every projective strategy on $\Phi_n$
+satisfies $I_d\le\IF(d)$. Equality holds if and only if $d$ divides
+$n$ and there is a unitary $U$ on $\C^n=\C^d\otimes\C^{n/d}$ such that
+the tracial PVMs are $P^t_a=U(\Pi^t_a\otimes I_{n/d})U^\dagger$ for
+all $t,a$. In particular, if $d$ does not divide $n$, the value
+$\IF(d)$ is not attained on $\Phi_n$.
+\end{theorem}
+
+\begin{proof}
+The inequality was proved for every $n$ at the end of
+Section~\ref{sec:partition}. Suppose equality. Steps~1--3 of the
+proof of Theorem~\ref{thm:main} make no use of $n=d$ and give a
+unitary $W$ on $\C^d\otimes\C^{4n}$ with
+$\RootP^t_a(V)=W(\Pi^t_a\otimes I_{4n})W^\dagger$ for all $t,a$. As
+in Step~4 there, the commutant argument gives
+$W^\dagger\Lambda W=I_d\otimes p$ for the range projection
+$\Lambda=\Zisom\Zisom^\dagger$ of the isometry
+\eqref{eq:reducingisometry} and a projection $p$ on $\C^{4n}$.
+Comparing ranks, $n=\rank\Lambda=d\rank p$, which forces $d\mid n$.
+Writing $k=n/d$ and choosing an isometry $\iota:\C^k\to\C^{4n}$ onto
+the range of $p$, the unitary
+$T=(I_d\otimes\iota^\dagger)W^\dagger\Zisom:
+\C^n\to\C^d\otimes\C^k$ satisfies
+\[
+TP^t_aT^\dagger
+=(I_d\otimes\iota^\dagger)(\Pi^t_a\otimes p)(I_d\otimes\iota)
+=\Pi^t_a\otimes I_k,
+\]
+the claimed classification with $U=T^\dagger$.
+
+Conversely, an amplified strategy
+$P^t_a=U(\Pi^t_a\otimes I_k)U^\dagger$ on $\Phi_{dk}$ has the same
+behaviour as the standard strategy on $\Phi_d$, since
+$\tr_{dk}\bigl((\Pi\otimes I_k)(\Pi'\otimes I_k)\bigr)
+=\tr_d(\Pi\Pi')$, and therefore attains $\IF(d)$.
+\end{proof}
+
+For fixed $d,n$, the space of four $d$-outcome PVMs on $\C^n$ is
+compact: it is a closed, bounded subset of a finite-dimensional matrix
+space. The Bell functional is continuous, so its optimum is attained.
+The equality classification therefore gives a strictly positive gap
+when $d\nmid n$, without specifying a rate. Write $s=n\bmod d>0$. Pad $\lfloor n/d\rfloor$ standard blocks with $s$
+one-dimensional blocks on which all four PVMs assign one fixed
+outcome achieving the local value $2$. The resulting behaviour is the
+mixture of the standard behaviour, with weight $d\lfloor n/d\rfloor/n$,
+and a deterministic local behaviour, with weight $s/n$, so that
+\[
+\sup\{I_d\ \text{on}\ \Phi_n\}\ \ge\ \IF(d)-\frac sn\bigl(\IF(d)-2\bigr).
+\]
+The deficit of the optimum is therefore at most of order $1/n$ along
+every residue class; lower bounds on it require a quantitative version
+of the rigidity argument and are not pursued here.
+
+% Reference list: entries set ragged right; identifiers break only after "/".
+\makeatletter
+\def\UrlBreaks{\do\/}\def\UrlBigBreaks{}%
+\def\UrlOrds{\do\*\do\-\do\~\do\'\do\"\do\:\do\.}%
+\let\oqp@BibitemOpen\BibitemOpen
+\def\BibitemOpen{\oqp@BibitemOpen\rightskip\z@\@plus1fil\relax}
+\makeatother
+\bibliography{oqp27-note-references}
+
+\end{document}

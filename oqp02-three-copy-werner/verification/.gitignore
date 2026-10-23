@@ -1,0 +1,4 @@
+# clones made by replay_d3.sh and replay_d4.sh, and Python caches
+upstream_d3/
+upstream_d4/
+__pycache__/

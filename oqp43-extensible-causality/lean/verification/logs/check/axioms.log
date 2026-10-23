@@ -1,0 +1,63 @@
+CausalNonpurifiability.OQP43.dimension_dichotomy (D : CausalNonpurifiability.Ports) :
+  (∀ (W : CausalNonpurifiability.PMat D),
+      CausalNonpurifiability.ExtensiblyCausal D W → CausalNonpurifiability.Purifiable D W) ↔
+    min D.m (min D.d (min D.n D.e)) = 1
+CausalNonpurifiability.OQP43.not_all_extensiblyCausal_purifiable :
+  ∃ W,
+    CausalNonpurifiability.ExtensiblyCausal CausalNonpurifiability.qubits W ∧
+      ¬CausalNonpurifiability.Purifiable CausalNonpurifiability.qubits W
+CausalNonpurifiability.OQP43.ocb_process_not_extensiblyCausal :
+  CausalNonpurifiability.Valid CausalNonpurifiability.qubits CausalNonpurifiability.WOCB ∧
+    ¬CausalNonpurifiability.ExtensiblyCausal CausalNonpurifiability.qubits CausalNonpurifiability.WOCB
+CausalNonpurifiability.OQP43.ordered_processes_purifiable (D : CausalNonpurifiability.Ports)
+  (W : CausalNonpurifiability.PMat D) (hW : CausalNonpurifiability.Valid D W)
+  (hord : CausalNonpurifiability.OrderedAB D W ∨ CausalNonpurifiability.OrderedBA D W) :
+  CausalNonpurifiability.Purifiable D W
+CausalNonpurifiability.OQP43.purifiable_causallySeparable (D : CausalNonpurifiability.Ports)
+  (W : CausalNonpurifiability.PMat D) (hW : CausalNonpurifiability.Valid D W)
+  (hP : CausalNonpurifiability.Purifiable D W) : CausalNonpurifiability.CausallySeparable D W
+CausalNonpurifiability.OQP43.purifiable_iff_transpose_formula (D : CausalNonpurifiability.Ports)
+  (W : CausalNonpurifiability.PMat D) :
+  CausalNonpurifiability.Purifiable D W ↔
+    ∃ p f S, CausalNonpurifiability.Pure D S ∧ Matrix.transpose (CausalNonpurifiability.reducePastFuture D S) = W
+CausalNonpurifiability.OQP43.swap_table_not_causal :
+  ¬CausalNonpurifiability.Causal fun x y a b => if a = y ∧ b = x then 1 else 0
+CausalNonpurifiability.OQP43.theorem_1_1 :
+  CausalNonpurifiability.Valid CausalNonpurifiability.qubits CausalNonpurifiability.Wq ∧
+    Matrix.PosDef CausalNonpurifiability.Wq ∧
+      CausalNonpurifiability.ExtensiblyCausal CausalNonpurifiability.qubits CausalNonpurifiability.Wq ∧
+        ¬CausalNonpurifiability.CausallySeparable CausalNonpurifiability.qubits CausalNonpurifiability.Wq ∧
+          ¬CausalNonpurifiability.Purifiable CausalNonpurifiability.qubits CausalNonpurifiability.Wq
+CausalNonpurifiability.OQP43.valid_iff_channels_normalized (D : CausalNonpurifiability.Ports)
+  {W : CausalNonpurifiability.PMat D} (hW : Matrix.PosSemidef W) :
+  CausalNonpurifiability.Valid D W ↔
+    ∀ (Mt : CausalNonpurifiability.Op (Fin D.m × Fin D.d)) (Nt : CausalNonpurifiability.Op (Fin D.n × Fin D.e)),
+      Matrix.PosSemidef Mt →
+        CausalNonpurifiability.ptraceOut Mt = 1 →
+          Matrix.PosSemidef Nt →
+            CausalNonpurifiability.ptraceOut Nt = 1 → (W * Matrix.kroneckerMap (fun x1 x2 => x1 * x2) Mt Nt).trace = 1
+CausalNonpurifiability.OQP43.white_process_purifiable (D : CausalNonpurifiability.Ports) :
+  CausalNonpurifiability.Valid D ((1 / (↑D.m * ↑D.n)) • 1) ∧
+    CausalNonpurifiability.OrderedAB D ((1 / (↑D.m * ↑D.n)) • 1) ∧
+      CausalNonpurifiability.OrderedBA D ((1 / (↑D.m * ↑D.n)) • 1) ∧
+        CausalNonpurifiability.Purifiable D ((1 / (↑D.m * ↑D.n)) • 1)
+CausalNonpurifiability.OQP43.wq_pauli_form :
+  CausalNonpurifiability.Wq = CausalNonpurifiability.toC (CausalNonpurifiability.W0 2 2 2 2) ∧
+    CausalNonpurifiability.W0 2 2 2 2 =
+      (1 / 80) •
+        (20 • CausalNonpurifiability.kron4 1 1 1 1 + 10 • CausalNonpurifiability.kron4 !![1, 0; 0, -1] 1 1 1 +
+                10 • CausalNonpurifiability.kron4 1 1 !![1, 0; 0, -1] 1 +
+              5 • CausalNonpurifiability.kron4 !![1, 0; 0, -1] 1 !![1, 0; 0, -1] 1 +
+            4 • CausalNonpurifiability.kron4 1 !![1, 0; 0, -1] !![1, 0; 0, -1] 1 +
+          4 • CausalNonpurifiability.kron4 !![1, 0; 0, -1] 1 !![0, 1; 1, 0] !![1, 0; 0, -1])
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"CausalNonpurifiability.OQP43.dimension_dichotomy"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"CausalNonpurifiability.OQP43.not_all_extensiblyCausal_purifiable"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"CausalNonpurifiability.OQP43.ocb_process_not_extensiblyCausal"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"CausalNonpurifiability.OQP43.ordered_processes_purifiable"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"CausalNonpurifiability.OQP43.purifiable_causallySeparable"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"CausalNonpurifiability.OQP43.purifiable_iff_transpose_formula"}
+AXIOM_AUDIT {"axioms":["propext","Quot.sound","Classical.choice"],"declaration":"CausalNonpurifiability.OQP43.swap_table_not_causal"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"CausalNonpurifiability.OQP43.theorem_1_1"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"CausalNonpurifiability.OQP43.valid_iff_channels_normalized"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"CausalNonpurifiability.OQP43.white_process_purifiable"}
+AXIOM_AUDIT {"axioms":["Quot.sound","propext","Classical.choice"],"declaration":"CausalNonpurifiability.OQP43.wq_pauli_form"}

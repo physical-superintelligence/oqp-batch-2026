@@ -1,0 +1,4 @@
+discovery/sdp_solve.py:60: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver, verbose=verbose, **kw)
+numerical solve: optimal_inaccurate lambda = 7.455357155920486e-07 time 442 s
+written certificate_uniform.json ; epsilon = 243444/653071328197 ; nonzero mu: {'det lemma2': 0.08843708897202573}

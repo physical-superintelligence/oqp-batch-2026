@@ -1,0 +1,176 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4.
+version: "v0.4"
+
+project:
+  name: "Bell inequalities for long range vacuum correlations (Open Quantum Problem 12)"
+  description: >-
+    Lean 4 formalization of the main theorem of the full manuscript of 21 October 2026,
+    "The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation": for the
+    vacuum of the real free scalar field of any mass m > 0 in 3+1-dimensional Minkowski space, the
+    Summers-Werner Bell correlation of the local von Neumann algebras of two double cones of radius
+    R centred at the origin and at (0, L e1) equals its classical value 1 once L is at least a
+    constant multiple of R, with one constant for all masses and radii (Theorem 1.1), and the same
+    holds for any two bounded regions when the second is moved far enough along a fixed spacelike
+    direction (Corollary 1.2). Stated as the CHSH inequality for all local observables, along a
+    fixed spacelike direction and for spatial translations with one threshold for all directions,
+    this answers Problem 12 of the IQOQI Vienna Open Quantum Problems, "Bell inequalities for long
+    range vacuum correlations", in the negative for bounded regions moved apart in these ways. The
+    existence of the vacuum representation and the noncommutativity of the local algebras are also
+    formalized.
+  authors:
+    - "David Turturean"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "David Turturean"
+
+classification:
+  arxiv: ["math-ph", "quant-ph"]
+  msc2020: ["81T05", "81P40", "46L60", "81T40"]
+
+sources:
+  - title: "The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation"
+    authors:
+      - "David Turturean"
+    type: "paper"
+    location: "Full manuscript of 21 October 2026, Theorem 1.1 and Corollary 1.2; see paper/README.md"
+    relationship: "formalizes"
+    note: >-
+      Theorem 1.1 and Corollary 1.2 are formalized as stated (Challenge.lean writes the vacuum Bell
+      correlation out as the supremum of the CHSH values), together with the definitions of Section
+      2.1 and the proofs of Sections 2-8 and Appendix A that they need. The CHSH form of these
+      results for Open Quantum Problem 12 and the version uniform over spatial directions are short
+      consequences added for this release.
+    license: "unknown"
+    author_endorsement: "other"
+  - title: "Bell inequalities for long range vacuum correlations (Open Quantum Problems, Problem 12)"
+    id: "https://oqp.iqoqi.oeaw.ac.at/bell-inequalities-for-long-range-vacuum-correlations"
+    type: "web discussion"
+    location: "Open Quantum Problems, IQOQI Vienna; text checked against the Internet Archive copy of 2023-10-29 in docs/OQP_STATEMENT.md"
+    relationship: "background"
+    note: >-
+      The problem answered by the headline theorems for two bounded regions moved apart along a
+      fixed spacelike direction or by spatial translations.
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "The vacuum violates Bell's inequalities"
+    authors:
+      - "Stephen J. Summers"
+      - "Reinhard F. Werner"
+    id: "https://doi.org/10.1016/0375-9601(85)90093-3"
+    type: "paper"
+    location: "Physics Letters A 110 (1985) 257-259"
+    relationship: "background"
+    note: "Reference [1] of the problem: maximal vacuum violation for suitable localizations."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Maximal violation of Bell's inequalities is generic in quantum field theory"
+    authors:
+      - "Stephen J. Summers"
+      - "Reinhard F. Werner"
+    id: "https://doi.org/10.1007/BF01207366"
+    type: "paper"
+    location: "Communications in Mathematical Physics 110 (1987) 247-259"
+    relationship: "background"
+    note: "Normalization of the Bell correlation used here (classical bound 1, Tsirelson bound sqrt 2)."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "Maximal violation of Bell's inequalities for algebras of observables in tangent spacetime regions"
+    authors:
+      - "Stephen J. Summers"
+      - "Reinhard F. Werner"
+    type: "paper"
+    location: "Annales de l'Institut Henri Poincaré, Physique théorique 49 (1988) 215-243"
+    relationship: "background"
+    note: "Maximal Bell correlation for complementary wedges and tangent double cones."
+    license: "unknown"
+    author_endorsement: "not-contacted"
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Theorem 1.1 and Corollary 1.2 of the full manuscript of 21 October 2026 for every mass m > 0, with the vacuum representation
+    given by its defining properties (Weyl relations of the one-particle inner product, Gaussian
+    vacuum expectations, cyclic vacuum) and quantified over all such representations; the CHSH
+    inequality for all self-adjoint contractions localized in two bounded regions beyond a
+    separation threshold, along a fixed spacelike direction and uniformly over spatial directions;
+    existence of the vacuum representation for every mass; noncommutativity of the local algebra of
+    every nonempty open region.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Anthropic's Claude Opus 5.5"]
+      framework: "Claude Code"
+      tool_setup: >-
+        Autonomous agents writing Lean, with remote-only builds and checks on Linux cloud machines,
+        directed by PSI. The release snapshot (module-system port, Challenge.lean, the CHSH bridge
+        theorems, the axiom check, documentation) was prepared by an agent on Anthropic's Claude Opus 5.5 (Claude Code).
+      cost:
+        wall_time: "formalization 2026-10-08 to 2026-10-14; release packaging 2026-10-14 and 2026-10-21"
+        spend_usd: "not tracked"
+        hardware: "API-only agents; remote Linux build machines"
+      prompting_notes: "Agents worked from the manuscript, one task file and persistent checkpoints."
+    - method: "agent"
+      models: ["OpenAI's GPT-6-Astra"]
+      framework: "Codex"
+      tool_setup: "Codex agents continued the formalization from 2026-10-09, with at most two managed subagents."
+      cost:
+        wall_time: "2026-10-09 to 2026-10-13"
+        spend_usd: "subscription-based"
+        hardware: "API-only agents; remote Linux build machines"
+      prompting_notes: "n/a"
+  spend_usd: "not tracked"
+  notes: >-
+    Provenance and use of AI. This result was released by Physical Superintelligence (PSI). The
+    mathematics was developed by PSI researchers working with AI models (OpenAI's GPT-6-Astra
+    and GPT-5.6 Pro and Anthropic's Claude Fable 5.1) in automated research workflows at PSI.
+    The Lean formalization was written by AI agents (Anthropic's Claude Opus 5.5 in Claude Code, and OpenAI's GPT-6-Astra in Codex) under
+    PSI's direction. David Turturean is responsible for the correctness of the paper. The
+    paper's AI disclosure has the details; this file records which agent did which part.
+    Comparator checks that the theorems proved in Solution.lean are exactly the statements in
+    Challenge.lean, using only the three standard axioms, and the proofs are replayed by Lean's
+    kernel and by independent kernels.
+
+review:
+  status: "statements checked"
+  reviewers:
+    - "Physical Superintelligence (PSI)"
+
+alignment:
+  namespace: "VacuumBellSeparation"
+  statements:
+    - source: "Open Quantum Problem 12, bounded regions along a fixed spacelike direction (CHSH form of Corollary 1.2)"
+      lean: "VacuumBellSeparation.OQP12.no_chsh_violation_far_apart"
+      module: "Solution"
+      status: "proved"
+      note: "Headline. Stated in Challenge.lean; every m > 0, bounded regions, fixed spacelike direction, every vacuum Weyl system and all self-adjoint contractions."
+    - source: "Theorem 1.1"
+      lean: "VacuumBellSeparation.OQP12.theorem_1_1"
+      module: "Solution"
+      status: "proved"
+      note: "One constant C_* > 2 for all m, R > 0; double cones of radius R with centres at spatial distance L >= C_* R along e1; Bell correlation written out as the supremum of the CHSH values."
+    - source: "Corollary 1.2"
+      lean: "VacuumBellSeparation.OQP12.corollary_1_2"
+      module: "Solution"
+      status: "proved"
+      note: "Fixed bounded regions and fixed spacelike direction; Summers-Werner normalization beta = 1, written out as the supremum of the CHSH values."
+    - source: "Section 2.1 (the model is not empty)"
+      lean: "VacuumBellSeparation.OQP12.freeFieldVacuum_exists"
+      module: "Solution"
+      status: "proved"
+      note: "A vacuum Weyl system exists for every mass m > 0."
+    - source: "Open Quantum Problem 12, bounded regions moved by spatial translations, uniformly over directions (consequence of Theorem 1.1 added for this release)"
+      lean: "VacuumBellSeparation.OQP12.no_chsh_violation_far_apart_uniform"
+      module: "Solution"
+      status: "proved"
+      note: "One distance D for all spatial translations of the second region with length at least D; from Theorem 1.1, a spatial reflection and isotony."
+    - source: "Sanity check of the definitions"
+      lean: "VacuumBellSeparation.OQP12.localAlgebra_open_nonabelian"
+      module: "Solution"
+      status: "proved"
+      note: "The local algebra of every nonempty open region contains two noncommuting operators."

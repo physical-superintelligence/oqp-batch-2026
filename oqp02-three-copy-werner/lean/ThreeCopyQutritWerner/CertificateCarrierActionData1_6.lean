@@ -1,0 +1,48 @@
+module
+
+public import ThreeCopyQutritWerner.CertificateMatrixLiteral
+public import ThreeCopyQutritWerner.CertificateCarrierPermutations
+
+@[expose] public section
+
+
+
+noncomputable section
+
+open scoped Matrix
+
+namespace ThreeCopyQutritWerner
+
+
+
+
+def certificateCarrierAction1_6 : Fin 12 → Matrix (Fin 17) (Fin 17) ℤ :=
+  ![certificate_matrix% "verification/matrix-literals/ab6704b2f31a7341d5063c9861bd4c23bda5d5ad6e186c0d0bb5b8c6862bb90e.xz" "a0d92db8418da22c3e42dc7756f4021ba991b1db081f1579a099c733b182a424",
+    certificate_matrix% "verification/matrix-literals/d59cb7d687b5d6bfcf7779880ab36b5bc7fa820aa2ba33fdbd416fd9f9eb673b.xz" "ab7e6de41bf6ccb3aa39b684fe2533914f6a5c856583af662a42e55a89190965",
+    certificate_matrix% "verification/matrix-literals/a1c875b0d1338d184c75f601a7530e228c58eff26a1e2a43c7c72b7992736703.xz" "e9b1a73269e20a30db21c1d222d0643e7d18db65b7b8bc68475215dac91375b0",
+    certificate_matrix% "verification/matrix-literals/e21e5bec1077fb0a8f4727c3278b0693ea887376da834d96f3062831f572d2e9.xz" "c9436d514276e8fa032fdc4a0136b25553c499bf11f1ec35274b4dffbad5ae8a",
+    certificate_matrix% "verification/matrix-literals/64a5dec677140fc7454125ad1d9e90a1b239ce32c87a2a2074fe52db674a9a07.xz" "9a7e5e6b8f1a117bfb4684768b005d3f8593366e3ab22e644d9214efab57a720",
+    certificate_matrix% "verification/matrix-literals/323d97dae323f4e0ef64cae48bdbfed5588e5e860ab4d944e8517e6b21b529ed.xz" "b201500b8b352f4057273787d10af0db2fd6860cd2380c50b180f193ee9137a1",
+    certificate_matrix% "verification/matrix-literals/bad78a923dabcb5e2d816611145e4971af31a3895f43850ab80179a01221c0ec.xz" "5facb005b0d311f9315bc124b408e49f1bd67298e7ff0ba6e871eb0d01105162",
+    certificate_matrix% "verification/matrix-literals/0157556e0fb144b4a861e0e0363eb74b1a2836b4cc25480a8f680ff735da7443.xz" "4b5437e09ac82a88937ac6e574b1a31e108a9ad9fd7e0a4a7bb24c118baeb251",
+    certificate_matrix% "verification/matrix-literals/772a01037ec3f05591d490470e60d0bc405cae1f9e8d0a0e8bd75601d958e0ff.xz" "8f1d7ed2fcf558ef2e7f1700f2801497232fafe2ebd0ee11b90d6650af5fec50",
+    certificate_matrix% "verification/matrix-literals/cf06d6ef464e99e4c041c7ed9620837a6fec372d159788882a87dc5c2efc9187.xz" "61158de954ede772f6cd5cde68e7ec3196a5f6ab32457ef286c4d092a2146e83",
+    certificate_matrix% "verification/matrix-literals/ece9d37b535dbd6faa6dba122039ad20f8db77b69d594028aecb72dbf714e9f9.xz" "7c57b515bef7545141de9aca7071c826f1c4aa3b892cac3b45db61bb2969a2b0",
+    certificate_matrix% "verification/matrix-literals/d7257a3ddd77769d0a9a1fc0b6b029395ff7fdd510ddf111496f5df3ec02508e.xz" "544c2d744127b833020cea6ed51adfb068c1d1407a49faa7de88e1fa07b01ede"]
+
+/-- Literal integer product of the original Gram and original carrier action. -/
+def certificateCarrierWeightedAction1_6 : Fin 12 → Matrix (Fin 17) (Fin 17) ℤ :=
+  ![certificate_matrix% "verification/matrix-literals/6ca0de1910de311a854382f55b4126802846f1a6aa5e420e965a3f5fae2e7222.xz" "29e5952a1712fcd19b1229d7255e6cee776af76d2ad58601d98ed9f68c64684c",
+    certificate_matrix% "verification/matrix-literals/f843e737b69c6c0724e435543d335053260a387168366ff962203dc106eb6d55.xz" "60f8fe0187386d1e340fc34d0aaab873d4f02fa7996ae627f00d7a37e8ef5afd",
+    certificate_matrix% "verification/matrix-literals/cb33a7004ff0daec6e2e13fbe4408b4de248786211618bee53b110af9a66cf7c.xz" "b7ce8b691a6b2e31f773b8b26320615d1bc992414d67acc5f9a7d117f82fc4b2",
+    certificate_matrix% "verification/matrix-literals/cc815ebbe0e848579460f498c3642f4dc4d1821402075c0716f68152bcd8711c.xz" "97dda321654eb9304b3092724c54c072da0c9b789ef0509416e348a277df9106",
+    certificate_matrix% "verification/matrix-literals/cc0be9ee29a651eae7284624aa65cae6ef9b430b88bf5c859cc9a6bac4a09e40.xz" "a2fe2244e0284fa0b5ec7cdba80c4d458895186d3dec923b3879599b0ad89c1b",
+    certificate_matrix% "verification/matrix-literals/b29a64973c24edd339e71a2bb8f0d778f90e3c6bffddcd172b12f7ea8b58ef1d.xz" "b8504e88e74311f64ff8f6407648485080a22a213ead4ff4a9767f4983fed6ca",
+    certificate_matrix% "verification/matrix-literals/6b16af620aba5985f82d16b0e4f57f88b30870630ee68bcd20512a3177837c3d.xz" "af833626e1d2bb470bda09a8513fb9a281e59ac9d94a3ef82155e66ceff63355",
+    certificate_matrix% "verification/matrix-literals/d4612e269d5b2d99c56547c64ef98f495303391f0b7d6b5d8aac6388bb731824.xz" "bbca6ca411a9f901ad403aff40e60d5e2313b1cba1874e9a82d740d68fd47be2",
+    certificate_matrix% "verification/matrix-literals/9fab870c95539f7afb5303bdc974e40ce737151b0cb3d99df91188369b1c0755.xz" "085db476af115aa1ed8d511adc871894ae19947b8b6abd5d218dd9b41e05765c",
+    certificate_matrix% "verification/matrix-literals/f32e26103d64da8f94dea16e7f00346e4aab3605918d741d607cdfbf8ce10903.xz" "d67839f3d0bfa24fe08f6dfc9f94b91938e0e26fddee159ce30cd64ea7034f35",
+    certificate_matrix% "verification/matrix-literals/46af9cefcc73e9dcf1b185392c87355b5ee60b4bd0bd2c708aa8bb13ee3a119b.xz" "add3524f7d0b7df39d547dc5f08bc58e104431caeebeded55612cca0a4a5e192",
+    certificate_matrix% "verification/matrix-literals/492b9f9c1cb4e58b0e769b3f998eb9b3ff791754d0da09bbe37c3420ac85a3c8.xz" "78979707ad2f0c046fd2bc39b59b30356a8c61854209720bb80c367ab5d6c350"]
+
+end ThreeCopyQutritWerner

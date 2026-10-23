@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite it as below."
+title: "Extensibly causal processes that are not purifiable (Open Quantum Problem 43): a Lean 4 formalization"
+type: software
+authors:
+  - given-names: "David"
+    family-names: "Turturean"
+license: Apache-2.0
+version: "1.0.0"
+abstract: >-
+  A Lean 4 / Mathlib formalization of a negative answer to IQOQI Vienna Open Quantum Problem 43,
+  "Are all extensibly causal processes purifiable?": an explicit process matrix for two parties
+  with qubit inputs and outputs is extensibly causal and not purifiable (purity in the sense of
+  Araújo, Feix, Navascués and Brukner). The development also proves that, for two parties
+  with positive finite port dimensions, every extensibly causal process is purifiable
+  exactly when the minimum port dimension is one.
+keywords:
+  - "Lean 4"
+  - "formal verification"
+  - "process matrices"
+  - "indefinite causal order"
+  - "extensible causality"
+  - "purification postulate"
+  - "Open Quantum Problems"
+references:
+  - type: article
+    title: "Extensible causality without purification"
+    authors:
+      - name: "Physical Superintelligence (PSI)"
+    year: 2026
+    notes: "Source draft for the formalization's theorem numbering. The accompanying paper is titled An extensibly causal quantum process with no purification; paper/README.md maps its statements to Lean."
+  - type: generic
+    title: "Open Quantum Problem 43: Are all extensibly causal processes purifiable?"
+    authors:
+      - name: "IQOQI Vienna Open Quantum Problems"
+    url: "https://oqp.iqoqi.oeaw.ac.at/are-all-extensibly-causal-processes-purifiable"

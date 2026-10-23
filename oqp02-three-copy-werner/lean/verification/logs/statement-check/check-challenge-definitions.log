@@ -1,0 +1,2 @@
+$ /usr/sbin/runuser -u builder -- env -i PATH=/opt/lean/bin:/usr/local/bin:/usr/bin:/bin HOME=/home/builder LANG=C.UTF-8 LC_ALL=C.UTF-8 bash -c python3 scripts/check-challenge-definitions.py # Challenge definitions equal Basic.lean; "1 verbatim blocks checked"
+1 verbatim blocks checked

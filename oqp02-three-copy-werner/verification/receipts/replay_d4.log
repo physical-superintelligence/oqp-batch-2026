@@ -1,0 +1,42 @@
+checked out 2ba792faf30ba677b0b61ab319fa049ea002c307
+content digest matches (2510 tracked files)
+=== STAGE reduction  2026-10-21T22:31:53Z
+{"universal_joint_entrywise_identities": 3, "general_complex_d4_diagnostic_inputs": 24, "rank_one_inputs": 8, "swap_subset_diagnostics": 192, "maximum_diagnostic_error": 7.77247621660103e-16, "maximum_B_isometry_defect": 1.414213562373096, "numerical_checks_are_not_proof": true, "analytic_reduction": "See manuscript, matched four-replica section"}
+=== exit 0  2026-10-21T22:31:53Z
+=== STAGE foundation  2026-10-21T22:31:53Z
+{"existing_manifest_checked": true, "files": 2485, "all_hashes_match": true}
+{"modules": 50, "literal_intertwiners": 1200, "positive_metrics": true}
+{"stage": "source", "family": "31", "columns": 667, "seconds": 10.932074287999967}
+{"stage": "source", "family": "22", "columns": 1407, "seconds": 22.203246389000014}
+{"stage": "source", "family": "13", "columns": 667, "seconds": 32.03749355800028}
+{"source_dimensions": {"31": 667, "22": 1407}, "total": 2741, "basis_minor_prime": 1000033, "nonzero_minor_determinants": {"31": 686863, "22": 137174, "13": 686863}, "source_diagrams_exact": true, "equality_columns_exact": 2741, "objective_coefficients_exact": 2741, "coordinate_scale": 268435456, "all_constraints_rebuilt_from_literal_partial_traces": true}
+=== exit 0  2026-10-21T22:33:27Z
+=== STAGE rank  2026-10-21T22:33:27Z
+{"all_row_rank": 272, "selected_row_rank": 272, "arithmetic": "rational", "seconds": 60.06225775099938}
+=== exit 0  2026-10-21T22:34:27Z
+=== STAGE maps --workers 2  2026-10-21T22:34:27Z
+{"stage": "maps", "completed": 100, "seconds": 2.769507259999955}
+{"stage": "maps", "completed": 200, "seconds": 5.836362043999543}
+{"stage": "maps", "completed": 300, "seconds": 6.508554011000342}
+{"stage": "maps", "completed": 400, "seconds": 8.852034497999739}
+{"stage": "maps", "completed": 500, "seconds": 9.636192144999768}
+{"stage": "maps", "completed": 600, "seconds": 12.860932262999995}
+{"stage": "maps", "completed": 700, "seconds": 15.916382112000065}
+{"stage": "maps", "completed": 800, "seconds": 22.347643973999766}
+{"stage": "maps", "completed": 900, "seconds": 23.30446499699974}
+{"stage": "maps", "completed": 1000, "seconds": 26.152185517999897}
+{"stage": "maps", "completed": 1100, "seconds": 26.852232958999593}
+{"stage": "maps", "completed": 1200, "seconds": 34.21841056999983}
+{"maps_rebuilt": 1239, "all_saved_maps_match": true, "arithmetic": "bounded integers, no floating point", "seconds": 71.90903001900006}
+=== exit 0  2026-10-21T22:35:40Z
+=== STAGE certificate  2026-10-21T22:35:40Z
+{"stage": "rational certificate", "blocks": 0, "seconds": 0.06414936900000612}
+{"stage": "rational certificate", "blocks": 200, "seconds": 11.961058938999486}
+{"stage": "rational certificate", "blocks": 400, "seconds": 28.23841950699989}
+{"stage": "rational certificate", "blocks": 600, "seconds": 46.9331862629997}
+{"stage": "rational certificate", "blocks": 800, "seconds": 64.26324113499959}
+{"stage": "rational certificate", "blocks": 1000, "seconds": 76.6886272769998}
+{"stage": "rational certificate", "blocks": 1200, "seconds": 96.02405527599967}
+{"coefficient_identities": 2741, "positive_Gram_blocks": 1239, "positive_congruence_rows": 4231, "rational_margin_lower_bound": "9999992/10000000", "all_exact": true, "maps_from_second_implementation": true, "seconds": 118.00192305499968}
+=== exit 0  2026-10-21T22:37:38Z
+ALL FIVE STAGES EXITED 0: the d = 4 four-replica certificate verifies.

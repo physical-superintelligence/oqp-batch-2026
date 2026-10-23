@@ -1,0 +1,28 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "OQP27.partB_maximizers_are_fourier_phase",
+    "OQP27.partB_noise_resistance_not_optimal",
+    "OQP27.partB_kl_discrimination_not_optimal",
+    "OQP27.cglmp_local_bound",
+    "OQP27.fourier_attains_cglmp_value",
+    "OQP27.fourier_projectors_pvm",
+    "OQP27.tracial_table_physical",
+    "OQP27.tensor_chsh_rank_one_pvm",
+    "OQP27.cglmp_witness_tolerance",
+    "OQP27.noise_separation_955",
+    "OQP27.statistical_separation",
+    "OQP27.bgp_facet",
+    "OQP27.bgp_relative_interior_point",
+    "OQP27.bgp_no_signalling_violation",
+    "OQP27.bgp_not_cglmp_four",
+    "OQP27.bgp_no_fusion"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

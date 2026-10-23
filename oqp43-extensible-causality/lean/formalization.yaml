@@ -1,0 +1,237 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4
+version: "v0.4"
+
+project:
+  name: "Extensibly causal processes that are not purifiable (Open Quantum Problem 43)"
+  description: >-
+    A negative answer to IQOQI Vienna Open Quantum Problem 43, "Are all extensibly causal
+    processes purifiable?": an explicit process matrix for two parties with qubit inputs and
+    outputs is extensibly causal and causally nonseparable, and it is not purifiable, with purity
+    in the sense of Araújo, Feix, Navascués and Brukner and purifications of every finite
+    dimension excluded. Also formalized: for two parties with port dimensions (m, d, n, e), every
+    extensibly causal process is purifiable exactly when one of the four dimensions is 1;
+    purifiable processes are causally separable; the problem's transposed recovery formula
+    defines the same purifiable processes; causally ordered processes are purifiable; and three
+    non-vacuity statements for the definitions.
+  authors:
+    - "David Turturean"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "David Turturean"
+
+classification:
+  arxiv: ["quant-ph"]
+  msc2020: ["81P16", "81P47", "03B35"]
+
+sources:
+  - title: "Extensible causality without purification"
+    authors:
+      - "Physical Superintelligence (PSI)"
+    type: "paper"
+    location: "paper/README.md"
+    relationship: "formalizes"
+    note: >-
+      Source draft for the formalization's theorem numbering. The accompanying paper is titled
+      "An extensibly causal quantum process with no purification"; paper/README.md maps the
+      current paper's statements to Lean. Theorem numbers below follow the October 2026
+      source draft. Challenge.lean
+      states its Theorem 1.1, the Pauli form of the process, the dimension dichotomy, Theorem 6.1,
+      Proposition 9.2, the first statement of Lemma 2.3, the transposition statement of Appendix B
+      and the answer to the problem.
+    license: "unknown"
+    author_endorsement: "participated"
+  - title: "Open Quantum Problem 43: Are all extensibly causal processes purifiable?"
+    contributors:
+      - name: "M. Araújo"
+        role: "problem contact"
+      - name: "Č. Brukner"
+        role: "problem contact"
+    id: "https://oqp.iqoqi.oeaw.ac.at/are-all-extensibly-causal-processes-purifiable"
+    type: "web discussion"
+    location: "https://web.archive.org/web/20231029013446/https://oqp.iqoqi.oeaw.ac.at/are-all-extensibly-causal-processes-purifiable"
+    relationship: "other"
+    note: >-
+      IQOQI Vienna Open Quantum Problems, listed 22 May 2017.
+      The open problem that the headline theorem answers in the negative; its text is quoted in
+      docs/OQP_STATEMENT.md and mapped to the Lean definitions in docs/FIDELITY.md.
+    license: "unknown"
+    author_endorsement: "not-contacted"
+  - title: "A purification postulate for quantum mechanics with indefinite causal order"
+    authors: ["M. Araújo", "A. Feix", "M. Navascués", "Č. Brukner"]
+    id: "arXiv:1611.08535"
+    type: "paper"
+    location: "Quantum 1, 10 (2017)"
+    relationship: "background"
+    note: >-
+      Definitions 1 and 3 (deterministic and pure processes, purifiability), formalized as
+      Deterministic, Pure and Purifiable; the question of Section 8.
+    author_endorsement: "not-contacted"
+  - title: "Causal and causally separable processes"
+    authors: ["O. Oreshkov", "C. Giarmatzi"]
+    id: "arXiv:1506.05449"
+    type: "paper"
+    location: "New J. Phys. 18, 093020 (2016)"
+    relationship: "background"
+    note: "Definition of extensibly causal processes, formalized as ExtensiblyCausal."
+    author_endorsement: "not-contacted"
+  - title: "Consequences of preserving reversibility in quantum superchannels"
+    authors: ["W. Yokojima", "M. T. Quintino", "A. Soeda", "M. Murao"]
+    id: "arXiv:2003.05682"
+    type: "paper"
+    location: "Quantum 5, 441 (2021)"
+    relationship: "independently-proves"
+    note: >-
+      Corollary 1 (purifiable bipartite processes are causally separable) is proved in Lean as
+      purifiable_causallySeparable, by the argument of Section 6.1 of the paper of record.
+    author_endorsement: "not-contacted"
+  - title: "Cyclic quantum causal models"
+    authors: ["J. Barrett", "R. Lorenz", "O. Oreshkov"]
+    id: "arXiv:2002.12157"
+    type: "paper"
+    location: "Nat. Commun. 12, 885 (2021)"
+    relationship: "independently-proves"
+    note: "Theorem 3 contains the same statement as Corollary 1 of Yokojima, Quintino, Soeda and Murao."
+    author_endorsement: "not-contacted"
+  - title: "Quantum correlations with no causal order"
+    authors: ["O. Oreshkov", "F. Costa", "Č. Brukner"]
+    id: "arXiv:1105.4464"
+    type: "paper"
+    location: "Nat. Commun. 3, 1092 (2012)"
+    relationship: "background"
+    note: "The process matrix formalism and the process W_OCB of the non-vacuity statement."
+    author_endorsement: "not-contacted"
+  - title: "Causally nonseparable processes admitting a causal model"
+    authors: ["A. Feix", "M. Araújo", "Č. Brukner"]
+    id: "arXiv:1604.03391"
+    type: "paper"
+    location: "New J. Phys. 18, 083040 (2016)"
+    relationship: "background"
+    note: "Conjectured that causally nonseparable bipartite processes that are extensibly causal exist."
+    author_endorsement: "not-contacted"
+  - title: "Quantum circuits with classical versus quantum control of causal order"
+    authors: ["J. Wechs", "H. Dourdent", "A. A. Abbott", "C. Branciard"]
+    id: "arXiv:2101.08796"
+    type: "paper"
+    location: "PRX Quantum 2, 030335 (2021)"
+    relationship: "background"
+    note: "Quantum circuits with quantum control of causal order and their relation to purifiable processes."
+    author_endorsement: "not-contacted"
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Proved: the eleven statements of Challenge.lean, about the definitions copied there from the
+    library: an explicit four-qubit process that is extensibly causal, causally nonseparable and
+    not purifiable, and the existential answer to the problem; the Pauli form of the process; the
+    dimension dichotomy for two parties with port dimensions (m, d, n, e); purifiable processes are
+    causally separable; the problem's transposed recovery formula defines the same purifiable
+    processes; for positive operators, the conditions defining process matrices are equivalent to
+    normalized probabilities for all pairs of local channels; causally ordered processes are
+    purifiable; and three non-vacuity statements.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Anthropic's Claude Fable 5.1", "Anthropic's Claude Opus 5.5"]
+      framework: "Claude Code"
+      tool_setup: >-
+        AI agents wrote the Lean library from the paper and a written formalization plan, built it
+        on remote Linux machines, and checked it with Comparator and Lean's kernel replay; the
+        release packaging (module-system port, Challenge.lean, documentation) was also done by an
+        agent.
+      cost:
+        wall_time: "September to October 2026"
+        spend_usd: "not tracked"
+        hardware: "API models; Lean builds on remote Linux machines"
+      prompting_notes: "Agents worked from the paper and a formalization plan, in repair cycles driven by compiler output."
+    - method: "agent"
+      models: ["OpenAI's GPT-6-Astra"]
+      framework: "Codex"
+      tool_setup: >-
+        Continuation of the Lean library from 9 October 2026: definition modules, statement
+        packaging and Comparator runs, built on remote Linux machines.
+      cost:
+        wall_time: "October 2026"
+        spend_usd: "not tracked"
+        hardware: "API models; Lean builds on remote Linux machines"
+      prompting_notes: "n/a"
+  spend_usd: "not tracked"
+  notes: >-
+    Provenance and use of AI. This result was released by Physical Superintelligence (PSI). The
+    mathematics was developed by PSI researchers working with AI models (OpenAI's GPT-6-Astra and Anthropic's Claude Fable 5.1, Claude Opus 5 and Claude Opus 5.5) in automated research workflows at PSI. The Lean formalization was
+    written by AI agents (Anthropic's Claude Fable 5.1 and Claude Opus 5.5 in Claude Code, and OpenAI's GPT-6-Astra in Codex)
+    under PSI's direction. David Turturean and Ning Bao are responsible for the correctness of
+    the paper. The paper's AI disclosure has the details; this file records which agent did
+    which part. Comparator checks that the theorems proved in Solution.lean are exactly the
+    statements in Challenge.lean, using only the three standard axioms, and the proofs are
+    replayed by Lean's kernel and by independent kernels.
+
+review:
+  status: "statements checked"
+  reviewers:
+    - "Physical Superintelligence (PSI)"
+  notes: "docs/FIDELITY.md records the correspondence between the problem, the source manuscript and the Lean statements."
+
+alignment:
+  namespace: "CausalNonpurifiability"
+  statements:
+    - source: "Open Quantum Problem 43, the question"
+      lean: "CausalNonpurifiability.OQP43.not_all_extensiblyCausal_purifiable"
+      module: "Solution"
+      status: "proved"
+      note: "Two parties with qubit input and output systems; library theorem oqp43_negative."
+    - source: "Theorem 1.1"
+      lean: "CausalNonpurifiability.OQP43.theorem_1_1"
+      module: "Solution"
+      status: "proved"
+      note: "Full rank is stated as positive definiteness; library theorem theorem_intro."
+    - source: "Equation for W_q (Pauli form)"
+      lean: "CausalNonpurifiability.OQP43.wq_pauli_form"
+      module: "Solution"
+      status: "proved"
+      note: "Library theorem eq_qubit_pauli; checked entrywise by kernel evaluation over the rationals."
+    - source: "Appendix B, last statement; the problem's recovery formula with S^T"
+      lean: "CausalNonpurifiability.OQP43.purifiable_iff_transpose_formula"
+      module: "Solution"
+      status: "proved"
+      note: "The formula with the full transpose S^T; library theorem purifiable_iff_transpose_convention."
+    - source: "Lemma 2.3, first statement"
+      lean: "CausalNonpurifiability.OQP43.valid_iff_channels_normalized"
+      module: "Solution"
+      status: "proved"
+      note: "For positive W; library theorem valid_iff_channel_normalization."
+    - source: "Non-vacuity of purifiability"
+      lean: "CausalNonpurifiability.OQP43.white_process_purifiable"
+      module: "Solution"
+      status: "proved"
+      note: "The white-noise process I/(mn); library theorem white_process."
+    - source: "Non-vacuity of causality"
+      lean: "CausalNonpurifiability.OQP43.swap_table_not_causal"
+      module: "Solution"
+      status: "proved"
+      note: "Library theorem not_causal_swap."
+    - source: "Appendix C (the process of Oreshkov, Costa and Brukner)"
+      lean: "CausalNonpurifiability.OQP43.ocb_process_not_extensiblyCausal"
+      module: "Solution"
+      status: "proved"
+      note: "Two clauses of the library theorem appC_OCB_game."
+    - source: "The dimension dichotomy (Theorem 3.1 and its consequence)"
+      lean: "CausalNonpurifiability.OQP43.dimension_dichotomy"
+      module: "Solution"
+      status: "proved"
+      note: "Two parties, all port dimensions (m, d, n, e); library theorem dimension_dichotomy."
+    - source: "Theorem 6.1 (Yokojima, Quintino, Soeda and Murao, Corollary 1; Barrett, Lorenz and Oreshkov, Theorem 3)"
+      lean: "CausalNonpurifiability.OQP43.purifiable_causallySeparable"
+      module: "Solution"
+      status: "proved"
+      note: "Library theorem purifiable_causallySeparable."
+    - source: "Proposition 9.2 (Araújo, Feix, Navascués and Brukner, Section 3)"
+      lean: "CausalNonpurifiability.OQP43.ordered_processes_purifiable"
+      module: "Solution"
+      status: "proved"
+      note: "Causally ordered processes are purifiable, in all dimensions; library theorem ordered_purifiable."
