@@ -36,6 +36,16 @@ This result was released by Physical Superintelligence (PSI). The mathematics wa
 
 ## Citation
 
+```bibtex
+@misc{maccormack2026werner,
+  author       = {MacCormack, Ian and Bao, Ning},
+  title        = {Three copies of the {Werner} state: the sharp curve in dimensions three and four and a bound in every dimension},
+  year         = {2026},
+  note         = {Preprint, with a Lean 4 formalization},
+  howpublished = {\url{https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp02-three-copy-werner}}
+}
+```
+
 The current paper is identified above. [CITATION.cff](lean/CITATION.cff) records the qutrit formalization and the 21 October manuscript it formalizes.
 
 ## License

@@ -44,6 +44,16 @@ This result was released by Physical Superintelligence (PSI). The mathematics wa
 
 ## Citation
 
+```bibtex
+@misc{turturean2026cglmp,
+  author       = {Turturean, David and Bao, Ning},
+  title        = {The optimal {CGLMP} measurements on maximally entangled states},
+  year         = {2026},
+  note         = {Preprint, with a Lean 4 formalization},
+  howpublished = {\url{https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp27-cglmp-inequalities}}
+}
+```
+
 The [formalization citation](lean/CITATION.cff) records the software and its
 bibliographic sources.
 

@@ -29,6 +29,16 @@ This result was released by Physical Superintelligence (PSI). The mathematics wa
 
 ## Citation
 
+```bibtex
+@misc{turturean2026vacuumbell,
+  author       = {Turturean, David},
+  title        = {The vacuum {Bell} correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation},
+  year         = {2026},
+  note         = {Preprint, with a Lean 4 formalization},
+  howpublished = {\url{https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp12-vacuum-bell-correlations}}
+}
+```
+
 See the [formalization citation](lean/CITATION.cff) and its reference to the full manuscript.
 
 ## License

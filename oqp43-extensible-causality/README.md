@@ -43,6 +43,16 @@ This result was released by Physical Superintelligence (PSI). The mathematics wa
 
 ## Citation
 
+```bibtex
+@misc{turturean2026extensible,
+  author       = {Turturean, David and Bao, Ning},
+  title        = {An extensibly causal quantum process with no purification},
+  year         = {2026},
+  note         = {Preprint, with a Lean 4 formalization},
+  howpublished = {\url{https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp43-extensible-causality}}
+}
+```
+
 Use [`lean/CITATION.cff`](lean/CITATION.cff) to cite the formalization.
 
 ## License

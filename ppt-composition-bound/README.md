@@ -25,6 +25,16 @@ This result was released by Physical Superintelligence (PSI). The mathematics wa
 
 ## Citation
 
+```bibtex
+@misc{turturean2026ppt,
+  author       = {Turturean, David and Bao, Ning},
+  title        = {Entanglement Breaking after $2(d-1)$ {PPT} Maps},
+  year         = {2026},
+  note         = {Preprint, with a Lean 4 formalization},
+  howpublished = {\url{https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/ppt-composition-bound}}
+}
+```
+
 See the [formalization citation](lean/CITATION.cff).
 
 ## License
