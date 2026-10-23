@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Cite this qutrit formalization and its source manuscript of 21 October 2026 using the records below."
+message: "Cite this software record for the Lean formalization and the current paper record below for the mathematical result."
 title: "Three-copy nondistillability of the qutrit Werner state: Lean 4 formalization"
 type: software
 authors:
@@ -13,10 +13,22 @@ keywords:
   - "entanglement distillation"
   - "Werner states"
   - "NPT"
+repository-code: "https://github.com/physical-superintelligence/oqp-batch-2026/tree/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp02-three-copy-werner/lean"
+commit: "7049357c42a8fe85262da08fdc10d57b4d9e67a0"
 references:
+  - type: unpublished
+    title: "Three copies of the Werner state: the sharp curve in dimensions three and four and a bound in every dimension"
+    authors:
+      - given-names: "Ian"
+        family-names: "MacCormack"
+      - given-names: "Ning"
+        family-names: "Bao"
+    year: 2026
+    url: "https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp02-three-copy-werner/paper/oqp02-three-copy-werner.pdf"
+    notes: "Preprint; repository snapshot of 23 October 2026."
   - type: article
     title: "Three-copy nondistillability of qutrit and ququart Werner states"
     authors:
       - name: "Physical Superintelligence (PSI)"
     status: in-preparation
-    notes: "Manuscript of 21 October 2026."
+    notes: "Historical source manuscript of 21 October 2026; retained for the formalization's theorem numbering. The current paper citation is listed above."

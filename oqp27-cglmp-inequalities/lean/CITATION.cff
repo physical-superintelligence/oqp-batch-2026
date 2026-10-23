@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this formalization, please cite it as below, and cite the paper it formalizes."
+message: "Cite this software record for the Lean formalization and the current paper record below for the mathematical result."
 title: "The power of CGLMP inequalities (Open Quantum Problems, Problem 27): Lean 4 formalization"
 type: software
 authors:
@@ -13,13 +13,26 @@ keywords:
   - "Bell inequalities"
   - "CGLMP inequality"
   - "Open Quantum Problems"
+repository-code: "https://github.com/physical-superintelligence/oqp-batch-2026/tree/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp27-cglmp-inequalities/lean"
+commit: "7049357c42a8fe85262da08fdc10d57b4d9e67a0"
 references:
+  - type: unpublished
+    title: "The optimal CGLMP measurements on maximally entangled states"
+    authors:
+      - given-names: "David"
+        family-names: "Turturean"
+      - given-names: "Ning"
+        family-names: "Bao"
+    year: 2026
+    url: "https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp27-cglmp-inequalities/paper/oqp27-cglmp-inequalities.pdf"
+    notes: "Preprint; repository snapshot of 23 October 2026."
   - type: article
     title: "CGLMP optimality and the strength of Bell tests"
     authors:
       - name: "Physical Superintelligence (PSI)"
     status: in-preparation
-  - type: webpage
+    notes: "Historical source draft; retained for the formalization's theorem correspondence. The current paper citation is listed above."
+  - type: website
     title: "The power of CGLMP inequalities (Open Quantum Problems, Problem 27)"
     authors:
       - name: "IQOQI Vienna"

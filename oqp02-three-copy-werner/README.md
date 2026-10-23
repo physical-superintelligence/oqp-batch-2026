@@ -36,17 +36,23 @@ This result was released by Physical Superintelligence (PSI). The mathematics wa
 
 ## Citation
 
+Cite the paper as follows:
+
+> Ian MacCormack and Ning Bao (2026). *Three copies of the Werner state: the sharp curve in dimensions three and four and a bound in every dimension*. Preprint.
+
+[PDF at the cited version](https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp02-three-copy-werner/paper/oqp02-three-copy-werner.pdf).
+
 ```bibtex
-@misc{maccormack2026werner,
-  author       = {MacCormack, Ian and Bao, Ning},
-  title        = {Three copies of the {Werner} state: the sharp curve in dimensions three and four and a bound in every dimension},
-  year         = {2026},
-  note         = {Preprint, with a Lean 4 formalization},
-  howpublished = {\url{https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp02-three-copy-werner}}
+@unpublished{maccormack2026werner,
+  author = {MacCormack, Ian and Bao, Ning},
+  title = {{Three copies of the Werner state: the sharp curve in dimensions three and four and a bound in every dimension}},
+  year = {2026},
+  note = {Preprint; repository snapshot of 23 October 2026.},
+  url = {https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp02-three-copy-werner/paper/oqp02-three-copy-werner.pdf}
 }
 ```
 
-The current paper is identified above. [CITATION.cff](lean/CITATION.cff) records the qutrit formalization and the 21 October manuscript it formalizes.
+The [combined BibTeX file](../CITATIONS.bib) contains these paper citations. If you use the Lean formalization, also cite its [software record](lean/CITATION.cff) and identify the commit used. Earlier source drafts remain identified in the formalization metadata for theorem correspondence.
 
 ## License
 
