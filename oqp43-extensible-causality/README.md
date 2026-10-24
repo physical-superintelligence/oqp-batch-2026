@@ -43,17 +43,23 @@ This result was released by Physical Superintelligence (PSI). The mathematics wa
 
 ## Citation
 
+Cite the paper as follows:
+
+> David Turturean and Ning Bao (2026). *An extensibly causal quantum process with no purification*. Preprint.
+
+[PDF at the cited version](https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp43-extensible-causality/paper/oqp43-extensible-causality.pdf).
+
 ```bibtex
-@misc{turturean2026extensible,
-  author       = {Turturean, David and Bao, Ning},
-  title        = {An extensibly causal quantum process with no purification},
-  year         = {2026},
-  note         = {Preprint, with a Lean 4 formalization},
-  howpublished = {\url{https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp43-extensible-causality}}
+@unpublished{turturean2026extensible,
+  author = {Turturean, David and Bao, Ning},
+  title = {{An extensibly causal quantum process with no purification}},
+  year = {2026},
+  note = {Preprint; repository snapshot of 23 October 2026.},
+  url = {https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp43-extensible-causality/paper/oqp43-extensible-causality.pdf}
 }
 ```
 
-Use [`lean/CITATION.cff`](lean/CITATION.cff) to cite the formalization.
+The [combined BibTeX file](../CITATIONS.bib) contains these paper citations. If you use the Lean formalization, also cite its [software record](lean/CITATION.cff) and identify the commit used. Earlier source drafts remain identified in the formalization metadata for theorem correspondence.
 
 ## License
 

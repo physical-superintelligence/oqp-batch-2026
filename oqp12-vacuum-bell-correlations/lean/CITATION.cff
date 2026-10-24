@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this formalization, please cite it as below, and cite the full manuscript of 21 October 2026."
+message: "Cite this software record for the Lean formalization, and cite the letter or full manuscript below according to the version used. The theorem numbering follows the full manuscript."
 title: "Bell inequalities for long range vacuum correlations (Open Quantum Problem 12): Lean 4 formalization"
 type: software
 authors:
@@ -14,10 +14,22 @@ keywords:
   - "CHSH"
   - "free scalar field"
   - "Open Quantum Problems"
+repository-code: "https://github.com/physical-superintelligence/oqp-batch-2026/tree/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp12-vacuum-bell-correlations/lean"
+commit: "7049357c42a8fe85262da08fdc10d57b4d9e67a0"
 references:
-  - type: article
+  - type: unpublished
     title: "The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation"
     authors:
       - given-names: "David"
         family-names: "Turturean"
-    status: in-preparation
+    year: 2026
+    url: "https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp12-vacuum-bell-correlations/paper/oqp12-vacuum-bell-correlations.pdf"
+    notes: "Preprint; letter of 22 October 2026, in the repository snapshot of 23 October 2026."
+  - type: unpublished
+    title: "The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation"
+    authors:
+      - given-names: "David"
+        family-names: "Turturean"
+    year: 2026
+    url: "https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp12-vacuum-bell-correlations/paper/full-manuscript/oqp12-vacuum-bell-correlations-full-manuscript.pdf"
+    notes: "Preprint; full manuscript of 21 October 2026, in the repository snapshot of 23 October 2026."

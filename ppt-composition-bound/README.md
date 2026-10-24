@@ -25,17 +25,23 @@ This result was released by Physical Superintelligence (PSI). The mathematics wa
 
 ## Citation
 
+Cite the paper as follows:
+
+> David Turturean and Ning Bao (2026). *Entanglement Breaking after 2(d-1) PPT Maps*. Preprint.
+
+[PDF at the cited version](https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/ppt-composition-bound/paper/ppt-composition-bound.pdf).
+
 ```bibtex
-@misc{turturean2026ppt,
-  author       = {Turturean, David and Bao, Ning},
-  title        = {Entanglement Breaking after $2(d-1)$ {PPT} Maps},
-  year         = {2026},
-  note         = {Preprint, with a Lean 4 formalization},
-  howpublished = {\url{https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/ppt-composition-bound}}
+@unpublished{turturean2026ppt,
+  author = {Turturean, David and Bao, Ning},
+  title = {{Entanglement Breaking after 2(d-1) PPT Maps}},
+  year = {2026},
+  note = {Preprint; repository snapshot of 23 October 2026.},
+  url = {https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/ppt-composition-bound/paper/ppt-composition-bound.pdf}
 }
 ```
 
-See the [formalization citation](lean/CITATION.cff).
+The [combined BibTeX file](../CITATIONS.bib) contains these paper citations. If you use the Lean formalization, also cite its [software record](lean/CITATION.cff) and identify the commit used.
 
 ## License
 

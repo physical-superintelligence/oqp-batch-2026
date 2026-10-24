@@ -44,18 +44,23 @@ This result was released by Physical Superintelligence (PSI). The mathematics wa
 
 ## Citation
 
+Cite the paper as follows:
+
+> David Turturean and Ning Bao (2026). *The optimal CGLMP measurements on maximally entangled states*. Preprint.
+
+[PDF at the cited version](https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp27-cglmp-inequalities/paper/oqp27-cglmp-inequalities.pdf).
+
 ```bibtex
-@misc{turturean2026cglmp,
-  author       = {Turturean, David and Bao, Ning},
-  title        = {The optimal {CGLMP} measurements on maximally entangled states},
-  year         = {2026},
-  note         = {Preprint, with a Lean 4 formalization},
-  howpublished = {\url{https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp27-cglmp-inequalities}}
+@unpublished{turturean2026cglmp,
+  author = {Turturean, David and Bao, Ning},
+  title = {{The optimal CGLMP measurements on maximally entangled states}},
+  year = {2026},
+  note = {Preprint; repository snapshot of 23 October 2026.},
+  url = {https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp27-cglmp-inequalities/paper/oqp27-cglmp-inequalities.pdf}
 }
 ```
 
-The [formalization citation](lean/CITATION.cff) records the software and its
-bibliographic sources.
+The [combined BibTeX file](../CITATIONS.bib) contains these paper citations. If you use the Lean formalization, also cite its [software record](lean/CITATION.cff) and identify the commit used. Earlier source drafts remain identified in the formalization metadata for theorem correspondence.
 
 ## License
 

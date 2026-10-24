@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "For an individual result, cite its paper and the CITATION.cff in that result's lean/ folder."
+message: "For a paper, use its entry in CITATIONS.bib. Cite the result's lean/CITATION.cff separately for the formalization. This record describes the collection."
 title: "Open Quantum Problems: a PSI batch, October 2026"
 type: dataset
 authors:
@@ -11,3 +11,60 @@ keywords:
   - "quantum information"
   - "Lean 4"
   - "formalization"
+references:
+  - type: unpublished
+    title: "Three copies of the Werner state: the sharp curve in dimensions three and four and a bound in every dimension"
+    authors:
+      - given-names: "Ian"
+        family-names: "MacCormack"
+      - given-names: "Ning"
+        family-names: "Bao"
+    year: 2026
+    url: "https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp02-three-copy-werner/paper/oqp02-three-copy-werner.pdf"
+    notes: "Preprint; repository snapshot of 23 October 2026."
+  - type: unpublished
+    title: "The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation"
+    authors:
+      - given-names: "David"
+        family-names: "Turturean"
+    year: 2026
+    url: "https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp12-vacuum-bell-correlations/paper/oqp12-vacuum-bell-correlations.pdf"
+    notes: "Preprint; letter of 22 October 2026, in the repository snapshot of 23 October 2026."
+  - type: unpublished
+    title: "The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation"
+    authors:
+      - given-names: "David"
+        family-names: "Turturean"
+    year: 2026
+    url: "https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp12-vacuum-bell-correlations/paper/full-manuscript/oqp12-vacuum-bell-correlations-full-manuscript.pdf"
+    notes: "Preprint; full manuscript of 21 October 2026, in the repository snapshot of 23 October 2026."
+  - type: unpublished
+    title: "The optimal CGLMP measurements on maximally entangled states"
+    authors:
+      - given-names: "David"
+        family-names: "Turturean"
+      - given-names: "Ning"
+        family-names: "Bao"
+    year: 2026
+    url: "https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp27-cglmp-inequalities/paper/oqp27-cglmp-inequalities.pdf"
+    notes: "Preprint; repository snapshot of 23 October 2026."
+  - type: unpublished
+    title: "An extensibly causal quantum process with no purification"
+    authors:
+      - given-names: "David"
+        family-names: "Turturean"
+      - given-names: "Ning"
+        family-names: "Bao"
+    year: 2026
+    url: "https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp43-extensible-causality/paper/oqp43-extensible-causality.pdf"
+    notes: "Preprint; repository snapshot of 23 October 2026."
+  - type: unpublished
+    title: "Entanglement Breaking after 2(d-1) PPT Maps"
+    authors:
+      - given-names: "David"
+        family-names: "Turturean"
+      - given-names: "Ning"
+        family-names: "Bao"
+    year: 2026
+    url: "https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/ppt-composition-bound/paper/ppt-composition-bound.pdf"
+    notes: "Preprint; repository snapshot of 23 October 2026."

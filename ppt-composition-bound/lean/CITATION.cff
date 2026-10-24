@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this formalization, please cite it as below, and cite the paper it formalizes."
+message: "Cite this software record for the Lean formalization and the current paper record below for the mathematical result."
 title: "PPT composition bound: 2(d-1) PPT maps compose to an entanglement-breaking map (Lean 4 formalization)"
 type: software
 authors:
@@ -12,9 +12,16 @@ keywords:
   - "quantum information"
   - "PPT maps"
   - "entanglement breaking"
+repository-code: "https://github.com/physical-superintelligence/oqp-batch-2026/tree/7049357c42a8fe85262da08fdc10d57b4d9e67a0/ppt-composition-bound/lean"
+commit: "7049357c42a8fe85262da08fdc10d57b4d9e67a0"
 references:
-  - type: article
+  - type: unpublished
     title: "Entanglement Breaking after 2(d-1) PPT Maps"
     authors:
-      - name: "Physical Superintelligence (PSI)"
-    status: in-preparation
+      - given-names: "David"
+        family-names: "Turturean"
+      - given-names: "Ning"
+        family-names: "Bao"
+    year: 2026
+    url: "https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/ppt-composition-bound/paper/ppt-composition-bound.pdf"
+    notes: "Preprint; repository snapshot of 23 October 2026."

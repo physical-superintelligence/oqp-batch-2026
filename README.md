@@ -49,8 +49,18 @@ The commands use the versions in that folder's `lean-toolchain`,
 
 ## Citation and license
 
-Use the selected result's paper citation and its `lean/CITATION.cff` for the
-formalization. The root [CITATION.cff](CITATION.cff) describes the collection.
+Cite the individual paper for a scientific result. Each result guide has a
+plain-text citation and a ready-to-copy BibTeX entry; [CITATIONS.bib](CITATIONS.bib)
+contains all five papers and a separate entry for the OQP 12 full manuscript.
+The entries use the papers' named authors and link to the exact PDF versions.
+
+If you use a Lean formalization, also cite that result's `lean/CITATION.cff`
+and identify the commit used. Earlier source drafts in the formalization
+metadata document theorem correspondence. The root [CITATION.cff](CITATION.cff)
+and GitHub's **Cite this repository** describe the collection as a whole.
+
+These are preprint citations. When a DOI or arXiv identifier becomes available
+for the version you cite, include it in the reference.
 
 The root [LICENSE](LICENSE) and [NOTICE](NOTICE) state the repository's
 default terms. Each result guide links to any additional license and notice

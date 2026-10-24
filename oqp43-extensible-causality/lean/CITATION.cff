@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this formalization, please cite it as below."
+message: "Cite this software record for the Lean formalization and the current paper record below for the mathematical result."
 title: "Extensibly causal processes that are not purifiable (Open Quantum Problem 43): a Lean 4 formalization"
 type: software
 authors:
@@ -22,7 +22,19 @@ keywords:
   - "extensible causality"
   - "purification postulate"
   - "Open Quantum Problems"
+repository-code: "https://github.com/physical-superintelligence/oqp-batch-2026/tree/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp43-extensible-causality/lean"
+commit: "7049357c42a8fe85262da08fdc10d57b4d9e67a0"
 references:
+  - type: unpublished
+    title: "An extensibly causal quantum process with no purification"
+    authors:
+      - given-names: "David"
+        family-names: "Turturean"
+      - given-names: "Ning"
+        family-names: "Bao"
+    year: 2026
+    url: "https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp43-extensible-causality/paper/oqp43-extensible-causality.pdf"
+    notes: "Preprint; repository snapshot of 23 October 2026."
   - type: article
     title: "Extensible causality without purification"
     authors:

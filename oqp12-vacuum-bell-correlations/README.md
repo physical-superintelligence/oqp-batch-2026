@@ -29,17 +29,41 @@ This result was released by Physical Superintelligence (PSI). The mathematics wa
 
 ## Citation
 
+Cite the letter or the full manuscript according to the version you use.
+
+### Letter
+
+> David Turturean (2026). *The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation*. Preprint. Letter.
+
+[PDF at the cited version](https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp12-vacuum-bell-correlations/paper/oqp12-vacuum-bell-correlations.pdf).
+
 ```bibtex
-@misc{turturean2026vacuumbell,
-  author       = {Turturean, David},
-  title        = {The vacuum {Bell} correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation},
-  year         = {2026},
-  note         = {Preprint, with a Lean 4 formalization},
-  howpublished = {\url{https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp12-vacuum-bell-correlations}}
+@unpublished{turturean2026vacuumbell,
+  author = {Turturean, David},
+  title = {{The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation}},
+  year = {2026},
+  note = {Preprint; letter of 22 October 2026, in the repository snapshot of 23 October 2026.},
+  url = {https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp12-vacuum-bell-correlations/paper/oqp12-vacuum-bell-correlations.pdf}
 }
 ```
 
-See the [formalization citation](lean/CITATION.cff) and its reference to the full manuscript.
+### Full manuscript
+
+> David Turturean (2026). *The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation*. Preprint. Full manuscript.
+
+[PDF at the cited version](https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp12-vacuum-bell-correlations/paper/full-manuscript/oqp12-vacuum-bell-correlations-full-manuscript.pdf).
+
+```bibtex
+@unpublished{turturean2026vacuumbellfull,
+  author = {Turturean, David},
+  title = {{The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation}},
+  year = {2026},
+  note = {Preprint; full manuscript of 21 October 2026, in the repository snapshot of 23 October 2026.},
+  url = {https://github.com/physical-superintelligence/oqp-batch-2026/blob/7049357c42a8fe85262da08fdc10d57b4d9e67a0/oqp12-vacuum-bell-correlations/paper/full-manuscript/oqp12-vacuum-bell-correlations-full-manuscript.pdf}
+}
+```
+
+The [combined BibTeX file](../CITATIONS.bib) contains these paper citations. If you use the Lean formalization, also cite its [software record](lean/CITATION.cff) and identify the commit used. The formalization's theorem numbering follows the full manuscript.
 
 ## License
 
