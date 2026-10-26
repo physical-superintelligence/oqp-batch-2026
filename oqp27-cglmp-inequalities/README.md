@@ -20,6 +20,7 @@ in the projective class.
 - [Paper-to-formalization map](lean/paper/README.md) and
   [problem-to-statement map](lean/docs/FIDELITY.md).
 - [Historical verification receipts](lean/verification/RECEIPTS.md).
+- [Earlier draft](drafts/2026-09-21/), files archived on 21 September 2026, with their timestamps and a verification command.
 
 ## Formalization
 

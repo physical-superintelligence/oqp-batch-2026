@@ -1,0 +1,32 @@
+[
+  {
+    "file": "freetsa-root.pem",
+    "retrieved_local_time_untrusted": "2026-09-21T19:18:15.429495+00:00",
+    "sha256": "2151b61137ffa86bf664691ba67e7da0b19f98c758e3d228d5d8ebf27e044438",
+    "url": "https://freetsa.org/files/cacert.pem"
+  },
+  {
+    "file": "freetsa-signer.pem",
+    "retrieved_local_time_untrusted": "2026-09-21T19:18:15.702103+00:00",
+    "sha256": "8bfb0305bb64e2571ca507552ef3245cb1c2fee8728e0ff8689225081ea13467",
+    "url": "https://freetsa.org/files/tsa.crt"
+  },
+  {
+    "file": "digicert-root.cer",
+    "retrieved_local_time_untrusted": "2026-09-21T19:18:15.828384+00:00",
+    "sha256": "709be12e9319a94329b4415774a3d0638ba500e5c2434e9f7c61ece53808434e",
+    "url": "https://knowledge.digicert.com/content/dam/kb/attachments/time-stamp/DigiCertTrustedRootG4.cer"
+  },
+  {
+    "file": "digicert-selfsigned-g4.crt",
+    "retrieved_local_time_untrusted": "2026-09-21T19:18:15.889300+00:00",
+    "sha256": "552f7bdcf1a7af9e6ce672017f4f12abf77240c78e761ac203d1d9d20ac89988",
+    "url": "https://cacerts.digicert.com/DigiCertTrustedRootG4.crt"
+  },
+  {
+    "file": "digicert-chain.pem",
+    "retrieved_local_time_untrusted": "2026-09-21T19:18:15.983420+00:00",
+    "sha256": "5e13de210e735b614d6ec948361aadef9dd6c0ef575382a75f57fd59e183b90e",
+    "url": "https://knowledge.digicert.com/content/dam/kb/attachments/time-stamp/DigiCertTrustedG4TimeStampingRSA4096SHA2562025CA1.pem"
+  }
+]

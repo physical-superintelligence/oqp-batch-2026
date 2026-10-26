@@ -1,0 +1,28 @@
+{
+  "leaf_count": 30,
+  "leaf_index": 18,
+  "root": "419414d6075c5371295dbf85d3e405ac72e9cf9635c574aa910407833f24d389",
+  "schema": "psi-merkle-inclusion-v1",
+  "siblings": [
+    {
+      "sha256": "39315be58e004ddec60076c638586e1d625ee58a9fb079122fa7394bdb20d788",
+      "side": "right"
+    },
+    {
+      "sha256": "173bde097bb19f3a9bceb5a09cee33f1af06877ae9765f9f3c655adda4fe78f9",
+      "side": "left"
+    },
+    {
+      "sha256": "ab8bfc3d429e9417a6fa331cf86a7577a6dc33eac5c81522cace96f2d8998ce8",
+      "side": "right"
+    },
+    {
+      "sha256": "b70dea2617edb3d7138de63c63f2c9db08300d3110f76da90f9773cfb3282426",
+      "side": "right"
+    },
+    {
+      "sha256": "a3ce9243b034a908526eb72411bb9787f03ef0ba3abf1be9fdea5dbbe5de21e4",
+      "side": "left"
+    }
+  ]
+}

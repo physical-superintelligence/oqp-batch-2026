@@ -1,0 +1,178 @@
+\begin{lemma}[A rank-two three-factor inequality]\label{lem:aux}
+Let $X$ act on a finite-dimensional complex tensor product
+$\mathcal H_1\otimes\mathcal H_2\otimes\mathcal H_3$ and have rank at most two.
+All partial traces are unnormalized. Put
+\[
+ N=\|X\|_F^2,\quad T=|\operatorname{Tr}X|^2,\quad
+ B_j=\sum_{|E|=j}\|\operatorname{Tr}_E X\|_F^2,\quad
+ g=(\sigma_1-\sigma_2)^2,
+\]
+where a missing singular value is zero. Then
+\[
+ \frac{17}{8}N-B_1+\frac12B_2-\frac5{16}T\ge\frac g4.
+\]
+\end{lemma}
+
+\begin{proof}
+Write
+\[
+q(Y)=\sum_{E\subseteq\{1,2,3\}}(-1/2)^{|E|}
+                 \|\operatorname{Tr}_E Y\|_F^2.
+\]
+For every square matrix, $\operatorname{Re}Y=(Y+Y^\dagger)/2$ and
+$\operatorname{Im}Y=(Y-Y^\dagger)/(2i)$.
+We first prove a positive-matrix bound, then use four positive secants and
+a real-Hilbert-space estimate. All identities below remain valid when a
+singular value vanishes; the zero matrix is immediate.
+
+\smallskip\noindent\emph{Positive rank-two matrices.}
+For $P=W\tau W^\dagger\succeq0$ of trace one, take $W^\dagger W=I_2$ and
+$\tau=\operatorname{diag}(\lambda,\mu)$, $\lambda+\mu=1$.
+Let $\varsigma_1,\varsigma_2,\varsigma_3$ be the Pauli matrices,
+$K_\nu=\sqrt\tau\varsigma_\nu\sqrt\tau$, and
+$M_{i\nu}=\operatorname{Tr}_{\widehat i}(WK_\nu W^\dagger)$, where
+$\widehat i=\{1,2,3\}\setminus\{i\}$.
+In the unit vector $\sum_a\sqrt{\tau_{aa}}|a\rangle W|a\rangle$, the expectation
+of $\varsigma_\nu^T\otimes\operatorname{sign}(M_{i\nu})$ is
+$\|M_{i\nu}\|_1$. Partition the nine pairs $(i,\nu)$ into the three triples
+with $\nu-i$ fixed modulo three. In each triple these Hermitian contractions
+anticommute. Thus their squared expectations sum to at most one:
+indeed $(\sum_jt_jL_j)^2\preceq\sum_jt_j^2 I$ for anticommuting contractions.
+Consequently $\sum_{i,\nu}\|M_{i\nu}\|_1^2\le3$.
+For Hermitian $M$, its positive and negative parts give
+$2\|M\|_F^2\le\|M\|_1^2+(\operatorname{Tr}M)^2$.
+Since $\operatorname{Tr}K_\nu$ is zero except for the value $\lambda-\mu$,
+\[
+ \sum_{i,\nu}\|M_{i\nu}\|_F^2
+       \le\tfrac32[1+(\lambda-\mu)^2]=3\operatorname{Tr}\tau^2.
+\]
+Pauli completeness
+$\sum_{\nu=0}^3(\varsigma_\nu)_{ab}(\varsigma_\nu)_{cd}
+=2\delta_{ad}\delta_{bc}$, with $\varsigma_0=I$, gives
+\[
+ \sum_{\nu=1}^3\|M_{i\nu}\|_F^2
+ =2\|\operatorname{Tr}_iP\|_F^2
+     -\|\operatorname{Tr}_{\widehat i}P\|_F^2.
+\]
+Substitution in $q(P)$ and homogeneity therefore prove
+\begin{equation}
+ q(P)\ge\frac{2\|P\|_F^2-(\operatorname{Tr}P)^2}{8}
+       =\frac{\operatorname{gap}(P)^2}{8}.
+ \label{eq:psdfloor}
+\end{equation}
+Here $\operatorname{gap}(P)$ is the difference of its two eigenvalues,
+padding by zero.
+
+\smallskip\noindent\emph{Four positive secants.}
+Take $X=USV^\dagger$, $U^\dagger U=V^\dagger V=I_2$, with $S$ diagonal
+and nonnegative. Set
+\[
+ s=\operatorname{Tr}S,\quad P=USU^\dagger,\quad Q=VSV^\dagger,
+ \quad f=\operatorname{Tr}(PQ),\quad G=2f-T;
+ \qquad g=2N-s^2.
+\]
+Let $F_i$ swap receiver $i$ between two physical replicas,
+$\Pi=\prod_i\frac{I-F_i}{2}$, and let $F_\ell$ swap two logical qubits. Define
+\[
+ \Delta=\sum_{i,\nu=1}^3
+ \left\|\operatorname{Tr}_{\widehat i}
+\bigl[U\sqrt S\varsigma_\nu\sqrt S U^\dagger
+       -V\sqrt S\varsigma_\nu\sqrt S V^\dagger\bigr]\right\|_F^2,
+\]
+\[
+ L=\Pi(U\sqrt S\otimes V\sqrt S),\qquad
+ \mathcal S=\operatorname{Tr}\!\left[\frac{I+F_\ell}{2}L^\dagger L\right].
+\]
+Both quantities are nonnegative. For $z\in\{1,-1,i,-i\}$ put
+$P_z=(U+zV)S(U+zV)^\dagger$ and
+$e(P_z)=q(P_z)-\operatorname{gap}(P_z)^2/8\ge0$ by \eqref{eq:psdfloor}.
+The following exact identity is useful:
+\begin{equation}
+ 24q(X)-4g+G=\sum_{z\in\{1,-1,i,-i\}}e(P_z)+\Delta+64\mathcal S.
+ \label{eq:secantidentity}
+\end{equation}
+For completeness, it can be checked with three short expansions.
+Put $E=q(P)+q(Q)$ and define
+\[
+ h=\sum_J(-1/2)^{|J|}\operatorname{Tr}[(\operatorname{Tr}_JP)
+ (\operatorname{Tr}_JQ)],\qquad
+ c_j=\sum_{|J|=j}\operatorname{Tr}(P_JQ_J),
+\]
+where
+$P_J=\operatorname{Tr}_{J^c}P$ and similarly for $Q_J$. Pauli completeness
+and expansion of the two projectors give, respectively,
+\[
+ \begin{aligned}
+ 8h&=8f-4c_2+2c_1-s^2,\\
+ 4E+\Delta&=8N-s^2-4B_1+2c_1,\\
+ 64\mathcal S&=4(s^2+N-c_1+c_2-f-B_1+B_2-T).
+ \end{aligned}
+\]
+For the middle equality the cross Pauli sum at receiver $i$ is
+$2\|\operatorname{Tr}_iX\|_F^2-\operatorname{Tr}(P_iQ_i)$.
+For the last equality the identity and logical-swap contributions are
+$(s^2-c_1+c_2-f)/8$ and $(N-B_1+B_2-T)/8$.
+Finally, four-phase averaging gives
+$\sum_z q(P_z)=4E+8h+8q(X)$ and
+$\sum_z\operatorname{gap}(P_z)^2=16g+8G$.
+The latter follows by applying
+$\operatorname{gap}(M)^2=2\operatorname{Tr}M^2-(\operatorname{Tr}M)^2$
+to the two-by-two Gram matrices
+$2S+zZ+\bar zZ^\dagger$, $Z=\sqrt S U^\dagger V\sqrt S$.
+These expansions prove \eqref{eq:secantidentity}, hence
+\begin{equation}
+ q(X)\ge(4g-G)/24.
+ \label{eq:secantbound}
+\end{equation}
+
+\smallskip\noindent\emph{Hermitian reduction and real Bessel inequality.}
+For positive $A,B$ with $AB=0$, positivity of
+$\prod_i(I-F_i)$ implies $b\le u+a$, where
+$u=\operatorname{Tr}A\operatorname{Tr}B$,
+$a=\sum_i\operatorname{Tr}[(\operatorname{Tr}_iA)(\operatorname{Tr}_iB)]$,
+and $b$ is the analogous sum over two traced factors.
+Thus their polarized $q$ value is
+$-a/2+b/4-u/8\le u/8$.
+Apply this and \eqref{eq:psdfloor} to the positive and negative parts of a Hermitian $Y$
+with at most two eigenvalues of either sign, obtaining
+\[
+ q(Y)\ge[2\|Y\|_F^2-\|Y\|_1^2]/8.
+\]
+Both $\operatorname{Re}X$ and $\operatorname{Im}X$ have this inertia bound:
+their quadratic forms vanish on $\ker X$, a subspace of codimension at most two.
+Since $q(X)=q(\operatorname{Re}X)+q(\operatorname{Im}X)$,
+\begin{equation}
+ q(X)\ge\frac{2N-\|\operatorname{Re}X\|_1^2
+                       -\|\operatorname{Im}X\|_1^2}{8}.
+ \label{eq:hermitianbound}
+\end{equation}
+Put $C=U^\dagger V$. Choose a Hermitian unitary
+$J=\operatorname{sign}(\operatorname{Re}X)$, assigning signs on its kernel,
+and a Hermitian Frobenius-orthonormal basis $E_0,\ldots,E_3$ of $M_2$.
+For the real inner product $\operatorname{Re}\operatorname{Tr}(A^\dagger B)$,
+the five matrices $JU/\sqrt2,iUE_0,\ldots,iUE_3$ are orthonormal.
+Indeed their cross inner products vanish because $U^\dagger JU$ and
+the $E_\mu$ are Hermitian. Bessel's inequality on $VS$ gives
+\[
+ \tfrac12\|\operatorname{Re}X\|_1^2+\|\operatorname{Im}(CS)\|_F^2\le N.
+\]
+Exchange $U,V$ and average. The elementary entrywise identity
+\[
+ \|\operatorname{Im}(CS)\|_F^2+\|\operatorname{Im}(SC)\|_F^2
+ -2\|\operatorname{Im}(\sqrt S C\sqrt S)\|_F^2
+ =\tfrac12\sum_{i,j}(S_{ii}-S_{jj})^2|C_{ij}|^2\ge0
+\]
+yields $\|\operatorname{Re}X\|_1^2\le2N-2\|\operatorname{Im}Z\|_F^2$.
+Apply the same argument to $iX$ and add, using $f=\|Z\|_F^2$:
+\[
+ \|\operatorname{Re}X\|_1^2+\|\operatorname{Im}X\|_1^2\le4N-2f.
+\]
+Equation \eqref{eq:hermitianbound} now gives $q(X)\ge(G+T-2N)/8$.
+Take one quarter of this bound and three quarters of \eqref{eq:secantbound}:
+\[
+ q(X)\ge-\frac N{16}+\frac T{32}+\frac g8.
+\]
+Since $2q(X)+N/8-T/16=17N/8-B_1+B_2/2-5T/16$, the claim follows.
+If the entire physical space is one-dimensional, it is immediate directly;
+otherwise rank-one SVDs can be padded to the two-column isometries used above.
+\end{proof}

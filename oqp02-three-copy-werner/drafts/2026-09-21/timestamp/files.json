@@ -1,0 +1,19 @@
+[
+  {
+    "id": "npt_qutrit_three_copy_endpoint",
+    "files": {
+      "paper.pdf": "manuscripts/three_copy_qutrit_werner_paper.pdf",
+      "paper.tex": "manuscripts/three_copy_qutrit_werner_paper.tex",
+      "notes/PROPOSITION6_AMENDMENT.md": "full_package_docs/PROPOSITION6_AMENDMENT.md",
+      "notes/RANGE_AND_REPAIR.md": "full_package_docs/RANGE_AND_REPAIR.md"
+    }
+  },
+  {
+    "id": "npt",
+    "files": {
+      "uniform-bound.pdf": "originals/4/three_copy_0462713.pdf",
+      "uniform-bound.tex": "originals/4/three_copy_0462713.tex",
+      "analytic.tex": "supporting_source/analytic.tex"
+    }
+  }
+]

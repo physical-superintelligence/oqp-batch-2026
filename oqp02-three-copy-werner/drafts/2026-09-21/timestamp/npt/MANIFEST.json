@@ -1,0 +1,131 @@
+{
+  "files": [
+    {
+      "bytes": 10245,
+      "path": "RESULT.json",
+      "sha256": "e27b0776943b8f6c4375797fc753642b97dd24e2d5fe4adeda5daa2319520734"
+    },
+    {
+      "bytes": 8146,
+      "path": "SOURCE_MAP.json",
+      "sha256": "ab112c83968f42e4df861a0b207a72a675aa629ff5a161607d63cb22c5099be4"
+    },
+    {
+      "bytes": 120278,
+      "path": "originals/1/three_copy_werner_manuscript.pdf",
+      "sha256": "72bcc624d37854010a407312c1b9175c1c7a800df33e582450a63c85360e7ee0"
+    },
+    {
+      "bytes": 265421,
+      "path": "originals/2/npt_project_status_20260909.pdf",
+      "sha256": "8bb0c743512bb08abcc3e47540889096a9e8cb1b7fa7dbb41437843ed8ffeb18"
+    },
+    {
+      "bytes": 138632,
+      "path": "originals/3/three_copy_endpoint.pdf",
+      "sha256": "70219c191c6bf25c9d6e20336c3d28fe3fa9b1eecb6ff458e293ae07ced58231"
+    },
+    {
+      "bytes": 112784,
+      "path": "originals/4/three_copy_0462713.pdf",
+      "sha256": "b9559bb20a04f82f77a0e10288cca0681b8f3f0e8ee7c5dfb00bf953169afad6"
+    },
+    {
+      "bytes": 16811,
+      "path": "originals/4/three_copy_0462713.tex",
+      "sha256": "09496ea0af1915d16809ba75f3dc97cd960390bb447bc2e65a5812d7bde4259e"
+    },
+    {
+      "bytes": 2565,
+      "path": "originals/5/README.md",
+      "sha256": "c446f09333cf5b75899da3637216661647cf2580bb8238c1cc0bb94a3b82dbca"
+    },
+    {
+      "bytes": 2972,
+      "path": "originals/6/README.md",
+      "sha256": "26468bfeb8712a5429636b6d00dfa1d6c188cee032a6bd8322bc39b26ebad7ba"
+    },
+    {
+      "bytes": 773,
+      "path": "originals/7/check_receipt.json",
+      "sha256": "3684698ee2268e99f978b3c1d749a7c4403d3a0a21a9f95b47df780dfc9f7ceb"
+    },
+    {
+      "bytes": 701537,
+      "path": "originals/8/npt_three_copy_proof_package.zip",
+      "sha256": "92b6326766fcf1a5c97047cfb5f0e25684ca8f9e8e3e0536fea79b0a4ab83d57"
+    },
+    {
+      "bytes": 2565,
+      "path": "report_collection/Evidence and reviews/npt/README.md",
+      "sha256": "c446f09333cf5b75899da3637216661647cf2580bb8238c1cc0bb94a3b82dbca"
+    },
+    {
+      "bytes": 2972,
+      "path": "report_collection/Evidence and reviews/npt/certificate_README.md",
+      "sha256": "26468bfeb8712a5429636b6d00dfa1d6c188cee032a6bd8322bc39b26ebad7ba"
+    },
+    {
+      "bytes": 773,
+      "path": "report_collection/Evidence and reviews/npt/certificate_check_receipt.json",
+      "sha256": "3684698ee2268e99f978b3c1d749a7c4403d3a0a21a9f95b47df780dfc9f7ceb"
+    },
+    {
+      "bytes": 138632,
+      "path": "report_collection/Evidence and reviews/npt/ian_npt_endpoint_20260911.pdf",
+      "sha256": "70219c191c6bf25c9d6e20336c3d28fe3fa9b1eecb6ff458e293ae07ced58231"
+    },
+    {
+      "bytes": 265421,
+      "path": "report_collection/Evidence and reviews/npt/ian_npt_status_20260909.pdf",
+      "sha256": "8bb0c743512bb08abcc3e47540889096a9e8cb1b7fa7dbb41437843ed8ffeb18"
+    },
+    {
+      "bytes": 701537,
+      "path": "report_collection/Evidence and reviews/npt/npt_three_copy_proof_package.zip",
+      "sha256": "92b6326766fcf1a5c97047cfb5f0e25684ca8f9e8e3e0536fea79b0a4ab83d57"
+    },
+    {
+      "bytes": 120278,
+      "path": "report_collection/Manuscripts/02 Active campaigns/npt/ian_npt_source_neighborhoods_20260910.pdf",
+      "sha256": "72bcc624d37854010a407312c1b9175c1c7a800df33e582450a63c85360e7ee0"
+    },
+    {
+      "bytes": 112784,
+      "path": "report_collection/Manuscripts/02 Active campaigns/npt/npt_three_copy_0462713.pdf",
+      "sha256": "b9559bb20a04f82f77a0e10288cca0681b8f3f0e8ee7c5dfb00bf953169afad6"
+    },
+    {
+      "bytes": 7204,
+      "path": "supporting_source/analytic.tex",
+      "sha256": "cd65d42872de5178c36c97a3806f0b4a3335f8db29bd87e32bb4d0881a68b41a"
+    },
+    {
+      "bytes": 7404,
+      "path": "supporting_source/certificate/algebra.py",
+      "sha256": "5d8ca67736772b9068842242e1d0139ab799a9574f351766e3d0c2f4f2cda381"
+    },
+    {
+      "bytes": 7146,
+      "path": "supporting_source/certificate/representations.py",
+      "sha256": "eb7e6dc36103f2631aa1a9c4c1ab2a12277fff205acf189a81334ad238b55f05"
+    },
+    {
+      "bytes": 47,
+      "path": "supporting_source/certificate/requirements.txt",
+      "sha256": "a0d69164dba924be38b9b429894dd44c74482c824d758c11f78185c0fa819f1b"
+    },
+    {
+      "bytes": 2123,
+      "path": "supporting_source/certificate/self_test.py",
+      "sha256": "a4f191990249d909fd18ed7e844d1120620f02221b0420c88bf9ed952fbf00c3"
+    },
+    {
+      "bytes": 6838,
+      "path": "supporting_source/certificate/verify.py",
+      "sha256": "32ae873131137d42b03c3e590aac1879976225f8602b6a56083fc7068fd7d93e"
+    }
+  ],
+  "result_id": "npt",
+  "schema": "psi-private-result-manifest-v1"
+}
