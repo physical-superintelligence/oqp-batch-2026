@@ -14,6 +14,7 @@ For local dimensions 3 and 4 and 0 ≤ α ≤ 1/2, the minimum of the three-copy
 - [Lean formalization](lean/), [theorem statements](lean/Challenge.lean) and [proofs](lean/Solution.lean).
 - [Paper-to-Lean map](lean/docs/PAPER_TO_LEAN.md) and [statement guide](lean/docs/FIDELITY.md) for the formalized manuscript.
 - [Verification package](verification/README.md), with certificate data, programs and run receipts for the current paper.
+- [Earlier draft](drafts/2026-09-21/), files archived on 21 September 2026, with their timestamps and a verification command.
 
 [`verification/`](verification) backs the paper's two computer-verified statements: pinned, digest-checked scripts that fetch and replay the published d = 3 and d = 4 endpoint certificates (Theorem 6.4), and the dimension-uniform certificate of Theorem 7.2 with its exact verifier; with control scripts, the zero census of Remark 4.5, run receipts and `SHA256SUMS`. Its [`README.md`](verification/README.md) gives the commands, the expected outputs and the interface between the paper and every stored object.
 

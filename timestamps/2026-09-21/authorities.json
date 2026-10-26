@@ -1,0 +1,24 @@
+[
+  {
+    "chain_certificate": "freetsa-signer.pem",
+    "chain_certificate_sha256": "8bfb0305bb64e2571ca507552ef3245cb1c2fee8728e0ff8689225081ea13467",
+    "endpoint": "https://freetsa.org/tsr",
+    "name": "freetsa",
+    "request_sha256": "267e23b2b0138ec9cff940989affd1d367e5ae4019d04df9e36b9d2f9701d7cc",
+    "response_sha256": "a269ee8a5286f510a2f5eb0ea5e37a98c845d68034032c46de16bc7ed23305be",
+    "root_certificate": "freetsa-root.pem",
+    "root_certificate_sha256": "2151b61137ffa86bf664691ba67e7da0b19f98c758e3d228d5d8ebf27e044438",
+    "signed_time_utc": "2026-09-21T19:17:23+00:00"
+  },
+  {
+    "chain_certificate": "digicert-chain.pem",
+    "chain_certificate_sha256": "5e13de210e735b614d6ec948361aadef9dd6c0ef575382a75f57fd59e183b90e",
+    "endpoint": "http://timestamp.digicert.com",
+    "name": "digicert",
+    "request_sha256": "716de68cdc527dc8d59d4283ff911caebc87ae25192e52b875fb306191cb2158",
+    "response_sha256": "d099fea7243bbaa113b6239d16ed6e3727c32ea70087baa2dbb3170ff160118a",
+    "root_certificate": "digicert-root.pem",
+    "root_certificate_sha256": "ce7d6b44f5d510391be98c8d76b18709400a30cd87659bfebe1c6f97ff5181ee",
+    "signed_time_utc": "2026-09-21T19:17:23+00:00"
+  }
+]

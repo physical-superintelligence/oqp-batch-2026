@@ -1,0 +1,371 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,microtype}
+\usepackage[margin=0.86in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist{itemsep=2pt,topsep=4pt,parsep=0pt}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{1pt}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\vecop}{vec}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\Aux}{\mathcal A}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\al}{\alpha_0}
+\newcommand{\eps}{\varepsilon}
+\begin{document}
+\begin{center}
+{\Large\bfseries An exact three-copy undistillability bound}\\[3pt]
+{\large Uniform in local dimension, at $\alpha=462713/1000000$}
+\end{center}
+\begin{abstract}
+We give an exact-arithmetic, computer-assisted proof that Werner states with
+parameter $0\le\alpha\le0.462713$ are three-copy undistillable in every
+finite local dimension. The proof combines a dimension-independent quadratic
+inequality for arbitrary complex rank-two matrices with a rational
+four-replica certificate. Positivity of 238 strictly positive leading blocks
+implies positivity in all sufficiently large dimensions; isometric embedding
+then covers every finite dimension. The analytic inequality is proved here.
+The accompanying rational data and independent checker comprise the finite
+computational part of the proof.
+\end{abstract}
+
+\section{Statement and conventions}
+Let $F(x\otimes y)=y\otimes x$ on $\CC^d\otimes\CC^d$, and define
+\begin{equation}\label{eq:werner}
+ \rho_{d,\alpha}=\frac{I-\alpha F}{d(d-\alpha)},\qquad
+ \al=\frac{462713}{1000000}=0.462713.
+\end{equation}
+All partial traces below are unnormalized. For a matrix $X$ on
+$\HH=\HH_1\otimes\HH_2\otimes\HH_3$, write
+\begin{equation}\label{eq:Q}
+ Q_\alpha(X)=\sum_{S\subseteq\{1,2,3\}}(-\alpha)^{|S|}
+                      \|\Tr_S X\|_F^2
+ =N-\alpha B_1+\alpha^2B_2-\alpha^3T,
+\end{equation}
+where $N=\|X\|_F^2$, $B_j=\sum_{|S|=j}\|\Tr_S X\|_F^2$,
+and $T=|\Tr X|^2$. A missing second singular value is taken to be zero.
+
+\begin{theorem}\label{thm:main}
+For arbitrary finite-dimensional complex spaces $\HH_1,\HH_2,\HH_3$ and
+every matrix $X$ on their tensor product with $\rank X\le2$,
+\[
+ Q_{\al}(X)\ge0.
+\]
+Consequently, for every integer $d\ge2$ and $0\le\alpha\le\al$,
+$\rho_{d,\alpha}$ is three-copy undistillable. It has negative partial
+transpose when $\alpha>1/d$; in particular the theorem gives a nonempty NPT
+interval $1/d<\alpha\le\al$ for every $d\ge3$.
+\end{theorem}
+
+Here three-copy undistillability is the Schmidt-rank-two condition
+\[
+ \langle\psi|(\rho_{d,\alpha}^{\Gamma})^{\otimes3}|\psi\rangle\ge0
+ \quad\text{for every $\psi$ of Schmidt rank at most two,}
+\]
+with the three copies grouped by party. Indeed
+$F^\Gamma=|\Omega_d\rangle\langle\Omega_d|$ for
+$\Omega_d=\sum_{a=1}^d e_a\otimes e_a$, and vectorization identifies
+Schmidt rank with matrix rank and the expectation with
+$Q_\alpha(X)/[d(d-\alpha)]^3$. A Schmidt-rank-two vector is the pullback
+of a two-qubit vector under local filters, giving the usual two-qubit-output
+criterion for distillation. The eigenvalue $1-d\alpha$ of
+$I-\alpha|\Omega_d\rangle\langle\Omega_d|$ gives the asserted NPT condition.
+The theorem concerns three physical copies, not arbitrary copy number.
+
+\section{A quadratic inequality and its determinant}
+The analytic ingredient is the following inequality, proved in full in
+Appendix~\ref{app:analytic}:
+\begin{equation}\label{eq:A}
+ \Aux(X):=\frac{17}{8}N-B_1+\frac12B_2-\frac5{16}T
+ \ \ge\ \frac{(\sigma_1-\sigma_2)^2}{4}\ge0
+ \qquad(\rank X\le2).
+\end{equation}
+It applies to arbitrary complex $X$ and unequal factor dimensions.
+
+For four vectors $r=(u_0,v_0,u_1,v_1)$ in $\HH$, put
+$D_j=u_jv_j^\dagger$. For real subset weights $w=(w_S)$ define
+\[
+ (H_w)_{ij}=\sum_S w_S\langle\Tr_S D_i,\Tr_S D_j\rangle_F.
+\]
+Then $c^\dagger H_wc=\sum_Sw_S\|\Tr_S(c_0D_0+c_1D_1)\|_F^2$.
+Every combination $c_0D_0+c_1D_1$ has rank at most two. Thus \eqref{eq:A} implies
+$H_a\succeq0$ and $\det H_a\ge0$ for the weights
+\begin{equation}\label{eq:aweights}
+ a_\varnothing=17/8,\quad a_S=-1\ (|S|=1),\quad
+ a_S=1/2\ (|S|=2),\quad a_{123}=-5/16.
+\end{equation}
+
+We make the polynomial determinant explicit. Replicas are ordered
+$(u_0,v_0,u_1,v_1)$ and numbered $0,1,2,3$. A permutation $p\in S_4$
+maps input position $j$ to output position $p(j)$; products act right to left.
+For $e,f\in\{0,1\}$ set
+\[
+ d_{ef}=(01)^e(23)^f,\qquad
+ c_{ef}=(03)^e(12)^f(02)(13).
+\]
+Writing $e_i=1_{i\in S}$ and $f_i=1_{i\in R}$, define the formal tensor
+\begin{equation}\label{eq:Kw}
+ K(w)=\sum_{S,R\subseteq\{1,2,3\}}w_Sw_R
+ \left(\bigotimes_{i=1}^3 P_{d_{e_if_i}}
+       -\bigotimes_{i=1}^3 P_{c_{e_if_i}}\right).
+\end{equation}
+Regrouping the four replicas by physical site, contraction of indices gives
+\begin{equation}\label{eq:det}
+ \langle u_0\otimes v_0\otimes u_1\otimes v_1,
+ K(w)(u_0\otimes v_0\otimes u_1\otimes v_1)\rangle=\det H_w.
+\end{equation}
+The first permutation product gives $(H_w)_{00}(H_w)_{11}$ and the
+second gives $(H_w)_{01}(H_w)_{10}$. Let $K_\alpha=K(w)$ with
+$w_S=(-\alpha)^{|S|}$.
+
+Let $\mathcal S$ denote averaging over physical-site permutations,
+simultaneous conjugation of replica labels by
+\[
+ V_4=\{1,(01)(23),(02)(13),(03)(12)\},
+\]
+and adjoint. Put $C=\mathcal S K(a)$. These operations preserve
+four-vector products and nonnegativity of their real expectations, so
+\begin{equation}\label{eq:Cpositive}
+ \langle r,Cr\rangle\ge0
+ \quad\text{for every four-vector product $r$.}
+\end{equation}
+This does not assert positivity of $C$ on arbitrary entangled vectors of the
+four-replica space.
+
+\section{The rational coefficient certificate}
+Use the eight transpose sets
+\[
+ \mathcal T=\{\varnothing,\{0\},\{1\},\{2\},\{3\},
+                         \{0,1\},\{0,2\},\{0,3\}\}.
+\]
+The supplied rational arrays define
+$Y_\tau=\sum_{\mathbf p\in S_4^3}y_{\tau,\mathbf p}
+P_{p_1}\otimes P_{p_2}\otimes P_{p_3}$ and a tensor $E$ satisfying
+the exact coefficient identity
+\begin{equation}\label{eq:cert}
+ K_{\al}=\sum_{\tau\in\mathcal T}Y_\tau+E+\mu C,
+ \qquad
+ \mu=\frac{1581841004766715}{18014398509481984}>0.
+\end{equation}
+All coefficients are rational constants independent of dimension.
+The tensor $E$ is supported only on monomials for which one of
+\[
+ p_i(0)=2,\quad p_i(2)=0,\quad p_i(1)=3,\quad p_i(3)=1
+\]
+holds for all three sites $i$, with the same choice throughout. Each such
+monomial contains one of the full-vector inner products
+$\langle u_1,u_0\rangle$, $\langle u_0,u_1\rangle$,
+$\langle v_1,v_0\rangle$, $\langle v_0,v_1\rangle$ as a factor.
+It therefore vanishes on orthogonal left and right singular frames.
+There are 819 such monomials, forming 40 symmetry orbits.
+
+Write $\Gamma_\tau$ for transpose on the full replica factors in $\tau$,
+at all three physical sites. If
+\begin{equation}\label{eq:familypositive}
+ \Gamma_\tau(Y_\tau)\succeq0 \quad(\tau\in\mathcal T),
+\end{equation}
+then $\langle r,Y_\tau r\rangle
+=\langle r^{*\tau},\Gamma_\tau(Y_\tau)r^{*\tau}\rangle\ge0$;
+the selected full vectors are conjugated in $r^{*\tau}$.
+Equations~\eqref{eq:Cpositive}--\eqref{eq:familypositive} imply
+$\det H_{w(\al)}\ge0$ on every orthogonal singular frame.
+
+The diagonal entries are positive for nonzero dyads: with $F_i$ denoting
+the local swaps between two replicas,
+\begin{equation}\label{eq:rankone}
+ Q_\alpha(uv^\dagger)
+ =\langle u\otimes v,\prod_{i=1}^3(I-\alpha F_i)(u\otimes v)\rangle
+ \ge(1-\alpha)^3\|u\|^2\|v\|^2\qquad(0\le\alpha<1).
+\end{equation}
+The swaps commute and each factor is bounded below by $(1-\alpha)I$.
+Thus the determinant inequality makes this two-by-two Hermitian restriction
+positive semidefinite. Applying it to the SVD of an arbitrary rank-two $X$
+proves $Q_{\al}(X)\ge0$ whenever \eqref{eq:familypositive} holds.
+
+\section{Certification in every dimension}
+\subsection*{Complete polynomial representations}
+At one physical site, the 24 operators
+$D_{\tau,p}=\Gamma_\tau(P_p)$ have pairing diagrams with four input and
+four output vertices. For $P_p$, input $j$ is paired with output $p(j)$;
+transpose exchanges the input and output vertices in $\tau$. A matrix entry
+is the product of the Kronecker deltas along the four edges. Composition is
+concatenation of diagrams, with one factor $d$ per closed loop. Adjoint
+reflects the diagram; trace closes matching input/output vertices.
+
+For $d\ge4$, these 24 operators are linearly independent: assign four
+distinct labels to the edges of any selected diagram. This matrix entry
+is one for that diagram and zero for every other pairing. Their physical
+algebra therefore has dimension 24.
+
+The second data file supplies matrices $\rho_{\tau,r}(p;d)$ and symmetric
+Grams $G_{\tau,r}(d)$ over $\QQ[d]$, and polynomial multiplicities
+$m_{\tau,r}(d)$. The checker verifies the following as polynomial identities:
+\begin{align}
+ \rho_r(p)\rho_r(q)&=d^{\ell(p,q)}\rho_r(p\cdot q),
+ &\rho_r(p)^T G_r&=G_r\rho_r(p^*),\label{eq:algebra}\\
+ \Tr_{\rm phys}D_{\tau,p}
+ &=\sum_r m_{\tau,r}(d)\operatorname{tr}\rho_{\tau,r}(p;d),
+ &\sum_r(\dim\rho_{\tau,r})^2&=24.\label{eq:traces}
+\end{align}
+Here $p\cdot q$ labels the concatenated diagram and $\ell(p,q)$ counts
+its closed loops; for a nonempty transpose set this is not generally
+ordinary permutation multiplication.
+It also checks $\rho_r(1)=I$, $G_r(d)\succ0$ and $m_r(d)>0$ for every
+real $d\ge4$. Positivity follows by substituting $d=4+u$: every Gram
+leading principal minor and multiplicity has nonnegative rational
+coefficients and a positive constant term.
+
+These checks prove completeness. The map
+$\Phi(a)=\bigoplus_r\rho_r(a)$ is a homomorphism. If $\Phi(a)=0$,
+\eqref{eq:traces} applied to $a^\dagger a$ gives
+$\Tr_{\rm phys}(a^\dagger a)=0$, hence $a=0$. Domain and codomain both
+have dimension 24, so $\Phi$ is an isomorphism. Conjugating each block by
+$G_r^{1/2}$ makes it a $*$-isomorphism. Physical positivity is therefore
+equivalent to positivity in every supplied block. No irreducible component
+is left unchecked.
+
+\subsection*{Strict leading blocks}
+For each block, let $k_r$ be the largest degree in $d$ of any entry of
+any $\rho_r(p;d)$, and let $g_r$ be the largest degree of a Gram entry.
+With $t=1/d$, set
+\[
+ R_{r,p}(t)=t^{k_r}\rho_r(p;1/t),\qquad
+ \overline G_r(t)=t^{g_r}G_r(1/t).
+\]
+Both are polynomial; the checker verifies
+$\overline G_r(0)\succ0$. The complete degree data are:
+\begin{center}\small
+\begin{tabular}{@{}llllr@{}}\toprule
+Transpose representative & Block orders & $k_r$ & $g_r$ & Triple blocks\\\midrule
+$\varnothing$ & $1,1,2,3,3$ & $0,0,0,0,0$ & $0,0,0,0,0$ & 35\\
+$\{0\}$ & $1,1,2,3,3$ & $0,0,0,1,1$ & $0,0,0,1,1$ & 35\\
+Each of $\{0,1\},\{0,2\},\{0,3\}$ & $1,1,1,1,2,4$ & $0,0,0,0,2,1$ & $0,0,0,0,1,1$ & 56\\\bottomrule
+\end{tabular}
+\end{center}
+For a triple $\mathbf r=(r_1,r_2,r_3)$ define, using the same raw coefficients
+as in \eqref{eq:cert},
+\begin{align}
+ M_{\tau,\mathbf r}(t)
+ &=\sum_{p_1,p_2,p_3}y_{\tau,\mathbf p}
+                  \bigotimes_{j=1}^3R_{\tau,r_j,p_j}(t),\label{eq:normalized}\\
+ B_{\tau,\mathbf r}(t)
+ &=\left(\bigotimes_j\overline G_{\tau,r_j}(t)\right)
+                         M_{\tau,\mathbf r}(t).
+\end{align}
+These are polynomial, and $B$ is symmetric by \eqref{eq:algebra} and
+the verified Hermitian coefficient symmetries. At positive $t=1/d$, $B$
+is the actual Gram-weighted physical block of $\Gamma_\tau(Y_\tau)$
+multiplied by the positive scalar $t^{\sum_j(k_{r_j}+g_{r_j})}$.
+This changes only how a block is tested, not its coefficients or positivity.
+
+For every representative triple, the exact certificate satisfies
+\begin{equation}\label{eq:margin}
+ G_0(M_0-\eps I)\succeq0,
+ \qquad \eps=\frac1{2000000000},\qquad
+ G_0=\bigotimes_j\overline G_{r_j}(0),\quad M_0=M_{\tau,\mathbf r}(0).
+\end{equation}
+Here $I$ is the matrix identity, not the leading image of the identity
+diagram, which may vanish. Since $G_0\succ0$, \eqref{eq:margin} implies
+$B(0)\succeq\eps G_0\succ0$.
+
+The coefficient symmetries identify reordered triples of block labels;
+$V_4$ identifies the four singleton transpose sets. Complementary transpose
+sets differ by full transpose, preserving positivity. Consequently the
+complete list comprises
+$\binom73+\binom73+3\binom83=238$ representative blocks, of order at most 64.
+There are finitely many continuous matrices $B(t)$, all strictly positive
+at zero. They are therefore simultaneously positive for all sufficiently
+small positive $t$. Thus \eqref{eq:familypositive} holds for every
+sufficiently large integer $d$.
+
+\subsection*{Descent and the parameter interval}
+Given arbitrary factor dimensions $d_i$, choose a sufficiently large common
+dimension $D\ge\max_i d_i$ and isometries $V_i:\HH_i\to\CC^D$.
+For $\widetilde X=(\bigotimes_iV_i)X(\bigotimes_iV_i)^\dagger$,
+\[
+ \Tr_S\widetilde X=(\bigotimes_{i\notin S}V_i)
+                  (\Tr_S X)(\bigotimes_{i\notin S}V_i)^\dagger.
+\]
+Rank and all partial-trace Frobenius norms are preserved. Hence
+$Q_{\al}(X)=Q_{\al}(\widetilde X)\ge0$. An explicit dimension cutoff is
+unnecessary: an arbitrarily large certified dimension can be chosen for
+each proposed finite-dimensional matrix.
+
+For completeness the lower-parameter interval follows without any
+dimension-dependent estimate. Put
+$A_\alpha=I-\alpha|\Omega_d\rangle\langle\Omega_d|$.
+Schmidt-rank-two positivity of $A_{\al}^{\otimes3}$ implies that of
+$A_{\al}^{\otimes k}$ for $k\le3$, by adjoining product vectors with
+positive spectator expectations. For $0\le\alpha\le\al$,
+\[
+ A_\alpha=(\alpha/\al)A_{\al}+(1-\alpha/\al)I.
+\]
+Expanding its third tensor power gives a nonnegative combination of
+$A_{\al}^{\otimes k}\otimes I$ on subsets of the copies. The expectation
+of each term on a Schmidt-rank-two vector is a sum of nonnegative
+expectations, obtained by resolving the spectator systems in local product
+bases; each resulting vector still has Schmidt rank at most two.
+This proves the entire interval in Theorem~\ref{thm:main}.
+
+\section{Finite exact checks and the accompanying data}
+The computational proof uses two data files, treated as untrusted input:
+\begin{itemize}
+\item \texttt{certificate/certificate.json.gz}: the eight rational
+coefficient tensors, ideal coefficients, $\mu$, $\al$, and $\eps$;
+\item \texttt{certificate/representations.json.gz}: the polynomial matrices,
+Grams and multiplicities defining \eqref{eq:algebra}--\eqref{eq:traces}.
+\end{itemize}
+Permutation tuples are lexicographically ordered. Subset masks use bit $i-1$
+for physical site $i$. The checker reconstructs \eqref{eq:Kw} and the
+symmetrized auxiliary tensor from \eqref{eq:aweights}, checks
+\eqref{eq:cert} coefficient by coefficient, validates every ideal term and
+coefficient symmetry, and verifies all polynomial identities and positivity
+conditions above. It checks 16,128 polynomial diagram products in the
+one-site blocks and all 238 strict-margin conditions \eqref{eq:margin}.
+
+All final positivity tests are on symmetric integer matrices obtained by
+clearing positive rational denominators. They pass two exact tests:
+fraction-free symmetric elimination and signs of characteristic-polynomial
+coefficients. The latter is valid because, for a real symmetric $R$,
+nonnegative coefficients of $\det(tI+R)$ exclude a positive root in $t$,
+and hence exclude any negative eigenvalue of $R$. Positive Gram limits are
+verified separately. No floating-point eigenvalue or optimizer status is
+used by the checker.
+
+From the extracted package directory, a complete replay is:
+\begin{verbatim}
+python -m pip install -r certificate/requirements.txt
+python -B certificate/verify.py
+\end{verbatim}
+The checker resolves its two data files relative to itself. The recorded
+replay passes the coefficient and polynomial checks and all 238 blocks by
+both exact methods. Its analytic input is precisely
+Lemma~\ref{lem:aux}, proved below; the determinant and dimension arguments
+have been proved above. These together establish Theorem~\ref{thm:main}.
+
+The SHA-256 digests, fixing the exact electronic data, are
+\begin{center}\small\ttfamily
+\begin{tabular}{@{}l@{}}
+certificate.json.gz:\\
+f00440126b5797ca03acc784411873cd15a39652b7dc9674dbb0a1afd759213c\\[3pt]
+representations.json.gz:\\
+e7652dfef493f38d6ae176e62281b869e310e667480e9c0520cc1ef617f8232f
+\end{tabular}
+\end{center}
+The rational value $\al$ is a certified parameter, not an optimality claim.
+The strict margin in \eqref{eq:margin} is a block-coordinate margin, not a
+dimension-independent lower bound on $Q_{\al}(X)/\|X\|_F^2$.
+
+\appendix
+\section{Proof of the analytic rank-two inequality}\label{app:analytic}
+\setcounter{equation}{0}
+\renewcommand{\theequation}{A\arabic{equation}}
+\input{analytic.tex}
+\end{document}

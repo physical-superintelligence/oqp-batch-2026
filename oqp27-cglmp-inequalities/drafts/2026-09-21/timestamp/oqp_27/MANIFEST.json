@@ -1,0 +1,286 @@
+{
+  "files": [
+    {
+      "bytes": 5883,
+      "path": "RESULT.json",
+      "sha256": "fee753efbfc3d2448ef23baffa07faee0100ab1c99a48cc24d3a548d63e603af"
+    },
+    {
+      "bytes": 18781,
+      "path": "SOURCE_MAP.json",
+      "sha256": "b79e57ec63297979b20df256684a4068ca85a85ecc39e583a23143856257544e"
+    },
+    {
+      "bytes": 282734,
+      "path": "originals/1/oqp27_paper.pdf",
+      "sha256": "378e882f913b9aff11220d17f9e8ae43553a62e0df585b2cb66d0dccb40e8cbb"
+    },
+    {
+      "bytes": 100214,
+      "path": "originals/1/oqp27_paper.tex",
+      "sha256": "761ada1f504b38a74a36c31ef717cf47224f725891484c71fa3eea7a7eb24bae"
+    },
+    {
+      "bytes": 1645,
+      "path": "originals/2/README.md",
+      "sha256": "0648fc5868bf5a2f54ca6a335d7c0ab24cf9c4fa3154b8fdbf37cd9fd0ef25c7"
+    },
+    {
+      "bytes": 12432,
+      "path": "originals/3/AUDIT_INDEPENDENT_B_facet_noise_KL.md",
+      "sha256": "2bdea3826f5f18c51c2fcd31fd29c7d891eb048ebe4ba3992a6eb3f33bb5f306"
+    },
+    {
+      "bytes": 19477,
+      "path": "originals/4/AUDIT_INDEPENDENT_C_analytic_novelty.md",
+      "sha256": "f481f4f2942754d50ef5db57a4a8d6e3ea6bc6b61d3017d46930a954b1cac7c1"
+    },
+    {
+      "bytes": 8906,
+      "path": "originals/5/AUDIT_INDEPENDENT_A_certificates.md",
+      "sha256": "8708400125f8ad47d2774cf4c6162db015398f1145cedd28900fc6f6a5f75aa5"
+    },
+    {
+      "bytes": 8906,
+      "path": "report_collection/Evidence and reviews/oqp27/AUDIT_INDEPENDENT_A_certificates.md",
+      "sha256": "8708400125f8ad47d2774cf4c6162db015398f1145cedd28900fc6f6a5f75aa5"
+    },
+    {
+      "bytes": 12432,
+      "path": "report_collection/Evidence and reviews/oqp27/AUDIT_INDEPENDENT_B_facet_noise_KL.md",
+      "sha256": "2bdea3826f5f18c51c2fcd31fd29c7d891eb048ebe4ba3992a6eb3f33bb5f306"
+    },
+    {
+      "bytes": 19477,
+      "path": "report_collection/Evidence and reviews/oqp27/AUDIT_INDEPENDENT_C_analytic_novelty.md",
+      "sha256": "f481f4f2942754d50ef5db57a4a8d6e3ea6bc6b61d3017d46930a954b1cac7c1"
+    },
+    {
+      "bytes": 1645,
+      "path": "report_collection/Evidence and reviews/oqp27/README.md",
+      "sha256": "0648fc5868bf5a2f54ca6a335d7c0ab24cf9c4fa3154b8fdbf37cd9fd0ef25c7"
+    },
+    {
+      "bytes": 282734,
+      "path": "report_collection/Manuscripts/02 Active campaigns/oqp27/oqp27_long_v4.pdf",
+      "sha256": "378e882f913b9aff11220d17f9e8ae43553a62e0df585b2cb66d0dccb40e8cbb"
+    },
+    {
+      "bytes": 1290,
+      "path": "supporting_source/CHANGELOG.md",
+      "sha256": "e24743dafe1ba9bd1b644bdba04825dd79e855df871579037145deee32f7a1ab"
+    },
+    {
+      "bytes": 31721,
+      "path": "supporting_source/OQP26_27_statements.pdf",
+      "sha256": "31260d83485d543b538afbeb5493654e849887f8ef826bc7682b68a68acf52c1"
+    },
+    {
+      "bytes": 37930,
+      "path": "supporting_source/OQP26_statement.pdf",
+      "sha256": "a3ea45241d416822366f688c32ac4e178a3b347c4cf48ef28c485fc0603ca99d"
+    },
+    {
+      "bytes": 27259,
+      "path": "supporting_source/OQP27_statement.pdf",
+      "sha256": "4a2b65aeadc6d1b18460c0589a81977e848c0c93f2eac93255b847ddc25d1e95"
+    },
+    {
+      "bytes": 277,
+      "path": "supporting_source/PROVENANCE.md",
+      "sha256": "0ca9d55cffcf6d820f0fd4e628c4110d46d9bf9ead5c79448c7b0809734dee74"
+    },
+    {
+      "bytes": 14973,
+      "path": "supporting_source/audits/editor_report_on_v3.md",
+      "sha256": "1ac5856bd2e3438374ec0e72751140a9c787b3e7201435633e6e79502affb1ac"
+    },
+    {
+      "bytes": 8085,
+      "path": "supporting_source/audits/editor_report_on_v4.md",
+      "sha256": "693b934811164354bedfc69c2a989bc3db6af8b1c77604100ef267c261d9901a"
+    },
+    {
+      "bytes": 14359,
+      "path": "supporting_source/audits/fidelity_report_v2_to_v3.md",
+      "sha256": "0f60c0440e6fa661e0f521ffe6c8264d58efd18e6fee91d8527a2ae762e8440d"
+    },
+    {
+      "bytes": 13672,
+      "path": "supporting_source/audits/fidelity_report_v4.md",
+      "sha256": "3943c5062090804c070d4a8add6d5c712dc6e5d8dd67959491704618ee051461"
+    },
+    {
+      "bytes": 5804,
+      "path": "supporting_source/audits/independent_audits_of_the_mathematics/check_A_1_finite_certificate.py",
+      "sha256": "0e7a91951165bc821c9ef69ac42a31e042427a189eb0cacfaad31daae5a4750a"
+    },
+    {
+      "bytes": 1717,
+      "path": "supporting_source/audits/independent_audits_of_the_mathematics/check_A_2_rn_enclosures.py",
+      "sha256": "dc15f65724ea1c5fd0644c6a8715429738489237b7f119ab1a3721bedbe1e694"
+    },
+    {
+      "bytes": 9231,
+      "path": "supporting_source/audits/independent_audits_of_the_mathematics/check_A_3_bernstein.py",
+      "sha256": "45fcf0cb429a2bd7da1b79803dbabc6d6c7be75f2f09c37707027ebc7c69aed4"
+    },
+    {
+      "bytes": 12533,
+      "path": "supporting_source/audits/independent_audits_of_the_mathematics/check_A_4_constants.py",
+      "sha256": "e73a8f655bf9955d3f78e7e4f2e1f2b0728317aea6ab69cd2399acbdca2e4595"
+    },
+    {
+      "bytes": 3102,
+      "path": "supporting_source/audits/independent_audits_of_the_mathematics/check_A_5_analytic_large_d.py",
+      "sha256": "0cc5b21e03337216fb4ec9f13bf17aa734cc82477494d4114dcbeb170897f48a"
+    },
+    {
+      "bytes": 7653,
+      "path": "supporting_source/audits/independent_audits_of_the_mathematics/check_A_6_circulation.py",
+      "sha256": "15d500133b768d80b58d5c5584071ee3c719ef205d60150c5b81288c78138c0f"
+    },
+    {
+      "bytes": 1726,
+      "path": "supporting_source/audits/independent_audits_of_the_mathematics/check_A_7_tilted_law.py",
+      "sha256": "0b7f31afd66b6687ce52f9ad46f63e4c66351b44b6dc95890f3b88bf0a8d2337"
+    },
+    {
+      "bytes": 2761,
+      "path": "supporting_source/audits/independent_audits_of_the_mathematics/check_A_common.py",
+      "sha256": "5ebe49343b04bb529447933f212b833b1ab5da4baf4560d7af65e0b5fa3983e1"
+    },
+    {
+      "bytes": 15579,
+      "path": "supporting_source/audits/independent_audits_of_the_mathematics/check_B_A_facet.py",
+      "sha256": "f6f959848dd409aaff2e41171d4acce17e3cd5e8a740756b6cde4dc30af0c970"
+    },
+    {
+      "bytes": 16156,
+      "path": "supporting_source/audits/independent_audits_of_the_mathematics/check_B_B2_noise.py",
+      "sha256": "284a7ed39813705764a064b14ce0c31aa90e41324d902522c203d92a2e3c6eb7"
+    },
+    {
+      "bytes": 27313,
+      "path": "supporting_source/audits/independent_audits_of_the_mathematics/check_B_B3_KL.py",
+      "sha256": "c8543fd872d7c60e4872663b7ea8f74f00eb96b600db0e412c90e0dcea7de746"
+    },
+    {
+      "bytes": 9379,
+      "path": "supporting_source/audits/independent_audits_of_the_mathematics/check_B_B3_LF_nonlocal.py",
+      "sha256": "3b05a0c1b362ed9508e869d4609706d5859353a930f2ebf160129b69285fa396"
+    },
+    {
+      "bytes": 3303,
+      "path": "supporting_source/audits/independent_audits_of_the_mathematics/check_B_B3_LF_unequal.py",
+      "sha256": "a665950532a9f46e5f0d873b251756de060e1b13e05c56e4443530057b60db00"
+    },
+    {
+      "bytes": 47282,
+      "path": "supporting_source/audits/self_referee_report_v1.md",
+      "sha256": "90703e214c4b2ba6cf120c85f8f1bc7aa86c3d42f0c74cc9d88eee77b0ac59d8"
+    },
+    {
+      "bytes": 6,
+      "path": "supporting_source/audits/style_scan_v4.txt",
+      "sha256": "2e22da2ab13713309ac75219e525b8e06ed02f3f1963b8feef203fa25827f93d"
+    },
+    {
+      "bytes": 645,
+      "path": "supporting_source/old_versions/v1/PROVENANCE_v1.md",
+      "sha256": "4cab8b7b376cf7097c45a7a49e5f893a1736cc7c3bb0025b7ad1e6ac86b34b0c"
+    },
+    {
+      "bytes": 243728,
+      "path": "supporting_source/old_versions/v1/oqp27_v1_paper.pdf",
+      "sha256": "52c1b7ed4576211f58c18567efdb10d2a4bcdecd6ae43779c5814884035c6b03"
+    },
+    {
+      "bytes": 775,
+      "path": "supporting_source/old_versions/v2/EDITS_v1_to_v2.md",
+      "sha256": "a45ea15c58e2b5f020fd79d28af81ff1fc210e193958a3dff20a6a98f5fd577f"
+    },
+    {
+      "bytes": 248419,
+      "path": "supporting_source/old_versions/v2/oqp27_v2_paper.pdf",
+      "sha256": "da2c80d90502b6ccea5baa38eec4dd7b96e15c4c34ef212c2d6476ad2cffb15d"
+    },
+    {
+      "bytes": 88863,
+      "path": "supporting_source/old_versions/v2/oqp27_v2_paper.tex",
+      "sha256": "165ea2c38e756c6c6f8624fe2bd90407b85baef1f2c1919f7a9acba66bc0023c"
+    },
+    {
+      "bytes": 6,
+      "path": "supporting_source/old_versions/v3/oqp27_v3__BANNED_SCAN.txt",
+      "sha256": "2e22da2ab13713309ac75219e525b8e06ed02f3f1963b8feef203fa25827f93d"
+    },
+    {
+      "bytes": 402,
+      "path": "supporting_source/old_versions/v3/oqp27_v3__PROVENANCE.md",
+      "sha256": "bb1650e31d43dbf5418347479a90beb957b0786ee58a62ab9153f6069aaa1880"
+    },
+    {
+      "bytes": 272956,
+      "path": "supporting_source/old_versions/v3/oqp27_v3__paper.pdf",
+      "sha256": "8943a22eae5251ca23be4de64be4e3a2b0240381123949fb2e2aa4e2f63daf9f"
+    },
+    {
+      "bytes": 95354,
+      "path": "supporting_source/old_versions/v3/oqp27_v3__paper.tex",
+      "sha256": "a828a9ae269fdfab861dd5aaab1e5afed08e2ecc388979c53dc1f77844abf083"
+    },
+    {
+      "bytes": 1073,
+      "path": "supporting_source/prl_letter/CHANGELOG_prl.md",
+      "sha256": "e2287a3fbad9666c64c5c9383a8ac55119afe0fc4200f7ec5016345ba6a4e972"
+    },
+    {
+      "bytes": 9534,
+      "path": "supporting_source/prl_letter/EDITOR_REPORT_prl.md",
+      "sha256": "1f86df7e7c48c4530fa8ff949b009f3542a770fa40e0568ee6a38dd04283596a"
+    },
+    {
+      "bytes": 6680,
+      "path": "supporting_source/prl_letter/EDITOR_REPORT_prl_v2.md",
+      "sha256": "5af3f343f19ba2f50f914ce5627a05449ef6109f6dcd8b8fdb7a6a3b279788e8"
+    },
+    {
+      "bytes": 13160,
+      "path": "supporting_source/prl_letter/FIDELITY_REPORT_prl.md",
+      "sha256": "3fcbd6e91b66bd9346a772684a412d1f8448bc45dfb3151f9890e4d5cd24f30f"
+    },
+    {
+      "bytes": 9664,
+      "path": "supporting_source/prl_letter/FIDELITY_REPORT_prl_v2.md",
+      "sha256": "b8d5179776f9bbe7abaae5c2476cd8bc4d7ad198be47b1ef001efd4b7a7a1e5f"
+    },
+    {
+      "bytes": 6,
+      "path": "supporting_source/prl_letter/oqp27_letter__BANNED_SCAN.txt",
+      "sha256": "2e22da2ab13713309ac75219e525b8e06ed02f3f1963b8feef203fa25827f93d"
+    },
+    {
+      "bytes": 365,
+      "path": "supporting_source/prl_letter/oqp27_letter__PROVENANCE.md",
+      "sha256": "339e8e87e9bd1181872f4268c2083aceb80257fb7d73a2356c6f817150dff30e"
+    },
+    {
+      "bytes": 275140,
+      "path": "supporting_source/prl_letter/oqp27_letter__paper.pdf",
+      "sha256": "09f1e3a74537b8d8c9b0ddb359185cb47440444de2e2170668f806db84cdaa45"
+    },
+    {
+      "bytes": 98260,
+      "path": "supporting_source/prl_letter/oqp27_letter__paper.tex",
+      "sha256": "37dc555dc60a041fc1ec5fdcf5aad1de7760baf2c7e9bf3785bb9af3c7405a4e"
+    },
+    {
+      "bytes": 275218,
+      "path": "supporting_source/prl_letter/oqp27_letter__paper_v1.pdf",
+      "sha256": "7d5485d382f2cf7007bf39f6687f9cf7ab79680a3a4ec28f6fa28df4db0e63f6"
+    }
+  ],
+  "result_id": "oqp_27",
+  "schema": "psi-private-result-manifest-v1"
+}

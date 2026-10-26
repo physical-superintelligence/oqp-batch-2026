@@ -1,0 +1,7 @@
+# Preserve timestamped material byte for byte, including on CRLF checkouts.
+*/drafts/2026-09-21/** -text
+timestamps/2026-09-21/** -text
+*.bin binary
+*.tsq binary
+*.tsr binary
+*.crl binary

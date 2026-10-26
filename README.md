@@ -20,7 +20,11 @@ supporting files.
   README.md     the result, paper, main formal statements and file guide
   paper/        the paper PDF and accompanying manuscript files
   lean/         the formalization, with its own build instructions and citation
+  drafts/       earlier manuscripts with their original timestamps (OQP 2 and OQP 27)
 ```
+
+The dated drafts can be checked with `python3 -I timestamps/verify.py`; see the
+[verification notes](timestamps/README.md).
 
 The formalizations are included as ordinary folders. Each `lean/` folder has
 its own pinned dependencies and can be copied out as a standalone project.
